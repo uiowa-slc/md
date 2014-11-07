@@ -1,7 +1,7 @@
 <div class="container clearfix">
 
       
-      <section class="staff-content main-content">
+      <section class="portfolio-holder-content main-content">
       	$Form
       	$Content
       	
