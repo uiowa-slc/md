@@ -9,7 +9,7 @@
         <section class="main-content <% if $BackgroundImage %>margin-top<% end_if %>">
             <article>    
                 <% if $Image %>
-                    <img src="$Image.CroppedImage(765,512).URL" alt="">
+                    <img src="$Image.CroppedFocusedImage(765,512).URL" alt="">
                 <% end_if %>
                 	<h1 class="postTitle">$Title</h1>
 
@@ -44,7 +44,7 @@
                   <ul>
                 <% loop $AlternativeImages %>
                     <li>
-                        <img src="$CroppedImage(644,390).URL" alt="$Top.$Title">  
+                        <img src="$CroppedFocusedImage(644,390).URL" alt="$Top.$Title">  
                     </li>
                 <% end_loop %>
             </ul>

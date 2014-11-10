@@ -13,7 +13,7 @@
                               <% if $Image %>
                               <a href="$Link" class="staff-link">
                                     
-                                    <img src="$Image.CroppedImage(350,234).URL" alt="$Title" class="staff-img">
+                                    <img src="$Image.CroppedFocusedImage(350,234).URL" alt="$Title" class="staff-img">
                               </a>
                               <% else %>
                               <a href="$Link" class="staff-link">
