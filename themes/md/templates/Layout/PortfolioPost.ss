@@ -7,7 +7,8 @@
     <div class="container clearfix">
         <div class="white-cover"></div>
         <section class="main-content <% if $BackgroundImage %>margin-top<% end_if %>">
-            <article>    
+            <article>
+
                 <% if $Image %>
                     <img src="$Image.CroppedFocusedImage(765,512).URL" alt="">
                 <% end_if %>

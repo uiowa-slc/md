@@ -1,8 +1,8 @@
-<div class="filter-container">
+<div class="filter-container show-for-large-up">
 <section class="portfolio-holder-content">
 
       <div class="row">
-            <ul class="xlarge-block-grid-4 large-block-grid-3 medium-block-grid-2 filter-list">
+            <ul class="large-block-grid-3 medium-block-grid-2 filter-list">
                   <li><% include PortfolioQuickFilters %></li>
                   <li><% include PortfolioAudienceFilters %></li>
                   <li>$SideBarView</li>
