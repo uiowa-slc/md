@@ -12,35 +12,28 @@
                     <img src="$Image.CroppedFocusedImage(765,512).URL" alt="">
                 <% end_if %>
                 	<h1 class="postTitle">$Title</h1>
-
-
+                    <p>
                 <% if $Date %>
-                    <h5>Created on: $Date.Nice</h5> 
-                   <% end_if %>
-
+                    <strong>Created:</strong> $Date.Nice <br /> 
+                <% end_if %>
                 <% if $Roles %>
-                    <h6>Project Contribuitors: </h6>
+                    <strong>Contributors: <br />
                     <% loop $Roles %>
-                    <p>$Title: <% loop $StaffPages %><a href="$Link"> $FirstName $LastName</a><% if not $Last %>, <% end_if %><% end_loop %> </p>
+                    <strong>$Title:</strong> <% loop $StaffPages %><a href="$Link"> $FirstName $LastName</a><% if not $Last %>, <% end_if %><% end_loop %><br />
                     <% end_loop %>
-
-             
 			    <% end_if %>
 
                 <% if $PieceDescription %>
-                	<h6>Description: $PieceDescription</h6> 
-                   <% end_if %>
+                    <strong>Description:</strong> $PieceDescription <br />
+                <% end_if %>
 
-                  <% if $Audience %>
-                    <h6>Target Audience: $Audience</h6>  
+                <% if $Audience %>
+                    <strong>Target Audience:</strong> $Audience <br />
+                <% end_if %>
 
-                  <% end_if %>
-
-                   <% if $Medium %>
-                    <h6>Designed for: $Medium</h6>  
-
-                  <% end_if %>
-
+                <% if $Medium %>
+                    <strong>Designed for:</strong> $Medium <br />  
+                <% end_if %>
                   <ul>
                 <% loop $AlternativeImages %>
                     <li>
@@ -49,8 +42,7 @@
                 <% end_loop %>
             </ul>
 
-
-                    <h3>About Project</h3>               	
+            <h2>About Project</h2>               	
 	                $Content  
                 
                     <% if TagsCollection %>

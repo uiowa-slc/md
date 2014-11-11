@@ -25,4 +25,8 @@ class PortfolioHolder extends BlogHolder{
 
 class PortfolioHolder_Controller extends BlogHolder_Controller{
 
+	public function StaffPages(){
+		return StaffPage::get();
+	}
+
 } 

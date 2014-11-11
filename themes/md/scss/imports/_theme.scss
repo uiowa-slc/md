@@ -1,6 +1,55 @@
- .portfolio-holder-content.main-content {
-	
+ .filter-container{
+ 	background: #eee;
+
+ 	.portfolio-holder-content{
+ 		padding-top: 19px;
+ 		padding-bottom: 0px;
+ 	}
+
+ 	h3{
+ 		margin: 0;
+ 	}
+
+ 	.staff-filter-list{
+ 		img{
+ 			display: inline;
+ 			width: 100px;
+ 		}
+ 	}
+
+ }
+
+ .portfolio-holder-content {
      border-right: none;
-	 width: 100%;
-	
+	 max-width: 1600px;
+	 margin: auto;
+	 padding: rem-calc(20);
+
+	 h2{
+	 	text-transform: uppercase;
+	 	a {
+	 		color: #333;
+	 	}
+	 }
+
+	 .tag-nav{
+	 	margin-left: 0;
+	 	padding-left: 0;
+	 	li a.clear-filters{
+	 		background: #A8A8A8;
+	 		color: white;
+	 		&:before{
+	 			content: 'X';
+	 			color: white;
+	 			padding-right: 6px;
+	 		}
+	 	}
+	 }
+
+	 .row{
+	 	width: 100%;
+	 	max-width: 100%;
+	 	background: none;
+	 }
+
 }
