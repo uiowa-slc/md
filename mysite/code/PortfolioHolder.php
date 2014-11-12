@@ -33,9 +33,15 @@ class PortfolioHolder_Controller extends BlogHolder_Controller{
 		parent::init();
 
 	}
-	public function tag($request){
+
+	private function getTagFromParams(){
 		$tagURLSegment = addslashes( $this->urlParams['ID'] );
 		$tag = Tag::get()->Filter(array("URLSegment" => $tagURLSegment))->First();
+		return $tag;
+	}
+	public function tag($request){
+
+		$tag = $this->getTagFromParams();
 
 		if(isset($tag)){
 			$Data = array (
@@ -46,6 +52,18 @@ class PortfolioHolder_Controller extends BlogHolder_Controller{
 		}else{
 			return $this->httpError(404);
 		}
+	}
+
+	public function PortfolioPosts(){
+
+		$tag = $this->getTagFromParams();
+
+		if($tag){
+			return $tag->PortfolioPosts();
+		}else{
+			return $this->AllChildren();
+		}
+
 	}
 
 	public function StaffPages(){

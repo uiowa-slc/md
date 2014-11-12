@@ -1,6 +1,5 @@
 <div class="filter-container show-for-large-up">
 <section class="portfolio-holder-content">
-
       <div class="row">
             <div class="filter-list">
                   <div class="large-4 columns"><% include PortfolioQuickFilters %></div>
@@ -8,10 +7,6 @@
                   <div class="large-5 columns"><% include PortfolioPeopleFilters %></div>
                   <!--<li><% include PortfolioPeopleFilters %></li>-->
             </div>
-
-      </div>
-      <div class="row">
-            
       </div>
 </section>
 </div>
@@ -20,10 +15,11 @@
 	$Form
 	$Content
       <% if SelectedTag %>
-            <h1>Viewing entries tagged as $SelectedTag.Title</h1>
+            <ul class="tag-nav"><li><a href="{$Link}" class="clear-filters">Clear All Filters</a></li></ul>
+            <h1>$SelectedTag.ClassName: $SelectedTag.Title</h1>
       <% end_if %>
      <ul class="xlarge-block-grid-4 large-block-grid-3 medium-block-grid-2">
-      <% loop BlogEntries %>
+      <% loop PortfolioPosts %>
             <li>
                   <% if $Image %>
                   <a href="$Link">
