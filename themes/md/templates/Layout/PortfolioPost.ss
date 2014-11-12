@@ -6,7 +6,7 @@
 <div class="gradient">
     <div class="container clearfix">
         <div class="white-cover"></div>
-        <section class="main-content <% if $BackgroundImage %>margin-top<% end_if %>">
+        <section class="main-content portfolio-single-content <% if $BackgroundImage %>margin-top<% end_if %>">
             <article>
 
                 <% if $Image %>
@@ -23,19 +23,26 @@
                     <strong>$Title:</strong> <% loop $StaffPages %><a href="$Link"> $FirstName $LastName</a><% if not $Last %>, <% end_if %><% end_loop %><br />
                     <% end_loop %>
 			    <% end_if %>
-
-                <% if $PieceDescription %>
-                    <strong>Description:</strong> $PieceDescription <br />
-                <% end_if %>
-
+                </p>
                 <% if $Audience %>
-                    <strong>Target Audience:</strong> $Audience <br />
+                    <strong>Audience:</strong> 
+                    <ul class="tag-nav">
+                    <% loop $Audience %>
+                        <% include TagListItem %>
+                    <% end_loop %>
+                    </ul>
                 <% end_if %>
 
-                <% if $Medium %>
-                    <strong>Designed for:</strong> $Medium <br />  
+                <% if $Mediums %>
+                    <strong>Mediums:</strong> 
+                    <ul class="tag-nav">
+                    <% loop $Mediums %>
+                        <% include TagListItem %>
+                    <% end_loop %>
+                    </ul>
                 <% end_if %>
-                  <ul>
+
+            <ul>
                 <% loop $AlternativeImages %>
                     <li>
                         <img src="$CroppedFocusedImage(644,390).URL" alt="$Top.$Title">  
@@ -44,18 +51,7 @@
             </ul>
 
             <h2>About Project</h2>               	
-	                $Content  
-                
-                    <% if TagsCollection %>
-                    <br />
-                    <p class="tags">
-                         <% _t('TAGS', 'Tags:') %> 
-                        <% loop TagsCollection %>
-                            <a href="$Link" title="<% _t('VIEWALLPOSTTAGGED', 'View all posts tagged') %> '$Tag'" rel="tag">$Tag</a><% if not Last %>,<% end_if %>
-                        <% end_loop %>
-                    </p>
-                <% end_if %>      
-
+	       $Content       
             </article>
         </section>
         
