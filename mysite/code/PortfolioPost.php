@@ -19,8 +19,7 @@ class PortfolioPost extends BlogEntry{
 
 	private static $many_many = array(
 	  'Audience' => 'Audience',
-	  'Mediums' => 'Medium',
-	  'TagObjects' => 'Tag'
+	  'Mediums' => 'Medium'
 	);
 
 	private static $defaults = array(

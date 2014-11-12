@@ -13,7 +13,7 @@ class Tag extends DataObject{
 	);
 
 	private static $belongs_many_many = array(
-		"PortfolioPosts" => "PortfolioPost"
+		
 	);
 
 	public function onBeforeWrite(){
