@@ -12,6 +12,10 @@
  		margin: 0;
  	}
 
+ 	.columns{
+ 		border-right: 1px solid #ddd;
+ 	}
+
  	.staff-filter-list{
  		margin-top: 4px;
  		text-align: right;
@@ -24,8 +28,15 @@
  			border-radius: 50%;
 
  			@media #{$xlarge-up}{
- 				width: 113px;
+ 				width: 108px;
  				margin: 0px 2px;
+ 			}
+ 		}
+
+ 		a.last{
+ 			display: none;
+ 			@media #{$xlarge-up}{
+ 				display: inline;
  			}
  		}
 

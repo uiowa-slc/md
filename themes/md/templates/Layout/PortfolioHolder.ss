@@ -15,7 +15,7 @@
 	$Form
 	$Content
       <% if SelectedTag %>
-            <ul class="tag-nav"><li><a href="{$Link}" class="clear-filters">Clear All Filters</a></li></ul>
+            <ul class="tag-nav"><li><a href="{$Link}" class="clear-filters">Clear Filter</a></li></ul>
             <h1>$SelectedTag.ClassName: $SelectedTag.Title</h1>
       <% end_if %>
      <ul class="xlarge-block-grid-4 large-block-grid-3 medium-block-grid-2">
