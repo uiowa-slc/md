@@ -4,6 +4,8 @@
  	.portfolio-holder-content{
  		padding-top: 10px;
  		padding-bottom: 10px;
+ 		padding-left: 0;
+ 		padding-right: 0;
  	}
 
  	h3{
@@ -11,12 +13,28 @@
  	}
 
  	.staff-filter-list{
+ 		margin-top: 4px;
+ 		text-align: right;
  		img{
  			display: inline;
- 			width: 100px;
+
+ 			width: 89px;
+ 			margin: 0px 1px;
+
  			border-radius: 50%;
- 			margin: 5px 3px;
+
+ 			@media #{$xlarge-up}{
+ 				width: 113px;
+ 				margin: 0px 2px;
+ 			}
  		}
+
+ 		 a.more-staff-link{
+ 			img{
+ 				width: 36px;
+ 			}
+ 		}
+
  	}
 
  }
@@ -45,6 +63,11 @@
 	 			color: white;
 	 			padding-right: 6px;
 	 		}
+	 	}
+
+	 	li a.active{
+	 		background: black;
+	 		color: white;
 	 	}
 	 }
 

@@ -1,0 +1,1 @@
+<li><a href="$Link" <% if $isActive %>class="active"<% end_if %>>$Title</span></a></li>

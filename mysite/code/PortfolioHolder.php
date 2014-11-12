@@ -24,9 +24,32 @@ class PortfolioHolder extends BlogHolder{
 }
 
 class PortfolioHolder_Controller extends BlogHolder_Controller{
+	private static $allowed_actions = array('tag', 'feed');
+
+	private static $url_handlers = array(
+        'tags//$ID' => 'tag'
+    );
+	public function init() {
+		parent::init();
+
+	}
+	public function tag($request){
+		$tagURLSegment = addslashes( $this->urlParams['ID'] );
+		$tag = Tag::get()->Filter(array("URLSegment" => $tagURLSegment))->First();
+
+		if(isset($tag)){
+			$Data = array (
+				'Title' =>$tag->Title,
+				'SelectedTag' => $tag
+			);
+			return $this->customise($Data)->renderWith(array('PortfolioHolder', 'Page'));
+		}else{
+			return $this->httpError(404);
+		}
+	}
 
 	public function StaffPages(){
-		return StaffPage::get();
+		return StaffPage::get()->sort('RAND()');
 	}
 
 } 

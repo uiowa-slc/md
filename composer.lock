@@ -185,12 +185,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/ac-json-events.git",
-                "reference": "9b4ad63163bf93125690d03614a9e825526e96f7"
+                "reference": "05313a3eb585dd32d5530438a3173acc5dbd980c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/ac-json-events/zipball/9b4ad63163bf93125690d03614a9e825526e96f7",
-                "reference": "9b4ad63163bf93125690d03614a9e825526e96f7",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/ac-json-events/zipball/05313a3eb585dd32d5530438a3173acc5dbd980c",
+                "reference": "05313a3eb585dd32d5530438a3173acc5dbd980c",
                 "shasum": ""
             },
             "require": {
@@ -209,7 +209,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/ac-json-events/tree/master",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/ac-json-events/issues"
             },
-            "time": "2014-10-19 06:19:38"
+            "time": "2014-11-10 19:01:47"
         },
         {
             "name": "md/division-bar",
@@ -249,12 +249,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/division-project.git",
-                "reference": "211930609fef6ad2c021f7e1840a6439ad1d4240"
+                "reference": "a89afd21edc3b40757c87c33b03a9269ce0df241"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/211930609fef6ad2c021f7e1840a6439ad1d4240",
-                "reference": "211930609fef6ad2c021f7e1840a6439ad1d4240",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/a89afd21edc3b40757c87c33b03a9269ce0df241",
+                "reference": "a89afd21edc3b40757c87c33b03a9269ce0df241",
                 "shasum": ""
             },
             "require": {
@@ -263,6 +263,7 @@
                 "md/ac-json-events": "dev-master",
                 "md/division-bar": "*",
                 "php": ">=5.3.2",
+                "sheadawson/quickaddnew": "*",
                 "silverstripe-themes/simple": "*",
                 "silverstripe/blog": "*",
                 "silverstripe/cms": "3.1.6",
@@ -287,10 +288,47 @@
             },
             "description": "The University of Iowa Division of Student Life Project Code and Theme",
             "support": {
-                "source": "https://github.com/StudentLifeMarketingAndDesign/division-project/tree/master",
+                "source": "https://github.com/StudentLifeMarketingAndDesign/division-project/tree/1.5",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/division-project/issues"
             },
-            "time": "2014-11-10 16:48:44"
+            "time": "2014-11-12 17:51:22"
+        },
+        {
+            "name": "sheadawson/quickaddnew",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sheadawson/silverstripe-quickaddnew.git",
+                "reference": "2578bb3cb7925f04d42abb77d41ed9b771162e9b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sheadawson/silverstripe-quickaddnew/zipball/2578bb3cb7925f04d42abb77d41ed9b771162e9b",
+                "reference": "2578bb3cb7925f04d42abb77d41ed9b771162e9b",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/framework": "3.*"
+            },
+            "replace": {
+                "silverstripe/quickaddnew": "*"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Shea Dawson",
+                    "email": "shea@silverstripe.com.au"
+                }
+            ],
+            "description": "A decorator for form fields that manage object relationships, to allow adding a new object on the fly through a dialog window. It can handle has_one, has_many or many_many relationships. At the moment it has been tested / works on DropdownField and ListboxField. It works both in the CMS and in the frontend.",
+            "homepage": "http://github.com/sheadawson/silverstripe-quickaddnew",
+            "keywords": [
+                "Forms",
+                "silverstripe"
+            ],
+            "time": "2014-10-08 10:26:14"
         },
         {
             "name": "silverstripe-themes/simple",
@@ -471,12 +509,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe-labs/silverstripe-googlesitemaps.git",
-                "reference": "05e62cbbc8e8801c3ebd5f241ebec5b9ca34b724"
+                "reference": "d3a12fe225b6ca58423618bb6553474e4cf9b88d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-googlesitemaps/zipball/05e62cbbc8e8801c3ebd5f241ebec5b9ca34b724",
-                "reference": "05e62cbbc8e8801c3ebd5f241ebec5b9ca34b724",
+                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-googlesitemaps/zipball/d3a12fe225b6ca58423618bb6553474e4cf9b88d",
+                "reference": "d3a12fe225b6ca58423618bb6553474e4cf9b88d",
                 "shasum": ""
             },
             "require": {
@@ -500,7 +538,7 @@
                 "seo",
                 "silverstripe"
             ],
-            "time": "2014-10-21 08:27:53"
+            "time": "2014-11-11 03:46:45"
         },
         {
             "name": "silverstripe/installer",
@@ -606,12 +644,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-spamprotection.git",
-                "reference": "05650e912d51bb6434d66af61aaf24ffb1b0032a"
+                "reference": "949ec2b3591e1922b310a99e0c6d39ef32f915ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-spamprotection/zipball/05650e912d51bb6434d66af61aaf24ffb1b0032a",
-                "reference": "05650e912d51bb6434d66af61aaf24ffb1b0032a",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-spamprotection/zipball/949ec2b3591e1922b310a99e0c6d39ef32f915ab",
+                "reference": "949ec2b3591e1922b310a99e0c6d39ef32f915ab",
                 "shasum": ""
             },
             "require": {
@@ -634,7 +672,7 @@
                 "silverstripe",
                 "spamprotection"
             ],
-            "time": "2014-09-25 20:53:55"
+            "time": "2014-11-11 22:24:21"
         },
         {
             "name": "silverstripe/timepickerfield",
