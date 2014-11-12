@@ -13,7 +13,6 @@ private static $default_parent = 'PortfolioHolder';
 	
 	private static $icon = "blog/images/blogpage-file.png";
 
-	private static $description = "An individual blog entry";
 	
 	private static $singular_name = 'Portfolio Post Page';
 	

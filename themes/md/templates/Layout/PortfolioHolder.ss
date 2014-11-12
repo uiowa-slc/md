@@ -2,15 +2,17 @@
 <section class="portfolio-holder-content">
 
       <div class="row">
-            <ul class="large-block-grid-3 medium-block-grid-2 filter-list">
-                  <li><% include PortfolioQuickFilters %></li>
-                  <li><% include PortfolioAudienceFilters %></li>
-                  <li>$SideBarView</li>
+            <div class="filter-list">
+                  <div class="large-4 columns"><% include PortfolioQuickFilters %></div>
+                  <div class="large-4 columns"><% include PortfolioAudienceFilters %></div>
+                  <div class="large-4 columns">$SideBarView</div>
                   <!--<li><% include PortfolioPeopleFilters %></li>-->
-            </ul>
+            </div>
 
       </div>
- 
+      <div class="row">
+            <% include PortfolioPeopleFilters %>
+      </div>
 </section>
 </div>
 

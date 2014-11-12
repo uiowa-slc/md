@@ -2,8 +2,8 @@
  	background: #eee;
 
  	.portfolio-holder-content{
- 		padding-top: 19px;
- 		padding-bottom: 0px;
+ 		padding-top: 10px;
+ 		padding-bottom: 10px;
  	}
 
  	h3{
@@ -14,6 +14,8 @@
  		img{
  			display: inline;
  			width: 100px;
+ 			border-radius: 50%;
+ 			margin: 5px 3px;
  		}
  	}
 
@@ -51,5 +53,6 @@
 	 	max-width: 100%;
 	 	background: none;
 	 }
+
 
 }
