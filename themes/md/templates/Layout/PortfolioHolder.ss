@@ -1,10 +1,10 @@
-<div class="filter-container show-for-medium-up">
+<div class="filter-container">
 <section class="portfolio-holder-content">
       <div class="row">
             <div class="filter-list">
-                  <div class="large-4 medium-3 columns"><% include PortfolioQuickFilters %></div>
-                  <div class="large-3 medium-3 columns"><% include PortfolioAudienceFilters %></div>
-                  <div class="large-5 medium-6 columns"><% include PortfolioPeopleFilters %></div>
+                  <div class="large-4 medium-6 columns"><% include PortfolioQuickFilters %></div>
+                  <div class="large-3 medium-6 columns"><% include PortfolioAudienceFilters %></div>
+                  <div class="large-5 show-for-large-up columns"><% include PortfolioPeopleFilters %></div>
                   <!--<li><% include PortfolioPeopleFilters %></li>-->
             </div>
       </div>
