@@ -2,8 +2,8 @@
  	background: #eee;
 
  	.portfolio-holder-content{
- 		padding-top: 10px;
- 		padding-bottom: 10px;
+ 		padding-top: 7px;
+ 		padding-bottom: 7px;
  		padding-left: 0;
  		padding-right: 0;
  	}
@@ -13,11 +13,12 @@
  	}
 
  	.columns{
- 		border-right: 1px solid #ddd;
+ 		//border-right: 1px solid #ddd;
  	}
 
  	.staff-filter-list{
  		margin-top: 4px;
+ 		margin-bottom: 4px;
  		text-align: center;
  		@media #{$large-up}{
  			text-align: right;
@@ -25,13 +26,13 @@
  		img{
  			display: inline;
 
- 			width: 89px;
+ 			width: 67px;
  			margin: 0px 1px;
 
  			border-radius: 50%;
 
  			@media #{$xlarge-up}{
- 				width: 108px;
+ 				width: 67px;
  				margin: 0px 2px;
  			}
  		}
@@ -48,7 +49,7 @@
 
  		 a.more-staff-link{
  			img{
- 				width: 36px;
+ 				width: 32px;
  			}
  		}
 
@@ -62,6 +63,10 @@
 	 margin: auto;
 	 padding: rem-calc(20);
 
+	 h1{
+	 	text-align: center;
+	 }
+
 	 h2{
 	 	text-transform: uppercase;
 	 	a {
@@ -72,22 +77,24 @@
 	 .tag-nav{
 	 	margin-left: 0;
 	 	padding-left: 0;
+	 	margin-top: 0;
+	 	text-align:center;
 	 	li{
-	 		margin-bottom: 4px;
+	 		a{
+	 			background: #DBDBDB;
+	 		}
+	 		margin-bottom: 0;
 	 	}
 	 	li a.clear-filters{
-	 		background: #A8A8A8;
-	 		color: white;
+	 		background: none;
 	 		&:before{
 	 			content: 'X';
-	 			color: white;
 	 			padding-right: 6px;
 	 		}
 	 	}
 
 	 	li a.active{
-	 		background: black;
-	 		color: white;
+	 		background: #ffce39;
 	 	}
 	 }
 
