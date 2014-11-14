@@ -60,7 +60,7 @@
 
 
            <% include BlogSideBar %>
-            <% include BlogEntrySideNews %>
+        <% include BlogEntrySideNews %>
         </section>
     </div>
 </div>

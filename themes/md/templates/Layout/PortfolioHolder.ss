@@ -33,6 +33,3 @@
             <% end_loop %>
       </ul>
 </section>
-<div class="container">
-      <% include TopicsAndNews %>
-</div>

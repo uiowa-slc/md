@@ -1,9 +1,8 @@
  .filter-container{
- 	background: #eee;
 
  	.portfolio-holder-content{
- 		padding-top: 7px;
- 		padding-bottom: 7px;
+ 		padding-top: rem-calc(20);
+ 		padding-bottom: 0;
  		padding-left: 0;
  		padding-right: 0;
  	}
@@ -81,7 +80,7 @@
 	 	text-align:center;
 	 	li{
 	 		a{
-	 			background: #DBDBDB;
+	 			background: #E7E7E7;
 	 		}
 	 		margin-bottom: 0;
 	 	}
