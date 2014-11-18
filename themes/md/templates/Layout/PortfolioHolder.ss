@@ -1,34 +1,28 @@
-<div class="filter-container">
-<section class="portfolio-holder-content">
-      <div class="row">
-            <div class="filter-list">
-                  <div class="large-12 columns"><% include PortfolioQuickFilters %></div>
-                  <%--<div class="large-3 medium-6 columns"><% include PortfolioAudienceFilters %></div>--%>
-                 <%-- <div class="large-5 show-for-large-up columns"><% include PortfolioPeopleFilters %></div> --%>
-                  <!--<li><% include PortfolioPeopleFilters %></li>-->
-            </div>
-      </div>
-</section>
-</div>
-
 <section class="portfolio-holder-content">
 	$Form
 	$Content
       <% if SelectedTag %>
             <h1>$SelectedTag.ClassName: $SelectedTag.Title</h1>
       <% end_if %>
-     <ul class="xlarge-block-grid-4 large-block-grid-3 medium-block-grid-2">
+     <ul class="medium-block-grid-2 portfolio-card-list">
             <% loop PortfolioPosts %>
                   <li>
-                        <% if $Image %>
                         <a href="$Link">
-                              <img src="$Image.CroppedFocusedImage(550,400).URL" alt="$Title">
+                              <img src="$Image.CroppedFocusedImage(800,500).URL" alt="$Title">
+                              <div class="portfolio-card-overlay">&nbsp;</div>
+                              <div class="portfolio-card-title"><h2>$Title</h2><p>
+                                    <% loop $Mediums.Limit(3) %>$Title<% if not $Last %>, <% end_if %><% end_loop %>
+                              </p>
+                                        <% loop $Roles %>
+                                        <ul class="staff-work-list">
+                                          <% loop $StaffPages %>
+                                           <li><img src="$Photo.CroppedImage(200,200).URL" /></li>
+                                          <% end_loop %>
+                                                <li><img class="more-staff" src="{$ThemeDir}/images/more-staff.gif" /></li>
+                                          </ul>
+                                          <% end_loop %>
+                              </div>
                         </a>
-                        <% else %>
-                        <a href="$Link"> 
-                              <img src="division-project/images/dosl.png" alt="$Title">
-                        </a>
-                        <% end_if %>
                   </li>
             <% end_loop %>
       </ul>
