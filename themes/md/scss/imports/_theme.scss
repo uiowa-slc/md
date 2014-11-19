@@ -1,6 +1,59 @@
- .portfolio-holder-content.main-content {
-	
-     border-right: none;
-	 width: 100%;
-	
-}
+ .filter-container{
+
+ 	.portfolio-holder-content{
+ 		padding-top: rem-calc(20);
+ 		padding-bottom: 0;
+ 		padding-left: 0;
+ 		padding-right: 0;
+ 	}
+
+ 	h3{
+ 		margin: 0;
+ 	}
+
+ 	.columns{
+ 		//border-right: 1px solid #ddd;
+ 	}
+
+ 	.staff-filter-list{
+ 		margin-top: 4px;
+ 		margin-bottom: 4px;
+ 		text-align: center;
+ 		@media #{$large-up}{
+ 			text-align: right;
+ 		}
+ 		img{
+ 			display: inline;
+
+ 			width: 67px;
+ 			margin: 0px 1px;
+
+ 			border-radius: 50%;
+
+ 			@media #{$xlarge-up}{
+ 				width: 67px;
+ 				margin: 0px 2px;
+ 			}
+ 		}
+
+ 		a.last{
+ 			display: inline;
+ 			@media #{$large-up}{
+ 				display: none;
+ 			}
+ 			@media #{$xlarge-up}{
+ 				display: inline;
+ 			}
+ 		}
+
+ 		 a.more-staff-link{
+ 			img{
+ 				width: 32px;
+ 			}
+ 		}
+
+ 	}
+
+ }
+
+ 

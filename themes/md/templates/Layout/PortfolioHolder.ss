@@ -1,38 +1,29 @@
-<div class="container clearfix">
-
-      
-      <section class="portfolio-holder-content main-content">
-      	$Form
-      	$Content
-      	
-                 <ul class="staff-list">
-                  <% loop BlogEntries %>
-                  
-                  
-                        <li>
-                              <% if $Image %>
-                              <a href="$Link" class="staff-link">
-                                    
-                                    <img src="$Image.CroppedFocusedImage(350,234).URL" alt="$Title" class="staff-img">
-                              </a>
-                              <% else %>
-                              <a href="$Link" class="staff-link">
-                                    
-                                    <img src="division-project/images/dosl.png" alt="$Title" class="staff-img">
-                              </a>
-                              <% end_if %>
-                              <p class="staff-name">
-                                    <a href="$Link">$Title</a>
-                                    <% if $Position %><small class="staff-position">$Position</small><% end_if %>
+<section class="portfolio-holder-content">
+	$Form
+	$Content
+      <% if SelectedTag %>
+            <h1>$SelectedTag.ClassName: $SelectedTag.Title</h1>
+      <% end_if %>
+     <ul class="medium-block-grid-2 portfolio-card-list">
+            <% loop PortfolioPosts %>
+                  <li>
+                        <a href="$Link">
+                              <img src="$Image.CroppedFocusedImage(800,500).URL" alt="$Title">
+                              <div class="portfolio-card-overlay">&nbsp;</div>
+                              <div class="portfolio-card-title"><h2>$Title</h2><p>
+                                    <% loop $Mediums.Limit(3) %>$Title<% if not $Last %>, <% end_if %><% end_loop %>
                               </p>
-                        </li>
-                  <% end_loop %>
-                        <li class="filler"></li>
-                        <li class="filler"></li>
-                  </ul>
-                  
-      	
-      	
-      </section>
-</div>
-<% include TopicsAndNews %>
+                                        <% loop $Roles %>
+                                        <ul class="staff-work-list">
+                                          <% loop $StaffPages %>
+                                           <li><img src="$Photo.CroppedImage(200,200).URL" /></li>
+                                          <% end_loop %>
+                                                <li><img class="more-staff" src="{$ThemeDir}/images/more-staff.gif" /></li>
+                                          </ul>
+                                          <% end_loop %>
+                              </div>
+                        </a>
+                  </li>
+            <% end_loop %>
+      </ul>
+</section>
