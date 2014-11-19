@@ -5,9 +5,9 @@ class PortfolioPost extends BlogEntry{
 
 private static $default_parent = 'PortfolioHolder';
 	private static $db = array(
-		'Audience' => 'Text',
-      	'Medium' => 'Text',
+		'Client' => 'Text',
       	'PieceDescription' => 'Text',
+      	'SiteLink' => 'Text'
 	);
 	private static $can_be_root = false;
 	
@@ -50,6 +50,7 @@ function getCMSFields() {
 		$fields->removeByName('StoryByDept', false);
 		$fields->removeByName('StoryByEmail', false);
 		$fields->removeByName('PhotosByEmail', false);
+		$fields->removeByName('ExternalURL', false);
 		
 
 
@@ -62,12 +63,12 @@ function getCMSFields() {
 
 
 		$fields->addFieldToTab("Root.Main", new TextField('PieceDescription', 'Description of Post'), 'Content');
-		$fields->addFieldToTab("Root.Main", new TextField('Audience', 'Audience'), 'Content');
-		$fields->addFieldToTab("Root.Main", new TextField('Medium', 'Medium'), 'Content');
-
+		$fields->addFieldToTab("Root.Main", new TextField('Client', 'Client'), 'Content');
+		$fields->addFieldToTab("Root.Main", new TextField('SiteLink', 'SiteLink'), 'Content');
 
         // Create a default configuration for the new GridField, allowing record editing
         $config = GridFieldConfig_RelationEditor::create();
+        $config->removeComponentsByType('GridFieldAddExistingAutocompleter');
         // Set the names and data for our gridfield columns
         $config->getComponentByType('GridFieldDataColumns')->setDisplayFields(array(
             'Title' => 'Title',

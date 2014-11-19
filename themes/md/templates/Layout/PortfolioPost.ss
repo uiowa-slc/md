@@ -31,13 +31,12 @@
                 	<h6>Description: $PieceDescription</h6> 
                    <% end_if %>
 
-                  <% if $Audience %>
-                    <h6>Target Audience: $Audience</h6>  
+                  <% if $Client %>
+                    <h6>Client: $Client</h6>  
 
                   <% end_if %>
-
-                   <% if $Medium %>
-                    <h6>Designed for: $Medium</h6>  
+                  <% if $SiteLink %>
+                    <h6>Site Link: <a href="$SiteLink">$SiteLink</a></h6>  
 
                   <% end_if %>
 
