@@ -19,7 +19,7 @@ class PortfolioPost extends BlogEntry{
 	);
 
 	private static $many_many = array(
-	  'Audience' => 'Audience',
+	  'Client' => 'Client',
 	  'Mediums' => 'Medium'
 	);
 
@@ -55,12 +55,12 @@ class PortfolioPost extends BlogEntry{
 				'Content');
 		$uploadField->setAllowedMaxFileNumber(4);
 
-		$audienceSource = function(){
-    		return Audience::get()->map()->toArray();
+		$clientSource = function(){
+    		return Client::get()->map()->toArray();
 		};
-		$audienceField = ListboxField::create('Audience', 'Audience', $audienceSource());
-		$audienceField->setMultiple(true)->useAddNew('Audience', $audienceSource);
-		$fields->addFieldToTab("Root.Main",$audienceField, 'Content');
+		$clientField = ListboxField::create('Client', 'Client', $clientSource());
+		$clientField->setMultiple(true)->useAddNew('Client', $clientSource);
+		$fields->addFieldToTab("Root.Main",$clientField, 'Content');
 
 
 		$mediumSource = function(){

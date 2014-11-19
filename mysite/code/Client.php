@@ -1,6 +1,6 @@
 <?php
 
-class Audience extends Tag{
+class Client extends Tag{
 
 	private static $db = array(
 

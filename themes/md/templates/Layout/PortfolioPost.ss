@@ -28,10 +28,10 @@
                     <% end_loop %>
                 <% end_if %>
                 </p>
-                <% if $Audience %>
-                    <strong>Audience:</strong> 
+                <% if $Client %>
+                    <strong>Clients:</strong> 
                     <ul class="tag-nav">
-                    <% loop $Audience %>
+                    <% loop $Client %>
                         <% include TagListItem %>
                     <% end_loop %>
                     </ul>
@@ -45,6 +45,10 @@
                     <% end_loop %>
                     </ul>
                 <% end_if %>
+                <% if $SiteLink %>
+                    <strong>Website URL:</strong> <a href="$SiteLink">$SiteLink</a> <br /> 
+                <% end_if %>
+
             </section>
             <section class="large-6 columns">          
                 $Content       
