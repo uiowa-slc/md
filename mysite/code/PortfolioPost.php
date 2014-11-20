@@ -19,7 +19,7 @@ class PortfolioPost extends BlogEntry{
 	);
 
 	private static $many_many = array(
-	  'Client' => 'Client',
+	  'Clients' => 'Client',
 	  'Mediums' => 'Medium'
 	);
 

@@ -1,74 +1,79 @@
 <section class="portfolio-post-content">
     $Form
-    <div class="portfolio-post-heading row">
-        <div class="large-3 columns details"><a href="#" id="details">Details +</a></div>
-        <div class="large-6 columns end"><h1>$Title</h1></div>
-        <div class="large-3 columns end">
 
+    <div class="portfolio-image-list row">
+        <div class="large-12 columns">
+            <% if $Image %><img src="$Image.URL" alt=""><% end_if %>
         </div>
     </div>
-    <div class="portfolio-post-details row hide">
-  
-        <section class="large-6 columns<% if $BackgroundImage %>margin-top<% end_if %>">
-            <article>
-                <h2 class="text-center">About the Project</h2> 
-                    <p>
-                <% if $Date %>
+    <div class="portfolio-post-heading row">
+        <div class="large-12 columns details"><h1>$Title</h1>
+                        <% loop $Roles %>
+                            <ul class="staff-work-list">
+                              <% loop $StaffPages %>
+                               <li><a href="$Link"><img src="$Photo.CroppedImage(200,200).URL" /></a></li>
+                              <% end_loop %>
+                            </ul>
+                        <% end_loop %>
+
+        <a href="#" id="details">Details +</a></div>
+    </div>
+    <div class="portfolio-post-details row">
+        <section class="large-6 columns">
+                <%--<% if $Date %>
                     <strong>Created:</strong> $Date.Nice <br /> 
-                <% end_if %>
-                <% if $Roles %>
-                    <strong>Contributors: </strong> <br />
-                    <% loop $Roles %>
-                        <ul class="staff-work-list">
-                          <% loop $StaffPages %>
-                           <li><a href="$Link"><img src="$Photo.CroppedImage(200,200).URL" /></li></a>
-                          <% end_loop %>
-                            <li><img class="more-staff" src="{$ThemeDir}/images/more-staff.gif" /></li>
-                        </ul>
-                    <% end_loop %>
-                <% end_if %>
-                </p>
-                <% if $Client %>
-                    <strong>Clients:</strong> 
-                    <ul class="tag-nav">
-                    <% loop $Client %>
-                        <% include TagListItem %>
-                    <% end_loop %>
-                    </ul>
-                <% end_if %>
+                <% end_if %>--%>
+                
+                $Content
 
                 <% if $Mediums %>
-                    <strong>Mediums:</strong> 
-                    <ul class="tag-nav">
                     <% loop $Mediums %>
-                        <% include TagListItem %>
+                        <a href="$Link">$Title<% if not Last %>, <% end_if %></a>
                     <% end_loop %>
-                    </ul>
+                    <br />
                 <% end_if %>
+
+                <% if $Clients %>
+                    <strong>Clients:</strong> 
+                    <% loop $Clients %>
+                        <a href="$Link">$Title<% if not Last %>, <% end_if %></a>
+                    <% end_loop %>
+                    <br />
+                <% end_if %>
+
                 <% if $SiteLink %>
-                    <strong>Website URL:</strong> <a href="$SiteLink">$SiteLink</a> <br /> 
+                   <a href="$SiteLink">Visit Website</a></strong><br /> 
                 <% end_if %>
 
-            </section>
-            <section class="large-6 columns">          
-                $Content       
-            </article>
         </section>
-
+        <section class="large-6 columns portfolio-roles">          
+                <% if $Roles %>
+                    <% loop $Roles %>
+                            <h3>$Title</h3>
+                            <% loop $StaffPages %>
+                                <a href="#">$Title<% if not $Last %>, <% end_if %></a>
+                            <% end_loop %>
+                    <% end_loop %>
+                <% end_if %>             
+        </section>    
     </div>
     <div class="row">
+    <div class="portfolio-image-list row">
+        <div class="large-12 columns">
+             <% loop $AlternativeImages %>
+                    <img src="$URL" alt="$Top.$Title">  
+            <% end_loop %>
+        </div>
+    </div>
         <div class="small-12 columns">
            <ul>
-                <% loop $AlternativeImages %>
-                    <li>
-                        <img src="$CroppedFocusedImage(644,390).URL" alt="$Top.$Title">  
-                    </li>
-                <% end_loop %>
+   
             </ul>  
         </div>
-    <!--$Content -->
-    <div class="portfolio-image-list">
-        <% if $Image %><img src="$Image.CroppedFocusedImage(765,512).URL" alt=""><% end_if %>
     </div>
+
+
+    <!--$Content -->
+
     
 </section>

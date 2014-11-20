@@ -35,10 +35,6 @@
 	 margin: auto;
 	 padding: rem-calc(20);
 
-	 h1{
-	 	text-align: center;
-	 }
-
 	 h2{
 	 	text-transform: uppercase;
 	 	a {
@@ -155,21 +151,36 @@
      border-right: none;
 	 max-width: 1400px;
 	 margin: auto;
-	 padding: rem-calc(20);
+	 padding: 0 rem-calc(20);
 
 	 .row{
 	 	max-width: 1400px;
 	 }
 
 	 .details{
-	 	margin-top: 14px;
+	 	padding: 1em 0;
 	 	font-size: 1.3em;
+
+		 .staff-work-list{
+		 	display: inline;
+		 	margin-left: 0;
+		 	margin-right: 0;
+		 }
+
 	 }
 
 	 .portfolio-post-heading{
 		 h1{
-		 	text-align: center;
+		 	display: inline;
+		 	margin-right: 25px;
+		 	font-size: 1.3em;
 		 }
+
+
+	 }
+
+	 .portfolio-roles{
+	 	text-align: center;
 	 }
 
 
