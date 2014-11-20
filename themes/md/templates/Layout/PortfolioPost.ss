@@ -2,12 +2,12 @@
     $Form
 
     <div class="portfolio-image-list row">
-        <div class="large-12 columns">
+        <div class="large-12">
             <% if $Image %><img src="$Image.URL" alt=""><% end_if %>
         </div>
     </div>
     <div class="portfolio-post-heading row">
-        <div class="large-12 columns details"><h1>$Title</h1>
+        <div class="large-12 columns summary"><h1>$Title</h1>
                         <% loop $Roles %>
                             <ul class="staff-work-list">
                               <% loop $StaffPages %>
@@ -16,7 +16,7 @@
                             </ul>
                         <% end_loop %>
 
-        <a href="#" id="details">Details +</a></div>
+        <a href="#" id="details-toggle">Details +</a></div>
     </div>
     <div class="portfolio-post-details row">
         <section class="large-6 columns">
@@ -59,7 +59,7 @@
     </div>
     <div class="row">
     <div class="portfolio-image-list row">
-        <div class="large-12 columns">
+        <div class="large-12">
              <% loop $AlternativeImages %>
                     <img src="$URL" alt="$Top.$Title">  
             <% end_loop %>

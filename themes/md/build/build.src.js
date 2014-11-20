@@ -11116,14 +11116,14 @@ $(window).load(function() {
 
 $(".portfolio-post-details").hide();
 
-$("#details").click(function(event){
+$("#details-toggle").click(function(event){
 	event.preventDefault();
 
 	$(".portfolio-post-details").slideToggle();
-	if ($("#details").html() == "Details +") {
-		$("#details").html("Details -");
+	if ($("#details-toggle").html() == "Details +") {
+		$("#details-toggle").html("Details -");
 	} else {
-		$("#details").html("Details +");
+		$("#details-toggle").html("Details +");
 	}
 	
 	console.log(this);

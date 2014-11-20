@@ -151,14 +151,14 @@
      border-right: none;
 	 max-width: 1400px;
 	 margin: auto;
-	 padding: 0 rem-calc(20);
+	 padding: 0;
 
 	 .row{
 	 	max-width: 1400px;
 	 }
 
-	 .details{
-	 	padding: 1em 0;
+	 .summary{
+	 	padding: 1em 20px;
 	 	font-size: 1.3em;
 
 		 .staff-work-list{
@@ -167,6 +167,14 @@
 		 	margin-right: 0;
 		 }
 
+	 }
+
+	 #details-toggle{
+	 	margin-left: 15px;
+	 }
+
+	 .portfolio-post-details{
+	 	padding: 1em 20px;
 	 }
 
 	 .portfolio-post-heading{
