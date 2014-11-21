@@ -6,6 +6,12 @@ class StaffPageExtension extends DataExtension {
         
     ); 
 
+    public function updateCMSFields(FieldList $fields) {
+     // $fields->addFieldToTab("Root.Main", new TextField('ExternalURL', 'External URL (if story lives elsewhere)'), 'Content');
+     
+
+  }
+
     public function Projects(){
     	$owner = $this->owner;
     	$roles = $owner->Roles();
