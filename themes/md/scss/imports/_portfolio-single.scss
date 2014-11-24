@@ -135,6 +135,11 @@ $portfolio-single-width: 1400px;
 
 	 .portfolio-roles{
 	 	text-align: center;
+	 	padding-top: 15px;
+
+	 	@media #{$medium-up}{
+	 		padding-top: 0;
+	 	}
 
 	 	.role{
 
