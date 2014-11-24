@@ -33,8 +33,10 @@ module.exports = function(grunt) {
           'division-project/bower_components/jquery.equalheights/jquery.equalheights.js',
           'division-project/bower_components/fitvids/jquery.fitvids.js',
           'division-project/bower_components/flexslider/jquery.flexslider.js',
+          'division-project/bower_components/blazy/blazy.js',
           'division-bar/js/division-bar.js',
           'division-project/js/*.js',
+          '<%=globalConfig.themeDir %>/vendor/visible/jquery.visible.js',
           '<%=globalConfig.themeDir %>/js/*.js' ],
         dest: '<%=globalConfig.themeDir %>/build/build.src.js'
       }
