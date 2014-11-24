@@ -1,17 +1,24 @@
 <?php
 
-class PortfolioPost extends BlogEntry{
+class PortfolioPost extends Page{
 
 
 	private static $default_parent = 'PortfolioHolder';
 	private static $db = array(
+		"Date" => "SS_Datetime",
+      	'SiteLink' => 'Text',
 
-      	'SiteLink' => 'Text'
 	);
 	private static $can_be_root = false;
 	private static $singular_name = 'Portfolio Post Page';
 
 	private static $plural_name = 'Portfolio Post Pages';
+
+	private static $has_one = array(
+        'Image' => 'Image',
+    );
+
+
 		
 	private static $has_many = array(
 		'AlternativeImages' => 'AlternativeImage',
@@ -28,7 +35,12 @@ class PortfolioPost extends BlogEntry{
 		'ShowInMenus' => false
 	);
 
-
+	public function populateDefaults(){
+		parent::populateDefaults();
+		
+		$this->setField('Date', date('Y-m-d H:i:s', strtotime('now')));
+	
+	}
 
 	function getCMSFields() {
 				
@@ -43,12 +55,15 @@ class PortfolioPost extends BlogEntry{
 		$fields->removeByName('PhotosByEmail', false);
 		$fields->removeByName('PhotosBy', false);
 		$fields->removeByName('ExternalURL', false);
-		$fields->removeByName('Date', false);
+		
 
 		$fields->removeByName('Tags');
       	$fields->removeByName('Author');
-	
-
+		$fields->addFieldToTab("Root.Main", $dateField = new DatetimeField("Date", _t("BlogEntry.DT", "Date")),"Content");
+		$dateField->getDateField()->setConfig('showcalendar', true);
+		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
+      	
+      	$fields->addFieldToTab("Root.Main", new UploadField('Image', 'Main Image'), 'Content');
 		$fields->addFieldToTab("Root.Main", $uploadField = new UploadField(
 				'AlternativeImages', 
 				'Alternative Photos'), 
@@ -58,7 +73,7 @@ class PortfolioPost extends BlogEntry{
 		$clientSource = function(){
     		return Client::get()->map()->toArray();
 		};
-		$clientField = ListboxField::create('Client', 'Client', $clientSource());
+		$clientField = ListboxField::create('Clients', 'Client', $clientSource());
 		$clientField->setMultiple(true)->useAddNew('Client', $clientSource);
 		$fields->addFieldToTab("Root.Main",$clientField, 'Content');
 

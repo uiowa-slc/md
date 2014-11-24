@@ -33,6 +33,7 @@
                             <br />
                         <% end_if %>
 
+
                         <% if $Clients %>
                             <strong>Clients:</strong> 
                             <% loop $Clients %>
@@ -40,10 +41,10 @@
                             <% end_loop %>
                             <br />
                         <% end_if %>
-
                         <% if $SiteLink %>
                            <a href="$SiteLink">Visit Website</a></strong><br /> 
                         <% end_if %>
+
 
                 </section>
                 <section class="large-5 end columns portfolio-roles">          
