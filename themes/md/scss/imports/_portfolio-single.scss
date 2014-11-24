@@ -54,6 +54,7 @@
 
 		}
 
+
 	}
 }
 
@@ -121,6 +122,13 @@ $portfolio-single-width: 1400px;
 			-moz-filter: grayscale(0);
 			filter: grayscale(0);
 		 }
+
+		 #details-toggle img{
+			-webkit-transform:rotate(90deg);
+		    -moz-transform:rotate(90deg);
+		    -o-transform:rotate(90deg);
+
+		}
 	 }
 
 	 .portfolio-roles{
