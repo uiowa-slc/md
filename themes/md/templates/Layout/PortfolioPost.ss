@@ -7,16 +7,14 @@
         </div>
     </div>
     <div class="portfolio-post-heading row">
-        <div class="large-12 columns summary"><h1>$Title</h1>
-                        <% loop $Roles %>
-                            <ul class="staff-work-list">
-                              <% loop $StaffPages %>
-                               <li><a href="$Link"><img src="$Photo.CroppedImage(200,200).URL" /></a></li>
-                              <% end_loop %>
-                            </ul>
-                        <% end_loop %>
-
-        <a href="#" id="details-toggle">Details</a></div>
+        <div class="large-12 columns summary"><h1>$Title</h1>     
+            <ul class="staff-work-list">
+              <% loop $StaffPages.Sort('RAND()') %>
+               <li><a href="$Link"><img src="$Photo.CroppedImage(200,200).URL" /></a></li>
+              <% end_loop %>
+            </ul>
+            <a href="#" id="details-toggle" class="btn">Details</a>
+        </div>
     </div>
     <div class="portfolio-post-details row">
         <section class="large-6 columns">

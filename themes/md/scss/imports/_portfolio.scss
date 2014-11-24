@@ -3,9 +3,16 @@
 	margin-top: 4px;
 	margin-bottom: 4px;
 	text-align: center;
+
 	li{
 		list-style-type: none;
-		display: inline;
+		display: inline-block;
+		margin: 0;
+		margin-bottom: 5px;
+
+	 	@media #{$large-up}{
+	 		margin-bottom: 0;
+	 	}
 	}
 	img.more-staff{
 		width: 30px;
@@ -162,14 +169,14 @@
 	 	font-size: 1.3em;
 
 		 .staff-work-list{
-		 	display: inline;
+		 	display: inline-block;
 		 	margin-left: 0;
 		 	margin-right: 0;
 		 }
 
 	 }
 	 #details-toggle{
-	 	padding-left: 10px;
+	 	border-radius: 100px;
 	 }
 	/* #details-toggle:after{
 	 	&:hover{

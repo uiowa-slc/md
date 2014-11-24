@@ -15,7 +15,7 @@
                               </p>
                                
                                         <ul class="staff-work-list">
-                                          <% loop $StaffPages %>
+                                          <% loop $StaffPages.Limit(3) %>
                                            <li><img src="$Photo.CroppedImage(200,200).URL" /></li>
                                           <% end_loop %>
                                                 <li><img class="more-staff" src="{$ThemeDir}/images/more-staff.gif" /></li>

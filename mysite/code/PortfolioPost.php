@@ -120,17 +120,22 @@ class PortfolioPost extends BlogEntry{
 	}
 
 	public function StaffPages(){
-		/*$roles = $this->Roles();
-		$people = new DataList("StaffPage");
+		$roles = $this->Roles();
+		$list = new ArrayList();
 
 		foreach($roles as $role){
-			$roleStaffPages = $role->StaffPages()->toArray();
-			foreach( $roleStaffPages as $staffPage){
-				$people->push($staffPage);
+			$roleStaffPages = $role->StaffPages();
+			foreach($roleStaffPages as $roleStaffPage){
+				$list->push($roleStaffPage);
 			}
 		}
 
-		return $people;*/
+		$list->removeDuplicates();
+
+		if(isset($list))
+			return $list;
+		else
+			return false;
 	}
 
 

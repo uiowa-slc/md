@@ -7,7 +7,7 @@ $("#details-toggle").click(function(event){
 
 	$(".portfolio-post-details").slideToggle();
 
-	$("#details-toggle").toggleClass("open")
+	$("#details-toggle").toggleClass("active")
 
 	/*if ($("#details-toggle").html() == "Details +") {
 		$("#details-toggle").html("Details -");
