@@ -13,14 +13,14 @@
                               <div class="portfolio-card-title"><h2>$Title</h2><p>
                                     <% loop $Mediums.Limit(3) %>$Title<% if not $Last %>, <% end_if %><% end_loop %>
                               </p>
-                                        <% loop $Roles %>
+                               
                                         <ul class="staff-work-list">
                                           <% loop $StaffPages %>
                                            <li><img src="$Photo.CroppedImage(200,200).URL" /></li>
                                           <% end_loop %>
                                                 <li><img class="more-staff" src="{$ThemeDir}/images/more-staff.gif" /></li>
                                           </ul>
-                                          <% end_loop %>
+                                    
                               </div>
                         </a>
                   </li>

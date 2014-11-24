@@ -119,9 +119,38 @@ class PortfolioPost extends BlogEntry{
 		return $fields;
 	}
 
+	public function StaffPages(){
+		/*$roles = $this->Roles();
+		$people = new DataList("StaffPage");
+
+		foreach($roles as $role){
+			$roleStaffPages = $role->StaffPages()->toArray();
+			foreach( $roleStaffPages as $staffPage){
+				$people->push($staffPage);
+			}
+		}
+
+		return $people;*/
+	}
+
 
 }
 
 class PortfolioPost_Controller extends BlogEntry_Controller{
-	
+	public function NextPage() {
+		$page = Page::get()->filter( array (
+				'ParentID' => $this->ParentID,
+				'Sort:GreaterThan' => $this->Sort
+			) )->First();
+
+		return $page;
+	}
+	public function PreviousPage() {
+		$page = Page::get()->filter( array (
+				'ParentID' => $this->ParentID,
+				'Sort:LessThan' => $this->Sort
+			) )->Last();
+
+		return $page;
+	}	
 }

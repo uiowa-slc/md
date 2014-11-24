@@ -16,7 +16,7 @@
                             </ul>
                         <% end_loop %>
 
-        <a href="#" id="details-toggle">Details +</a></div>
+        <a href="#" id="details-toggle">Details</a></div>
     </div>
     <div class="portfolio-post-details row">
         <section class="large-6 columns">
@@ -49,15 +49,16 @@
         <section class="large-6 columns portfolio-roles">          
                 <% if $Roles %>
                     <% loop $Roles %>
+                        <div class="role">
                             <h3>$Title</h3>
                             <% loop $StaffPages %>
                                 <a href="#">$Title<% if not $Last %>, <% end_if %></a>
                             <% end_loop %>
+                        </div>
                     <% end_loop %>
                 <% end_if %>             
         </section>    
     </div>
-    <div class="row">
     <div class="portfolio-image-list row">
         <div class="large-12">
              <% loop $AlternativeImages %>
@@ -65,15 +66,16 @@
             <% end_loop %>
         </div>
     </div>
-        <div class="small-12 columns">
-           <ul>
-   
-            </ul>  
+
+    <div class="row">
+        <div class="large-12 next-project">
+            <% if $NextPage %>
+                <% with $NextPage %>
+                    <a href="$Link">Next: $Title</a>
+                <% end_with %>
+            <% end_if %>
         </div>
     </div>
-
-
-    <!--$Content -->
-
+    
     
 </section>
