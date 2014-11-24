@@ -25,6 +25,7 @@
                 $Content
 
                 <% if $Mediums %>
+                    <strong>Mediums:</strong> 
                     <% loop $Mediums %>
                         <a href="$Link">$Title<% if not Last %>, <% end_if %></a>
                     <% end_loop %>
@@ -40,7 +41,12 @@
                 <% end_if %>
 
                 <% if $SiteLink %>
-                   <a href="$SiteLink">Visit Website</a></strong><br /> 
+                    <strong>Site Link:</strong> 
+                   <a href="$SiteLink">$SiteLink</a></strong><br /> 
+                <% end_if %>
+                <% if $Date %>
+                    <strong>Date: $Date</strong> 
+                  
                 <% end_if %>
 
         </section>

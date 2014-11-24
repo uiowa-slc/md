@@ -1,6 +1,6 @@
 <?php
 
-class PortfolioHolder extends BlogHolder{
+class PortfolioHolder extends Page{
 	//private static $icon = "blog/images/blogholder-file.png";
 	
 	private static $description = "Displays listings of Portfolio Posts";
