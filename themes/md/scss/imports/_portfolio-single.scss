@@ -84,8 +84,12 @@ $portfolio-single-width: 1400px;
 	 }
 
 	 .summary{
-	 	padding: 1em 20px;
+	 	padding: 10px;
 	 	font-size: 1.3em;
+
+	 	@media #{$large-up}{
+	 		padding: 20px;
+	 	}
 
 		 .staff-work-list{
 		 	display: inline-block;
@@ -95,20 +99,7 @@ $portfolio-single-width: 1400px;
 		 }
 
 	 }
-	 #details-toggle{
-	 	border-radius: 100px;
-	 }
-	/* #details-toggle:after{
-	 	&:hover{
-	 		text-decoration: none;
-	 	}
-	 	padding-left: 5px;
-	 	content: '+';
-	 }
 
-	 #details-toggle.open:after{
-	 	content: '-';
-	}*/
 	 .portfolio-post-details{
 	 	padding: 30px 20px;
 	 	padding-top: 10px;
