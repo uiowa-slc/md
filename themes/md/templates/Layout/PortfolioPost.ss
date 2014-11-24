@@ -12,13 +12,12 @@
               <% loop $StaffPages.Sort('RAND()') %>
                 <li><img src="$Photo.CroppedImage(200,200).URL" /></li>
               <% end_loop %>
+                <li><a href="#" id="details-toggle"><img src="{$ThemeDir}/images/details-toggle.gif" /></a></li>
             </ul>
-            <a href="#" id="details-toggle" class="btn">Details</a>
+            
         </div>
     </div>
     <div class="portfolio-post-details row">
-        <div class="large-9 columns large-centered">
-            <div class="row">
                 <section class="large-7 columns">
                         <%--<% if $Date %>
                             <strong>Created:</strong> $Date.Nice <br /> 
@@ -59,8 +58,7 @@
                             <% end_loop %>
                         <% end_if %>             
                 </section>
-            </div>
-        </div>
+
     </div>
     <div class="portfolio-image-list row">
         <div class="large-12">
@@ -79,6 +77,5 @@
             <% end_if %>
         </div>
     </div>
-    
-    
+
 </section>
