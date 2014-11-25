@@ -8,7 +8,7 @@
     </div>
     <div class="portfolio-post-heading row">
         <div class="large-12 columns summary"><h1>$Title</h1>     
-            <ul class="staff-work-list">
+            <ul class="staff-work-list single">
               <% loop $StaffPages.Sort('RAND()') %>
                 <li><img src="$Photo.CroppedImage(200,200).URL" /></li>
               <% end_loop %>

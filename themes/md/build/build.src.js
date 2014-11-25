@@ -11416,7 +11416,7 @@ $(window).load(function() {
 
 $(".portfolio-post-details").hide();
 
-$(".staff-work-list li img").click(function(event){
+$(".staff-work-list.single li img").click(function(event){
 	event.preventDefault();
 
 	$(".portfolio-post-details").slideToggle();
