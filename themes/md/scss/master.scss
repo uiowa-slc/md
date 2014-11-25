@@ -1,25 +1,10 @@
-/* Global
--------------------------------------------*/
+
+// Settings, Config and Mixins
 @import "../../../division-project/scss/imports/_config.scss";
 @import "../../../division-project/scss/imports/_mixins.scss";
-@import "../../../division-project/scss/imports/_normalize.scss";
-@import "../../../division-project/scss/imports/_typography.scss";
-@import "../../../division-project/scss/imports/_global.scss";
-
-/* Elements
--------------------------------------------*/
-@import "../../../division-project/scss/imports/_buttons.scss";
-@import "../../../division-project/scss/imports/_font.scss";
-//@import "../../../division-project/scss/imports/_forms.scss";
-@import "../../../division-project/scss/imports/_search.scss";
-/*@import "../../../division-project/scss/imports/_grid.scss";*/ 
-@import "../../../division-project/scss/imports/_grid-simple.scss";
-@import "../../../division-project/scss/imports/_tables.scss";
-
-/* Foundation Components
--------------------------------------------*/
-
 @import "imports/_settings";
+
+
 
 
 @import "foundation/components/grid";
@@ -27,8 +12,8 @@
 /*@import "foundation/components/alert-boxes";*/
 @import "foundation/components/block-grid";
 @import "foundation/components/breadcrumbs";
-// @import "foundation/components/button-groups";
-/*@import "foundation/components/buttons";*/
+@import "foundation/components/button-groups";
+@import "foundation/components/buttons";
 /*@import "foundation/components/clearing";*/
 /*@import "foundation/components/dropdown";*/
 /*@import "foundation/components/dropdown-buttons";*/
@@ -62,6 +47,26 @@
 
 @import "../../../division-project/scss/imports/_xlarge-block-grid.scss";
 
+
+/* Global
+-------------------------------------------*/
+
+@import "../../../division-project/scss/imports/_normalize.scss";
+@import "../../../division-project/scss/imports/_typography.scss";
+@import "../../../division-project/scss/imports/_global.scss";
+
+/* Elements
+-------------------------------------------*/
+@import "../../../division-project/scss/imports/_buttons.scss";
+@import "../../../division-project/scss/imports/_font.scss";
+//@import "../../../division-project/scss/imports/_forms.scss";
+@import "../../../division-project/scss/imports/_search.scss";
+/*@import "../../../division-project/scss/imports/_grid.scss";*/ 
+@import "../../../division-project/scss/imports/_grid-simple.scss";
+@import "../../../division-project/scss/imports/_tables.scss";
+
+/* Foundation Components
+-------------------------------------------*/
 
 /* Vendor
 -------------------------------------------*/ 

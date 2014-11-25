@@ -18,7 +18,7 @@ module.exports = function(grunt) {
           '<%=globalConfig.themeDir %>/css/master.css' : '<%=globalConfig.themeDir %>/scss/master.scss'
         },                  // Target
         options: {              // Target options
-          style: 'compressed',
+          style: 'expanded',
 //          sourcemap: 'auto',
           loadPath: ['division-project/scss', 'division-project/bower_components/foundation/scss/']
         }

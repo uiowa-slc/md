@@ -9910,7 +9910,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
         touch = (( "ontouchstart" in window ) || msGesture || window.DocumentTouch && document instanceof DocumentTouch) && slider.vars.touch,
         // depricating this idea, as devices are being released with both of these events
         //eventType = (touch) ? "touchend" : "click",
-        eventType = "click touchend MSPointerUp keyup",
+        eventType = "click touchend MSPointerUp",
         watchedEvent = "",
         watchedEventClearTimer,
         vertical = slider.vars.direction === "vertical",
@@ -10486,8 +10486,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
         }
       },
       uniqueID: function($clone) {
-        // Append _clone to current level and children elements with id attributes
-        $clone.filter( '[id]' ).add($clone.find( '[id]' )).each(function() {
+        $clone.find( '[id]' ).each(function() {
           var $this = $(this);
           $this.attr( 'id', $this.attr( 'id' ) + '_clone' );
         });
@@ -10775,8 +10774,9 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
           slider.cloneOffset = 1;
           // clear out old clones
           if (type !== "init") slider.container.find('.clone').remove();
-          slider.container.append(methods.uniqueID(slider.slides.first().clone().addClass('clone')).attr('aria-hidden', 'true'))
-                          .prepend(methods.uniqueID(slider.slides.last().clone().addClass('clone')).attr('aria-hidden', 'true'));
+          // slider.container.append(slider.slides.first().clone().addClass('clone').attr('aria-hidden', 'true')).prepend(slider.slides.last().clone().addClass('clone').attr('aria-hidden', 'true'));
+		      methods.uniqueID( slider.slides.first().clone().addClass('clone').attr('aria-hidden', 'true') ).appendTo( slider.container );
+		      methods.uniqueID( slider.slides.last().clone().addClass('clone').attr('aria-hidden', 'true') ).prependTo( slider.container );
         }
         slider.newSlides = $(slider.vars.selector, slider);
 
@@ -10978,7 +10978,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     video: false,                   //{NEW} Boolean: If using video in the slider, will prevent CSS3 3D Transforms to avoid graphical glitches
 
     // Primary Controls
-    controlNav: true,               //Boolean: Create navigation for paging control of each slide? Note: Leave true for manualControls usage
+    controlNav: true,               //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage
     directionNav: true,             //Boolean: Create navigation for previous/next navigation? (true/false)
     prevText: "Previous",           //String: Set the text for the "previous" directionNav item
     nextText: "Next",               //String: Set the text for the "next" directionNav item
@@ -11340,7 +11340,7 @@ $(window).load(function() {
 
 	/* FitVids */
 	$(".module .media").fitVids();
-
+	$(".hero-content").fitVids();
 });
    
 (function($){
@@ -11416,7 +11416,7 @@ $(window).load(function() {
 
 $(".portfolio-post-details").hide();
 
-$(".staff-work-list.single li img").click(function(event){
+$(".staff-work-list.single li img, .portfolio-post-heading h1").click(function(event){
 	event.preventDefault();
 
 	$(".portfolio-post-details").slideToggle();

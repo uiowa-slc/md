@@ -3,16 +3,16 @@
 
     <div class="portfolio-image-list main-image row">
         <div class="large-12">
-            <% if $Image %><img class="b-lazy" src="{$ThemeDir}/images/more-staff.gif" data-src="$Image.AbsoluteURL" alt=""><% end_if %>
+            <% if $Image %><img class="b-lazy" src="{$ThemeDir}/images/more-staff.gif" data-src="$Image.AbsoluteURL"><% end_if %>
         </div>
     </div>
     <div class="portfolio-post-heading row">
         <div class="large-12 columns summary"><h1>$Title</h1>     
             <ul class="staff-work-list single">
               <% loop $StaffPages.Sort('RAND()') %>
-                <li><img src="$Photo.CroppedImage(200,200).URL" /></li>
+                <li><img src="$Photo.CroppedImage(200,200).URL" alt="Photograph of $Title" /></li>
               <% end_loop %>
-                <li><a href="#" id="details-toggle"><img src="{$ThemeDir}/images/details-toggle.gif" /></a></li>
+                <li><img id="details-toggle" src="{$ThemeDir}/images/details-toggle.gif" alt="More information below." /></li>
             </ul>
             
         </div>
@@ -68,14 +68,6 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="large-12 next-project">
-            <% if $NextPage %>
-                <% with $NextPage %>
-                    <a href="$Link">Next: $Title</a>
-                <% end_with %>
-            <% end_if %>
-        </div>
-    </div>
+    <% include PortfolioPostNavigation %>
 
 </section>
