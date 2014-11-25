@@ -113,7 +113,8 @@ class PortfolioPost extends Page{
         $config->getComponentByType('GridFieldDataColumns')->setDisplayFields(array(
             'Title' => 'Title',
             // Retrieve from a has-one relationship
-        ));    
+        ));   
+        $config->addComponent(new GridFieldSortableRows('SortOrder'));
 
 		$rolesField = new GridField(
 			'Roles', 
