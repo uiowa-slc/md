@@ -9,7 +9,7 @@
     <div class="portfolio-post-heading row">
         <div class="large-12 columns summary"><h1>$Title</h1>     
             <ul class="staff-work-list single">
-              <% loop $StaffPages.Sort('RAND()') %>
+              <% loop $StaffPages %>
                 <li><img src="$Photo.CroppedImage(200,200).URL" alt="Photograph of $Title" /></li>
               <% end_loop %>
                 <li><img id="details-toggle" src="{$ThemeDir}/images/details-toggle.gif" alt="More information below." /></li>
@@ -51,7 +51,7 @@
                             <% loop $Roles %>
                                 <div class="role $FirstLast">
                                     <h3>$Title</h3>
-                                    <% loop $StaffPages %>
+                                    <% loop $SortedStaffPages %>
                                         <a href="$Link">$Title<% if not $Last %>, <% end_if %></a>
                                     <% end_loop %>
                                 </div>

@@ -19,16 +19,17 @@
 	 .portfolio-card-list{
 
 	 	li{
-
+	 		overflow: hidden;
 	 		a{
 	 			display: block;
 	 			position: relative;
 	 		}
 
 	 		.portfolio-card-overlay, .portfolio-card-title{
-	 			opacity: 0;
+	 				opacity: 0;
 	 				display: block;
 	 				position: absolute;
+	 				overflow: hidden;
 
 	 		}
 
@@ -84,6 +85,25 @@
 	 				display: block;
 	 			}
 	 		}
+	 	}
+
+
+	 	li.browse-container{
+
+
+	 		.browse{
+
+	 			min-height: 420px;
+	 			padding: 0;
+		 		p{
+		 			font-size: 1.4em;
+		 			a{
+		 				display: inline;
+		 			}
+		 		}
+
+	 		}
+
 	 	}
 
 

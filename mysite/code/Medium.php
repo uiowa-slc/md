@@ -10,4 +10,11 @@ class Medium extends Tag{
 		"PortfolioPosts" => "PortfolioPost"
 	);
 
+	public function getAddNewFields(){
+		return new FieldList(
+			new TextField("Title", "Medium Name")
+		);
+
+	}
+
 }

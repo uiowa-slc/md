@@ -8371,6 +8371,9 @@ aside .mod a {
 .portfolio-holder-content h2 a {
   color: #333;
 }
+.portfolio-holder-content .portfolio-card-list li {
+  overflow: hidden;
+}
 .portfolio-holder-content .portfolio-card-list li a {
   display: block;
   position: relative;
@@ -8379,6 +8382,7 @@ aside .mod a {
   opacity: 0;
   display: block;
   position: absolute;
+  overflow: hidden;
 }
 .portfolio-holder-content .portfolio-card-list li .portfolio-card-overlay {
   transition: opacity .25s ease-in-out;
@@ -8422,6 +8426,16 @@ aside .mod a {
   .portfolio-holder-content .portfolio-card-list li .staff-work-list {
     display: block;
   }
+}
+.portfolio-holder-content .portfolio-card-list li.browse-container .browse {
+  min-height: 420px;
+  padding: 0;
+}
+.portfolio-holder-content .portfolio-card-list li.browse-container .browse p {
+  font-size: 1.4em;
+}
+.portfolio-holder-content .portfolio-card-list li.browse-container .browse p a {
+  display: inline;
 }
 .portfolio-holder-content .tag-nav {
   margin-left: 0;
@@ -8576,7 +8590,7 @@ aside .mod a {
   }
 }
 .portfolio-post-content .portfolio-roles .role {
-  padding: 1em 0;
+  padding: 10px 0;
 }
 .portfolio-post-content .portfolio-roles .role.first {
   padding-top: 0;

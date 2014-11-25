@@ -10,4 +10,12 @@ class Client extends Tag{
 		"PortfolioPosts" => "PortfolioPost"
 	);
 
+
+	public function getAddNewFields(){
+		return new FieldList(
+			new TextField("Title", "Client Name")
+		);
+
+	}
+
 }

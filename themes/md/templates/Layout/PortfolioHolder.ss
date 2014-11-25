@@ -14,16 +14,25 @@
                                     <% loop $Mediums.Limit(3) %>$Title<% if not $Last %>, <% end_if %><% end_loop %>
                               </p>
                                
-                                        <ul class="staff-work-list">
-                                          <% loop $StaffPages.Limit(3) %>
-                                           <li><img src="$Photo.CroppedImage(200,200).URL" /></li>
-                                          <% end_loop %>
-                                                <li><img class="more-staff" src="{$ThemeDir}/images/more-staff.gif" /></li>
-                                          </ul>
+                                  <ul class="staff-work-list">
+                                    <% loop $StaffPages.Limit(3) %>
+                                          <li><img src="$Photo.CroppedImage(200,200).URL" /></li>
+                                    <% end_loop %>
+                                          <li><img class="more-staff" src="{$ThemeDir}/images/more-staff.gif" /></li>
+                                    </ul>
                                     
                               </div>
                         </a>
                   </li>
             <% end_loop %>
+                  <li class="browse-container">
+                        <div class="row browse">
+                        <h2>Advanced Search</h2>
+                        <p>Additionally, you can filter our projects by the following categories:</p>
+                        <p><strong>Medium:</strong> <% loop $MediumTags %><a href="$Link">$Title<% if not Last %>, <% end_if %></a><% end_loop %><br />
+                        <strong>Client:</strong><% loop $ClientTags %><a href="$Link">$Title<% if not Last %>, <% end_if %></a><% end_loop %></p>
+                        </div>
+
+                  </li>
       </ul>
 </section>

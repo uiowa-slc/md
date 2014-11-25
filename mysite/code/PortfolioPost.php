@@ -47,18 +47,6 @@ class PortfolioPost extends Page{
 		
 		$fields = parent::getCMSFields();
 		
-		$fields->removeByName('StoryBy', false);
-		$fields->removeByName('StoryByEmail', false);
-		$fields->removeByName('StoryByTitle', false);
-		$fields->removeByName('StoryByDept', false);
-		$fields->removeByName('StoryByEmail', false);
-		$fields->removeByName('PhotosByEmail', false);
-		$fields->removeByName('PhotosBy', false);
-		$fields->removeByName('ExternalURL', false);
-		
-
-		$fields->removeByName('Tags');
-      	$fields->removeByName('Author');
 		$fields->addFieldToTab("Root.Main", $dateField = new DatetimeField("Date", _t("BlogEntry.DT", "Date")),"Content");
 		$dateField->getDateField()->setConfig('showcalendar', true);
 		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
@@ -85,7 +73,7 @@ class PortfolioPost extends Page{
 		$mediumField->setMultiple(true)->useAddNew('Medium', $mediumSource);
 		$fields->addFieldToTab("Root.Main",$mediumField, 'Content');
 
-		$tagSource = function(){
+		/*$tagSource = function(){
     		return Tag::get()->filter(array('ClassName'=>'Tag'))->map()->toArray();
 		};
 		$tagField = ListboxField::create('TagObjects', 'Other Tags', $tagSource());
@@ -93,18 +81,7 @@ class PortfolioPost extends Page{
 		$fields->addFieldToTab("Root.Main",$tagField, 'Content');
 
 
-		$fields->addFieldToTab("Root.Main", new TextField('SiteLink', 'SiteLink'), 'Content');
-
-		/*$mediumSource = function(){
-    		return Tag::get()->filter(array('Type'=>'Medium'))->map()->toArray();
-		};
-		$mediumField = ListboxField::create('TagObjects', 'Medium', $mediumSource());
-		$mediumField->setMultiple(true);
-		$mediumField->useAddNew('Tag', $mediumSource, $this->setTagFieldType('Medium') );
-		$fields->addFieldToTab("Root.Main",$mediumField, 'Content');*/
-
-		//$fields->addFieldToTab("Root.Main", new TextField('Audience', 'Audience'), 'Content');
-		//$fields->addFieldToTab("Root.Main", new TextField('Medium', 'Medium'), 'Content');
+		$fields->addFieldToTab("Root.Main", new TextField('SiteLink', 'SiteLink'), 'Content');*/
 
         // Create a default configuration for the new GridField, allowing record editing
         $config = GridFieldConfig_RelationEditor::create();
@@ -148,10 +125,13 @@ class PortfolioPost extends Page{
 
 		$list->removeDuplicates();
 
-		if(isset($list))
-			return $list;
-		else
-			return false;
+		$listArray = $list->toArray();
+		shuffle($listArray);
+
+		$shuffledArrayList = new ArrayList($listArray); 
+
+		return $shuffledArrayList;
+
 	}
 
 

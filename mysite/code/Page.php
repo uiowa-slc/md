@@ -56,8 +56,8 @@ class Page_Controller extends ContentController {
 		// included so that our older themes still work
 	}
 
-	public function AudienceTags(){
-		return Audience::get();
+	public function ClientTags(){
+		return Client::get();
 	}
 
 	public function MediumTags(){

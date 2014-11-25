@@ -14,4 +14,21 @@ class Role extends DataObject {
     		'PortfolioPost' => 'PortfolioPost'
     	);
     public static $default_sort='SortOrder';
+
+    public function getCMSFields() {
+        $staffPages = StaffPage::get()->map()->toArray();
+
+        $staffListboxField = ListboxField::create('StaffPages', 'Staff who worked on this project')
+                            ->setMultiple(true) 
+                            ->setSource($staffPages);
+        return new FieldList(
+            new TextField('Title'),
+            $staffListboxField
+        );
+    }
+
+    public function getSortedStaffPages(){
+       return $this->StaffPages()->Sort('LastName DESC');
+    }
+
 }
