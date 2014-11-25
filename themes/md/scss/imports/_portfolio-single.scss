@@ -79,6 +79,7 @@ $portfolio-single-width: 1400px;
 	 margin: auto;
 	 padding: 0;
 
+
 	 .row{
 	 	max-width: 1400px;
 	 }
@@ -102,7 +103,7 @@ $portfolio-single-width: 1400px;
 
 	 .portfolio-post-details{
 	 	padding: 0 20px;
-	 	
+	 	padding-bottom: 25px;
 
 	 	@media screen and (min-width: $portfolio-single-width){
 	 		padding: 0;
@@ -120,10 +121,14 @@ $portfolio-single-width: 1400px;
 
 		#details-toggle {
 		 	outline: 0;
+		 	img{
+		 		width: 55px;
+		 	}
+		 	
 		 }
 	 }
 
-	 .portfolio-post-heading.active{
+	 .portfolio-post-heading.active, .portfolio-post-heading:focus{
 	 	.staff-work-list img{
 		 	-webkit-filter: grayscale(0);
 			-moz-filter: grayscale(0);
@@ -131,6 +136,7 @@ $portfolio-single-width: 1400px;
 		 }
 
 		 #details-toggle img{
+
 			-webkit-transform:rotate(90deg);
 		    -moz-transform:rotate(90deg);
 		    -o-transform:rotate(90deg);
