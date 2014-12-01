@@ -54,12 +54,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "91e7724e6e75291d6f5512415fbdcec525ad4d7e"
+                "reference": "89d77bfbee79e16653f7162c86e602cc188471db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/91e7724e6e75291d6f5512415fbdcec525ad4d7e",
-                "reference": "91e7724e6e75291d6f5512415fbdcec525ad4d7e",
+                "url": "https://api.github.com/repos/composer/installers/zipball/89d77bfbee79e16653f7162c86e602cc188471db",
+                "reference": "89d77bfbee79e16653f7162c86e602cc188471db",
                 "shasum": ""
             },
             "replace": {
@@ -139,7 +139,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-11-23 19:34:57"
+            "time": "2014-11-29 01:29:17"
         },
         {
             "name": "frankmullenger/gallery",
@@ -284,12 +284,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/division-project.git",
-                "reference": "13e7eecbfb0fbb418f3cbca9ea10aaf84a848e1c"
+                "reference": "2487fdea3627cc6396f6ef21ff4fb538262da174"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/13e7eecbfb0fbb418f3cbca9ea10aaf84a848e1c",
-                "reference": "13e7eecbfb0fbb418f3cbca9ea10aaf84a848e1c",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/2487fdea3627cc6396f6ef21ff4fb538262da174",
+                "reference": "2487fdea3627cc6396f6ef21ff4fb538262da174",
                 "shasum": ""
             },
             "require": {
@@ -326,7 +326,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/division-project/tree/master",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/division-project/issues"
             },
-            "time": "2014-11-24 18:51:20"
+            "time": "2014-12-01 21:48:08"
         },
         {
             "name": "sheadawson/quickaddnew",
@@ -753,12 +753,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-userforms.git",
-                "reference": "8303f27c39ac4fb5b7f9d11b19068d436d887244"
+                "reference": "7a76626cd268268bcfaba4faeb458ad96568a3d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/8303f27c39ac4fb5b7f9d11b19068d436d887244",
-                "reference": "8303f27c39ac4fb5b7f9d11b19068d436d887244",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/7a76626cd268268bcfaba4faeb458ad96568a3d0",
+                "reference": "7a76626cd268268bcfaba4faeb458ad96568a3d0",
                 "shasum": ""
             },
             "require": {
@@ -789,7 +789,7 @@
                 "silverstripe",
                 "userforms"
             ],
-            "time": "2014-10-28 02:25:58"
+            "time": "2014-11-28 05:16:50"
         },
         {
             "name": "silverstripe/widgets",
