@@ -71,8 +71,7 @@
                   <% end_loop %>
                 </ul>
 
-
-                  
+                 
                   $Content
             </section>
             <section class="sec-content">
