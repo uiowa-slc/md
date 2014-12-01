@@ -1,3 +1,4 @@
+<div class="gradient">
 <div class="container clearfix">
       <section class="staff-content main-content">
       	$Form
@@ -34,5 +35,6 @@
       <section class="sec-content hide-print">
             <% include SideNav %>
       </section>
+</div>
 </div>
 <% include TopicsAndNews %>

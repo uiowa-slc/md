@@ -8373,6 +8373,7 @@ aside .mod a {
 }
 .portfolio-holder-content .portfolio-card-list li {
   overflow: hidden;
+  line-height: 67px;
 }
 .portfolio-holder-content .portfolio-card-list li a {
   display: block;
@@ -8480,6 +8481,11 @@ aside .mod a {
   .staff-work-list li {
     margin-bottom: 0;
   }
+}
+.staff-work-list:hover img {
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  filter: grayscale(0);
 }
 .staff-work-list img.more-staff {
   width: 30px;
