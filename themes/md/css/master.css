@@ -8609,7 +8609,7 @@ aside .mod a {
   padding-bottom: 0.625rem;
 }
 .portfolio-post-content .portfolio-image-list.main-image {
-  padding-top: 0.625rem;
+  padding-top: 0;
 }
 .portfolio-post-content .portfolio-image-list.main-image img {
   padding-bottom: 0;

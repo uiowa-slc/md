@@ -52,10 +52,11 @@ class PortfolioPost extends Page{
 		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
       	
       	$fields->addFieldToTab("Root.Main", new UploadField('Image', 'Main Image'), 'Content');
-		$fields->addFieldToTab("Root.Main", $uploadField = new UploadField(
+		$fields->addFieldToTab("Root.Main", $uploadField = new SortableUploadField(
 				'AlternativeImages', 
 				'Alternative Photos'), 
 				'Content');
+
 		$uploadField->setAllowedMaxFileNumber(4);
 
 		$clientSource = function(){
