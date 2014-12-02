@@ -51,6 +51,7 @@ class PortfolioPost extends Page{
 		$fields->removeByName('Widgets');
 
 		$fields->addFieldToTab("Root.Main", $dateField = new DatetimeField("Date", _t("BlogEntry.DT", "Date")),"Content");
+
 		$dateField->getDateField()->setConfig('showcalendar', true);
 		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
       	
@@ -68,7 +69,7 @@ class PortfolioPost extends Page{
 		$clientField = ListboxField::create('Clients', 'Client', $clientSource());
 		$clientField->setMultiple(true)->useAddNew('Client', $clientSource);
 		$fields->addFieldToTab("Root.Main",$clientField, 'Content');
-
+		
 
 		$mediumSource = function(){
     		return Medium::get()->map()->toArray();
@@ -76,7 +77,7 @@ class PortfolioPost extends Page{
 		$mediumField = ListboxField::create('Mediums', 'Medium', $mediumSource());
 		$mediumField->setMultiple(true)->useAddNew('Medium', $mediumSource);
 		$fields->addFieldToTab("Root.Main",$mediumField, 'Content');
-
+		$fields->addFieldToTab("Root.Main", new TextField("SiteLink", "Website Link"), "Content");
         
         $config = GridFieldConfig_RelationEditor::create();
         $config->removeComponentsByType('GridFieldAddExistingAutocompleter');
