@@ -21,7 +21,7 @@ class PortfolioPost extends Page{
 
 		
 	private static $has_many = array(
-		'AlternativeImages' => 'AlternativeImage',
+		'GalleryImages' => 'GalleryImage',
 		'Roles' => 'Role' 
 	);
 
@@ -46,15 +46,18 @@ class PortfolioPost extends Page{
 				
 		
 		$fields = parent::getCMSFields();
-		
+		$fields->removeByName('Sidebar');
+		$fields->removeByName('BackgroundImage');
+		$fields->removeByName('Widgets');
+
 		$fields->addFieldToTab("Root.Main", $dateField = new DatetimeField("Date", _t("BlogEntry.DT", "Date")),"Content");
 		$dateField->getDateField()->setConfig('showcalendar', true);
 		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
       	
       	$fields->addFieldToTab("Root.Main", new UploadField('Image', 'Main Image'), 'Content');
 		$fields->addFieldToTab("Root.Main", $uploadField = new SortableUploadField(
-				'AlternativeImages', 
-				'Alternative Photos'), 
+				'GalleryImages', 
+				'Additional Photos (drag and drop sortable)'), 
 				'Content');
 
 		$uploadField->setAllowedMaxFileNumber(4);
@@ -74,20 +77,9 @@ class PortfolioPost extends Page{
 		$mediumField->setMultiple(true)->useAddNew('Medium', $mediumSource);
 		$fields->addFieldToTab("Root.Main",$mediumField, 'Content');
 
-		/*$tagSource = function(){
-    		return Tag::get()->filter(array('ClassName'=>'Tag'))->map()->toArray();
-		};
-		$tagField = ListboxField::create('TagObjects', 'Other Tags', $tagSource());
-		$tagField->setMultiple(true)->useAddNew('Tag', $tagSource);
-		$fields->addFieldToTab("Root.Main",$tagField, 'Content');
-
-
-		$fields->addFieldToTab("Root.Main", new TextField('SiteLink', 'SiteLink'), 'Content');*/
-
-        // Create a default configuration for the new GridField, allowing record editing
+        
         $config = GridFieldConfig_RelationEditor::create();
         $config->removeComponentsByType('GridFieldAddExistingAutocompleter');
-        // Set the names and data for our gridfield columns
         $config->getComponentByType('GridFieldDataColumns')->setDisplayFields(array(
             'Title' => 'Title',
             // Retrieve from a has-one relationship
@@ -101,7 +93,7 @@ class PortfolioPost extends Page{
 			$config
 
 			);
-		$fields->addFieldToTab("Root.Roles",$rolesField);
+		$fields->addFieldToTab("Root.Main",$rolesField, 'Content');
 
 		return $fields;
 	} 

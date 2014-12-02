@@ -25,14 +25,14 @@
                         </a>
                   </li>
             <% end_loop %>
-                  <li class="browse-container">
-                        <div class="row browse">
-                        <h2>Advanced Search</h2>
-                        <p>Additionally, you can filter our projects by the following categories:</p>
-                        <p><strong>Medium:</strong> <% loop $MediumTags %><a href="$Link">$Title<% if not Last %>, <% end_if %></a><% end_loop %><br />
-                        <strong>Client:</strong><% loop $ClientTags %><a href="$Link">$Title<% if not Last %>, <% end_if %></a><% end_loop %></p>
-                        </div>
+            <li class="browse-container">
+                  <div class="row browse">
+                  <h2>Advanced Search</h2>
+                  <p>Additionally, you can filter our projects by the following categories:</p>
+                  <p><strong>Medium:</strong> <% loop $MediumTags %><a href="$Link">$Title<% if not Last %>, <% end_if %></a><% end_loop %><br />
+                  <strong>Client:</strong><% loop $ClientTags %><a href="$Link">$Title<% if not Last %>, <% end_if %></a><% end_loop %></p>
+                  </div>
 
-                  </li>
+            </li>
       </ul>
 </section>

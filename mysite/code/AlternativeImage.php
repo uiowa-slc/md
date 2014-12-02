@@ -1,5 +1,5 @@
 <?php
-class AlternativeImage extends Image {
+class GalleryImage extends Image {
 
 	private static $db = array( 
 		'Sort' => 'Int'

@@ -24,13 +24,13 @@ class StaffPageExtension extends DataExtension {
      // $fields->addFieldToTab("Root.Main", new TextField('ExternalURL', 'External URL (if story lives elsewhere)'), 'Content');
         //$fields = parent::getCMSFields();
 
+  
         $fields->removeByName('Position');
         $fields->removeByName('EmailAddress');
         $fields->removeByName('Phone');
         $fields->removeByName('DepartmentName');
         $fields->removeByName('DepartmentURL');
         $fields->removeByName('Content');
-
 
 
         $fields->addFieldToTab("Root.Main", new TextField("Location", "Where are you from?"));
@@ -44,8 +44,7 @@ class StaffPageExtension extends DataExtension {
         $fields->addFieldToTab("Root.Main", new TextareaField("PostGraduation","What do you hope to do after graduation?"));
         $fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
         $fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
-
-        return $fields;
+   
   }
 
     public function Projects(){
