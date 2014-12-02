@@ -52,7 +52,6 @@ class StaffPageExtension extends DataExtension {
     public function getAddNewFields(){
 
         $fields = new FieldList();
-        $fields->push(new TextField("Title", "First AND Last Name"));
         $fields->push(new TextField("FirstName", "First Name"));
         $fields->push(new TextField("LastName", "Last Name"));
         
@@ -67,6 +66,9 @@ class StaffPageExtension extends DataExtension {
 
   public function onBeforeWrite(){
     $this->owner->ParentID = 24;
+
+    $this->owner->Title = $this->owner->FirstName.' '.$this->owner->LastName;
+
     parent::onBeforeWrite();
   }
 
