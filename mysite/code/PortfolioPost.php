@@ -69,7 +69,7 @@ class PortfolioPost extends Page{
 		$clientField = ListboxField::create('Clients', 'Client', $clientSource());
 		$clientField->setMultiple(true)->useAddNew('Client', $clientSource);
 		$fields->addFieldToTab("Root.Main",$clientField, 'Content');
-		
+
 
 		$mediumSource = function(){
     		return Medium::get()->map()->toArray();
@@ -91,9 +91,8 @@ class PortfolioPost extends Page{
 			'Roles', 
 			'Role',
 			$this->Roles(), 
-			$config
+			$config);
 
-			);
 		$fields->addFieldToTab("Root.Main",$rolesField, 'Content');
 
 		return $fields;

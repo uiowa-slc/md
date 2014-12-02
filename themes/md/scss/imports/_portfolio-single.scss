@@ -130,6 +130,13 @@ $portfolio-single-width: 1400px;
 		 	margin-top: 0;
 		 	font-size: 1.8em;
 		 	line-height: 1;
+		 	margin-bottom: 0;
+		 	padding-bottom: 0;
+
+		 	@media #{$medium-up}{
+		 		padding-bottom: 10px;
+		 	}
+
 		 	&:hover {
 		 		cursor: pointer;
 		 	}

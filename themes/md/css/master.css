@@ -8568,6 +8568,13 @@ aside .mod a {
   margin-top: 0;
   font-size: 1.8em;
   line-height: 1;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+@media only screen and (min-width: 40.063em) {
+  .portfolio-post-content .portfolio-post-heading h1 {
+    padding-bottom: 10px;
+  }
 }
 .portfolio-post-content .portfolio-post-heading h1:hover {
   cursor: pointer;

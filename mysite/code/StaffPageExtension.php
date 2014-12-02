@@ -1,5 +1,6 @@
 <?php
 class StaffPageExtension extends DataExtension {
+
   private static $db = array(
         "Location" => "Text",
         "Interests" => "Text",
@@ -33,6 +34,7 @@ class StaffPageExtension extends DataExtension {
         $fields->removeByName('Content');
 
 
+
         $fields->addFieldToTab("Root.Main", new TextField("Location", "Where are you from?"));
         $fields->addFieldToTab("Root.Main", new TextareaField("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) "));
         $fields->addFieldToTab("Root.Main", new TextField("Major", "Major"));
@@ -45,6 +47,27 @@ class StaffPageExtension extends DataExtension {
         $fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
         $fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
    
+  }
+
+    public function getAddNewFields(){
+
+        $fields = new FieldList();
+        $fields->push(new TextField("Title", "First AND Last Name"));
+        $fields->push(new TextField("FirstName", "First Name"));
+        $fields->push(new TextField("LastName", "Last Name"));
+        
+        $fields->push(new CheckboxSetField("Teams", 'Team <a href="admin/pages/edit/show/14" target="_blank">(Manage Teams)</a>', StaffTeam::get()->map('ID', 'Name')));
+
+        return $fields;
+
+
+
+
+    }
+
+  public function onBeforeWrite(){
+    $this->owner->ParentID = 24;
+    parent::onBeforeWrite();
   }
 
     public function Projects(){

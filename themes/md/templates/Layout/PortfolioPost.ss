@@ -46,7 +46,9 @@
 
 
                 </section>
-                <section class="large-5 end columns portfolio-roles">          
+
+                <section class="large-5 end columns portfolio-roles">
+                <hr class="hide-for-large-up" />       
                         <% if $Roles %>
                             <% loop $Roles %>
                                 <div class="role $FirstLast">

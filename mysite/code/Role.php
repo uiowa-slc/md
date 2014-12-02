@@ -16,16 +16,20 @@ class Role extends DataObject {
     public static $default_sort='SortOrder';
 
     public function getCMSFields() {
-        $staffPages = StaffPage::get()->map()->toArray();
 
-        $staffListboxField = ListboxField::create('StaffPages', 'Staff who worked on this project')
-                            ->setMultiple(true) 
-                            ->setSource($staffPages);
+         $staffPages = function(){
+            return StaffPage::get()->map()->toArray();
+        };
+        $staffListboxField = ListboxField::create('StaffPages', 'Staff who worked on this project', $staffPages())
+                            ->setMultiple(true)
+                            ->useAddNew('StaffPage', $staffPages);
         return new FieldList(
-            new TextField('Title'),
+            new TextField('Title', 'Title'),
             $staffListboxField
         );
     }
+
+
 
     public function getSortedStaffPages(){
        return $this->StaffPages()->Sort('LastName DESC');
