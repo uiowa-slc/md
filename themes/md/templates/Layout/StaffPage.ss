@@ -7,20 +7,18 @@
             		<img src="$Photo.SetWidth(760).URL" alt="$FirstName $LastName">
             	<% end_if %>
                         <p class="staff-small-info">
-
-                        <% if $Location %><strong>From:</strong> $Location<br /><% end_if %>
-                       
-                        <% if $Major %><strong>Major:</strong> $Major<br /><% end_if %>
-
-                        <% if $LinkedInURL %><<a href="$LinkedInURL" target="_blank">View LinkedIn Page</a><br /><% end_if %>
-                        <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank">View Portfolio</a><% end_if %>
+                              <% if $Teams %><strong>Team:</strong> <% loop $Teams %>$Title<% if not $Last %>, <% end_if %><% end_loop %><br /><% end_if %>
+                              <% if $Location %><strong>From:</strong> $Location<br /><% end_if %>
+                              <% if $Major %><strong>Major:</strong> $Major<br /><% end_if %>
+                              <% if $LinkedInURL %><<a href="$LinkedInURL" target="_blank">View LinkedIn Page</a><br /><% end_if %>
+                              <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank">View Portfolio</a><% end_if %>
                         </p>
                         <% if $DegreeDescription %>
                               <h2>Why I chose my degree</h2> 
                               $DegreeDescription
                         <% end_if %>
                         <% if $TopStrengths %>
-                              <h2>My Top Strengths</h2>
+                              <h2>My top strengths</h2>
                               $TopStrengths
                         <% end_if %>
                         <% if $MDExperience %>
@@ -28,15 +26,15 @@
                               $MDExperience
                         <% end_if %>
                         <% if $FavoriteProject %>
-                              <h2>Favorite M+D Project and why?</h2>
+                              <h2>Favorite M+D project and why?</h2>
                               $FavoriteProject
                         <% end_if %>
                         <% if $PostGraduation %>
-                        <h2>Plans After Graduation</h2> 
+                        <h2>Plans after graduation</h2> 
                               $PostGraduation
                         <% end_if %>
                         <% if $FavoriteQuote %>
-                              <h2>Favorite Quote</h2> 
+                              <h2>Favorite quote</h2> 
                               <blockquote>$FavoriteQuote</blockquote>
                         <% end_if %>
                         <% if $Interests %>
@@ -44,7 +42,7 @@
                               $Interests
                         <% end_if %>
 
-                        <h2>$FirstName's Projects</h2>
+                        <h2>$FirstName's projects</h2>
                         <ul class="medium-block-grid-2 portfolio-card-list">
                               <% loop $Roles %>
                               <% with $PortfolioPost %> 
