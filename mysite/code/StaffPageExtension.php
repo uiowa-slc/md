@@ -20,7 +20,11 @@ class StaffPageExtension extends DataExtension {
         'Roles' => 'Role'
         
     ); 
-
+    public function getCMSFields() {
+      $this->extend('updateCMSFields', $fields);
+      
+      return $fields;
+    }
     public function updateCMSFields(FieldList $fields) {
      // $fields->addFieldToTab("Root.Main", new TextField('ExternalURL', 'External URL (if story lives elsewhere)'), 'Content');
         //$fields = parent::getCMSFields();
@@ -41,7 +45,7 @@ class StaffPageExtension extends DataExtension {
         $fields->addFieldToTab("Root.Main", new TextareaField("DegreeDescription","Explain why you chose your degree."));
         $fields->addFieldToTab("Root.Main", new TextareaField("MDExperience","What have you learned from your experience at M+D?"));
         $fields->addFieldToTab("Root.Main", new TextareaField("FavoriteProject","Favorite M+D project? Why?"));
-        $fields->addFieldToTab("Root.Main", new TextareaField("TopStrengths","Favorite quote"));
+        $fields->addFieldToTab("Root.Main", new TextareaField("TopStrengths","Top five strengths"));
         $fields->addFieldToTab("Root.Main", new TextareaField("FavoriteQuote","Favorite quote"));
         $fields->addFieldToTab("Root.Main", new TextareaField("PostGraduation","What do you hope to do after graduation?"));
         $fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
