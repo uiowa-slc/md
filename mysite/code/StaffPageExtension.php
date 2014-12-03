@@ -37,7 +37,7 @@ class StaffPageExtension extends DataExtension {
         $fields->removeByName('DepartmentURL');
         $fields->removeByName('Content');
 
-
+        $fields->removeByName("BackgroundImage");
 
         $fields->addFieldToTab("Root.Main", new TextField("Location", "Where are you from?"));
         $fields->addFieldToTab("Root.Main", new TextareaField("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) "));
