@@ -4,8 +4,10 @@
       	$Form
       	$Content
       	<% loop Teams %>
+                  <% if $Title != "Alumni" %>
                   <h2 class="staff-title">$Title</h2>
                   <ul class="staff-list">
+
                   <% loop $SortedStaffPages %>
                         <li>
                               <% if $Photo %>
@@ -28,7 +30,13 @@
                         <li class="filler"></li>
                         <li class="filler"></li>
                   </ul>
-                  
+                  <% else_if $Title == "Alumni" %>
+                        <a href="meet-us/alumni" class="staff-Title">
+                                    
+                               <h2>$Title</h2>
+                        </a>
+
+                  <% end_if %>
       	<% end_loop %>
       	
       </section>
