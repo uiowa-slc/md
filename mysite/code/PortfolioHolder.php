@@ -21,6 +21,26 @@ class PortfolioHolder extends Page{
 	private static $allowed_children = array(
 		'PortfolioPost'
 	);
+
+	public function ActiveMediums(){
+		return $this->ActiveCategories("Medium");
+	}
+	public function ActiveClients(){
+		return $this->ActiveCategories("Client");
+	}
+
+	public function ActiveCategories($category){
+		$categories = $category::get();
+		$categoriesArrayList = new ArrayList();
+		foreach($categories as $category){
+			if($category->PortfolioPosts()->First()){
+				$categoriesArrayList->push($category);
+			}
+		}
+		return $categoriesArrayList;		
+	}
+
+
 }
 
 class PortfolioHolder_Controller extends BlogHolder_Controller{
