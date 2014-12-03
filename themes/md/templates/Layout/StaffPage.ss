@@ -10,7 +10,7 @@
                               <% if $Teams %><strong>Team:</strong> <% loop $Teams %>$Title<% if not $Last %>, <% end_if %><% end_loop %><br /><% end_if %>
                               <% if $Location %><strong>From:</strong> $Location<br /><% end_if %>
                               <% if $Major %><strong>Major:</strong> $Major<br /><% end_if %>
-                              <% if $LinkedInURL %><<a href="$LinkedInURL" target="_blank">View LinkedIn Page</a><br /><% end_if %>
+                              <% if $LinkedInURL %><a href="$LinkedInURL" target="_blank">View LinkedIn Page</a><br /><% end_if %>
                               <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank">View Portfolio</a><% end_if %>
                         </p>
                         <% if $DegreeDescription %>

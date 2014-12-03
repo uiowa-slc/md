@@ -10,7 +10,7 @@
         <div class="large-12 columns summary"><h1>$Title</h1>     
             <ul class="staff-work-list single">
               <% loop $StaffPages %>
-                <li><img src="$Photo.CroppedImage(200,200).URL" alt="Photograph of a project, $Title" /></li>
+                <% if $Photo %><li><img src="$Photo.CroppedImage(200,200).URL" alt="Photograph of a project, $Title" /></li><% end_if %>
               <% end_loop %>
                 <li><img id="details-toggle" src="{$ThemeDir}/images/details-toggle.gif" alt="More information below." /></li>
             </ul>

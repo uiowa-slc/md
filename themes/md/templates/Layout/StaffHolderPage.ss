@@ -30,14 +30,9 @@
                         <li class="filler"></li>
                         <li class="filler"></li>
                   </ul>
-                  <% else_if $Title == "Alumni" %>
-                        <a href="meet-us/alumni" class="staff-Title">
-                                    
-                               <h2>$Title</h2>
-                        </a>
-
                   <% end_if %>
       	<% end_loop %>
+            
       	
       </section>
       <section class="sec-content hide-print">
