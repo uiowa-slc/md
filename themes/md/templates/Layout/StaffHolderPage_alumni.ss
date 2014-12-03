@@ -18,7 +18,7 @@
                               <% end_if %>
                               <p class="staff-name">
                                     <a href="$Link">$FirstName $LastName</a>
-                                    <% if $Position && $StaffTeam.Name != "Alumni"%><small class="staff-position">$Position</small><% end_if %>
+                                    <% if $Position %><small class="staff-position">$Position</small><% end_if %>
                               </p>
                         </li>
                   <% end_loop %>
