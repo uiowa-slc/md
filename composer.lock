@@ -284,12 +284,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/division-project.git",
-                "reference": "78ccdb133608c7769c4a7a4ea9a1169cf648cd5b"
+                "reference": "b4f37c098be07a255455cb4a161634a756469f98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/78ccdb133608c7769c4a7a4ea9a1169cf648cd5b",
-                "reference": "78ccdb133608c7769c4a7a4ea9a1169cf648cd5b",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/b4f37c098be07a255455cb4a161634a756469f98",
+                "reference": "b4f37c098be07a255455cb4a161634a756469f98",
                 "shasum": ""
             },
             "require": {
@@ -327,7 +327,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/division-project/tree/master",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/division-project/issues"
             },
-            "time": "2014-12-02 18:09:22"
+            "time": "2014-12-03 16:55:40"
         },
         {
             "name": "sheadawson/quickaddnew",
@@ -800,12 +800,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-userforms.git",
-                "reference": "319d1972b15b78397445385a40a4094078d1a3af"
+                "reference": "4cdf44a1ef9666cc61d5157436813275a9d30e9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/319d1972b15b78397445385a40a4094078d1a3af",
-                "reference": "319d1972b15b78397445385a40a4094078d1a3af",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/4cdf44a1ef9666cc61d5157436813275a9d30e9a",
+                "reference": "4cdf44a1ef9666cc61d5157436813275a9d30e9a",
                 "shasum": ""
             },
             "require": {
@@ -836,7 +836,7 @@
                 "silverstripe",
                 "userforms"
             ],
-            "time": "2014-12-02 06:49:03"
+            "time": "2014-12-03 01:52:57"
         },
         {
             "name": "silverstripe/widgets",
