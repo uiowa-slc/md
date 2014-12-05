@@ -34,20 +34,16 @@
       <div class="row">
           
         <div class="large-6 columns mod">
-            <h3 class="mod-title">Clients</h3>
-            <ul class="grid-justify">
-                <% loop $ActiveClients %>
-                  <li><a href="$Link">$Title</a></li>
-                <% end_loop %>
-            </ul>
+        <h3 class="mod-title">Clients</h3>
+          <% loop $ActiveClients %>
+            <a href="$Link">$Title</a><% if not $Last %>, <% end_if %>
+          <% end_loop %>
         </div>
         <div class="large-6 columns mod"> 
-              <h3 class="mod-title">Mediums</h3>
-              <ul class="unstyled">
-                  <% loop $ActiveMediums %>
-                  <li><a href="$Link">$Title</a></li>
-                <% end_loop %>                            
-              </ul>      
+            <h3 class="mod-title">Mediums</h3>
+            <% loop $ActiveMediums %>
+                  <a href="$Link">$Title</a><% if not $Last %>, <% end_if %>
+            <% end_loop %>     
         </div>
           
       </div>
