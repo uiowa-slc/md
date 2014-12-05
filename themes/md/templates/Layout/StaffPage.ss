@@ -41,24 +41,24 @@
                               <h2>Interests</h2>
                               $Interests
                         <% end_if %>
-
-                        <h2>$FirstName's projects</h2>
-                        <ul class="medium-block-grid-2 portfolio-card-list">
-                              <% loop $Roles %>
-                              <% with $PortfolioPost %> 
-                              <li>
-                                    <a href="$Link">
-                                          <img src="$Image.CroppedFocusedImage(800,500).URL" alt="$Title">
-                                          <div class="portfolio-card-overlay">&nbsp;</div>
-                                          <div class="portfolio-card-title"><h2>$Title</h2><p>
-                                          $Up.Title
-                                          </p>
-                                    </div>
-                              </a>
-                        </li>
-                        <% end_with %>
-                        <% end_loop %>
-                  </ul>
+                        <% if $Roles %>
+                              <h2>$FirstName's projects</h2>
+                              <ul class="medium-block-grid-2 portfolio-card-list">
+                                    <% loop $Roles %>
+                                          <% with $PortfolioPost %> 
+                                          <li>
+                                                <a href="$Link">
+                                                      <img src="$Image.CroppedFocusedImage(800,500).URL" alt="$Title">
+                                                      <div class="portfolio-card-overlay">&nbsp;</div>
+                                                      <div class="portfolio-card-title"><h2>$Title</h2>
+                                                            <p>$Up.Title</p>
+                                                      </div>
+                                                </a>
+                                          </li>
+                                          <% end_with %>
+                                    <% end_loop %>
+                              </ul>
+                        <% end_if %>
             </section>
             <section class="sec-content">
             	<% include SideNav %>  

@@ -1,3 +1,4 @@
+<div class="portfolio-holder-container">
 <section class="portfolio-holder-content">
 	$Form
 	$Content
@@ -25,14 +26,35 @@
                         </a>
                   </li>
             <% end_loop %>
-            <li class="browse-container">
-                  <div class="row browse">
-                  <h2>Advanced Search</h2>
-                  <p>Additionally, you can filter our projects by the following categories:</p>
-                  <p><strong>Medium:</strong> <% loop $ActiveMediums %><a href="$Link">$Title<% if not Last %>, <% end_if %></a><% end_loop %><br />
-                  <strong>Client:</strong><% loop $ActiveClients %><a href="$Link">$Title<% if not Last %>, <% end_if %></a><% end_loop %></p>
-                  </div>
 
-            </li>
       </ul>
 </section>
+</div>
+<section class="topics hide-print">
+      <div class="row">
+          
+        <div class="large-6 columns mod">
+            <h3 class="mod-title">Clients</h3>
+            <ul class="grid-justify">
+                <% loop $ActiveClients %>
+                  <li><a href="$Link">$Title</a></li>
+                <% end_loop %>
+            </ul>
+        </div>
+        <div class="large-6 columns mod"> 
+              <h3 class="mod-title">Mediums</h3>
+              <ul class="unstyled">
+                  <% loop $ActiveMediums %>
+                  <li><a href="$Link">$Title</a></li>
+                <% end_loop %>                            
+              </ul>      
+        </div>
+          
+      </div>
+</section>
+<!--<section class="browse-container padding">
+      <h2>Advanced Search</h2>
+      <p>Additionally, you can filter our projects by the following categories:</p>
+      <p><strong>Medium:</strong> <% loop $ActiveMediums %><a href="$Link">$Title<% if not Last %>, <% end_if %></a><% end_loop %><br />
+      <strong>Client:</strong><% loop $ActiveClients %><a href="$Link">$Title<% if not Last %>, <% end_if %></a><% end_loop %></p>
+</section>-->

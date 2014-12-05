@@ -24,8 +24,12 @@
                         <% end_if %>--%>
                         
                         $Content
-
+                        <% if $SiteLink %>
+                           <a href="$SiteLink" class="btn" target="_blank">Visit Website</a></strong><br /> 
+                        <% end_if %>
+                        <hr />
                         <% if $Mediums %>
+                            <strong>Mediums: </strong>
                             <% loop $Mediums %>
                                 <a href="$Link">$Title<% if not Last %>, <% end_if %></a>
                             <% end_loop %>
@@ -34,17 +38,12 @@
 
 
                         <% if $Clients %>
-                            <strong>Clients:</strong> 
+                            <strong>Clients: </strong> 
                             <% loop $Clients %>
                                 <a href="$Link">$Title<% if not Last %>, <% end_if %></a>
                             <% end_loop %>
                             <br />
                         <% end_if %>
-                        <% if $SiteLink %>
-                           <a href="$SiteLink">Visit Website</a></strong><br /> 
-                        <% end_if %>
-
-
                 </section>
 
                 <section class="large-5 end columns portfolio-roles">
