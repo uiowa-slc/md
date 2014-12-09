@@ -8854,12 +8854,17 @@ aside .mod a {
   margin-bottom: 10px;
 }
 .staff-content .staff-work-list img {
-  width: 200px;
+  width: 100px;
   padding: 5px;
   padding-bottom: 0;
   -webkit-filter: none;
   -moz-filter: none;
   filter: none;
+}
+@media only screen and (min-width: 64.063em) {
+  .staff-content .staff-work-list img {
+    width: 200px;
+  }
 }
 
 @media only screen and (min-width: 64.063em) {

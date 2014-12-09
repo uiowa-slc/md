@@ -21,7 +21,10 @@
 		}
 
 		img{
-			width: 200px;
+			width: 100px;
+			@media #{$large-up}{
+				width: 200px;
+			}
 			padding: 5px;
 			padding-bottom: 0;
 
