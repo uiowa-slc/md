@@ -1,0 +1,38 @@
+.staff-content{
+
+	.staff-title{
+		text-align: center;
+		padding: 0;
+		margin: 0;
+		padding-bottom: 20px;
+	}
+	.staff-link:hover:before {
+		border: none;
+	}
+
+	.staff-team.first{
+		padding-top: 20px;
+		
+	}
+	.staff-work-list{
+		margin: 0;
+		li{
+			margin-bottom: 10px;
+		}
+
+		img{
+			width: 200px;
+			padding: 5px;
+			padding-bottom: 0;
+
+			-webkit-filter: none;
+			-moz-filter: none;
+			filter: none;
+
+		}
+
+
+	}
+
+
+}

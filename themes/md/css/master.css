@@ -8835,6 +8835,33 @@ aside .mod a {
   padding: 0;
 }
 
+.staff-content .staff-title {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 20px;
+}
+.staff-content .staff-link:hover:before {
+  border: none;
+}
+.staff-content .staff-team.first {
+  padding-top: 20px;
+}
+.staff-content .staff-work-list {
+  margin: 0;
+}
+.staff-content .staff-work-list li {
+  margin-bottom: 10px;
+}
+.staff-content .staff-work-list img {
+  width: 200px;
+  padding: 5px;
+  padding-bottom: 0;
+  -webkit-filter: none;
+  -moz-filter: none;
+  filter: none;
+}
+
 @media only screen and (min-width: 64.063em) {
   .staff-single-content .staff-small-info {
     /* Old Still might use: */
