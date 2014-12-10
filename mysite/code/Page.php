@@ -27,8 +27,10 @@ class Page extends SiteTree {
 	}
 
 	public function ValidateUrl($url){
-
-		if (!preg_match("~^(?:f|ht)tps?://~i", $url)){
+		if(empty($url)){
+			return $url;
+		}
+		else if (!preg_match("~^(?:f|ht)tps?://~i", $url)){
 			$url = "http://" . $url;
 		}
 	
