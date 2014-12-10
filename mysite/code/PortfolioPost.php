@@ -127,6 +127,13 @@ class PortfolioPost extends Page{
 
 	}
 
+	public function onBeforeWrite(){
+	   
+	    $this->owner->SiteLink = $this->owner->ValidateUrl($this->owner->SiteLink);
+	    
+
+	    parent::onBeforeWrite();
+  }
 
 }
 

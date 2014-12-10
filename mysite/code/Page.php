@@ -26,6 +26,15 @@ class Page extends SiteTree {
 		return $f;
 	}
 
+	public function ValidateUrl($url){
+
+		if (!preg_match("~^(?:f|ht)tps?://~i", $url)){
+			$url = "http://" . $url;
+		}
+	
+		return $url;
+	}
+
 	
 }
 class Page_Controller extends ContentController {
@@ -62,5 +71,7 @@ class Page_Controller extends ContentController {
 
 	public function MediumTags(){
 		return Medium::get();
-	}	
+	}
+
+		
 }

@@ -73,6 +73,9 @@ class StaffPageExtension extends DataExtension {
 
     $this->owner->Title = $this->owner->FirstName.' '.$this->owner->LastName;
 
+    $this->owner->LinkedInURL = $this->owner->ValidateUrl($this->owner->LinkedInURL);
+    $this->owner->PortfolioURL = $this->owner->ValidateUrl($this->owner->PortfolioURL);
+
     parent::onBeforeWrite();
   }
 
