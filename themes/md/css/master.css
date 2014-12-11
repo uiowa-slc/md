@@ -7316,6 +7316,11 @@ html[xmlns] .slides {
     display: inline-block;
   }
 }
+@media only screen and (min-width: 90.063em) {
+  .directory-toggle {
+    padding-left: 19px;
+  }
+}
 
 .search-toggle {
   background: url(../../../division-bar/images/division-bar/magnifier-18.png) no-repeat 10px 10px;
@@ -7350,7 +7355,7 @@ html[xmlns] .slides {
     border-top: none;
     display: block !important;
     position: absolute;
-    right: 284px;
+    right: 260px;
     bottom: 7px;
     left: auto;
     -webkit-box-shadow: none;
@@ -7393,7 +7398,7 @@ html[xmlns] .slides {
   margin-left: 0;
   margin-right: 0;
   margin-top: 4px;
-  margin-bottom: 2px;
+  margin-bottom: 0;
   height: auto;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
