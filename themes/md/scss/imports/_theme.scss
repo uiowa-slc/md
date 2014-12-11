@@ -55,5 +55,21 @@
  	}
 
  }
-
+/* -------------------------------------------------------
+NAVIGATION OVERRIDES
+---------------------------------------------------------- */
+.nav-main a {
+	@media (min-width: $break-medium) {
+		padding-left: .9em;
+		padding-right: .9em;
+	}
+	@media (min-width: $break-large) {
+		padding-left: 1.20em;
+		padding-right: 1.20em;
+	}
+	@media (min-width: $break-xlarge) {
+		padding-left: 1.8em;
+		padding-right: 1.8em;
+	}
+}
  
