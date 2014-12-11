@@ -252,12 +252,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/division-bar.git",
-                "reference": "7dbf5471c30ce2905c9486ab4ec87c47e1fbefe8"
+                "reference": "cb6baa3f63fb95b0bbf330f0d687513cf15ba8e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-bar/zipball/7dbf5471c30ce2905c9486ab4ec87c47e1fbefe8",
-                "reference": "7dbf5471c30ce2905c9486ab4ec87c47e1fbefe8",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-bar/zipball/cb6baa3f63fb95b0bbf330f0d687513cf15ba8e0",
+                "reference": "cb6baa3f63fb95b0bbf330f0d687513cf15ba8e0",
                 "shasum": ""
             },
             "require": {
@@ -276,7 +276,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/division-bar/tree/master",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/division-bar/issues"
             },
-            "time": "2014-11-25 16:38:15"
+            "time": "2014-12-10 20:14:48"
         },
         {
             "name": "md/division-project",
@@ -372,12 +372,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe-australia/silverstripe-gridfieldextensions.git",
-                "reference": "067608506752dbc0ff2542f08cc9e9184a5eb475"
+                "reference": "600ae4bdf8ba8fc282c996a6e93b421a69c0885e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-gridfieldextensions/zipball/067608506752dbc0ff2542f08cc9e9184a5eb475",
-                "reference": "067608506752dbc0ff2542f08cc9e9184a5eb475",
+                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-gridfieldextensions/zipball/600ae4bdf8ba8fc282c996a6e93b421a69c0885e",
+                "reference": "600ae4bdf8ba8fc282c996a6e93b421a69c0885e",
                 "shasum": ""
             },
             "require": {
@@ -400,6 +400,10 @@
             ],
             "authors": [
                 {
+                    "name": "Marcus Nyeholt",
+                    "email": "marcus@silverstripe.com.au"
+                },
+                {
                     "name": "Andrew Short",
                     "email": "andrewjshort@gmail.com"
                 }
@@ -410,7 +414,7 @@
                 "gridfield",
                 "silverstripe"
             ],
-            "time": "2014-11-27 13:04:43"
+            "time": "2014-12-08 11:14:53"
         },
         {
             "name": "silverstripe-themes/simple",
@@ -686,12 +690,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/chillu/silverstripe-recaptcha.git",
-                "reference": "ac7db259142dba769a76541fc156ef57b82f2970"
+                "reference": "02a53f235c4965e79198c3934b8b27ce33abb9fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chillu/silverstripe-recaptcha/zipball/ac7db259142dba769a76541fc156ef57b82f2970",
-                "reference": "ac7db259142dba769a76541fc156ef57b82f2970",
+                "url": "https://api.github.com/repos/chillu/silverstripe-recaptcha/zipball/02a53f235c4965e79198c3934b8b27ce33abb9fc",
+                "reference": "02a53f235c4965e79198c3934b8b27ce33abb9fc",
                 "shasum": ""
             },
             "require": {
@@ -708,9 +712,7 @@
             "authors": [
                 {
                     "name": "Ingo Schommer",
-                    "email": "ingo@silverstripe.com",
-                    "homepage": "http://chillu.com",
-                    "role": "tech-lead"
+                    "email": "ingo@silverstripe.com"
                 }
             ],
             "description": "Provides a form field which allows form to validate for non-bot submissions by giving them a challenge to decrypt an image.",
@@ -718,7 +720,7 @@
                 "silverstripe",
                 "spamprotection"
             ],
-            "time": "2014-02-18 21:11:57"
+            "time": "2014-12-11 10:38:25"
         },
         {
             "name": "silverstripe/spamprotection",
@@ -800,12 +802,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-userforms.git",
-                "reference": "de66d6f010e390111dc789874344c1cd1622a698"
+                "reference": "729318fc0a26e9e00e61c9c3ccc046f57ae8a291"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/de66d6f010e390111dc789874344c1cd1622a698",
-                "reference": "de66d6f010e390111dc789874344c1cd1622a698",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/729318fc0a26e9e00e61c9c3ccc046f57ae8a291",
+                "reference": "729318fc0a26e9e00e61c9c3ccc046f57ae8a291",
                 "shasum": ""
             },
             "require": {
@@ -836,7 +838,7 @@
                 "silverstripe",
                 "userforms"
             ],
-            "time": "2014-12-05 02:22:45"
+            "time": "2014-12-08 09:17:41"
         },
         {
             "name": "silverstripe/widgets",
