@@ -6,12 +6,12 @@
             	<% if $Photo %>
             		<img src="$Photo.SetWidth(760).URL" alt="$FirstName $LastName">
             	<% end_if %>
-                        <p class="staff-small-info">
+                        <p class="staff-small-info <% if not $Photo %>no-photo<% end_if %>">
                               <% if $Teams %><strong>Team:</strong> <% loop $Teams %>$Title<% if not $Last %>, <% end_if %><% end_loop %><br /><% end_if %>
                               <% if $Location %><strong>From:</strong> $Location<br /><% end_if %>
                               <% if $Major %><strong>Major:</strong> $Major<br /><% end_if %>
-                              <% if $LinkedInURL %><a href="$LinkedInURL" target="_blank">View LinkedIn Page</a><br /><% end_if %>
-                              <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank">View Portfolio</a><% end_if %>
+                              <% if $LinkedInURL %><a href="$LinkedInURL" target="_blank">LinkedIn Page</a><br /><% end_if %>
+                              <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank">Portfolio / Website</a><% end_if %>
                         </p>
                         <% if $DegreeDescription %>
                               <h2>Why I chose my degree</h2> 

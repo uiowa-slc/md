@@ -8892,6 +8892,12 @@ aside .mod a {
     text-align: center;
     margin-right: 33px;*/
   }
+  .staff-single-content .staff-small-info.no-photo {
+    float: none;
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+  }
 }
 .staff-single-content .portfolio-card-list li:hover .portfolio-card-title {
   top: 40%;

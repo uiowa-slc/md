@@ -13,6 +13,13 @@
 			background: white;
 			padding-top: 15px;
 			padding-left: 15px;
+
+			&.no-photo{
+				float: none;
+				width: 100%;
+				margin-top: 0;
+				padding: 0;
+			}
 			
 
 			/*float: right;
