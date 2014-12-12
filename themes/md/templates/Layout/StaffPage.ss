@@ -61,7 +61,7 @@
                         <% end_if %>
             </section>
             <section class="sec-content">
-            	<% include SideNav %>  
+            	<% include StaffPageSideNav %>  
             </section>
       </section>
 </div>

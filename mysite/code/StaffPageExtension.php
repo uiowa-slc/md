@@ -1,7 +1,7 @@
 <?php
 class StaffPageExtension extends DataExtension {
 
-  private static $db = array(
+    private static $db = array(
         "Location" => "Text",
         "Interests" => "Text",
         "Major" => "Text",
@@ -13,31 +13,29 @@ class StaffPageExtension extends DataExtension {
         "PostGraduation" => "Text",
         "LinkedInURL" => "Text",
         "PortfolioURL" => "Text",
-
     );
 
     private static $belongs_many_many = array(
-        'Roles' => 'Role'
-        
+    'Roles' => 'Role'
+
     ); 
+
     public function getCMSFields() {
       $this->extend('updateCMSFields', $fields);
-      
       return $fields;
     }
-    public function updateCMSFields(FieldList $fields) {
-     // $fields->addFieldToTab("Root.Main", new TextField('ExternalURL', 'External URL (if story lives elsewhere)'), 'Content');
-        //$fields = parent::getCMSFields();
 
-  
+    public function updateCMSFields(FieldList $fields) {
+
         $fields->removeByName('Position');
         $fields->removeByName('EmailAddress');
         $fields->removeByName('Phone');
         $fields->removeByName('DepartmentName');
         $fields->removeByName('DepartmentURL');
         $fields->removeByName('Content');
-
         $fields->removeByName("BackgroundImage");
+        $fields->renameField('Teams', 'Team - If this person\'s an M+D Alum, put 
+            them in <strong>both the Alumni team and their original position</strong> (e.g., "Alumni + Graphic Designers")');
 
         $fields->addFieldToTab("Root.Main", new TextField("Location", "Where are you from?"));
         $fields->addFieldToTab("Root.Main", new TextareaField("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) "));
@@ -50,42 +48,36 @@ class StaffPageExtension extends DataExtension {
         $fields->addFieldToTab("Root.Main", new TextareaField("PostGraduation","What do you hope to do after graduation?"));
         $fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
         $fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
-   
-  }
-
-    public function getAddNewFields(){
-
-        $fields = new FieldList();
-        $fields->push(new TextField("FirstName", "First Name"));
-        $fields->push(new TextField("LastName", "Last Name"));
-        
-        $fields->push(new CheckboxSetField("Teams", 'Team <a href="admin/pages/edit/show/14" target="_blank">(Manage Teams)</a>', StaffTeam::get()->map('ID', 'Name')));
-
-        return $fields;
-
-
-
 
     }
 
-  public function onBeforeWrite(){
-    $this->owner->ParentID = 24;
+    public function getAddNewFields(){
+        $fields = new FieldList();
+        $fields->push(new TextField("FirstName", "First Name"));
+        $fields->push(new TextField("LastName", "Last Name"));
 
-    $this->owner->Title = $this->owner->FirstName.' '.$this->owner->LastName;
+        $fields->push(new CheckboxSetField("Teams", 'Team - If this person\'s an M+D Alum, put 
+            them in the Alumni team and their original position (e.g., "Alumni + Graphic Designers")', StaffTeam::get()->map('ID', 'Name')));
 
-    $this->owner->LinkedInURL = $this->owner->ValidateUrl($this->owner->LinkedInURL);
-    $this->owner->PortfolioURL = $this->owner->ValidateUrl($this->owner->PortfolioURL);
+        return $fields;
+    }
 
-    parent::onBeforeWrite();
-  }
+    public function onBeforeWrite(){
+        $this->owner->ParentID = 24;
+        $this->owner->Title = $this->owner->FirstName.' '.$this->owner->LastName;
+        $this->owner->LinkedInURL = $this->owner->ValidateUrl($this->owner->LinkedInURL);
+        $this->owner->PortfolioURL = $this->owner->ValidateUrl($this->owner->PortfolioURL);
+
+        parent::onBeforeWrite();
+    }
 
     public function Projects(){
-    	$owner = $this->owner;
-    	$roles = $owner->Roles();
+       $owner = $this->owner;
+       $roles = $owner->Roles();
 
-    	if(DataObject::get_one('Roles', "Title = '$roles->Title'")){
-    		
-    	}
+       if(DataObject::get_one('Roles', "Title = '$roles->Title'")){
+
+       }
 
     }   
 }

@@ -14,7 +14,7 @@
       	
       </section>
       <section class="sec-content hide-print">
-            <% include SideNav %>
+            <% include StaffPageSideNav %>
       </section>
 </div>
 <% include TopicsAndNews %>

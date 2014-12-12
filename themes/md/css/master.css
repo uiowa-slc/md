@@ -8888,6 +8888,14 @@ NAVIGATION OVERRIDES
     width: 200px;
   }
 }
+.staff-content .staff-work-list.alumni img {
+  width: 75px;
+}
+@media only screen and (min-width: 64.063em) {
+  .staff-content .staff-work-list.alumni img {
+    width: 100px;
+  }
+}
 
 @media only screen and (min-width: 64.063em) {
   .staff-single-content .staff-small-info {

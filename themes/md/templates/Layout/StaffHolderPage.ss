@@ -8,7 +8,7 @@
                         <div class="staff-team $FirstLast">
                               <h2 class="staff-title">$Title</h2>
                               <ul class="staff-work-list">
-                                    <% loop $StaffPages.Sort("LastName ASC") %>
+                                    <% loop $ActiveStaffPages.Sort("LastName ASC") %>
                                           <% include StaffPageCoinLarge %>
                                     <% end_loop %>
                                     <li class="filler"></li>
@@ -20,10 +20,13 @@
                   <% else %>
                         <div class="staff-team $FirstLast">
                               <h2 class="staff-title">$Title</h2>
-                              <ul class="staff-work-list">
+                              <ul class="staff-work-list alumni">
                                     <% loop $StaffPages.Sort("RAND()").Limit(5) %>
                                           <% include StaffPageCoinLarge %>
                                     <% end_loop %>
+                                    <li><a href="meet-us/alumni"><img class="details-toggle" src="{$ThemeDir}/images/details-toggle.gif" alt="More information below." /></a>
+                                          <p class="staff-name"><a href="$Link">View all Alumni</a></p>
+                                    </li>
                                     <li class="filler"></li>
                                     <li class="filler"></li>
                               </ul>
@@ -33,6 +36,7 @@
                   <% end_if %>
       	<% end_loop %>
             
+
       	
       </section>
 </div>
