@@ -8873,12 +8873,10 @@ NAVIGATION OVERRIDES
   margin: 0;
 }
 .staff-content .staff-work-list li {
-  margin-bottom: 10px;
+  margin: 5px;
 }
 .staff-content .staff-work-list img {
   width: 100px;
-  padding: 5px;
-  padding-bottom: 0;
   -webkit-filter: none;
   -moz-filter: none;
   filter: none;
