@@ -85,5 +85,10 @@ class Page_Controller extends ContentController {
 
 		return $limitedStaffPages->sort('LastName ASC');
 	}
+
+	public function AlumStaffPages(){
+		$alumniTeam = StaffTeam::get()->filter(array('Name' => 'Alumni'))->First();
+		return $alumniTeam->StaffPages();
+	}
 		
 }

@@ -16,8 +16,7 @@ class StaffPageExtension extends DataExtension {
     );
 
     private static $belongs_many_many = array(
-    'Roles' => 'Role'
-
+        'Roles' => 'Role'
     ); 
 
     public function getCMSFields() {
@@ -26,7 +25,6 @@ class StaffPageExtension extends DataExtension {
     }
 
     public function updateCMSFields(FieldList $fields) {
-
         $fields->removeByName('Position');
         $fields->removeByName('EmailAddress');
         $fields->removeByName('Phone');
@@ -36,7 +34,6 @@ class StaffPageExtension extends DataExtension {
         $fields->removeByName("BackgroundImage");
         $fields->renameField('Teams', 'Team - If this person\'s an M+D Alum, put 
             them in <strong>both the Alumni team and their original position</strong> (e.g., "Alumni + Graphic Designers")');
-
         $fields->addFieldToTab("Root.Main", new TextField("Location", "Where are you from?"));
         $fields->addFieldToTab("Root.Main", new TextareaField("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) "));
         $fields->addFieldToTab("Root.Main", new TextField("Major", "Major"));
@@ -80,4 +77,16 @@ class StaffPageExtension extends DataExtension {
        }
 
     }   
+
+    public function isAlum(){
+        $owner = $this->owner;
+        $teams = $owner->Teams();
+
+        foreach($teams as $team){
+            if($team->Title == "Alumni"){
+                return true;
+            }
+        }
+        return false;
+    }
 }
