@@ -7,7 +7,7 @@
 <% if Menu(2) %>
 <nav class="sec-nav">
 	<ul class="first-level">
-		<% loop AlumStaffPages %>
+		<% loop AlumStaffPages.Sort("LastName ASC") %>
 			<li <% if $LinkOrCurrent = "current" %>class="active"<% end_if %>><a href="$Link">$MenuTitle</a></li>
 		<% end_loop %>
 		<li><a href="meet-us/">View current M+D Staff Members</a></li>
