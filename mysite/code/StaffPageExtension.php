@@ -1,12 +1,10 @@
 <?php
 class StaffPageExtension extends DataExtension {
 
-<<<<<<< HEAD
+
   private static $db = array(
         //Everybody
-=======
-    private static $db = array(
->>>>>>> FETCH_HEAD
+
         "Location" => "Text",
         "Interests" => "Text",
         "FavoriteProject" => "Text",
@@ -19,7 +17,7 @@ class StaffPageExtension extends DataExtension {
         "TopStrengths" => "Text",
         "FavoriteQuote" => "Text",
         "PostGraduation" => "Text",
-<<<<<<< HEAD
+
         "MDExperience" => "Text",
 
         //Alumni
@@ -36,10 +34,10 @@ class StaffPageExtension extends DataExtension {
 
 
 
-=======
+
         "LinkedInURL" => "Text",
         "PortfolioURL" => "Text",
->>>>>>> FETCH_HEAD
+
     );
 
     private static $belongs_many_many = array(
@@ -51,10 +49,9 @@ class StaffPageExtension extends DataExtension {
       return $fields;
     }
 
-<<<<<<< HEAD
-=======
+
     public function updateCMSFields(FieldList $fields) {
->>>>>>> FETCH_HEAD
+
         $fields->removeByName('Position');
         $fields->removeByName('EmailAddress');
         $fields->removeByName('Phone');
@@ -62,13 +59,16 @@ class StaffPageExtension extends DataExtension {
         $fields->removeByName('DepartmentURL');
         $fields->removeByName('Content');
         $fields->removeByName("BackgroundImage");
-<<<<<<< HEAD
+
 
         //Everybody
-=======
+
         $fields->renameField('Teams', 'Team - If this person\'s an M+D Alum, put 
             them in <strong>both the Alumni team and their original position</strong> (e.g., "Alumni + Graphic Designers")');
->>>>>>> FETCH_HEAD
+
+        $fields->renameField('Teams', 'Team - If this person\'s an M+D Alum, put 
+            them in <strong>both the Alumni team and their original position</strong> (e.g., "Alumni + Graphic Designers")');
+
         $fields->addFieldToTab("Root.Main", new TextField("Location", "Where are you from?"));
         $fields->addFieldToTab("Root.Main", new TextareaField("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) "));
         $fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
@@ -84,7 +84,7 @@ class StaffPageExtension extends DataExtension {
         $fields->addFieldToTab("Root.Main", new TextareaField("TopStrengths","Top five strengths"));
         $fields->addFieldToTab("Root.Main", new TextareaField("FavoriteQuote","Favorite quote"));
         $fields->addFieldToTab("Root.Main", new TextareaField("PostGraduation","What do you hope to do after graduation?"));
-<<<<<<< HEAD
+
         }
 
         //Alumni
@@ -105,10 +105,10 @@ class StaffPageExtension extends DataExtension {
         }
 
   }
-=======
+
         $fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
         $fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
->>>>>>> FETCH_HEAD
+
 
     }
 
@@ -116,6 +116,7 @@ class StaffPageExtension extends DataExtension {
         $fields = new FieldList();
         $fields->push(new TextField("FirstName", "First Name"));
         $fields->push(new TextField("LastName", "Last Name"));
+
 
         $fields->push(new CheckboxSetField("Teams", 'Team - If this person\'s an M+D Alum, put 
             them in the Alumni team and their original position (e.g., "Alumni + Graphic Designers")', StaffTeam::get()->map('ID', 'Name')));
@@ -146,8 +147,15 @@ class StaffPageExtension extends DataExtension {
         $owner = $this->owner;
         $teams = $owner->Teams();
 
-<<<<<<< HEAD
-    }   
+      
+
+
+        $fields->push(new CheckboxSetField("Teams", 'Team - If this person\'s an M+D Alum, put 
+            them in the Alumni team and their original position (e.g., "Alumni + Graphic Designers")', StaffTeam::get()->map('ID', 'Name')));
+
+
+        return $fields;
+    }
 
 
     public function isStudent(){
@@ -157,7 +165,16 @@ class StaffPageExtension extends DataExtension {
             return false;
         }
 
+    public function onBeforeWrite(){
+        $this->owner->ParentID = 24;
+        $this->owner->Title = $this->owner->FirstName.' '.$this->owner->LastName;
+        $this->owner->LinkedInURL = $this->owner->ValidateUrl($this->owner->LinkedInURL);
+        $this->owner->PortfolioURL = $this->owner->ValidateUrl($this->owner->PortfolioURL);
+
+
+        parent::onBeforeWrite();
     }
+
 
     // if ($this->InTeam("Professional Staff")) 
 
@@ -212,7 +229,22 @@ class StaffPageExtension extends DataExtension {
 
 
 
-=======
+
+    public function Projects(){
+       $owner = $this->owner;
+       $roles = $owner->Roles();
+
+       if(DataObject::get_one('Roles', "Title = '$roles->Title'")){
+
+       }
+
+    }   
+
+    public function isAlum(){
+        $owner = $this->owner;
+        $teams = $owner->Teams();
+
+
         foreach($teams as $team){
             if($team->Title == "Alumni"){
                 return true;
@@ -220,5 +252,5 @@ class StaffPageExtension extends DataExtension {
         }
         return false;
     }
->>>>>>> FETCH_HEAD
+
 }
