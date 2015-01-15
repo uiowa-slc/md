@@ -10,7 +10,7 @@
                               <% if $Teams %><strong>Team:</strong> <% loop $Teams %>$Title<% if not $Last %>, <% end_if %><% end_loop %><br /><% end_if %>
                               <% if $Location %><strong>From:</strong> $Location<br /><% end_if %>
 
-                              <% if $isStudent() %>
+                              <% if $isStudent %>
                                     <% if $Major %><strong>Major:</strong> $Major<br /><% end_if %>
                               <% end_if %>
 
@@ -35,7 +35,7 @@
 
 
                         <%-- student --%>
-                        <% if $isStudent() %>
+                        <% if $isStudent %>
 
                         <% if $DegreeDescription %>
                               <h2>Why I chose my degree</h2> 
