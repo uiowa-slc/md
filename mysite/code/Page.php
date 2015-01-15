@@ -75,5 +75,20 @@ class Page_Controller extends ContentController {
 		return Medium::get();
 	}
 
+	public function ActiveStaffPages(){
+		$staffPages = StaffPage::get();
+
+		$alumniTeam = StaffTeam::get()->filter(array('Name' => 'Alumni'))->First();
+		$alumniPages = $alumniTeam->StaffPages();
+
+		$limitedStaffPages = $staffPages->subtract($alumniPages);
+
+		return $limitedStaffPages->sort('LastName ASC');
+	}
+
+	public function AlumStaffPages(){
+		$alumniTeam = StaffTeam::get()->filter(array('Name' => 'Alumni'))->First();
+		return $alumniTeam->StaffPages();
+	}
 		
 }

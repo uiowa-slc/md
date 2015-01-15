@@ -8549,6 +8549,28 @@ aside .mod a {
   width: 32px;
 }
 
+/* -------------------------------------------------------
+NAVIGATION OVERRIDES
+---------------------------------------------------------- */
+@media (min-width: 768px) {
+  .nav-main a {
+    padding-left: .9em;
+    padding-right: .9em;
+  }
+}
+@media (min-width: 980px) {
+  .nav-main a {
+    padding-left: 1.20em;
+    padding-right: 1.20em;
+  }
+}
+@media (min-width: 1140px) {
+  .nav-main a {
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+  }
+}
+
 .portfolio-card-list li {
   overflow: hidden;
   line-height: 67px;
@@ -8850,13 +8872,8 @@ aside .mod a {
 .staff-content .staff-work-list {
   margin: 0;
 }
-.staff-content .staff-work-list li {
-  margin-bottom: 10px;
-}
 .staff-content .staff-work-list img {
   width: 100px;
-  padding: 5px;
-  padding-bottom: 0;
   -webkit-filter: none;
   -moz-filter: none;
   filter: none;
@@ -8864,6 +8881,14 @@ aside .mod a {
 @media only screen and (min-width: 64.063em) {
   .staff-content .staff-work-list img {
     width: 200px;
+  }
+}
+.staff-content .staff-work-list.alumni img {
+  width: 75px;
+}
+@media only screen and (min-width: 64.063em) {
+  .staff-content .staff-work-list.alumni img {
+    width: 100px;
   }
 }
 
@@ -8891,6 +8916,12 @@ aside .mod a {
     color: white;
     text-align: center;
     margin-right: 33px;*/
+  }
+  .staff-single-content .staff-small-info.no-photo {
+    float: none;
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
   }
 }
 .staff-single-content .portfolio-card-list li:hover .portfolio-card-title {

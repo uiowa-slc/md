@@ -17,7 +17,7 @@
 	.staff-work-list{
 		margin: 0;
 		li{
-			margin-bottom: 10px;
+			
 		}
 
 		img{
@@ -25,12 +25,20 @@
 			@media #{$large-up}{
 				width: 200px;
 			}
-			padding: 5px;
-			padding-bottom: 0;
 
 			-webkit-filter: none;
 			-moz-filter: none;
 			filter: none;
+
+		}
+
+		&.alumni{
+			img{
+				width: 75px;
+				@media #{$large-up}{
+					width: 100px;
+				}
+			}
 
 		}
 

@@ -1,91 +1,224 @@
 <?php
 class StaffPageExtension extends DataExtension {
 
+<<<<<<< HEAD
   private static $db = array(
+        //Everybody
+=======
+    private static $db = array(
+>>>>>>> FETCH_HEAD
         "Location" => "Text",
         "Interests" => "Text",
-        "Major" => "Text",
-        "DegreeDescription" => "Text",
-        "MDExperience" => "Text",
         "FavoriteProject" => "Text",
-        "TopStrengths" => "Text",
-        "FavoriteQuote" => "Text",
-        "PostGraduation" => "Text",
         "LinkedInURL" => "Text",
         "PortfolioURL" => "Text",
 
+        //Students
+        "Major" => "Text",
+        "DegreeDescription" => "Text",
+        "TopStrengths" => "Text",
+        "FavoriteQuote" => "Text",
+        "PostGraduation" => "Text",
+<<<<<<< HEAD
+        "MDExperience" => "Text",
+
+        //Alumni
+        "EmploymentLocation" => "Text",
+        "CurrentPosition" => "Text",
+        "FavoriteMemory" => "Text",
+        "Advice" => "Text",
+
+        //Pro Staff
+        "PositionTitle" => "Text",
+        "EnjoymentFactors" => "Text",
+        "JoinDate" => "Date",
+        "Background" => "Text",
+
+
+
+=======
+        "LinkedInURL" => "Text",
+        "PortfolioURL" => "Text",
+>>>>>>> FETCH_HEAD
     );
 
     private static $belongs_many_many = array(
         'Roles' => 'Role'
-        
     ); 
+
     public function getCMSFields() {
       $this->extend('updateCMSFields', $fields);
-      
       return $fields;
     }
-    public function updateCMSFields(FieldList $fields) {
-     // $fields->addFieldToTab("Root.Main", new TextField('ExternalURL', 'External URL (if story lives elsewhere)'), 'Content');
-        //$fields = parent::getCMSFields();
 
-  
+<<<<<<< HEAD
+=======
+    public function updateCMSFields(FieldList $fields) {
+>>>>>>> FETCH_HEAD
         $fields->removeByName('Position');
         $fields->removeByName('EmailAddress');
         $fields->removeByName('Phone');
         $fields->removeByName('DepartmentName');
         $fields->removeByName('DepartmentURL');
         $fields->removeByName('Content');
-
         $fields->removeByName("BackgroundImage");
+<<<<<<< HEAD
 
+        //Everybody
+=======
+        $fields->renameField('Teams', 'Team - If this person\'s an M+D Alum, put 
+            them in <strong>both the Alumni team and their original position</strong> (e.g., "Alumni + Graphic Designers")');
+>>>>>>> FETCH_HEAD
         $fields->addFieldToTab("Root.Main", new TextField("Location", "Where are you from?"));
         $fields->addFieldToTab("Root.Main", new TextareaField("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) "));
-        $fields->addFieldToTab("Root.Main", new TextField("Major", "Major"));
-        $fields->addFieldToTab("Root.Main", new TextareaField("DegreeDescription","Explain why you chose your degree."));
-        $fields->addFieldToTab("Root.Main", new TextareaField("MDExperience","What have you learned from your experience at M+D?"));
+        $fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
+        $fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
         $fields->addFieldToTab("Root.Main", new TextareaField("FavoriteProject","Favorite M+D project? Why?"));
+
+ 
+        //Students
+        if($this->isStudent()){
+        $fields->addFieldToTab("Root.Main", new TextField("Major", "Major"));
+        $fields->addFieldToTab("Root.Main", new TextareaField("DegreeDescription","Explain why you chose your degree."));  
+        $fields->addFieldToTab("Root.Main", new TextareaField("MDExperience","What have you learned from your experience at M+D?"));
         $fields->addFieldToTab("Root.Main", new TextareaField("TopStrengths","Top five strengths"));
         $fields->addFieldToTab("Root.Main", new TextareaField("FavoriteQuote","Favorite quote"));
         $fields->addFieldToTab("Root.Main", new TextareaField("PostGraduation","What do you hope to do after graduation?"));
+<<<<<<< HEAD
+        }
+
+        //Alumni
+        if($this->inTeam('Alumni')){
+        $fields->addFieldToTab("Root.Main", new TextField("EmploymentLocation", "Where are you employed?"));
+        $fields->addFieldToTab("Root.Main", new TextField("CurrentPosition", "What is your current position title?"));
+        $fields->addFieldToTab("Root.Main", new TextareaField("FavoriteMemory","What is your favorite memory of M+D?"));  
+        $fields->addFieldToTab("Root.Main", new TextareaField("Advice","What advice would you give to current students?")); 
+        }
+
+        //Pro Staff
+        if($this->inTeam('Professional Staff')){
+        $fields->addFieldToTab("Root.Main", new TextField("PositionTitle", "Position title"));
+        $fields->addFieldToTab("Root.Main", new TextareaField("EnjoymentFactors", "What do you enjoy about working at M+D?"));
+        $fields->addFieldToTab("Root.Main", $dateField = new DateField("JoinDate","When did you join the M+D staff?(MM DD YYYY)"));
+        // $dateField->getDateField()->setConfig('showcalendar', true);  
+        $fields->addFieldToTab("Root.Main", new TextareaField("Background","Background & Education")); 
+        }
+
+  }
+=======
         $fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
         $fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
-   
-  }
+>>>>>>> FETCH_HEAD
+
+    }
 
     public function getAddNewFields(){
-
         $fields = new FieldList();
         $fields->push(new TextField("FirstName", "First Name"));
         $fields->push(new TextField("LastName", "Last Name"));
-        
-        $fields->push(new CheckboxSetField("Teams", 'Team <a href="admin/pages/edit/show/14" target="_blank">(Manage Teams)</a>', StaffTeam::get()->map('ID', 'Name')));
+
+        $fields->push(new CheckboxSetField("Teams", 'Team - If this person\'s an M+D Alum, put 
+            them in the Alumni team and their original position (e.g., "Alumni + Graphic Designers")', StaffTeam::get()->map('ID', 'Name')));
 
         return $fields;
+    }
+
+    public function onBeforeWrite(){
+        $this->owner->ParentID = 24;
+        $this->owner->Title = $this->owner->FirstName.' '.$this->owner->LastName;
+        $this->owner->LinkedInURL = $this->owner->ValidateUrl($this->owner->LinkedInURL);
+        $this->owner->PortfolioURL = $this->owner->ValidateUrl($this->owner->PortfolioURL);
+
+        parent::onBeforeWrite();
+    }
+
+    public function Projects(){
+       $owner = $this->owner;
+       $roles = $owner->Roles();
+
+       if(DataObject::get_one('Roles', "Title = '$roles->Title'")){
+
+       }
+
+    }   
+
+    public function isAlum(){
+        $owner = $this->owner;
+        $teams = $owner->Teams();
+
+<<<<<<< HEAD
+    }   
 
 
+    public function isStudent(){
+        if(!($this->inTeam("Professional Staff")) && !($this->inTeam("Alumni"))){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    // if ($this->InTeam("Professional Staff")) 
+
+    public function inTeam($teamName){
+
+       $owner = $this->owner;
+       $teamsIncluded = $owner->Teams();
+
+       foreach($teamsIncluded as $team ){
+             if($team->Name == $teamName){
+                return true;
+            }       
+       }
+
+       return false;
 
 
     }
 
-  public function onBeforeWrite(){
-    $this->owner->ParentID = 24;
+    public function isAlumni(){
+       
+       $owner = $this->owner;
+       $teamsIncluded = $owner->Teams;
 
-    $this->owner->Title = $this->owner->FirstName.' '.$this->owner->LastName;
+       if($teamsIncluded == ('Alumni')){
+            return true;
+       }
 
-    $this->owner->LinkedInURL = $this->owner->ValidateUrl($this->owner->LinkedInURL);
-    $this->owner->PortfolioURL = $this->owner->ValidateUrl($this->owner->PortfolioURL);
+       else{
+            return false;
+       }
+            
 
-    parent::onBeforeWrite();
-  }
+    }
 
-    public function Projects(){
-    	$owner = $this->owner;
-    	$roles = $owner->Roles();
 
-    	if(DataObject::get_one('Roles', "Title = '$roles->Title'")){
-    		
-    	}
 
-    }   
+    public function isProStaff(){
+
+       $owner = $this->owner;
+       $teamsIncluded = $owner->Teams;
+
+       if($teamsIncluded == ('Professional Staff')){
+            return true;
+       }
+
+       else{
+            return false;
+       }
+    }
+
+
+
+
+=======
+        foreach($teams as $team){
+            if($team->Title == "Alumni"){
+                return true;
+            }
+        }
+        return false;
+    }
+>>>>>>> FETCH_HEAD
 }

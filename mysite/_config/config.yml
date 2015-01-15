@@ -12,6 +12,12 @@ SSViewer:
 StaffPage:
   extensions:
     - StaffPageExtension
+StaffHolderPage:
+  extensions:
+    - StaffHolderPageExtension
 StaffHolderPage_Controller:
   extensions:
     - StaffHolderPageControllerExtension
+StaffTeam:
+  extensions:
+    - StaffTeamExtension
