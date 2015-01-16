@@ -2,7 +2,7 @@
       <section class="container clearfix">
             <div class="white-cover"></div>
             <section class="main-content staff-single-content <% if $BackgroundImage %>margin-top<% end_if %>">
-            	<h1>$Title</h1>
+            	
             	<% if $Photo %>
             		<img src="$Photo.SetWidth(760).URL" alt="$FirstName $LastName">
             	<% end_if %>
@@ -15,8 +15,7 @@
                               <% if $LinkedInURL %><a href="$LinkedInURL" target="_blank">View LinkedIn Page</a><br /><% end_if %>
                               <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank">View Portfolio</a><% end_if %>
                         </p>
-                        
-                       
+                        <h1>$Title</h1>
                         <% if $FavoriteProject %>
                               <h2>Favorite M+D project and why?</h2>
                               $FavoriteProject
