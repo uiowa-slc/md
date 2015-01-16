@@ -18,12 +18,21 @@
 		margin: 0;
 		li{
 			
+			a.staff-link{
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+			padding: 3px 0;
+
+			@media #{$large-up}{
+				padding: 5px 0;
+			}
 		}
 
 		img{
 			width: 100px;
 			@media #{$large-up}{
-				width: 200px;
+				width: 175px;
 			}
 
 			-webkit-filter: none;
