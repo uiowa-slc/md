@@ -15,7 +15,7 @@
                                     <% loop $Mediums.Limit(3) %>$Title<% if not $Last %>, <% end_if %><% end_loop %>
                               </p>
                                
-                                  <ul class="staff-work-list">
+                                  <ul class="staff-work-list show-for-xlarge-up">
                                     <% loop $StaffPages.Limit(3) %>
                                           <% if $Photo %><li><img src="$Photo.CroppedImage(200,200).URL" alt="Photo of $FirstName $LastName" /></li><% end_if %>
                                     <% end_loop %>
