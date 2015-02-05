@@ -9206,6 +9206,7 @@ NAVIGATION OVERRIDES
   margin-top: -10px;
   text-align: center;
   opacity: 1;
+  line-height: 2;
 }
 .portfolio-card-list li:hover .portfolio-card-title a, .portfolio-card-list li:hover .portfolio-card-title p {
   color: white;
@@ -9213,10 +9214,16 @@ NAVIGATION OVERRIDES
 .portfolio-card-list li:hover .portfolio-card-title h2 {
   text-transform: uppercase;
   font-weight: normal;
+  font-size: 1.75rem;
   margin: 0;
   color: white;
   border-top: 3px solid white;
   border-bottom: 3px solid white;
+}
+@media only screen and (min-width: 64.063em) {
+  .portfolio-card-list li:hover .portfolio-card-title h2 {
+    font-size: 2.25rem;
+  }
 }
 .portfolio-card-list li .staff-work-list {
   display: none;
