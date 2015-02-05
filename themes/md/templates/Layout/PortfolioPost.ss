@@ -64,7 +64,7 @@
     <div class="portfolio-image-list row">
         <div class="large-12">
              <% loop $GalleryImages %>
-                    <img class="b-lazy" src="{$ThemeDir}/images/more-staff.gif" data-src="$URL" alt="$Top.$Title">  
+                    <img class="b-lazy" src="{$ThemeDir}/images/placeholder.png" data-src="$URL" alt="$Top.$Title">  
             <% end_loop %>
         </div>
     </div>
