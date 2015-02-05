@@ -18,12 +18,13 @@
                     <li><a class="button right" href="$Link">&larr; $Title</a></li>
                 <% end_with %>
             <% end_if %>
-            	<li><a class="button left" href="our-work/">View all entries</a></li>
+            	<li><a class="button left show-for-large-up" href="our-work/">View all entries</a></li>
 			<% if $NextPage %>
                 <% with $NextPage %>
                     <li><a class="button right" href="$Link">$Title &rarr;</a></li>
                 <% end_with %>
             <% end_if %>
+                <li><a class="button left hide-for-large-up" href="our-work/">View all entries</a></li>
 			</ul>
 
         </div>

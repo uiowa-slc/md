@@ -61,7 +61,8 @@
 }
 
 .topics.active-tags{
-	padding: auto $column-gutter;
+	padding-left: $column-gutter/2;
+	padding-right: $column-gutter/2;
 	.row{
 		max-width: $portfolio-width+$column-gutter;
 	}

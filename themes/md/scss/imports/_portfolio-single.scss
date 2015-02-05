@@ -82,12 +82,9 @@
 }
 
 
-
-$portfolio-single-width: 1400px;
-
 .portfolio-post-content {
      border-right: none;
-	 max-width: $portfolio-single-width;
+	 max-width: $portfolio-width;
 	 margin: auto;
 	 padding: 0;
 
@@ -114,10 +111,11 @@ $portfolio-single-width: 1400px;
 	 }
 
 	 .portfolio-post-details{
-	 	padding: 0 20px;
-	 	padding-bottom: 25px;
-
-	 	@media screen and (min-width: $portfolio-single-width){
+	 	@media #{$large-up}{
+	 		padding: 0 $column-gutter;
+	 		padding-bottom: $column-gutter;
+	 	}
+	 	@media screen and (min-width: $portfolio-width){
 	 		padding: 0;
 	 		padding-bottom: 25px;
 	 		
@@ -188,7 +186,11 @@ $portfolio-single-width: 1400px;
 	 .portfolio-image-list{
 	 	img {
 	 		width: 100%;
-	 		padding-bottom: $column-gutter;
+	 		padding-bottom: $column-gutter/2;
+
+	 		@media #{$large-up}{
+	 			padding-bottom: $column-gutter;
+	 		}
 	 	}
 	 	&.main-image{
 	 		padding-top: 0;
@@ -204,7 +206,16 @@ $portfolio-single-width: 1400px;
  .post-navigation{
  	text-align: center;
  	font-size: 1.2em;
+
+ 	padding-left: $column-gutter/3;
+ 	padding-right: $column-gutter/3;
+ 	@media #{$large-up}{
+ 		padding-left: $column-gutter/2;
+ 		padding-right: $column-gutter/2;
+ 	}
+
  	padding-bottom: $column-gutter;
+
  	.button-group{
  		line-height: $column-gutter/2;
  	}

@@ -107,8 +107,12 @@
 .portfolio-holder-content {
      border-right: none;
 	 margin: auto;
-	 padding: $column-gutter $column-gutter/2;
-
+	 padding: $column-gutter/2 $column-gutter/2;
+	 padding-bottom: 0;
+	 padding-top: $column-gutter;
+	 h1{
+	 	text-align: center;
+	 }
 	 h2{
 
 	 	a {

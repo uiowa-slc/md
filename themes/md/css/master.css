@@ -7573,7 +7573,8 @@ aside .mod a {
 }
 
 .topics.active-tags {
-  padding: auto 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .topics.active-tags .row {
   max-width: 1420px;
@@ -7684,7 +7685,12 @@ NAVIGATION OVERRIDES
 .portfolio-holder-content {
   border-right: none;
   margin: auto;
-  padding: 20px 10px;
+  padding: 10px 10px;
+  padding-bottom: 0;
+  padding-top: 20px;
+}
+.portfolio-holder-content h1 {
+  text-align: center;
 }
 .portfolio-holder-content h2 a {
   color: #333;
@@ -7802,9 +7808,11 @@ NAVIGATION OVERRIDES
   margin-left: 0;
   margin-right: 0;
 }
-.portfolio-post-content .portfolio-post-details {
-  padding: 0 20px;
-  padding-bottom: 25px;
+@media only screen and (min-width: 64.063em) {
+  .portfolio-post-content .portfolio-post-details {
+    padding: 0 20px;
+    padding-bottom: 20px;
+  }
 }
 @media screen and (min-width: 1400px) {
   .portfolio-post-content .portfolio-post-details {
@@ -7864,7 +7872,12 @@ NAVIGATION OVERRIDES
 }
 .portfolio-post-content .portfolio-image-list img {
   width: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+}
+@media only screen and (min-width: 64.063em) {
+  .portfolio-post-content .portfolio-image-list img {
+    padding-bottom: 20px;
+  }
 }
 .portfolio-post-content .portfolio-image-list.main-image {
   padding-top: 0;
@@ -7876,7 +7889,15 @@ NAVIGATION OVERRIDES
 .post-navigation {
   text-align: center;
   font-size: 1.2em;
+  padding-left: 6.66667px;
+  padding-right: 6.66667px;
   padding-bottom: 20px;
+}
+@media only screen and (min-width: 64.063em) {
+  .post-navigation {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 .post-navigation .button-group {
   line-height: 10px;
