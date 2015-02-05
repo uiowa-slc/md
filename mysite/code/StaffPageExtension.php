@@ -125,7 +125,13 @@ class StaffPageExtension extends DataExtension {
 			return false;
 		}
 	}
-
+	public function isAlum() {
+		if ($this->inTeam("Alumni")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	public function onBeforeWrite() {
 		$this->owner->ParentID = 24;
 		$this->owner->Title = $this->owner->FirstName . ' ' . $this->owner->LastName;

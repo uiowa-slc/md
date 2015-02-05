@@ -128,7 +128,7 @@
                         <% end_if %>
                         <% if $isAlum %>
                               <hr />
-                              <p><a href="mailto:studentlife-marketing@uiowa.edu">Is this your M+D alumni page? Email us your updated photo.</a></p>
+                              <p><a href="mailto:studentlife-marketing@uiowa.edu">Is this your M+D alumni page? Email us your updated photo and profile information.</a></p>
                         <% end_if %>
             </section>
             <section class="sec-content">
