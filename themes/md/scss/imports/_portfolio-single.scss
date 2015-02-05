@@ -199,24 +199,27 @@ $portfolio-single-width: 1400px;
 
 	 }
 
-	 .post-navigation{
-	 	text-align: center;
-	 	font-size: 1.2em;
-	 	padding-bottom: $column-gutter;
-	 	a{
-	 		color: #333;
-	 		background: #f4f4f4;
-	 		padding: 2em;
-	 		margin-bottom: 0;
-		 	&:hover{
-		 		background: #eee;
-		 	}
-	 	}
-
-
-	 }
-
 }
+
+ .post-navigation{
+ 	text-align: center;
+ 	font-size: 1.2em;
+ 	padding-bottom: $column-gutter;
+ 	.button-group{
+ 		line-height: $column-gutter/2;
+ 	}
+ 	a{
+ 		color: #333;
+ 		background: #f4f4f4;
+ 		padding: 2em;
+ 		margin-bottom: 0;
+	 	&:hover,&:focus{
+	 		background: #eee;
+	 		color: #666;
+	 	}
+ 	}
+
+ }
 
 .main-content{
 	.tag-nav{

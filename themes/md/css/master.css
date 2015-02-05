@@ -265,8 +265,8 @@ select {
 }
 .row .row {
   width: auto;
-  margin-left: -0.3125rem;
-  margin-right: -0.3125rem;
+  margin-left: -10px;
+  margin-right: -10px;
   margin-top: 0;
   margin-bottom: 0;
   max-width: none;
@@ -293,8 +293,8 @@ select {
 
 .column,
 .columns {
-  padding-left: 0.3125rem;
-  padding-right: 0.3125rem;
+  padding-left: 10px;
+  padding-right: 10px;
   width: 100%;
   float: left;
 }
@@ -455,8 +455,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.3125rem;
-    padding-right: 0.3125rem;
+    padding-left: 10px;
+    padding-right: 10px;
     float: left;
   }
 
@@ -604,8 +604,8 @@ select {
   }
   .row.small-uncollapse > .column,
   .row.small-uncollapse > .columns {
-    padding-left: 0.3125rem;
-    padding-right: 0.3125rem;
+    padding-left: 10px;
+    padding-right: 10px;
     float: left;
   }
 }
@@ -757,8 +757,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.3125rem;
-    padding-right: 0.3125rem;
+    padding-left: 10px;
+    padding-right: 10px;
     float: left;
   }
 
@@ -906,8 +906,8 @@ select {
   }
   .row.medium-uncollapse > .column,
   .row.medium-uncollapse > .columns {
-    padding-left: 0.3125rem;
-    padding-right: 0.3125rem;
+    padding-left: 10px;
+    padding-right: 10px;
     float: left;
   }
 
@@ -1203,8 +1203,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.3125rem;
-    padding-right: 0.3125rem;
+    padding-left: 10px;
+    padding-right: 10px;
     float: left;
   }
 
@@ -1352,8 +1352,8 @@ select {
   }
   .row.large-uncollapse > .column,
   .row.large-uncollapse > .columns {
-    padding-left: 0.3125rem;
-    padding-right: 0.3125rem;
+    padding-left: 10px;
+    padding-right: 10px;
     float: left;
   }
 
@@ -7568,6 +7568,17 @@ aside .mod a {
   width: 32px;
 }
 
+.topics {
+  background: #f4f4f4;
+}
+
+.topics.active-tags {
+  padding: auto 20px;
+}
+.topics.active-tags .row {
+  max-width: 1420px;
+}
+
 /* -------------------------------------------------------
 NAVIGATION OVERRIDES
 ---------------------------------------------------------- */
@@ -7666,15 +7677,14 @@ NAVIGATION OVERRIDES
   display: inline;
 }
 
-.portfolio-holder-container {
-  background: #f4f4f4;
+.portfolio-holder-container.row {
+  max-width: 1400px;
 }
 
 .portfolio-holder-content {
   border-right: none;
-  max-width: 1400px;
   margin: auto;
-  padding: 1.25rem;
+  padding: 20px 10px;
 }
 .portfolio-holder-content h2 a {
   color: #333;
@@ -7854,7 +7864,7 @@ NAVIGATION OVERRIDES
 }
 .portfolio-post-content .portfolio-image-list img {
   width: 100%;
-  padding-bottom: 0.625rem;
+  padding-bottom: 20px;
 }
 .portfolio-post-content .portfolio-image-list.main-image {
   padding-top: 0;
@@ -7862,19 +7872,24 @@ NAVIGATION OVERRIDES
 .portfolio-post-content .portfolio-image-list.main-image img {
   padding-bottom: 0;
 }
-.portfolio-post-content .post-navigation {
+
+.post-navigation {
   text-align: center;
   font-size: 1.2em;
-  padding-bottom: 0.625rem;
+  padding-bottom: 20px;
 }
-.portfolio-post-content .post-navigation a {
+.post-navigation .button-group {
+  line-height: 10px;
+}
+.post-navigation a {
   color: #333;
   background: #f4f4f4;
   padding: 2em;
   margin-bottom: 0;
 }
-.portfolio-post-content .post-navigation a:hover {
+.post-navigation a:hover, .post-navigation a:focus {
   background: #eee;
+  color: #666;
 }
 
 .main-content .tag-nav {

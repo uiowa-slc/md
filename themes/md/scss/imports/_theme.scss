@@ -55,6 +55,18 @@
  	}
 
  }
+
+.topics{
+	background: #f4f4f4;
+}
+
+.topics.active-tags{
+	padding: auto $column-gutter;
+	.row{
+		max-width: $portfolio-width+$column-gutter;
+	}
+}
+
 /* -------------------------------------------------------
 NAVIGATION OVERRIDES
 ---------------------------------------------------------- */

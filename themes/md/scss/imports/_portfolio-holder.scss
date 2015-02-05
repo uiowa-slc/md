@@ -101,14 +101,13 @@
 
  }
 
-.portfolio-holder-container{
-	background: #f4f4f4;
+.portfolio-holder-container.row{
+	max-width: $portfolio-width;
 }
 .portfolio-holder-content {
      border-right: none;
-	 max-width: 1400px;
 	 margin: auto;
-	 padding: rem-calc(20);
+	 padding: $column-gutter $column-gutter/2;
 
 	 h2{
 

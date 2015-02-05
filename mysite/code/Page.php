@@ -1,43 +1,33 @@
 <?php
 class Page extends SiteTree {
 
-	private static $db = array(
-		
-	);
+	private static $db = array();
 
-	private static $has_one = array(
-	);
+	private static $has_one = array();
 
+	private static $many_many = array();
 
-	private static $many_many = array (
-	);
+	private static $many_many_extraFields = array();
 
-    private static $many_many_extraFields=array(
-      );
+	private static $plural_name = "Pages";
 
-    private static $plural_name = "Pages";
+	private static $defaults = array();
 
-	private static $defaults = array ();
-
-
-	public function getCMSFields(){
+	public function getCMSFields() {
 		$f = parent::getCMSFields();
-		
+
 		return $f;
 	}
 
-	public function ValidateUrl($url){
-		if(empty($url)){
+	public function ValidateUrl($url) {
+		if (empty($url)) {
 			return $url;
-		}
-		else if (!preg_match("~^(?:f|ht)tps?://~i", $url)){
+		} else if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
 			$url = "http://" . $url;
 		}
-	
+
 		return $url;
 	}
-
-	
 }
 class Page_Controller extends ContentController {
 
@@ -56,8 +46,7 @@ class Page_Controller extends ContentController {
 	 *
 	 * @var array
 	 */
-	private static $allowed_actions = array (
-	);
+	private static $allowed_actions = array();
 
 	public function init() {
 		parent::init();
@@ -65,17 +54,35 @@ class Page_Controller extends ContentController {
 		// Note: you should use SS template require tags inside your templates
 		// instead of putting Requirements calls here.  However these are
 		// included so that our older themes still work
+
 	}
 
-	public function ClientTags(){
+	public function ClientTags() {
 		return Client::get();
 	}
 
-	public function MediumTags(){
+	public function MediumTags() {
 		return Medium::get();
 	}
+	public function ActiveMediums() {
+		return $this->ActiveCategories("Medium");
+	}
+	public function ActiveClients() {
+		return $this->ActiveCategories("Client");
+	}
 
-	public function ActiveStaffPages(){
+	public function ActiveCategories($category) {
+		$categories = $category::get();
+		$categoriesArrayList = new ArrayList();
+		foreach ($categories as $category) {
+			if ($category->PortfolioPosts()->First()) {
+				$categoriesArrayList->push($category);
+			}
+		}
+		return $categoriesArrayList;
+	}
+
+	public function ActiveStaffPages() {
 		$staffPages = StaffPage::get();
 
 		$alumniTeam = StaffTeam::get()->filter(array('Name' => 'Alumni'))->First();
@@ -86,9 +93,8 @@ class Page_Controller extends ContentController {
 		return $limitedStaffPages->sort('LastName ASC');
 	}
 
-	public function AlumStaffPages(){
+	public function AlumStaffPages() {
 		$alumniTeam = StaffTeam::get()->filter(array('Name' => 'Alumni'))->First();
 		return $alumniTeam->StaffPages();
 	}
-		
 }

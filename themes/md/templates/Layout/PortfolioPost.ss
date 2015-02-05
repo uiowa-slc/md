@@ -64,11 +64,10 @@
     <div class="portfolio-image-list row">
         <div class="large-12">
              <% loop $GalleryImages %>
-                    <img class="b-lazy" src="{$ThemeDir}/images/placeholder.png" data-src="$SetWidth(1400).URL" alt="$Top.$Title">  
+                    <img class="b-lazy $FirstLast" src="{$ThemeDir}/images/placeholder.png" data-src="$SetWidth(1400).URL" alt="$Top.$Title">  
             <% end_loop %>
         </div>
     </div>
-
     <% include PortfolioPostNavigation %>
-
 </section>
+<% include ActiveTagsSection %>
