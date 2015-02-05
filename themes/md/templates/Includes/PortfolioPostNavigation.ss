@@ -15,13 +15,13 @@
 			<ul class="button-group">
 			<% if $PreviousPage %>
                 <% with $PreviousPage %>
-                    <li><a class="button right" href="$Link">&larr; $Title</a></li>
+                    <li><a class="button right" href="$Link">&larr; $Title.LimitCharacters(30)</a></li>
                 <% end_with %>
             <% end_if %>
             	<li><a class="button left show-for-large-up" href="our-work/">View all entries</a></li>
 			<% if $NextPage %>
                 <% with $NextPage %>
-                    <li><a class="button right" href="$Link">$Title &rarr;</a></li>
+                    <li><a class="button right" href="$Link">$Title.LimitCharacters(30) &rarr;</a></li>
                 <% end_with %>
             <% end_if %>
                 <li><a class="button left hide-for-large-up" href="our-work/">View all entries</a></li>

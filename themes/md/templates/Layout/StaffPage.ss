@@ -16,6 +16,16 @@
                               <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank">View Portfolio</a><% end_if %>
                         </p>
                         <h1>$Title</h1>
+
+                        <% if $Roles %>
+                              <h2>$FirstName's projects</h2>
+                              <ul class="medium-block-grid-2 portfolio-card-list">
+                                    <% loop $Projects %>
+                                          <% include PortfolioPostCardSmall %>
+                                    <% end_loop %>
+                              </ul>
+                        <% end_if %>
+                        
                         <% if $FavoriteProject %>
                               <h2>Favorite M+D project and why?</h2>
                               $FavoriteProject
@@ -84,7 +94,6 @@
                         <%-- Professional Staff --%>
 
                         <% if $inTeam("Professional Staff") %>
-
                               <% if $PositionTitle %>
                                     <h2>Position title</h2>
                                     $PositionTitle
@@ -105,16 +114,6 @@
                                     $Background
                               <% end_if %>
 
-                        <% end_if %>
-
-
-                        <% if $Roles %>
-                              <h2>$FirstName's projects</h2>
-                              <ul class="medium-block-grid-2 portfolio-card-list">
-                                    <% loop $Projects %>
-                                          <% include PortfolioPostCard %>
-                                    <% end_loop %>
-                              </ul>
                         <% end_if %>
                         <% if $NewsPosts %>
                               <h2>Posts by $FirstName</h2>
