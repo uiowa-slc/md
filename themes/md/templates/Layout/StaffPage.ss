@@ -111,10 +111,8 @@
                         <% if $Roles %>
                               <h2>$FirstName's projects</h2>
                               <ul class="medium-block-grid-2 portfolio-card-list">
-                                    <% loop $Roles %>
-                                          <% with $PortfolioPost %> 
-                                                <% include PortfolioPostCard %>
-                                          <% end_with %>
+                                    <% loop $Projects %>
+                                          <% include PortfolioPostCard %>
                                     <% end_loop %>
                               </ul>
                         <% end_if %>
