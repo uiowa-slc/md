@@ -72,6 +72,7 @@
  		}
  		.staff-work-list{
  			display: none;
+ 			margin-left: 0;
  			@media #{$large-up}{
  				display: block;
  			}

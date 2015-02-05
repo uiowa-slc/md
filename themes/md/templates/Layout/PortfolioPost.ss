@@ -48,23 +48,23 @@
 
                 <section class="large-5 end columns portfolio-roles">
                 <hr class="hide-for-large-up" />       
-                        <% if $Roles %>
-                            <% loop $Roles %>
-                                <div class="role $FirstLast">
-                                    <h3>$Title</h3>
-                                    <% loop $SortedStaffPages %>
-                                        <a href="$Link">$Title<% if not $Last %>, <% end_if %></a>
-                                    <% end_loop %>
-                                </div>
-                            <% end_loop %>
-                        <% end_if %>             
+                    <% if $Roles %>
+                        <% loop $Roles %>
+                            <div class="role $FirstLast">
+                                <h3>$Title</h3>
+                                <% loop $SortedStaffPages %>
+                                    <a href="$Link">$Title<% if not $Last %>, <% end_if %></a>
+                                <% end_loop %>
+                            </div>
+                        <% end_loop %>
+                    <% end_if %>             
                 </section>
 
     </div>
     <div class="portfolio-image-list row">
         <div class="large-12">
              <% loop $GalleryImages %>
-                    <img class="b-lazy" src="{$ThemeDir}/images/placeholder.png" data-src="$URL" alt="$Top.$Title">  
+                    <img class="b-lazy" src="{$ThemeDir}/images/placeholder.png" data-src="$SetWidth(1400).URL" alt="$Top.$Title">  
             <% end_loop %>
         </div>
     </div>

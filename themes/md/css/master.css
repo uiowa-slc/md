@@ -7648,6 +7648,7 @@ NAVIGATION OVERRIDES
 }
 .portfolio-card-list li .staff-work-list {
   display: none;
+  margin-left: 0;
 }
 @media only screen and (min-width: 64.063em) {
   .portfolio-card-list li .staff-work-list {
@@ -7896,6 +7897,7 @@ NAVIGATION OVERRIDES
   margin: 0;
 }
 .staff-content .staff-work-list li {
+  margin-left: 0;
   padding: 3px 0;
 }
 .staff-content .staff-work-list li a.staff-link {
