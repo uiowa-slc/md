@@ -4,8 +4,8 @@
 	"require": {
 		"php": ">=5.3.2",
 		"md/division-project": "dev-master",
-		"frankmullenger/gallery": "1.1.*@dev"
-
+		"frankmullenger/gallery": "1.1.*@dev",
+        "md/rss-display" : "*"
 	},
 	"config": {
 		"process-timeout": 600	
@@ -31,6 +31,11 @@
         {
             "type": "vcs",
             "url": "https://github.com/StudentLifeMarketingAndDesign/ac-json-events"
+
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/StudentLifeMarketingAndDesign/rss-display"
 
         }
     ]

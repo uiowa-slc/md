@@ -15,6 +15,9 @@ StaffPage:
 StaffHolderPage:
   extensions:
     - StaffHolderPageExtension
+StaffPage_Controller:
+  extensions:
+    - StaffPageControllerExtension
 StaffHolderPage_Controller:
   extensions:
     - StaffHolderPageControllerExtension

@@ -45,7 +45,7 @@ class StaffPageExtension extends DataExtension {
 	public function updateCMSFields(FieldList $fields) {
 
 		$fields->removeByName('Position');
-		$fields->removeByName('EmailAddress');
+		//$fields->removeByName('EmailAddress');
 		$fields->removeByName('Phone');
 		$fields->removeByName('DepartmentName');
 		$fields->removeByName('DepartmentURL');

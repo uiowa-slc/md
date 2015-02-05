@@ -113,17 +113,17 @@
                               <ul class="medium-block-grid-2 portfolio-card-list">
                                     <% loop $Roles %>
                                           <% with $PortfolioPost %> 
-                                          <li>
-                                                <a href="$Link">
-                                                      <img src="$Image.CroppedFocusedImage(800,500).URL" alt="$Title">
-                                                      <div class="portfolio-card-overlay">&nbsp;</div>
-                                                      <div class="portfolio-card-title"><h2>$Title</h2>
-                                                            <p>$Up.Title</p>
-                                                      </div>
-                                                </a>
-                                          </li>
+                                                <% include PortfolioPostCard %>
                                           <% end_with %>
                                     <% end_loop %>
+                              </ul>
+                        <% end_if %>
+                        <% if $NewsPosts %>
+                              <h2>Posts by $FirstName</h2>
+                              <ul class="medium-block-grid-2 portfolio-card-list">
+                              <% loop $NewsPosts %>
+                                    <% include PortfolioPostBlogCard %>
+                              <% end_loop %>
                               </ul>
                         <% end_if %>
                         <% if $isAlum %>
