@@ -7,10 +7,9 @@
               <h1>$SelectedTag.ClassName: $SelectedTag.Title</h1>
         <% end_if %>
        <ul class="medium-block-grid-2 portfolio-card-list">
-              <% loop PortfolioPosts %>
-                    <% include PortfolioPostCard %>
-              <% end_loop %>
-
+            <% loop PortfolioPosts %>
+                  <% include PortfolioPostCard %>
+            <% end_loop %>
         </ul>
   </section>
 </div>
