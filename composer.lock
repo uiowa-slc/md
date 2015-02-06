@@ -285,12 +285,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/division-project.git",
-                "reference": "ca05c03cfef80a8cc0dbaa6e73397846d12dd7dc"
+                "reference": "d85894f272431260bfaaf3bc4fda5a23b1095a1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/ca05c03cfef80a8cc0dbaa6e73397846d12dd7dc",
-                "reference": "ca05c03cfef80a8cc0dbaa6e73397846d12dd7dc",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/d85894f272431260bfaaf3bc4fda5a23b1095a1f",
+                "reference": "d85894f272431260bfaaf3bc4fda5a23b1095a1f",
                 "shasum": ""
             },
             "require": {
@@ -329,7 +329,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/division-project/tree/async-optimizations",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/division-project/issues"
             },
-            "time": "2015-02-06 06:47:15"
+            "time": "2015-02-06 08:03:17"
         },
         {
             "name": "md/rss-display",
