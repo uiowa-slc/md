@@ -11049,25 +11049,30 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 })(jQuery);
 
 /*!
-  hey, [be]Lazy.js - v1.2.2 - 2014.05.04 
+  hey, [be]Lazy.js - v1.3.1 - 2015.02.01 
   A lazy loading and multi-serving image script
   (c) Bjoern Klinggaard - @bklinggaard - http://dinbror.dk/blazy
 */
-;(function(bLazyJS) {
+;(function(root, blazy) {
 	if (typeof define === 'function' && define.amd) {
-        	// Register bLazy as an AMD module
-        	define(bLazyJS);
+        // AMD. Register bLazy as an anonymous module
+        define(blazy);
+	} else if (typeof exports === 'object') {
+		// Node. Does not work with strict CommonJS, but
+        // only CommonJS-like environments that support module.exports,
+        // like Node. 
+		module.exports = blazy();
 	} else {
-        	// Register bLazy on window
-        	window.Blazy = bLazyJS();
+        // Browser globals. Register bLazy on window
+        root.Blazy = blazy();
 	}
-})(function () {
+})(this, function () {
 	'use strict';
 	
 	//vars
-	var source, options, winWidth, winHeight, images, count, isRetina, destroyed;
+	var source, options, viewport, images, count, isRetina, destroyed;
 	//throttle vars
-	var validateT, saveWinOffsetT;
+	var validateT, saveViewportOffsetT;
 	
 	// constructor
 	function Blazy(settings) {
@@ -11085,26 +11090,30 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 			};
 		}
 		//init vars
-		destroyed 		= true;
-		images 			= [];
+		destroyed 				= true;
+		images 					= [];
+		viewport				= {};
 		//options
-		options 		= settings 		|| {};
-		options.error	 	= options.error 	|| false;
-		options.offset		= options.offset 	|| 100;
-		options.success		= options.success 	|| false;
-	  	options.selector 	= options.selector 	|| '.b-lazy';
-		options.separator 	= options.separator 	|| '|';
-		options.container	= options.container 	?  document.querySelectorAll(options.container) : false;
-		options.errorClass 	= options.errorClass 	|| 'b-error';
-		options.breakpoints	= options.breakpoints	|| false;
+		options 				= settings 				|| {};
+		options.error	 		= options.error 		|| false;
+		options.offset			= options.offset 		|| 100;
+		options.success			= options.success 		|| false;
+	  	options.selector 		= options.selector 		|| '.b-lazy';
+		options.separator 		= options.separator 	|| '|';
+		options.container		= options.container 	?  document.querySelectorAll(options.container) : false;
+		options.errorClass 		= options.errorClass 	|| 'b-error';
+		options.breakpoints		= options.breakpoints	|| false;
 		options.successClass 	= options.successClass 	|| 'b-loaded';
-		options.src = source 	= options.src		|| 'data-src';
-		isRetina		= window.devicePixelRatio > 1;
+		options.src = source 	= options.src			|| 'data-src';
+		isRetina				= window.devicePixelRatio > 1;
+		viewport.top 			= 0 - options.offset;
+		viewport.left 			= 0 - options.offset;
 		//throttle, ensures that we don't call the functions too often
-		validateT		= throttle(validate, 25); 
-		saveWinOffsetT		= throttle(saveWinOffset, 50);
+		validateT				= throttle(validate, 25); 
+		saveViewportOffsetT			= throttle(saveViewportOffset, 50);
 
-		saveWinOffset();		
+		saveViewportOffset();	
+				
 		//handle multi-served image src
 		each(options.breakpoints, function(object){
 			if(object.width >= window.screen.width) {
@@ -11122,8 +11131,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 	Blazy.prototype.revalidate = function() {
  		initialize();
    	};
-	Blazy.prototype.load = function(element){
-		if(!isElementLoaded(element)) loadImage(element);
+	Blazy.prototype.load = function(element, force){
+		if(!isElementLoaded(element)) loadImage(element, force);
 	};
 	Blazy.prototype.destroy = function(){
 		if(options.container){
@@ -11133,7 +11142,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 		}
 		unbindEvent(window, 'scroll', validateT);
 		unbindEvent(window, 'resize', validateT);
-		unbindEvent(window, 'resize', saveWinOffsetT);
+		unbindEvent(window, 'resize', saveViewportOffsetT);
 		count = 0;
 		images.length = 0;
 		destroyed = true;
@@ -11152,7 +11161,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 	 				bindEvent(object, 'scroll', validateT);
 	 			});
 	 		}
-			bindEvent(window, 'resize', saveWinOffsetT);
+			bindEvent(window, 'resize', saveViewportOffsetT);
 			bindEvent(window, 'resize', validateT);
 	 		bindEvent(window, 'scroll', validateT);
 		}
@@ -11175,9 +11184,9 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 		}
 	}
 	
-	function loadImage(ele){
+	function loadImage(ele, force){
 		// if element is visible
-		if(ele.offsetWidth > 0 && ele.offsetHeight > 0) {
+		if(force || (ele.offsetWidth > 0 && ele.offsetHeight > 0)) {
 			var dataSrc = ele.getAttribute(source) || ele.getAttribute(options.src); // fallback to default data-src
 			if(dataSrc) {
 				var dataSrcSplitted = dataSrc.split(options.separator);
@@ -11208,21 +11217,14 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 			
 	function elementInView(ele) {
 		var rect = ele.getBoundingClientRect();
-		var bottomline = winHeight + options.offset;
 		
-	    return (
-		 // inside horizontal view
-		 rect.left >= 0
-		 && rect.right <= winWidth + options.offset	 
-		 && (
-		 // from top to bottom
-		 rect.top  >= 0
-		 && rect.top  <= bottomline
-		 // from bottom to top
-		 || rect.bottom <= bottomline
-	 	 	&& rect.bottom >= 0 - options.offset
-			)
-		);
+		return (
+			// Intersection
+			rect.right >= viewport.left
+			&& rect.bottom >= viewport.top
+			&& rect.left <= viewport.right
+			&& rect.top <= viewport.bottom
+		 );
 	 }
 	 
 	 function isElementLoaded(ele) {
@@ -11236,9 +11238,9 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
  		for(var i = count; i--; images.unshift(nodelist[i])){}
 	 }
 	 
-	 function saveWinOffset(){
-		 winHeight = window.innerHeight || document.documentElement.clientHeight;
-		 winWidth = window.innerWidth || document.documentElement.clientWidth;
+	 function saveViewportOffset(){
+		 viewport.bottom = (window.innerHeight || document.documentElement.clientHeight) + options.offset;
+		 viewport.right = (window.innerWidth || document.documentElement.clientWidth) + options.offset;
 	 }
 	 
 	 function bindEvent(ele, type, fn) {
@@ -11309,66 +11311,60 @@ $(document).ready(function() {
     });
 
 });
-$(window).load(function() {
-	// add js class to body if javascript enabled
-    //$('body').addClass('js');
 
-	// Flexslider
-	// $('.flexslider').flexslider({
-	// 	slideshow: false
-	// });
-	
-	if ($('.flexslider').length){
+if ($('.flexslider').length){
 
-		$('.flexslider').show();
+	$('.flexslider').show();
 
-		 //Flexslider
-		$('.flexslider').flexslider({
-			animation: "slide",
-			animationLoop: true,
-			itemMargin: 0,
-			minItems: 1,
-			maxItems: 1,
-			itemWidth: 500,
-		});
-	}
+	 //Flexslider
+	$('.flexslider').flexslider({
+		animation: "slide",
+		animationLoop: true,
+		itemMargin: 0,
+		minItems: 1,
+		maxItems: 1,
+		itemWidth: 500,
+	});
+}
 
-	$('.nav-title a').click(function() {
-		$('.nav-main-wrapper').toggleClass('expand');
-		return false;
-	})
+$('.nav-title a').click(function() {
+	$('.nav-main-wrapper').toggleClass('expand');
+	return false;
+})
 
-	/* FitVids */
-	$(".module .media").fitVids();
-	$(".hero-content").fitVids();
-});
-   
+/* FitVids */
+$(".module .media").fitVids();
+$(".hero-content").fitVids();
+
 //app.js
-
 $(".portfolio-post-details").hide();
-
-$(".staff-work-list.single li img, .portfolio-post-heading h1").click(function(event){
-	event.preventDefault();
-
-	$(".portfolio-post-details").slideToggle();
-
-	$("#details-toggle, .portfolio-post-heading").toggleClass("active")
-
-	/*if ($("#details-toggle").html() == "Details +") {
+$(".staff-work-list.single li img, .portfolio-post-heading h1").click(function(event) {
+    event.preventDefault();
+    $(".portfolio-post-details").slideToggle();
+    $("#details-toggle, .portfolio-post-heading").toggleClass("active")
+    /*if ($("#details-toggle").html() == "Details +") {
 		$("#details-toggle").html("Details -");
 	} else {
 		$("#details-toggle").html("Details +");
 	}*/
-	
-	//console.log(this);
+    //console.log(this);
 });
-
-
 $(".staff-work-list li img").each(function(index) {
-   // $(this).delay((index++) * 100).fadeTo(1000, 1); 
+    // $(this).delay((index++) * 100).fadeTo(1000, 1); 
 });
 
-;(function() {
-    // Initialize
-    var bLazy = new Blazy();
-})();
+    var bLazy = new Blazy({
+        breakpoints: [{
+            width: 420 // max-width
+            ,
+            src: 'data-src-small'
+        }, {
+            width: 768 // max-width
+            ,
+            src: 'data-src-medium'
+        }, {
+            width: 1400 // max-width
+            ,
+            src: 'data-src-large'
+        }]
+    });

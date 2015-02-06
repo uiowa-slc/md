@@ -3,7 +3,7 @@
 
     <div class="portfolio-image-list main-image row">
         <div class="large-12">
-            <% if $Image %><img src="$Image.URL" alt="Cover photograph for $Title"><% end_if %>
+            <% if $Image %><img class="b-lazy $FirstLast" src="{$ThemeDir}/images/placeholder.png" data-src-small="$Image.SetWidth(420).URL" data-src-medium="$Image.SetWidth(768).URL" data-src-large="$Image.SetWidth(1400).URL" alt="Cover photograph for $Title"><% end_if %>
         </div>
     </div>
     <div class="portfolio-post-heading row">
@@ -64,7 +64,7 @@
     <div class="portfolio-image-list row">
         <div class="large-12">
              <% loop $GalleryImages %>
-                    <img class="b-lazy $FirstLast" src="{$ThemeDir}/images/placeholder.png" data-src="$SetWidth(1400).URL" alt="$Top.$Title">  
+                    <img class="b-lazy $FirstLast" src="{$ThemeDir}/images/placeholder.png" data-src-small="$SetWidth(420).URL" data-src-medium="$SetWidth(768).URL" data-src-large="$SetWidth(1400).URL" alt="$Top.$Title">  
             <% end_loop %>
         </div>
     </div>
