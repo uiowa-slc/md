@@ -11337,6 +11337,22 @@ $(".module .media").fitVids();
 $(".hero-content").fitVids();
 
 //app.js
+
+    var bLazy = new Blazy({
+        breakpoints: [{
+            width: 420 // max-width
+            ,
+            src: 'data-src-small'
+        }, {
+            width: 768 // max-width
+            ,
+            src: 'data-src-medium'
+        }
+       ]
+    });
+
+
+
 $(".portfolio-post-details").hide();
 $(".staff-work-list.single li img, .portfolio-post-heading h1").click(function(event) {
     event.preventDefault();
@@ -11352,19 +11368,3 @@ $(".staff-work-list.single li img, .portfolio-post-heading h1").click(function(e
 $(".staff-work-list li img").each(function(index) {
     // $(this).delay((index++) * 100).fadeTo(1000, 1); 
 });
-
-    var bLazy = new Blazy({
-        breakpoints: [{
-            width: 420 // max-width
-            ,
-            src: 'data-src-small'
-        }, {
-            width: 768 // max-width
-            ,
-            src: 'data-src-medium'
-        }, {
-            width: 1400 // max-width
-            ,
-            src: 'data-src-large'
-        }]
-    });

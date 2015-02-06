@@ -9,7 +9,11 @@
  		&.blog-card{
  			img{ width: 100%}
  		}
+ 		img{
+ 			width: 100%;
+ 		}
  		a{
+ 			background: #eee;
  			display: block;
  			position: relative;
  		}
