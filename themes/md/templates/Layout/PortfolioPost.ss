@@ -11,7 +11,7 @@
         <div class="large-12 columns summary"><h1>$Title</h1>     
             <ul class="staff-work-list single">
               <% loop $StaffPages %>
-                <% if $Photo %><li><img src="$Photo.CroppedImage(200,200).URL" alt="Photograph of a project, $Title" /></li><% end_if %>
+                <% if $Photo %><li><img class="b-lazy" data-src="$Photo.CroppedImage(200,200).URL" src="{$ThemeDir}/images/placeholder.png" alt="Photograph of a project, $Title" /></li><% end_if %>
               <% end_loop %>
                 <li><img id="details-toggle" src="{$ThemeDir}/images/details-toggle.gif" alt="More information below." /></li>
             </ul>
