@@ -19,7 +19,7 @@
 
                         <% if $Roles %>
                               <h2>$FirstName's projects</h2>
-                              <ul class="small-block-grid-1 medium-block-grid-2 portfolio-card-list">
+                              <ul class="small-block-grid-1 medium-block-grid-1 large-block-grid-2 portfolio-card-list">
                                     <% loop $Projects %>
                                           <% include PortfolioPostCardSmall %>
                                     <% end_loop %>
