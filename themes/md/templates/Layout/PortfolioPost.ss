@@ -47,7 +47,8 @@
                 </section>
 
                 <section class="large-5 end columns portfolio-roles">
-                <hr class="hide-for-large-up" />       
+                <hr class="hide-for-large-up" />  
+                <% cached %>     
                     <% if $Roles %>
                         <% loop $Roles %>
                             <div class="role $FirstLast">
@@ -57,7 +58,8 @@
                                 <% end_loop %>
                             </div>
                         <% end_loop %>
-                    <% end_if %>             
+                    <% end_if %>  
+                <% end_cached %>           
                 </section>
 
     </div>

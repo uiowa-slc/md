@@ -17,8 +17,7 @@
                         </p>
                         <h1>$Title</h1>
 
-                        <% if $Roles %>
-                              <h2>$FirstName's projects</h2>
+                        <% if $Projects %>
                               <ul class="medium-block-grid-2 portfolio-card-list">
                                     <% loop $Projects %>
                                           <% include PortfolioPostCardSmall %>
@@ -26,6 +25,17 @@
                               </ul>
                         <% end_if %>
                         
+                        <% if $NewsPosts %>
+                              <h2>Posts by $FirstName</h2>
+                              <ul class="medium-block-grid-2 portfolio-card-list">
+                              <% cached %>
+                                    <% loop $NewsPosts %>
+                                          <% include PortfolioPostBlogCard %>
+                                    <% end_loop %>
+                              <% end_cached %>
+                              </ul>
+                        <% end_if %>
+
                         <% if $FavoriteProject %>
                               <h2>Favorite M+D project and why?</h2>
                               $FavoriteProject
@@ -115,14 +125,7 @@
                               <% end_if %>
 
                         <% end_if %>
-                        <% if $NewsPosts %>
-                              <h2>Posts by $FirstName</h2>
-                              <ul class="medium-block-grid-2 portfolio-card-list">
-                              <% loop $NewsPosts %>
-                                    <% include PortfolioPostBlogCard %>
-                              <% end_loop %>
-                              </ul>
-                        <% end_if %>
+
                         <% if $isAlum %>
                               <hr />
                               <p><a href="mailto:studentlife-marketing@uiowa.edu">Is this your M+D alumni page? Email us your updated photo and profile information.</a></p>

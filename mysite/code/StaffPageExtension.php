@@ -161,14 +161,18 @@ class StaffPageExtension extends DataExtension {
 	public function Projects() {
 		$owner = $this->owner;
 		$roles = $owner->Roles();
-		$projects = new ArrayList();
+		if ($roles->First()) {
 
-		foreach ($roles as $role) {
-			$projects->push($role->PortfolioPost());
+			$projects = new ArrayList();
+			foreach ($roles as $role) {
+				if ($role->PortfolioPost()->exists()) {
+					$projects->push($role->PortfolioPost());
+				}
+			}
+			$projects->removeDuplicates();
+
+			return $projects;
 		}
-		$projects->removeDuplicates();
-
-		return $projects;
 
 	}
 
