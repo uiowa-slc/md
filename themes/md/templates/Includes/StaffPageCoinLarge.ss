@@ -1,7 +1,7 @@
 <li>
       <% if $Photo %>
       <a href="$Link" class="staff-link">
-            <img src="$Photo.CroppedImage(350,350).URL" alt="Image showing $FirstName $LastName" class="staff-img">
+            <img class="b-lazy staff-img" src="{$ThemeDir}/images/staff-coin-placeholder.png" data-src="$Photo.CroppedImage(350,350).URL" alt="Image showing $FirstName $LastName">
       </a>
       <% else %>
       <a href="$Link" class="staff-link">
