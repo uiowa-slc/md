@@ -130,7 +130,17 @@
 
                         <% if $isAlum %>
                               <hr />
-                              <p><a href="mailto:studentlife-marketing@uiowa.edu">Is this your M+D alumni page? Email us your updated photo and profile information.</a></p>
+                              <p><a href="mailto:studentlife-marketing@uiowa.edu">Is this your M+D alumni page? If you'd like to make changes to it, please fill out this form.</a></p>
+                        <% end_if %>
+
+                        <% if $isStudent %>
+                              <hr />
+                              <p><a href="http://goo.gl/forms/fpuIwUA2vO">Is this your M+D staff page? If you'd like to make changes to it, please fill out this form.</a></p>
+                        <% end_if %>
+
+                        <% if $inTeam("Professional Staff") %>
+                               <hr />
+                              <p><a href="http://goo.gl/forms/xNGXYVVfv9">Is this your M+D professional staff page? If you'd like to make changes to it, please fill out this form</a></p>
                         <% end_if %>
             </section>
             <section class="sec-content">
