@@ -131,6 +131,7 @@
                         <% if $isAlum %>
                               <hr />
                               <p><a href="$EditPortfolioLink">Is this your M+D alumni page? If you'd like to make changes to it, please fill out this form.</a></p>
+
                         <% end_if %>
 
                         <% if $isStudent %>
