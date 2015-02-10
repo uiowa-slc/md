@@ -130,7 +130,7 @@
 
                         <% if $isAlum %>
                               <hr />
-                              <p><a href="mailto:studentlife-marketing@uiowa.edu">Is this your M+D alumni page? If you'd like to make changes to it, please fill out this form.</a></p>
+                              <p><a href="http://goo.gl/forms/59Fzmw6oHv">Is this your M+D alumni page? If you'd like to make changes to it, please fill out this form.</a></p>
                         <% end_if %>
 
                         <% if $isStudent %>
