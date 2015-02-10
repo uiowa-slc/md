@@ -45,6 +45,7 @@
 @import "foundation/components/visibility";
 
 
+
 @import "../../../division-project/scss/imports/_xlarge-block-grid.scss";
 
 
@@ -88,8 +89,10 @@
 @import "../../../division-project/scss/imports/_print.scss";
 
 /* Theme specific styles */
+
 @import "imports/_theme.scss";
 @import "imports/_portfolio-holder.scss";
 @import "imports/_portfolio-single.scss";
 @import "imports/_staff-holder.scss";
 @import "imports/_staff-single.scss";
+@import "imports/icons";

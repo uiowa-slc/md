@@ -16,7 +16,7 @@
 
 
 $(".portfolio-post-details").hide();
-$(".staff-work-list.single li img, .portfolio-post-heading h1").click(function(event) {
+$(".portfolio-post-heading .staff-work-list, h1.internal").click(function(event) {
     event.preventDefault();
     $(".portfolio-post-details").slideToggle();
     $("#details-toggle, .portfolio-post-heading").toggleClass("active")

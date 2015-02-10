@@ -8,7 +8,10 @@
         </div>
     </div>
     <div class="portfolio-post-heading row">
-        <div class="large-12 columns summary"><h1>$Title</h1>     
+        <div class="large-12 columns summary">
+            <% if $SiteLink %><h1><a class="external" target="_blank" href="$SiteLink">$Title</a></h1>
+            <% else %><h1 class="internal">$Title</h1>
+            <% end_if %>
             <ul class="staff-work-list single">
               <% loop $StaffPages %>
                 <% if $Photo %><li><img class="b-lazy" data-src="$Photo.CroppedImage(200,200).URL" src="{$ThemeDir}/images/placeholder.png" alt="Photograph of a project, $Title" /></li><% end_if %>
