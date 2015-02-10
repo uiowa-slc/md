@@ -16,12 +16,14 @@
                               <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank">View Portfolio</a><% end_if %>
                         </p>
                         <h1>$Title</h1>
-
                         <% if $Projects %>
+                              <h2>$FirstName's projects</h2>
                               <ul class="medium-block-grid-2 portfolio-card-list">
+                                    <% cached %>
                                     <% loop $Projects %>
                                           <% include PortfolioPostCardSmall %>
                                     <% end_loop %>
+                                    <% end_cached %>
                               </ul>
                         <% end_if %>
                         

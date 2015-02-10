@@ -1,7 +1,10 @@
 
  .portfolio-card-list{
 
+ 	img.portfolio-cover-image{
+ 		width: 100%;
 
+ 	}
  	li{
  		min-height: 200px;
  		overflow: hidden;
@@ -9,7 +12,9 @@
  		&.blog-card{
  			img{ width: 100%}
  		}
+
  		a{
+ 			background: #eee;
  			display: block;
  			position: relative;
  		}
