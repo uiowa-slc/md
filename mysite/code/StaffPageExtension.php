@@ -46,7 +46,7 @@ class StaffPageExtension extends DataExtension {
 	}
 
 	public function updateCMSFields(FieldList $fields) {
-
+		$owner = $this->owner;
 		$fields->removeByName('Position');
 		//$fields->removeByName('EmailAddress');
 		$fields->removeByName('Phone');
@@ -263,13 +263,24 @@ class StaffPageExtension extends DataExtension {
 			}else{
 				return false;
 			}
-			$url = $urlPrefix.$parameters;
-			$token = 'b2a3b311297c42593d13945fbc29543924ebb29e';
-			
-			$shorten = bitly_v3_shorten($url, $token);
+			//print_r(urldecode('https%253A%252F%252Fdocs.google.com%252Fforms'));
+			//print_r(get_defined_constants() );
+			if(defined('BITLY_OAUTH')){
 
-			if(isset($shorten['url'])){
-				return $shorten['url'];
+				$url = $urlPrefix.$parameters;
+				$token = BITLY_OAUTH;
+				
+				$shorten = bitly_v3_shorten($url, $token);
+
+				//print_r($shorten);
+
+				if(isset($shorten['url'])){
+					return $shorten['url'];
+				}else{
+					return $urlPrefix;
+				}
+			}else{
+				return $urlPrefix;
 			}
 
 	}

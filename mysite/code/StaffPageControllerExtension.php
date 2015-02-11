@@ -11,18 +11,4 @@ class StaffPageControllerExtension extends Extension {
 	);
 
 
-	public function NewsPosts(){
-		$owner = $this->owner;
-		$memberId = $owner->EmailAddress;
-
-
-		if(isset($memberId)){
-			$url = 'http://studentlife.uiowa.edu/news/rss?member='.$memberId;
-			return $owner->RSSDisplay(20, $url);
-		}else{
-			return false;
-		}
-		
-	}
-
 }

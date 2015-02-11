@@ -13,22 +13,22 @@
 /**
  * The bitlyKey assigned to your bit.ly account. (http://bit.ly/a/account)
  */
-define('bitlyKey', 'R_2cc2f326c5a646babe83c6920cc9d89b');
+define('bitlyKey', '');
 
 /**
  * The bitlyLogin assigned to your bit.ly account. (http://bit.ly/a/account)
  */
-define('bitlyLogin' , 'o_372b1g6pdv');
+define('bitlyLogin' , '');
 
 /**
  * The client_id assigned to your OAuth app. (http://bit.ly/a/account)
  */
-define('bitly_clientid' , '2f4b1eb5beb9b615ac70b16e34daf4bc6b899112');
+define('bitly_clientid' , '');
 
 /**
  * The client_secret assigned to your OAuth app. (http://bit.ly/a/account)
  */
-define('bitly_secret' , 'b2a3b311297c42593d13945fbc29543924ebb29e');
+define('bitly_secret' , '');
 
 /**
  * The URI of the standard bitly v3 API.
