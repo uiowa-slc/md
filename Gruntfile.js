@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         },                  // Target
         options: {              // Target options
           style: 'compressed',
-          loadPath: ['division-project/scss', 'division-project/bower_components/foundation/scss/']
+          loadPath: ['division-project/scss', 'division-project/bower_components/foundation/scss/', 'division-bar/scss/']
         }
       }
     },
@@ -28,14 +28,7 @@ module.exports = function(grunt) {
 
     concat: {
       js:{
-        src: ['division-project/bower_components/jquery/jquery.js',
-          'division-project/bower_components/jquery.equalheights/jquery.equalheights.js',
-          'division-project/bower_components/fitvids/jquery.fitvids.js',
-          'division-project/bower_components/flexslider/jquery.flexslider.js',
-          'division-project/bower_components/blazy/blazy.js',
-          'division-bar/js/division-bar.js',
-          'division-project/js/*.js',
-          '<%=globalConfig.themeDir %>/vendor/visible/jquery.visible.js',
+        src: ['division-project/build/build.src.js',
           '<%=globalConfig.themeDir %>/js/*.js' ],
         dest: '<%=globalConfig.themeDir %>/build/build.src.js'
       }
