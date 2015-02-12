@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+=======
+html, body{ height: 100%; }
+*{ box-sizing: border-box; }
+html, body{ font-size: 15px; }
+body{ background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 255); color: rgb(34, 34, 34); padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; line-height: 1.5; position: relative; cursor: auto; background-position: initial initial; background-repeat: initial initial; }
+img{ max-width: 100%; height: auto; }
+img{ }
+.clearfix::before, .clearfix::after{ content: ' '; display: table; }
+.clearfix::after{ clear: both; }
+img{ display: inline-block; vertical-align: middle; }
+@media print{
+*{ background-image: initial !important; background-attachment: initial !important; background-origin: initial !important; background-clip: initial !important; background-color: transparent !important; color: rgb(0, 0, 0) !important; box-shadow: none !important; text-shadow: none !important; background-position: initial initial !important; background-repeat: initial initial !important; }
+a{ text-decoration: underline; }
+a[href]::after{ content: ' (', attr(href), ')'; }
+ img{ page-break-inside: avoid; }
+img{ max-width: 100% !important; }
+p, h2, h3{ orphans: 3; widows: 3; }
+h2, h3{ page-break-after: avoid; }
+}
+>>>>>>> ss-3.2
  header, nav, section{ display: block; }
 html{ background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); font-family: sans-serif; background-position: initial initial; background-repeat: initial initial; }
 body{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; }
@@ -27,6 +48,7 @@ img{ display: inline-block; vertical-align: middle; }
 .clearfix::before, .clearfix::after{ content: ' '; display: table; }
 .clearfix::after{ clear: both; }
 .clearfix{ }
+<<<<<<< HEAD
 .division-topbar input[type="submit"]{ -webkit-appearance: button; cursor: pointer; }
 .division-topbar input[type="search"]{ -webkit-appearance: textfield; box-sizing: border-box; }
 .division-topbar *{ box-sizing: border-box; }
@@ -98,6 +120,8 @@ img{ display: inline-block; vertical-align: middle; }
 .dosl, .adr{ float: none; width: auto; }
 .dosl{ display: block; padding-bottom: 0px; }
 }
+=======
+>>>>>>> ss-3.2
 [class^="icon-"]::before{ font-family: search; font-style: normal; font-weight: normal; speak: none; display: inline-block; text-decoration: inherit; width: 1em; margin-right: 0.2em; text-align: center; font-variant: normal; text-transform: none; line-height: 1em; margin-left: 0.2em; }
 .icon-facebook::before{ content: ; }
 form{ margin-top: 1em; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; }

@@ -30,7 +30,7 @@
                         <% if $NewsPosts %>
                               <h2>Posts by $FirstName</h2>
                               <ul class="medium-block-grid-2 portfolio-card-list">
-                              <% cached %>
+                              <% cached 'staff-posts', ID %>
                                     <% loop $NewsPosts %>
                                           <% include PortfolioPostBlogCard %>
                                     <% end_loop %>

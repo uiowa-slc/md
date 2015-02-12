@@ -52,7 +52,7 @@
 
                 <section class="large-5 end columns portfolio-roles">
                 <hr class="hide-for-large-up" />  
-                <% cached %>     
+                <% cached 'portfolio-post-roles', ID %>     
                     <% if $Roles %>
                         <% loop $Roles %>
                             <div class="role $FirstLast">
