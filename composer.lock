@@ -253,12 +253,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/division-bar.git",
-                "reference": "42d357932308e39e53ec5c39e7a97a3db3025e51"
+                "reference": "ac90553b89756e0d45a4ba172d6dfc7a551937b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-bar/zipball/42d357932308e39e53ec5c39e7a97a3db3025e51",
-                "reference": "42d357932308e39e53ec5c39e7a97a3db3025e51",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-bar/zipball/ac90553b89756e0d45a4ba172d6dfc7a551937b0",
+                "reference": "ac90553b89756e0d45a4ba172d6dfc7a551937b0",
                 "shasum": ""
             },
             "require": {
@@ -277,7 +277,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/division-bar/tree/master",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/division-bar/issues"
             },
-            "time": "2015-02-10 15:43:23"
+            "time": "2015-02-12 16:29:47"
         },
         {
             "name": "md/division-project",
@@ -285,12 +285,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/division-project.git",
-                "reference": "7a3c3a40b7301670d911b63d94928556c824a961"
+                "reference": "b268e9c6bfb9ffd3977d258312230394604ef173"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/7a3c3a40b7301670d911b63d94928556c824a961",
-                "reference": "7a3c3a40b7301670d911b63d94928556c824a961",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/b268e9c6bfb9ffd3977d258312230394604ef173",
+                "reference": "b268e9c6bfb9ffd3977d258312230394604ef173",
                 "shasum": ""
             },
             "require": {
@@ -305,7 +305,7 @@
                 "silverstripe-themes/simple": "*",
                 "silverstripe/blog": "*",
                 "silverstripe/cms": "3.1.9",
-                "silverstripe/framework": "3.1.9",
+                "silverstripe/framework": "*",
                 "silverstripe/googlesitemaps": "*",
                 "silverstripe/installer": "*",
                 "silverstripe/mathspamprotection": "*",
@@ -329,7 +329,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/division-project/tree/async-optimizations",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/division-project/issues"
             },
-            "time": "2015-02-11 03:04:10"
+            "time": "2015-02-12 20:13:00"
         },
         {
             "name": "md/rss-display",
@@ -1049,12 +1049,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/UndefinedOffset/SortableGridField.git",
-                "reference": "9d60a5834323a00af49960b3eb3d080fa8878122"
+                "reference": "3e9b1b6e2e1111f636ca5b641135394538d75e57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UndefinedOffset/SortableGridField/zipball/9d60a5834323a00af49960b3eb3d080fa8878122",
-                "reference": "9d60a5834323a00af49960b3eb3d080fa8878122",
+                "url": "https://api.github.com/repos/UndefinedOffset/SortableGridField/zipball/3e9b1b6e2e1111f636ca5b641135394538d75e57",
+                "reference": "3e9b1b6e2e1111f636ca5b641135394538d75e57",
                 "shasum": ""
             },
             "require": {
@@ -1081,7 +1081,7 @@
                 "gridfield",
                 "silverstripe"
             ],
-            "time": "2015-01-17 16:46:20"
+            "time": "2015-02-11 13:29:12"
         }
     ],
     "packages-dev": [],
