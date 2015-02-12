@@ -130,18 +130,18 @@
 
                         <% if $isAlum %>
                               <hr />
-                              <p><a href="$EditPortfolioLink">Is this your M+D alumni page? If you'd like to make changes to it, please fill out this form.</a></p>
+                              <p><a href="$EditPortfolioLink" target="_blank">Is this your M+D alumni page? If you'd like to make changes to it, please fill out this form.</a></p>
 
                         <% end_if %>
 
                         <% if $isStudent %>
                               <hr />
-                              <p><a href="$EditPortfolioLink">Is this your M+D staff page? If you'd like to make changes to it, please fill out this form.</a></p>
+                              <p><a href="$EditPortfolioLink" target="_blank">Is this your M+D staff page? If you'd like to make changes to it, please fill out this form.</a></p>
                         <% end_if %>
 
                         <% if $inTeam("Professional Staff") %>
                                <hr />
-                              <p><a href="$EditPortfolioLink">Is this your M+D professional staff page? If you'd like to make changes to it, please fill out this form.</a></p>
+                              <p><a href="$EditPortfolioLink" target="_blank">Is this your M+D professional staff page? If you'd like to make changes to it, please fill out this form.</a></p>
                         <% end_if %>
             </section>
             <section class="sec-content">
