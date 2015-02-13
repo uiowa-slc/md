@@ -148,4 +148,7 @@ class PortfolioPost_Controller extends BlogEntry_Controller {
 
 		return $page;
 	}
+
+
+
 }

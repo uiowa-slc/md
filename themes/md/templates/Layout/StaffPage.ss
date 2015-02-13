@@ -16,16 +16,28 @@
                               <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank">View Portfolio</a><% end_if %>
                         </p>
                         <h1>$Title</h1>
-
-                        <% if $Roles %>
+                        <% if $Projects %>
                               <h2>$FirstName's projects</h2>
                               <ul class="medium-block-grid-2 portfolio-card-list">
+                                    <% cached %>
                                     <% loop $Projects %>
                                           <% include PortfolioPostCardSmall %>
                                     <% end_loop %>
+                                    <% end_cached %>
                               </ul>
                         <% end_if %>
                         
+                        <% if $NewsPosts %>
+                              <h2>Posts by $FirstName</h2>
+                              <ul class="medium-block-grid-2 portfolio-card-list">
+                              <% cached 'staff-posts', ID %>
+                                    <% loop $NewsPosts %>
+                                          <% include PortfolioPostBlogCard %>
+                                    <% end_loop %>
+                              <% end_cached %>
+                              </ul>
+                        <% end_if %>
+
                         <% if $FavoriteProject %>
                               <h2>Favorite M+D project and why?</h2>
                               $FavoriteProject
@@ -115,17 +127,21 @@
                               <% end_if %>
 
                         <% end_if %>
-                        <% if $NewsPosts %>
-                              <h2>Posts by $FirstName</h2>
-                              <ul class="medium-block-grid-2 portfolio-card-list">
-                              <% loop $NewsPosts %>
-                                    <% include PortfolioPostBlogCard %>
-                              <% end_loop %>
-                              </ul>
-                        <% end_if %>
+
                         <% if $isAlum %>
                               <hr />
-                              <p><a href="mailto:studentlife-marketing@uiowa.edu">Is this your M+D alumni page? Email us your updated photo and profile information.</a></p>
+                              <p><a href="$EditPortfolioLink" target="_blank">Is this your M+D alumni page? If you'd like to make changes to it, please fill out this form.</a></p>
+
+                        <% end_if %>
+
+                        <% if $isStudent %>
+                              <hr />
+                              <p><a href="$EditPortfolioLink" target="_blank">Is this your M+D staff page? If you'd like to make changes to it, please fill out this form.</a></p>
+                        <% end_if %>
+
+                        <% if $inTeam("Professional Staff") %>
+                               <hr />
+                              <p><a href="$EditPortfolioLink" target="_blank">Is this your M+D professional staff page? If you'd like to make changes to it, please fill out this form.</a></p>
                         <% end_if %>
             </section>
             <section class="sec-content">

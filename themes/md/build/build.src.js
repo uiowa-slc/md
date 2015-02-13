@@ -11281,6 +11281,50 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 	 return Blazy;
 });
 
+/*!
+loadCSS: load a CSS file asynchronously.
+[c]2014 @scottjehl, Filament Group, Inc.
+Licensed MIT
+*/
+function loadCSS( href, before, media, callback ){
+	"use strict";
+	// Arguments explained:
+	// `href` is the URL for your CSS file.
+	// `before` optionally defines the element we'll use as a reference for injecting our <link>
+	// By default, `before` uses the first <script> element in the page.
+	// However, since the order in which stylesheets are referenced matters, you might need a more specific location in your document.
+	// If so, pass a different reference element to the `before` argument and it'll insert before that instead
+	// note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+	var ss = window.document.createElement( "link" );
+	var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+	var sheets = window.document.styleSheets;
+	ss.rel = "stylesheet";
+	ss.href = href;
+	// temporarily, set media to something non-matching to ensure it'll fetch without blocking render
+	ss.media = "only x";
+	ss.onload = callback || function() {};
+	// inject link
+	ref.parentNode.insertBefore( ss, ref );
+	// This function sets the link's media back to `all` so that the stylesheet applies once it loads
+	// It is designed to poll until document.styleSheets includes the new sheet.
+	function toggleMedia(){
+		var defined;
+		for( var i = 0; i < sheets.length; i++ ){
+			if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){
+				defined = true;
+			}
+		}
+		if( defined ){
+			ss.media = media || "all";
+		}
+		else {
+			setTimeout( toggleMedia );
+		}
+	}
+	toggleMedia();
+	return ss;
+}
+
 $(document).ready(function() {
 
     // Hide the directory navigation
@@ -11336,101 +11380,35 @@ $('.nav-title a').click(function() {
 $(".module .media").fitVids();
 $(".hero-content").fitVids();
 
-(function($){
-
-    /**
-     * Copyright 2012, Digital Fusion
-     * Licensed under the MIT license.
-     * http://teamdf.com/jquery-plugins/license/
-     *
-     * @author Sam Sehnert
-     * @desc A small plugin that checks whether elements are within
-     *       the user visible viewport of a web browser.
-     *       only accounts for vertical position, not horizontal.
-     */
-    var $w = $(window);
-    $.fn.visible = function(partial,hidden,direction){
-
-        if (this.length < 1)
-            return;
-
-        var $t        = this.length > 1 ? this.eq(0) : this,
-            t         = $t.get(0),
-            vpWidth   = $w.width(),
-            vpHeight  = $w.height(),
-            direction = (direction) ? direction : 'both',
-            clientSize = hidden === true ? t.offsetWidth * t.offsetHeight : true;
-
-        if (typeof t.getBoundingClientRect === 'function'){
-
-            // Use this native browser method, if available.
-            var rec = t.getBoundingClientRect(),
-                tViz = rec.top    >= 0 && rec.top    <  vpHeight,
-                bViz = rec.bottom >  0 && rec.bottom <= vpHeight,
-                lViz = rec.left   >= 0 && rec.left   <  vpWidth,
-                rViz = rec.right  >  0 && rec.right  <= vpWidth,
-                vVisible   = partial ? tViz || bViz : tViz && bViz,
-                hVisible   = partial ? lViz || rViz : lViz && rViz;
-
-            if(direction === 'both')
-                return clientSize && vVisible && hVisible;
-            else if(direction === 'vertical')
-                return clientSize && vVisible;
-            else if(direction === 'horizontal')
-                return clientSize && hVisible;
-        } else {
-
-            var viewTop         = $w.scrollTop(),
-                viewBottom      = viewTop + vpHeight,
-                viewLeft        = $w.scrollLeft(),
-                viewRight       = viewLeft + vpWidth,
-                offset          = $t.offset(),
-                _top            = offset.top,
-                _bottom         = _top + $t.height(),
-                _left           = offset.left,
-                _right          = _left + $t.width(),
-                compareTop      = partial === true ? _bottom : _top,
-                compareBottom   = partial === true ? _top : _bottom,
-                compareLeft     = partial === true ? _right : _left,
-                compareRight    = partial === true ? _left : _right;
-
-            if(direction === 'both')
-                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop)) && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
-            else if(direction === 'vertical')
-                return !!clientSize && ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-            else if(direction === 'horizontal')
-                return !!clientSize && ((compareRight <= viewRight) && (compareLeft >= viewLeft));
-        }
-    };
-
-})(jQuery);
-
 //app.js
 
+    var bLazy = new Blazy({
+        breakpoints: [{
+            width: 420 // max-width
+            ,
+            src: 'data-src-small'
+        }, {
+            width: 768 // max-width
+            ,
+            src: 'data-src-medium'
+        }
+       ]
+    });
+
+
+
 $(".portfolio-post-details").hide();
-
-$(".staff-work-list.single li img, .portfolio-post-heading h1").click(function(event){
-	event.preventDefault();
-
-	$(".portfolio-post-details").slideToggle();
-
-	$("#details-toggle, .portfolio-post-heading").toggleClass("active")
-
-	/*if ($("#details-toggle").html() == "Details +") {
+$(".portfolio-post-heading .staff-work-list, h1.internal").click(function(event) {
+    event.preventDefault();
+    $(".portfolio-post-details").slideToggle();
+    $("#details-toggle, .portfolio-post-heading").toggleClass("active")
+    /*if ($("#details-toggle").html() == "Details +") {
 		$("#details-toggle").html("Details -");
 	} else {
 		$("#details-toggle").html("Details +");
 	}*/
-	
-	//console.log(this);
+    //console.log(this);
 });
-
-
 $(".staff-work-list li img").each(function(index) {
-   // $(this).delay((index++) * 100).fadeTo(1000, 1); 
+    // $(this).delay((index++) * 100).fadeTo(1000, 1); 
 });
-
-;(function() {
-    // Initialize
-    var bLazy = new Blazy();
-})();

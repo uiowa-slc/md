@@ -18,9 +18,8 @@ module.exports = function(grunt) {
           '<%=globalConfig.themeDir %>/css/master.css' : '<%=globalConfig.themeDir %>/scss/master.scss'
         },                  // Target
         options: {              // Target options
-          style: 'expanded',
-//          sourcemap: 'auto',
-          loadPath: ['division-project/scss', 'division-project/bower_components/foundation/scss/']
+          style: 'compressed',
+          loadPath: ['division-project/scss', 'division-project/bower_components/foundation/scss/', 'division-bar/scss/']
         }
       }
     },
@@ -29,14 +28,7 @@ module.exports = function(grunt) {
 
     concat: {
       js:{
-        src: ['division-project/bower_components/jquery/jquery.js',
-          'division-project/bower_components/jquery.equalheights/jquery.equalheights.js',
-          'division-project/bower_components/fitvids/jquery.fitvids.js',
-          'division-project/bower_components/flexslider/jquery.flexslider.js',
-          'division-project/bower_components/blazy/blazy.js',
-          'division-bar/js/division-bar.js',
-          'division-project/js/*.js',
-          '<%=globalConfig.themeDir %>/vendor/visible/jquery.visible.js',
+        src: ['division-project/build/build.src.js',
           '<%=globalConfig.themeDir %>/js/*.js' ],
         dest: '<%=globalConfig.themeDir %>/build/build.src.js'
       }
@@ -72,6 +64,21 @@ module.exports = function(grunt) {
       }
     },
 
+    criticalcss: {
+            custom: {
+                options: {
+                    url: "http://localhost:8888/md/",
+                    width: 1200,
+                    height: 900,
+                    outputfile: "<%=globalConfig.themeDir %>/templates/Includes/CriticalCss.ss",
+                    filename: "<%=globalConfig.themeDir %>/css/master.css", // Using path.resolve( path.join( ... ) ) is a good idea here
+                    buffer: 800*1024,
+                    ignoreConsole: false
+                }
+            }
+        }
+
+
   });
 
   // Load the plugin that provides the "uglify" task.
@@ -80,9 +87,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-simple-watch');
+  grunt.loadNpmTasks('grunt-criticalcss');
 
   // Default task(s).
   // Note: order of tasks is very important
-  grunt.registerTask('default', ['sass', 'concat', 'uglify', 'watch']);
+  grunt.registerTask('default', ['sass', 'concat', 'uglify', 'criticalcss', 'watch']);
 
 };

@@ -28,7 +28,7 @@ deploy.php
 focuspoint/
 node_modules/
 ac-json-events/
-
+cache/
 quickaddnew/
 rss-display
 gallery/
