@@ -1,0 +1,10 @@
+Name: md_staticpublishqueue
+After: 'staticpublishqueue/*'
+---
+SiteTree:
+  extensions:
+    - PublishableSiteTree
+    - SiteTreePublishingEngine
+    - FilesystemPublisher('cache', 'html')
+FilesystemPublisher:
+    static_base_url: http://md.studentlife.uiowa.edu
