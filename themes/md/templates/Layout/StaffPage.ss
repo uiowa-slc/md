@@ -19,7 +19,7 @@
                         <% if $Projects %>
                               <h2>$FirstName's projects</h2>
                               <ul class="medium-block-grid-2 portfolio-card-list">
-                                    <% cached %>
+                                    <% cached 'staff-portfolio-posts', ID %>
                                     <% loop $Projects %>
                                           <% include PortfolioPostCardSmall %>
                                     <% end_loop %>
