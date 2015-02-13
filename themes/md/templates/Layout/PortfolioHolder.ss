@@ -1,38 +1,23 @@
-<div class="container clearfix">
+<div class="portfolio-holder-container row">
+<div class="large-12 columns">
+  <section class="portfolio-holder-content">
+  	$Form
+  	$Content
+        <% if SelectedTag %>
+              <h1>$SelectedTag.ClassName: $SelectedTag.Title</h1>
+        <% end_if %>
 
-      
-      <section class="staff-content main-content">
-      	$Form
-      	$Content
-      	
-                 <ul class="staff-list">
-                  <% loop BlogEntries %>
-                  
-                  
-                        <li>
-                              <% if $Image %>
-                              <a href="$Link" class="staff-link">
-                                    
-                                    <img src="$Image.CroppedImage(350,234).URL" alt="$Title" class="staff-img">
-                              </a>
-                              <% else %>
-                              <a href="$Link" class="staff-link">
-                                    
-                                    <img src="division-project/images/dosl.png" alt="$Title" class="staff-img">
-                              </a>
-                              <% end_if %>
-                              <p class="staff-name">
-                                    <a href="$Link">$Title</a>
-                                    <% if $Position %><small class="staff-position">$Position</small><% end_if %>
-                              </p>
-                        </li>
-                  <% end_loop %>
-                        <li class="filler"></li>
-                        <li class="filler"></li>
-                  </ul>
-                  
-      	
-      	
-      </section>
+       <ul class="small-block-grid-1 medium-block-grid-2 portfolio-card-list">
+          <% cached %>
+            <% loop PortfolioPosts %>
+                  <% include PortfolioPostCard %>
+            <% end_loop %>
+          <% end_cached %>
+        </ul>
+  </section>
 </div>
-<% include TopicsAndNews %>
+    <% if $SelectedTag %>
+      <% include PortfolioPostNavigation %>
+    <% end_if %>
+</div>
+<% include ActiveTagsSection %>

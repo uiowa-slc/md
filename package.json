@@ -2,11 +2,13 @@
   "name": "division-project",
   "version": "0.1.1",
   "devDependencies": {
+    "criticalcss": "^0.5.0",
     "grunt": "*",
     "grunt-contrib-concat": "*",
-    "grunt-contrib-uglify": "*",
     "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
+    "grunt-criticalcss": "^0.5.0",
     "grunt-simple-watch": "*"
   }
 }

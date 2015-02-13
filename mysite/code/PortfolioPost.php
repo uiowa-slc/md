@@ -1,99 +1,154 @@
 <?php
 
-class PortfolioPost extends BlogEntry{
+class PortfolioPost extends Page {
 
-
-private static $default_parent = 'PortfolioHolder';
+	private static $default_parent = 'PortfolioHolder';
 	private static $db = array(
-		'Audience' => 'Text',
-      	'Medium' => 'Text',
-      	'PieceDescription' => 'Text',
+		"Date" => "SS_Datetime",
+		'SiteLink' => 'Text',
+
 	);
 	private static $can_be_root = false;
-	
-	private static $icon = "blog/images/blogpage-file.png";
-
-	private static $description = "An individual blog entry";
-	
 	private static $singular_name = 'Portfolio Post Page';
-	
+
 	private static $plural_name = 'Portfolio Post Pages';
-		
-	private static $has_many = array(
-		'AlternativeImages' => 'AlternativeImage',
-		'Roles' => 'Role' 
+
+	private static $has_one = array(
+		'Image' => 'Image',
 	);
-	
 
-	private static $belongs_many_many = array(
-		     
-		 );
-	
+	private static $has_many = array(
+		'GalleryImages' => 'GalleryImage',
+		'Roles' => 'Role',
+	);
 
-	
-	
+	private static $many_many = array(
+		'Clients' => 'Client',
+		'Mediums' => 'Medium',
+	);
+
 	private static $defaults = array(
 		"ProvideComments" => true,
-		'ShowInMenus' => false
+		'ShowInMenus' => false,
 	);
-	
 
+	public function populateDefaults() {
+		parent::populateDefaults();
 
-function getCMSFields() {
-				
-		
+		$this->setField('Date', date('Y-m-d H:i:s', strtotime('now')));
+
+	}
+
+	function getCMSFields() {
+
 		$fields = parent::getCMSFields();
-		
-		$fields->removeByName('StoryBy', false);
-		$fields->removeByName('StoryByEmail', false);
-		$fields->removeByName('StoryByTitle', false);
-		$fields->removeByName('StoryByDept', false);
-		$fields->removeByName('StoryByEmail', false);
-		$fields->removeByName('PhotosByEmail', false);
-		
+		$fields->removeByName('Sidebar');
+		$fields->removeByName('BackgroundImage');
+		$fields->removeByName('Widgets');
 
+		$fields->addFieldToTab("Root.Main", $dateField = new DatetimeField("Date", _t("BlogEntry.DT", "Date")), "Content");
 
-		$fields->addFieldToTab("Root.Main", $uploadField = new UploadField(
-				'AlternativeImages', 
-				'Alternative Photos'), 
-				'Content');
-		$uploadField->setAllowedMaxFileNumber(4);
-		
+		$dateField->getDateField()->setConfig('showcalendar', true);
+		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
 
+		$fields->addFieldToTab("Root.Main", new UploadField('Image', 'Main Image'), 'Content');
+		$fields->addFieldToTab("Root.Main", $uploadField = new SortableUploadField(
+			'GalleryImages',
+			'Additional Photos (drag and drop sortable)'),
+			'Content');
 
-		$fields->addFieldToTab("Root.Main", new TextField('PieceDescription', 'Description of Post'), 'Content');
-		$fields->addFieldToTab("Root.Main", new TextField('Audience', 'Audience'), 'Content');
-		$fields->addFieldToTab("Root.Main", new TextField('Medium', 'Medium'), 'Content');
+		$uploadField->setAllowedMaxFileNumber(20);
 
+		$clientSource = function () {
+			return Client::get()->map()->toArray();
+		};
+		$clientField = ListboxField::create('Clients', 'Client', $clientSource());
+		$clientField->setMultiple(true)->useAddNew('Client', $clientSource);
+		$fields->addFieldToTab("Root.Main", $clientField, 'Content');
 
-        // Create a default configuration for the new GridField, allowing record editing
-        $config = GridFieldConfig_RelationEditor::create();
-        // Set the names and data for our gridfield columns
-        $config->getComponentByType('GridFieldDataColumns')->setDisplayFields(array(
-            'Title' => 'Title',
-            // Retrieve from a has-one relationship
-        ));    
+		$mediumSource = function () {
+			return Medium::get()->map()->toArray();
+		};
+		$mediumField = ListboxField::create('Mediums', 'Medium', $mediumSource());
+		$mediumField->setMultiple(true)->useAddNew('Medium', $mediumSource);
+		$fields->addFieldToTab("Root.Main", $mediumField, 'Content');
+		$fields->addFieldToTab("Root.Main", new TextField("SiteLink", "Website Link"), "Content");
 
-
-
+		$config = GridFieldConfig_RelationEditor::create();
+		$config->removeComponentsByType('GridFieldAddExistingAutocompleter');
+		$config->getComponentByType('GridFieldDataColumns')->setDisplayFields(array(
+			'Title' => 'Title',
+			// Retrieve from a has-one relationship
+		));
+		$config->addComponent(new GridFieldSortableRows('SortOrder'));
 
 		$rolesField = new GridField(
-			'Roles', 
+			'Roles',
 			'Role',
-			$this->Roles(), 
-			$config
+			$this->Roles(),
+			$config);
 
-			);
-		$fields->addFieldToTab("Root.Roles",$rolesField);
+		$fields->addFieldToTab("Root.Main", $rolesField, 'Content');
 
 		return $fields;
-	} 
+	}
 
+	public function setTagFieldType($type = '') {
+		$tag = Tag::get()->First();
+		$fields = $tag->getCMSFields();
+		$fields->replaceField('Type', new DropdownField('Type', 'Type', singleton('Tag')->dbObject('Type')->enumValues(), $type));
+		return $fields;
+	}
 
+	public function StaffPages() {
+		$roles = $this->Roles();
+		$list = new ArrayList();
 
+		foreach ($roles as $role) {
+			$roleStaffPages = $role->StaffPages();
+			foreach ($roleStaffPages as $roleStaffPage) {
+				$list->push($roleStaffPage);
+			}
+		}
+
+		$list->removeDuplicates();
+
+		$listArray = $list->toArray();
+		shuffle($listArray);
+
+		$shuffledArrayList = new ArrayList($listArray);
+
+		return $shuffledArrayList;
+
+	}
+
+	public function onBeforeWrite() {
+
+		$this->owner->SiteLink = $this->owner->ValidateUrl($this->owner->SiteLink);
+
+		parent::onBeforeWrite();
+	}
 
 }
 
-class PortfolioPost_Controller extends BlogEntry_Controller{
-	
+class PortfolioPost_Controller extends BlogEntry_Controller {
+	public function NextPage() {
+		$page = Page::get()->filter(array(
+			'ParentID' => $this->ParentID,
+			'Sort:GreaterThan' => $this->Sort,
+		))->First();
+
+		return $page;
+	}
+	public function PreviousPage() {
+		$page = Page::get()->filter(array(
+			'ParentID' => $this->ParentID,
+			'Sort:LessThan' => $this->Sort,
+		))->Last();
+
+		return $page;
+	}
+
+
+
 }

@@ -1,0 +1,8 @@
+---
+Name: myroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'tags//$ID': 'Tag_Controller'
+    'api//$Action/$ID': 'Api_Controller'

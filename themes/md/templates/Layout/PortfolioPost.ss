@@ -1,77 +1,80 @@
-<% if $BackgroundImage %>
-    <div class="img-container" style="background-image: url($BackgroundImage.URL);">
-        <div class="img-fifty-top"></div>
+<section class="portfolio-post-content">
+    $Form
+
+    <div class="portfolio-image-list main-image row">
+        <div class="large-12">
+            <% if $Image %><img class="b-lazy $FirstLast" src="{$ThemeDir}/images/placeholder.png" data-src="$Image.SetWidth(1400).URL" data-src-small="$Image.SetWidth(420).URL" data-src-medium="$Image.SetWidth(768).URL" alt="Cover photograph for $Title"><% end_if %>
+             <noscript><img src="$Image.SetWidth(600).URL" alt="Cover photograph for $Title" /></noscript>
+        </div>
     </div>
-<% end_if %>
-<div class="gradient">
-    <div class="container clearfix">
-        <div class="white-cover"></div>
-        <section class="main-content <% if $BackgroundImage %>margin-top<% end_if %>">
-            <article>    
-                <% if $Image %>
-                    <img src="$Image.CroppedImage(765,512).URL" alt="">
-                <% end_if %>
-                	<h1 class="postTitle">$Title</h1>
-
-
-                <% if $Date %>
-                    <h5>Created on: $Date.Nice</h5> 
-                   <% end_if %>
-
-                <% if $Roles %>
-                    <h6>Project Contribuitors: </h6>
-                    <% loop $Roles %>
-                    <p>$Title: <% loop $StaffPages %><a href="$Link"> $FirstName $LastName</a><% if not $Last %>, <% end_if %><% end_loop %> </p>
-                    <% end_loop %>
-
-             
-			    <% end_if %>
-
-                <% if $PieceDescription %>
-                	<h6>Description: $PieceDescription</h6> 
-                   <% end_if %>
-
-                  <% if $Audience %>
-                    <h6>Target Audience: $Audience</h6>  
-
-                  <% end_if %>
-
-                   <% if $Medium %>
-                    <h6>Designed for: $Medium</h6>  
-
-                  <% end_if %>
-
-                  <ul>
-                <% loop $AlternativeImages %>
-                    <li>
-                        <img src="$CroppedImage(644,390).URL" alt="$Top.$Title">  
-                    </li>
-                <% end_loop %>
+    <div class="portfolio-post-heading row">
+        <div class="large-12 columns summary">
+            <% if $SiteLink %><h1><a class="external" target="_blank" href="$SiteLink">$Title</a></h1>
+            <% else %><h1 class="internal">$Title</h1>
+            <% end_if %>
+            <ul class="staff-work-list single">
+              <% loop $StaffPages %>
+                <% if $Photo %><li><img class="b-lazy" data-src="$Photo.CroppedImage(200,200).URL" src="{$ThemeDir}/images/placeholder.png" alt="Photograph of a project, $Title" /></li><% end_if %>
+              <% end_loop %>
+                <li><img id="details-toggle" src="{$ThemeDir}/images/details-toggle.gif" alt="More information below." /></li>
             </ul>
-
-
-                    <h3>About Project</h3>               	
-	                $Content  
-                
-                    <% if TagsCollection %>
-                    <br />
-                    <p class="tags">
-                         <% _t('TAGS', 'Tags:') %> 
-                        <% loop TagsCollection %>
-                            <a href="$Link" title="<% _t('VIEWALLPOSTTAGGED', 'View all posts tagged') %> '$Tag'" rel="tag">$Tag</a><% if not Last %>,<% end_if %>
-                        <% end_loop %>
-                    </p>
-                <% end_if %>      
-
-            </article>
-        </section>
-        
-        <section class="sec-content hide-print">
-            <%-- include SideNav --%>
-
-
-           <% include BlogSideBar %>
-            <% include BlogEntrySideNews %>
-        </section>
+            
+        </div>
     </div>
-</div>
+    <div class="portfolio-post-details row">
+                <section class="large-7 columns">
+                        <%--<% if $Date %>
+                            <strong>Created:</strong> $Date.Nice <br /> 
+                        <% end_if %>--%>
+                        
+                        $Content
+                        <% if $SiteLink %>
+                           <a href="$SiteLink" class="btn" target="_blank">Visit Website</a></strong><br /> 
+                        <% end_if %>
+                        <hr />
+                        <% if $Mediums %>
+                            <strong>Mediums: </strong>
+                            <% loop $Mediums %>
+                                <a href="$Link">$Title<% if not Last %>, <% end_if %></a>
+                            <% end_loop %>
+                            <br />
+                        <% end_if %>
+
+
+                        <% if $Clients %>
+                            <strong>Clients: </strong> 
+                            <% loop $Clients %>
+                                <a href="$Link">$Title<% if not Last %>, <% end_if %></a>
+                            <% end_loop %>
+                            <br />
+                        <% end_if %>
+                </section>
+
+                <section class="large-5 end columns portfolio-roles">
+                <hr class="hide-for-large-up" />  
+                <% cached 'portfolio-post-roles', ID %>     
+                    <% if $Roles %>
+                        <% loop $Roles %>
+                            <div class="role $FirstLast">
+                                <h3>$Title</h3>
+                                <% loop $SortedStaffPages %>
+                                    <a href="$Link">$Title<% if not $Last %>, <% end_if %></a>
+                                <% end_loop %>
+                            </div>
+                        <% end_loop %>
+                    <% end_if %>  
+                <% end_cached %>           
+                </section>
+
+    </div>
+    <div class="portfolio-image-list row">
+        <div class="large-12">
+             <% loop $GalleryImages %>
+                    <img class="b-lazy $FirstLast" src="{$ThemeDir}/images/placeholder.png" data-src="$SetWidth(1400).URL" data-src-small="$SetWidth(420).URL" data-src-medium="$SetWidth(768).URL" alt="$Top.$Title">
+                    <noscript><img src="$Image.SetWidth(600).URL" alt="$Top.Title" /></noscript>
+            <% end_loop %>
+        </div>
+    </div>
+    <% include PortfolioPostNavigation %>
+</section>
+<% include ActiveTagsSection %>

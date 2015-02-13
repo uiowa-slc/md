@@ -25,3 +25,12 @@ assets/
 mathspamprotection/
 deploy-hulk.php
 deploy.php
+focuspoint/
+node_modules/
+ac-json-events/
+
+quickaddnew/
+rss-display
+gallery/
+.phpintel
+gridfieldextensions/
