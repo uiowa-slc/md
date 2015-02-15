@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d40e98ff7431fe14bcfe701d011d2806",
+    "hash": "67d3b32227fe86102ac3068fefc36cfb",
     "packages": [
         {
             "name": "colymba/gridfield-bulk-editing-tools",
@@ -286,12 +286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/division-project.git",
-                "reference": "5b2e2e551aca7e97915dfe7f7aae7aab1a831645"
+                "reference": "88f4f60d491bc4477d875b16e47ffcb478cbdc99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/5b2e2e551aca7e97915dfe7f7aae7aab1a831645",
-                "reference": "5b2e2e551aca7e97915dfe7f7aae7aab1a831645",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/88f4f60d491bc4477d875b16e47ffcb478cbdc99",
+                "reference": "88f4f60d491bc4477d875b16e47ffcb478cbdc99",
                 "shasum": ""
             },
             "require": {
@@ -311,6 +311,7 @@
                 "silverstripe/installer": "*",
                 "silverstripe/mathspamprotection": "*",
                 "silverstripe/recaptcha": "*",
+                "silverstripe/staticpublishqueue": "*",
                 "silverstripe/timepickerfield": "*",
                 "silverstripe/userforms": "*",
                 "silverstripe/widgets": "*",
@@ -330,7 +331,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/division-project/tree/async-optimizations",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/division-project/issues"
             },
-            "time": "2015-02-14 20:23:58"
+            "time": "2015-02-15 21:23:35"
         },
         {
             "name": "md/rss-display",
