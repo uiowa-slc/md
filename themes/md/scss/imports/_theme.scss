@@ -97,4 +97,27 @@ NAVIGATION OVERRIDES
     .b-lazy.b-loaded {
                    opacity: 1;
     }
+
+   /* -------------------------------------------------------
+FOOTER STYLES
+---------------------------------------------------------- */
+.footer-logo img{
+		margin-top: 0px; 
+		max-width:80px;
+	@media #{$medium-up}{
+		margin-top: 0px; 
+		max-width:100px;
+	}
+	@media #{$large-up}{
+		margin-top: -20px; 
+		max-width:180px;
+	}
+
+}
+.footer h4.work-with-md-header{
+	@media #{$large-up}{
+		margin-top:40px;
+	}
+	
+}
  
