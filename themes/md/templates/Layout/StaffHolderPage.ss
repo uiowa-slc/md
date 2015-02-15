@@ -7,9 +7,9 @@
                         <% if $Title != "Alumni" %>
                               <div class="staff-team $FirstLast">
                                     <h2 class="staff-title">$Title</h2>
-                                    <ul class="staff-work-list">
+                                    <ul class="staff-coin-list large">
                                           <% loop $ActiveStaffPages.Sort("LastName ASC") %>
-                                                <% include StaffPageCoinLarge %>
+                                                <% include StaffCoin %>
                                           <% end_loop %>
                                           <li class="filler"></li>
                                           <li class="filler"></li>
@@ -20,10 +20,10 @@
                         <% else %>
                               <div class="staff-team $FirstLast">
                                     <h2 class="staff-title">$Title</h2>
-                                    <ul class="staff-work-list alumni">
+                                    <ul class="staff-coin-list large alumni">
                                           <% loop $StaffPages.Sort("RAND()").Limit(5) %>
                                                 <% if $Photo %>
-                                                      <% include StaffPageCoinLarge %>
+                                                      <% include StaffCoin %>
                                                 <% end_if %>
                                           <% end_loop %>
                                           <li class="filler"></li>

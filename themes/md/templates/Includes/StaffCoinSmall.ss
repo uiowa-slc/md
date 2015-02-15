@@ -1,0 +1,1 @@
+<% if $Photo %><li><img class="b-lazy" data-src="$Photo.CroppedImage(100,100).URL" src="{$ThemeDir}/images/placeholder.png" alt="Photograph of a project, $Title" /></li><% end_if %>

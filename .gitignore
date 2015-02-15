@@ -34,3 +34,7 @@ rss-display
 gallery/
 .phpintel
 gridfieldextensions/
+
+staticpublishqueue/
+
+gridfieldajaxrefresh/

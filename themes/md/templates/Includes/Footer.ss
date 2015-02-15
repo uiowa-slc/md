@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<div class="col-1-4 hide-print" style="text-align: center;">
-				<a href="http://md.studentlife.uiowa.edu/" class="footer-logo"><img src="{$ThemeDir}/images/md.png" alt="Division Of Student Life Logo"></a><br>
+				<a href="{$BaseHref}" class="footer-logo"><img src="{$ThemeDir}/images/md.png" alt="Division Of Student Life Logo"></a><br>
 				<h4 class="work-with-md-header">Work With M+D</h4>
 				
 				<a href="hire-us/" class="appt-btn">Hire Us</a>

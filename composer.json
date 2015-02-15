@@ -4,7 +4,9 @@
 	"require": {
 		"php": ">=5.3.2",
 		"md/division-project": "dev-async-optimizations",
+        "silverstripe/staticpublishqueue" : "*",
 		"frankmullenger/gallery": "1.1.*@dev"
+
 	},
 	"config": {
 		"process-timeout": 600	

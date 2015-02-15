@@ -16,7 +16,7 @@
 
 
 $(".portfolio-post-details").hide();
-$(".portfolio-post-heading .staff-work-list, h1.internal").click(function(event) {
+$(".portfolio-post-heading .staff-coin-list, h1.internal").click(function(event) {
     event.preventDefault();
     $(".portfolio-post-details").slideToggle();
     $("#details-toggle, .portfolio-post-heading").toggleClass("active")
@@ -27,6 +27,6 @@ $(".portfolio-post-heading .staff-work-list, h1.internal").click(function(event)
 	}*/
     //console.log(this);
 });
-$(".staff-work-list li img").each(function(index) {
+$(".staff-coin-list li img").each(function(index) {
     // $(this).delay((index++) * 100).fadeTo(1000, 1); 
 });
