@@ -1,5 +1,7 @@
 .staff-content{
-
+	hr{
+		margin: rem-calc(60) 0;
+	}
 	.staff-title{
 		text-align: center;
 		padding: 0;
@@ -22,6 +24,12 @@
 			a.staff-link{
 				margin-left: 5px;
 				margin-right: 5px;
+
+				@media #{$large-up}{
+					margin-left: 10px;
+					margin-right: 10px;
+					margin-bottom: 10px;
+				}
 			}
 			padding: 3px 0;
 

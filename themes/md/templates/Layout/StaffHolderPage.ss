@@ -26,14 +26,12 @@
                                                       <% include StaffPageCoinLarge %>
                                                 <% end_if %>
                                           <% end_loop %>
-                                          <li><a href="meet-us/alumni"><img class="details-toggle" src="{$ThemeDir}/images/details-toggle.gif" alt="More information below." /></a>
-                                                <p class="staff-name"><a href="$Link">View all Alumni</a></p>
-                                          </li>
                                           <li class="filler"></li>
                                           <li class="filler"></li>
                                     </ul>
                                     <p class="text-center"><a href="meet-us/alumni" class="btn">View all Alumni</a></p>
                               </div>
+                              <hr />
 
                         <% end_if %>
             	<% end_loop %>

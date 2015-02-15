@@ -93,7 +93,7 @@ class StaffPageExtension extends DataExtension {
 
 		//Pro Staff
 		if ($owner->inTeam('Professional Staff')) {
-			$fields->addFieldToTab("Root.Main", new TextField("PositionTitle", "Position title"));
+			$fields->addFieldToTab("Root.Main", new TextField("Position", "Position"), "EmailAddress");
 			$fields->addFieldToTab("Root.Main", new TextareaField("EnjoymentFactors", "What do you enjoy about working at M+D?"));
 			$fields->addFieldToTab("Root.Main", $dateField = new DateField("JoinDate", "When did you join the M+D staff?(MM DD YYYY)"));
 			// $dateField->getDateField()->setConfig('showcalendar', true);

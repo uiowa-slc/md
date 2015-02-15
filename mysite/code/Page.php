@@ -83,7 +83,7 @@ class Page_Controller extends ContentController {
 	}
 
 	public function ActiveStaffPages() {
-		$staffPages = StaffPage::get();
+		$staffPages = StaffPage::get()->filter(array('ShowInMenus' => 1));
 
 		$alumniTeam = StaffTeam::get()->filter(array('Name' => 'Alumni'))->First();
 		$alumniPages = $alumniTeam->StaffPages();
