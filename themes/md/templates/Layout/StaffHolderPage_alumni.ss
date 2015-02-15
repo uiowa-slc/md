@@ -4,9 +4,9 @@
             	
                   <div class="staff-team $FirstLast">
                         <h2 class="staff-title">M+D Alumni</h2>
-                        <ul class="staff-work-list">
+                        <ul class="staff-coin-list">
                               <% loop $StaffPages.Sort("LastName ASC") %>
-                                    <% include StaffPageCoinLarge %>
+                                    <% include StaffCoinLarge %>
                               <% end_loop %>
                               <li class="filler"></li>
                               <li class="filler"></li>
