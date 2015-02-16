@@ -7,6 +7,8 @@
             		<img src="$Photo.SetWidth(760).URL" alt="$FirstName $LastName">
             	<% end_if %>
                         <p class="staff-small-info <% if not $Photo %>no-photo<% end_if %>">
+                              <% if $inTeam("Professional Staff") %><strong>Position: </strong>$Position <br />
+                              <% end_if %>
                               <% if $Teams %><strong>Team:</strong> <% loop $Teams %>$Title<% if not $Last %>, <% end_if %><% end_loop %><br /><% end_if %>
                               <% if $Location %><strong>From:</strong> $Location<br /><% end_if %>
                               <% if $isStudent %>
@@ -112,10 +114,7 @@
                         <%-- Professional Staff --%>
 
                         <% if $inTeam("Professional Staff") %>
-                              <% if $Position %>
-                                    <h2>Position</h2>
-                                    $Position
-                              <% end_if %>
+      
 
                               <% if $EnjoymentFactors %>
                                     <h2>What do you enjoy about working at M+D?</h2>
