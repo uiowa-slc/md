@@ -257,3 +257,9 @@ h2, h3{ page-break-after: avoid; }
 @media (min-width: 1140px){
 .nav-main a{ padding-left: 1.8em; padding-right: 1.8em; }
 }
+@media only screen and (min-width: 64.063em){
+.footer-logo{ margin-top: -20px; max-width: 150px; }
+}
+@media only screen and (min-width: 64.063em){
+.footer-h4{ margin-top: 40px; }
+}
