@@ -10,6 +10,7 @@ class StaffPageExtension extends DataExtension {
 		"LinkedInURL" => "Text",
 		"PortfolioURL" => "Text",
 		"TwitterHandle" => "Text",
+		"GithubURL" => "Text",
 
 		//Students
 		"Major" => "Text",
@@ -31,7 +32,7 @@ class StaffPageExtension extends DataExtension {
 		//Pro Staff
 		"PositionTitle" => "Text",
 		"EnjoymentFactors" => "Text",
-		"JoinDate" => "Date",
+		"JoinDate" => "Text",
 		"Background" => "Text",
 
 	);
@@ -67,7 +68,8 @@ class StaffPageExtension extends DataExtension {
 		$fields->addFieldToTab("Root.Main", new TextareaField("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) "));
 		$fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
 		$fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
-		$fields->addFieldToTab("Root.Main", new TextField("TwitterHandle", "Twitter Username"));
+		$fields->addFieldToTab("Root.Main", new TextField("TwitterHandle", "Twitter Username @"));
+		$fields->addFieldToTab("Root.Main", new TextField("GithubURL", "Github URL?"));
 		$fields->addFieldToTab("Root.Main", new TextareaField("FavoriteProject", "Favorite M+D project? Why?"));
 
 		//Students
@@ -95,7 +97,7 @@ class StaffPageExtension extends DataExtension {
 		if ($owner->inTeam('Professional Staff')) {
 			$fields->addFieldToTab("Root.Main", new TextField("Position", "Position"), "EmailAddress");
 			$fields->addFieldToTab("Root.Main", new TextareaField("EnjoymentFactors", "What do you enjoy about working at M+D?"));
-			$fields->addFieldToTab("Root.Main", $dateField = new DateField("JoinDate", "When did you join the M+D staff?(MM DD YYYY)"));
+			$fields->addFieldToTab("Root.Main", new TextField("JoinDate", "When did you join the M+D staff?"));
 			// $dateField->getDateField()->setConfig('showcalendar', true);
 			$fields->addFieldToTab("Root.Main", new TextareaField("Background", "Background & Education"));
 		}
@@ -150,6 +152,10 @@ class StaffPageExtension extends DataExtension {
 		$this->owner->Title = $this->owner->FirstName . ' ' . $this->owner->LastName;
 		$this->owner->LinkedInURL = $this->owner->ValidateUrl($this->owner->LinkedInURL);
 		$this->owner->PortfolioURL = $this->owner->ValidateUrl($this->owner->PortfolioURL);
+		$this->owner->GithubURL= $this->owner->ValidateUrl($this->owner->GithubURL);
+		$this->owner->EmploymentLocationURL= $this->owner->ValidateUrl($this->owner->EmploymentLocationURL);
+		
+
 
 		parent::onBeforeWrite();
 	}
