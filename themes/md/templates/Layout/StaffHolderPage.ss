@@ -29,7 +29,7 @@
                                           <li class="filler"></li>
                                           <li class="filler"></li>
                                     </ul>
-                                    <p class="text-center"><a href="meet-us/alumni" class="btn">View all Alumni</a></p>
+                                    <p class="text-center alumni-link"><a href="meet-us/alumni" class="btn">View all Alumni</a></p>
                               </div>
                               <hr />
 
