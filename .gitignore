@@ -35,6 +35,10 @@ gallery/
 .phpintel
 gridfieldextensions/
 
+node_modules/
+
+
 staticpublishqueue/
 
 gridfieldajaxrefresh/
+
