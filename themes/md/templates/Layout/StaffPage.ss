@@ -16,7 +16,7 @@
                               <% end_if %>
                               <% if $LinkedInURL %><a href="$LinkedInURL" target="_blank">LinkedIn Page</a><br /><% end_if %>
                                  <% if $TwitterHandle %><a href="http://www.twitter.com/$TwitterHandle/" target="_blank">$TwitterHandle</a><br /><% end_if %>
-                              <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank"> Portfolio Website</a><br /><% end_if %>
+                              <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank"> Personal Website</a><br /><% end_if %>
                               <% if $GithubURL %><a href="$GithubURL" target="_blank">Github Page</a><% end_if %>
                         </p>
                         <h1>$Title</h1>

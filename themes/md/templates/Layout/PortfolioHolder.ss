@@ -5,6 +5,7 @@
   	$Content
         <% if SelectedTag %>
               <h1>$SelectedTag.ClassName: $SelectedTag.Title</h1>
+              <p class="text-center"><a href="hire/contact">Want to work with us in this medium? Give us a shout!</a></p>
         <% end_if %>
 
        <ul class="small-block-grid-1 medium-block-grid-2 portfolio-card-list">

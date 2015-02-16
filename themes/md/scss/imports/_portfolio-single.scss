@@ -49,8 +49,15 @@
 		 	margin-bottom: 0;
 		 	padding-bottom: 0;
 
+		 	&:hover{
+		 		cursor: pointer;
+		 	}
+
 		 	a.external{
-		 		
+		 		color: #222;
+		 		transition: color 0.5s linear;
+
+
 		 		&:hover{ 
 		 			text-decoration: none;
 		 	
@@ -72,10 +79,16 @@
 		 		padding-bottom: 10px;
 		 	}
 
-		 	&:hover {
-		 		cursor: pointer;
-		 	}
+
 		 }
+
+	 	&:hover {
+	 		
+	 		a.external{
+	 			color: #08C;
+	 		}
+	 		
+	 	}
 
 		#details-toggle {
 		 	outline: 0;
