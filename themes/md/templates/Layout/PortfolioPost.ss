@@ -12,9 +12,9 @@
             <% if $SiteLink %><h1><a class="external" target="_blank" href="$SiteLink">$Title</a></h1>
             <% else %><h1 class="internal">$Title</h1>
             <% end_if %>
-            <ul class="staff-work-list single">
+            <ul class="staff-coin-list small">
               <% loop $StaffPages %>
-                <% if $Photo %><li><img class="b-lazy" data-src="$Photo.CroppedImage(200,200).URL" src="{$ThemeDir}/images/placeholder.png" alt="Photograph of a project, $Title" /></li><% end_if %>
+                <% include StaffCoinSmall %>
               <% end_loop %>
                 <li><img id="details-toggle" src="{$ThemeDir}/images/details-toggle.gif" alt="More information below." /></li>
             </ul>

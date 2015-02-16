@@ -257,9 +257,13 @@ h2, h3{ page-break-after: avoid; }
 @media (min-width: 1140px){
 .nav-main a{ padding-left: 1.8em; padding-right: 1.8em; }
 }
-@media only screen and (min-width: 64.063em){
-.footer-logo{ margin-top: -20px; max-width: 150px; }
+.footer-logo img{ margin-top: 0px; max-width: 80px; }
+@media only screen and (min-width: 40.063em){
+.footer-logo img{ margin-top: 0px; max-width: 100px; }
 }
 @media only screen and (min-width: 64.063em){
-.footer-h4{ margin-top: 40px; }
+.footer-logo img{ margin-top: -20px; max-width: 180px; }
+}
+@media only screen and (min-width: 64.063em){
+.footer h4.work-with-md-header{ margin-top: 40px; }
 }

@@ -18,8 +18,8 @@
                         <h1>$Title</h1>
                         <% if $Projects %>
                               <h2>$FirstName's projects</h2>
-                              <ul class="medium-block-grid-2 portfolio-card-list">
-                                    <% cached %>
+                              <ul class="small-block-grid-1 medium-block-grid-2 portfolio-card-list">
+                                    <% cached 'staff-portfolio-posts', ID %>
                                     <% loop $Projects %>
                                           <% include PortfolioPostCardSmall %>
                                     <% end_loop %>
@@ -29,7 +29,7 @@
                         
                         <% if $NewsPosts %>
                               <h2>Posts by $FirstName</h2>
-                              <ul class="medium-block-grid-2 portfolio-card-list">
+                              <ul class="small-block-grid-1 medium-block-grid-2 portfolio-card-list">
                               <% cached 'staff-posts', ID %>
                                     <% loop $NewsPosts %>
                                           <% include PortfolioPostBlogCard %>

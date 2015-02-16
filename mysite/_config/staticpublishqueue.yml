@@ -1,0 +1,8 @@
+Name: md_staticpublishqueue
+After: 'staticpublishqueue/*'
+---
+SiteTree:
+  extensions:
+    - PublishableSiteTree
+    - SiteTreePublishingEngine
+    - FilesystemPublisher('cache', 'html')

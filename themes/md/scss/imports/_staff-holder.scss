@@ -1,5 +1,7 @@
 .staff-content{
-
+	hr{
+		margin: rem-calc(60) 0;
+	}
 	.staff-title{
 		text-align: center;
 		padding: 0;
@@ -14,45 +16,9 @@
 		padding-top: 20px;
 		
 	}
-	.staff-work-list{
-		margin: 0;
-		li{
-
-			margin-left:0;
-			a.staff-link{
-				margin-left: 5px;
-				margin-right: 5px;
-			}
-			padding: 3px 0;
-
-			@media #{$large-up}{
-				padding: 5px 0;
-			}
-		}
-
-		img{
-			width: 100px;
-			@media #{$large-up}{
-				width: 175px;
-			}
-
-			-webkit-filter: none;
-			-moz-filter: none;
-			filter: none;
-
-		}
-
-		&.alumni{
-			img{
-				width: 75px;
-				@media #{$large-up}{
-					width: 100px;
-				}
-			}
-
-		}
-
-
+	
+	.staff-team .alumni-link{
+		margin-top: $column-gutter;
 	}
 
 

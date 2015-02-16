@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "719d9dffcac0cd9569024e94afcd4329",
+    "hash": "67d3b32227fe86102ac3068fefc36cfb",
     "packages": [
         {
             "name": "colymba/gridfield-bulk-editing-tools",
@@ -286,12 +286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/division-project.git",
-                "reference": "ed903d88dd6bba31458cb234810acf3bb33662f9"
+                "reference": "9a0e1c4ce45df2421586379bc5993c3323e39c11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/ed903d88dd6bba31458cb234810acf3bb33662f9",
-                "reference": "ed903d88dd6bba31458cb234810acf3bb33662f9",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/9a0e1c4ce45df2421586379bc5993c3323e39c11",
+                "reference": "9a0e1c4ce45df2421586379bc5993c3323e39c11",
                 "shasum": ""
             },
             "require": {
@@ -311,6 +311,7 @@
                 "silverstripe/installer": "*",
                 "silverstripe/mathspamprotection": "*",
                 "silverstripe/recaptcha": "*",
+                "silverstripe/staticpublishqueue": "*",
                 "silverstripe/timepickerfield": "*",
                 "silverstripe/userforms": "*",
                 "silverstripe/widgets": "*",
@@ -330,7 +331,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/division-project/tree/async-optimizations",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/division-project/issues"
             },
-            "time": "2015-02-12 21:08:53"
+            "time": "2015-02-16 03:18:23"
         },
         {
             "name": "md/rss-display",
@@ -662,6 +663,45 @@
             "time": "2015-01-19 08:48:47"
         },
         {
+            "name": "silverstripe/gridfieldajaxrefresh",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe-labs/silverstripe-gridfieldajaxrefresh.git",
+                "reference": "304c68d1d0e84e51c96ffdf370fedd2d8d53b5d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-gridfieldajaxrefresh/zipball/304c68d1d0e84e51c96ffdf370fedd2d8d53b5d3",
+                "reference": "304c68d1d0e84e51c96ffdf370fedd2d8d53b5d3",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "~3.0"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Julian Seidenberg",
+                    "email": "julian@silverstripe.com"
+                }
+            ],
+            "description": "Adds the ability to either automatically or manually refresh a SilverStripe GridField",
+            "keywords": [
+                "ajax",
+                "auto-refresh",
+                "automatic",
+                "gridfield",
+                "refresh",
+                "silverstripe"
+            ],
+            "time": "2014-08-14 20:35:49"
+        },
+        {
             "name": "silverstripe/installer",
             "version": "3.1.9",
             "source": {
@@ -792,6 +832,44 @@
                 "spamprotection"
             ],
             "time": "2015-01-31 02:34:54"
+        },
+        {
+            "name": "silverstripe/staticpublishqueue",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe-labs/silverstripe-staticpublishqueue.git",
+                "reference": "6961f2994dc49d87248908d9d8b2400b88a8b133"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-staticpublishqueue/zipball/6961f2994dc49d87248908d9d8b2400b88a8b133",
+                "reference": "6961f2994dc49d87248908d9d8b2400b88a8b133",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "3.1.*",
+                "silverstripe/framework": "3.1.*",
+                "silverstripe/gridfieldajaxrefresh": "dev-master"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Static publishing queue to create static versions of pages for enhanced performance and security",
+            "keywords": [
+                "cache",
+                "caching",
+                "html",
+                "performance",
+                "publishing",
+                "queue",
+                "security",
+                "silverstripe",
+                "static",
+                "static-cache",
+                "static-caching",
+                "static-publishing"
+            ],
+            "time": "2015-01-04 20:39:55"
         },
         {
             "name": "silverstripe/timepickerfield",
