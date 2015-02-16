@@ -154,7 +154,7 @@ class StaffPageExtension extends DataExtension {
 		$this->owner->PortfolioURL = $this->owner->ValidateUrl($this->owner->PortfolioURL);
 		$this->owner->GithubURL= $this->owner->ValidateUrl($this->owner->GithubURL);
 		$this->owner->EmploymentLocationURL= $this->owner->ValidateUrl($this->owner->EmploymentLocationURL);
-		
+		$this->owner->TwitterHandle= $this->owner->ValidateTwitter($this->owner->TwitterHandle);
 
 
 		parent::onBeforeWrite();
@@ -194,6 +194,18 @@ class StaffPageExtension extends DataExtension {
 		}
 
 	}
+
+	public function ValidateTwitter($username) {
+			if (empty($username)) {
+				return $username;
+			} else if (!preg_match("/@/i", $username)) {
+				$username = "@" . $username;
+			}
+
+			return $username;
+		}
+
+
 	public function EditPortfolioLink(){
 
 		/* 	Student staff Page:
