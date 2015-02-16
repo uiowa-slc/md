@@ -70,7 +70,7 @@
 					content: "\ea7e";
 					font-size: 0.7em;
 					padding-left: 5px;
-					transition: font-size 0.2s ease-in-out;
+					transition: all 0.2s ease-in-out;
 					
 				}
 		 	}
@@ -89,6 +89,14 @@
 	 			color: #08C;
 	 		}
 	 		
+	 	}
+
+	 	&.active{
+	 	  #details-toggle {
+			-webkit-filter: grayscale(100%);
+			-moz-filter: grayscale(100%);
+			filter: grayscale(100%); 			
+	 		}
 	 	}
 
 		#details-toggle {
