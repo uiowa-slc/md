@@ -13,7 +13,9 @@
                                     <% if $Major %><strong>Major:</strong> $Major<br /><% end_if %>
                               <% end_if %>
                               <% if $LinkedInURL %><a href="$LinkedInURL" target="_blank">View LinkedIn Page</a><br /><% end_if %>
-                              <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank">View Portfolio</a><% end_if %>
+                                 <% if $TwitterHandle %><a href="http://www.twitter.com/$TwitterHandle/" target="_blank">View Twitter Handle</a><br /><% end_if %>
+                              <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank">View Portfolio</a><br /><% end_if %>
+                              <% if $GithubURL %><a href="$GithubURL" target="_blank">View Github Page</a><% end_if %>
                         </p>
                         <h1>$Title</h1>
                         <% if $Projects %>
@@ -83,6 +85,10 @@
                               <% if $EmploymentLocation %>
                                     <h2>Where are you employed?</h2>
                                     $EmploymentLocation
+                                    <br />
+                                    <% if $EmploymentLocationURL %>
+                                          <a href="$EmploymentLocationURL" target="_blank">View Company Website</a>
+                                    <% end_if %>
                               <% end_if %>
 
                               <% if $CurrentPosition %>
@@ -106,9 +112,9 @@
                         <%-- Professional Staff --%>
 
                         <% if $inTeam("Professional Staff") %>
-                              <% if $PositionTitle %>
-                                    <h2>Position title</h2>
-                                    $PositionTitle
+                              <% if $Position %>
+                                    <h2>Position</h2>
+                                    $Position
                               <% end_if %>
 
                               <% if $EnjoymentFactors %>
