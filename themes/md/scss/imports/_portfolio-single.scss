@@ -49,15 +49,14 @@
 		 	margin-bottom: 0;
 		 	padding-bottom: 0;
 
+
 		 	&:hover{
 		 		cursor: pointer;
 		 	}
 
 		 	a.external{
+		 		transition: all 0.2s ease-in-out;
 		 		color: #222;
-		 		transition: color 0.5s linear;
-
-
 		 		&:hover{ 
 		 			text-decoration: none;
 		 	
@@ -71,7 +70,8 @@
 					content: "\ea7e";
 					font-size: 0.7em;
 					padding-left: 5px;
-					transition: all 0.2s ease;
+					transition: font-size 0.2s ease-in-out;
+					
 				}
 		 	}
 
@@ -82,8 +82,9 @@
 
 		 }
 
-	 	&:hover {
+	 	&:hover, &.active, &:hover  {
 	 		
+
 	 		a.external{
 	 			color: #08C;
 	 		}
@@ -97,6 +98,8 @@
 	 }
 
 	 .portfolio-post-heading.active, .portfolio-post-heading:focus{
+
+
 	 	.staff-coin-list img{
 		 	-webkit-filter: grayscale(0);
 			-moz-filter: grayscale(0);
