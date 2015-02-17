@@ -136,14 +136,14 @@
 
 	 	@media #{$medium-up}{
 	 		padding-top: 0;
-	 		width: 300px;
+	 		width: 400px;
 	 		float: right;
 	 	}
 
 	 	@media #{$large-up}{
 	 		
-	 		padding-left: $column-gutter/2;
-	 		padding-bottom: $column-gutter/2
+	 		padding-left: $column-gutter;
+	 		padding-bottom: $column-gutter;
 	 	}
 
 
