@@ -2,7 +2,7 @@
     <hr class="hide-for-large-up" />  
     <% cached 'portfolio-post-roles', ID %>     
         <% if $Roles %>
-            <% loop $Roles %>
+            <% loop $Roles.Sort("Title") %>
                 <div class="role $FirstLast">
                     <h3>$Title</h3>
                     <% loop $SortedStaffPages %>
