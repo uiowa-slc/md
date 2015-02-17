@@ -7,7 +7,7 @@
              <noscript><img src="$Image.SetWidth(600).URL" alt="Cover photograph for $Title" /></noscript>
         </div>
     </div>
-    <div class="portfolio-post-heading row">
+    <div class="portfolio-post-heading active row">
         <div class="large-12 columns summary">
             <% if $SiteLink %><h1><a class="external" target="_blank" href="$SiteLink">$Title</a></h1>
             <% else %><h1 class="internal">$Title</h1>
@@ -16,22 +16,27 @@
               <% loop $StaffPages %>
                 <% include StaffCoinSmall %>
               <% end_loop %>
-                <li><img id="details-toggle" src="{$ThemeDir}/images/details-toggle.gif" alt="More information below." /></li>
+                <%--<li><img id="details-toggle" src="{$ThemeDir}/images/details-toggle.gif" alt="More information below." /></li>--%>
             </ul>
             
         </div>
     </div>
     <div class="portfolio-post-details row">
-                <section class="large-7 columns">
-                        <%--<% if $Date %>
-                            <strong>Created:</strong> $Date.Nice <br /> 
-                        <% end_if %>--%>
+                <section class="large-7 end large-centered columns">
                         
+                        <div class="portfolio-content">
+                        <% include PortfolioPostRoles %>
                         $Content
-                        <% if $SiteLink %>
-                           <a href="$SiteLink" class="btn" target="_blank">Visit Website</a></strong><br /> 
-                        <% end_if %>
-                        <hr />
+
+                        </div>
+
+                        <div class="portfolio-details-nav">
+                            <a href="#" id="unconcat" class="btn">Continue Reading +</a>
+                            <% if $SiteLink %>
+                               <a href="$SiteLink" class="btn" target="_blank">Visit Website</a></strong><br /> 
+                            <% end_if %>
+                        </div>
+                         <hr />
                         <% if $Mediums %>
                             <strong>Mediums: </strong>
                             <% loop $Mediums %>
@@ -50,21 +55,7 @@
                         <% end_if %>
                 </section>
 
-                <section class="large-5 end columns portfolio-roles">
-                <hr class="hide-for-large-up" />  
-                <% cached 'portfolio-post-roles', ID %>     
-                    <% if $Roles %>
-                        <% loop $Roles %>
-                            <div class="role $FirstLast">
-                                <h3>$Title</h3>
-                                <% loop $SortedStaffPages %>
-                                    <a href="$Link">$Title<% if not $Last %>, <% end_if %></a>
-                                <% end_loop %>
-                            </div>
-                        <% end_loop %>
-                    <% end_if %>  
-                <% end_cached %>           
-                </section>
+
 
     </div>
     <div class="portfolio-image-list row">

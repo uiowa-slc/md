@@ -29,6 +29,7 @@
 	 }
 
 	 .portfolio-post-details{
+
 	 	@media #{$large-up}{
 	 		padding: 0 $column-gutter;
 	 		padding-bottom: $column-gutter;
@@ -37,6 +38,10 @@
 	 		padding: 0;
 	 		padding-bottom: 25px;
 	 		
+	 	}
+
+	 	.portfolio-details-nav{
+	 		padding-top: $column-gutter;
 	 	}
 	 }
 
@@ -121,14 +126,32 @@
 		    -o-transform:rotate(90deg);
 		}
 	 }
-
+	 .portfolio-content{
+	 	font-size: rem-calc(22);
+	 	height: 300px;
+	 	overflow: hidden;
+	 	&.active{
+	 		overflow: auto;
+	 		height: auto;
+	 	}
+	 }
 	 .portfolio-roles{
 	 	text-align: center;
 	 	padding-top: 15px;
+	 	font-size: rem-calc(18);
 
 	 	@media #{$medium-up}{
 	 		padding-top: 0;
 	 	}
+
+	 	@media #{$large-up}{
+	 		width: 300px;
+	 		float: right;
+	 		padding: $column-gutter;
+	 		padding-top: $column-gutter+10px;
+	 	}
+
+
 
 	 	.role{
 

@@ -29,6 +29,8 @@ module.exports = function(grunt) {
     concat: {
       js:{
         src: ['division-project/build/build.src.js',
+          '<%=globalConfig.themeDir %>/bower_components/ftellipsis/build/ftellipsis.min.js',
+          //'<%=globalConfig.themeDir %>/js/thirdparty/TextOverflowClamp.js',
           '<%=globalConfig.themeDir %>/js/*.js' ],
         dest: '<%=globalConfig.themeDir %>/build/build.src.js'
       }

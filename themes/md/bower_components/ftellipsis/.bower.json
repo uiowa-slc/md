@@ -1,0 +1,24 @@
+{
+  "name": "ftellipsis",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ftlabs/ftellipsis.git"
+  },
+  "ignore": [
+    "examples/",
+    "test/"
+  ],
+  "homepage": "https://github.com/ftlabs/ellipsis",
+  "version": "0.2.3",
+  "_release": "0.2.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.3",
+    "commit": "0ff252d2bbca1b2ec5f0b7c051d5b7152d5fda6b"
+  },
+  "_source": "git://github.com/ftlabs/ellipsis.git",
+  "_target": "~0.2.3",
+  "_originalSource": "ftellipsis",
+  "_direct": true
+}
