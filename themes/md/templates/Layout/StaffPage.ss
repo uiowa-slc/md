@@ -18,8 +18,8 @@
                               <% if $LinkedInURL %><a href="$LinkedInURL" target="_blank">LinkedIn Page</a><br /><% end_if %>
                                <% end_if %>
          
-                              <% if $GithubURL %><a href="$GithubURL" target="_blank">Github Page</a><% end_if %>
-                               <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank"> Personal Website</a><br /><% end_if %>
+                              <% if $GithubURL %><a href="$GithubURL" target="_blank">Github Page</a><br /><% end_if %>
+                               <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank"> Personal Website</a><% end_if %>
                         </p>
                         <h1>$Title</h1>
                         <% if $Projects %>
