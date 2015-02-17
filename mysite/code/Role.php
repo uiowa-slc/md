@@ -30,7 +30,7 @@ class Role extends DataObject {
 	}
 
 	public function getSortedStaffPages() {
-		return $this->StaffPages()->Sort('LastName DESC');
+		return $this->StaffPages()->Sort('LastName ASC');
 	}
 
 }
