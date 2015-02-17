@@ -42,6 +42,11 @@
 
 	 	.portfolio-details-nav{
 	 		padding-top: $column-gutter;
+	 		.btn.continue-reading{
+	 			background: none;
+	 			border: none;
+	 			box-shadow: none;
+	 		}
 	 	}
 	 }
 

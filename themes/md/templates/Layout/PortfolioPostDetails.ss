@@ -7,7 +7,7 @@
                         </div>
 
                         <div class="portfolio-details-nav">
-                            <a href="#" id="unconcat" class="btn">Continue Reading +</a>
+                            <a href="#" id="unconcat" class="btn continue-reading">Continue Reading +</a>
                             <% if $SiteLink %>
                                <a href="$SiteLink" class="btn" target="_blank">Visit Website</a></strong><br /> 
                             <% end_if %>
