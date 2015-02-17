@@ -1,5 +1,5 @@
 <div class="portfolio-roles" id="concat2">
-    <hr class="hide-for-large-up" />  
+    <hr class="hide-for-medium-up" />  
     <% cached 'portfolio-post-roles', ID %>     
         <% if $Roles %>
             <% loop $Roles.Sort("Title") %>

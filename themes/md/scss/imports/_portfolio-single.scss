@@ -43,9 +43,7 @@
 	 	.portfolio-details-nav{
 	 		padding-top: $column-gutter;
 	 		.btn.continue-reading{
-	 			background: none;
-	 			border: none;
-	 			box-shadow: none;
+	 
 	 		}
 	 	}
 	 }
@@ -116,9 +114,12 @@
 	 }
 
 	 .portfolio-content{
-	 	font-size: rem-calc(26);
+	 	
 	 	height: 300px;
 	 	overflow: hidden;
+	 	@media #{$large-up}{
+	 		font-size: rem-calc(23);
+	 	}
 	 	p:first-of-type{
 	 		margin-top: 0;
 	 	}
@@ -134,11 +135,12 @@
 
 	 	@media #{$medium-up}{
 	 		padding-top: 0;
+	 		width: 300px;
+	 		float: right;
 	 	}
 
 	 	@media #{$large-up}{
-	 		width: 300px;
-	 		float: right;
+	 		
 	 		padding-left: $column-gutter/2;
 	 		padding-bottom: $column-gutter/2
 	 	}
