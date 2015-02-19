@@ -8,19 +8,21 @@
             	<% end_if %>
                         <p class="staff-small-info <% if not $Photo %>no-photo<% end_if %>">
                               <% if $inTeam("Professional Staff") %><strong>Position: </strong>$Position <br />
-                                    <% if $EmailAddress %><a href="mailto:$EmailAddress">$EmailAddress</a><% end_if %>
+                                    <% if $EmailAddress %><a href="mailto:$EmailAddress">$EmailAddress <br /></a><% end_if %>
                               <% end_if %>
                               <% if $Teams %><strong>Team:</strong> <% loop $Teams %>$Title<% if not $Last %>, <% end_if %><% end_loop %><br /><% end_if %>
                               <% if $Location %><strong>From:</strong> $Location<br /><% end_if %>
                               <% if $isStudent %>
                                     <% if $Major %><strong>Major:</strong> $Major<br /><% end_if %>
                               <% end_if %>
-                                <% if $TwitterHandle %><a href="http://www.twitter.com/$TwitterHandle/" target="_blank">$TwitterHandle</a><br />
-                              <% if $LinkedInURL %><a href="$LinkedInURL" target="_blank">LinkedIn Page</a><br /><% end_if %>
-                               <% end_if %>
+                              <span class="social">
+                                    <% if $TwitterHandle %><a href="http://www.twitter.com/$TwitterHandle/" class="btn" target="_blank">{$TwitterHandle}</a> <% end_if %>
+                                    <% if $LinkedInURL %><a href="$LinkedInURL" class="btn" target="_blank">LinkedIn</a> <% end_if %>
+                               
          
-                              <% if $GithubURL %><a href="$GithubURL" target="_blank">Github Page</a><br /><% end_if %>
-                               <% if $PortfolioURL %><a href="$PortfolioURL" target="_blank"> Personal Website</a><% end_if %>
+                              <% if $GithubURL %><a href="$GithubURL" class="btn" target="_blank">GitHub</a> <% end_if %>
+                               <% if $PortfolioURL %><a href="$PortfolioURL" class="btn" target="_blank">Website</a><% end_if %>
+                               </span>
                         </p>
                         <h1>$Title</h1>
                         <% if $Projects %>
@@ -69,7 +71,7 @@
                               <% end_if %>
 
                               <% if $MDExperience %>
-                                    <h2>What I have learned from my experience at M+D</h2> 
+                                    <h2>What I've learned from my experience at M+D</h2> 
                                     $MDExperience
                               <% end_if %>
 
@@ -88,21 +90,21 @@
                         <% if $inTeam("Alumni") %>
 
                               <% if $EmploymentLocation %>
-                                    <h2>Where are you employed?</h2>
-                                    $EmploymentLocation
-                                    <br />
+                                    <h2>Where I'm currently employed</h2>
                                     <% if $EmploymentLocationURL %>
-                                          <a href="$EmploymentLocationURL" target="_blank">View Company Website</a>
+                                          <a href="$EmploymentLocationURL" target="_blank">$EmploymentLocation</a>
+                                    <% else %>
+                                          $EmploymentLocation
                                     <% end_if %>
                               <% end_if %>
 
                               <% if $CurrentPosition %>
-                                    <h2>What is your current position title?</h2>
+                                    <h2>My current position title</h2>
                                     $CurrentPosition
                               <% end_if %>
 
                               <% if $FavoriteMemory %>
-                                    <h2>What is your favorite memory of M+D?</h2>
+                                    <h2>Favorite memory of M+D</h2>
                                     $FavoriteMemory
                               <% end_if %>
 
@@ -111,6 +113,10 @@
                                     $Advice
                               <% end_if %>
 
+                              <% if $FavoriteQuote %>
+                                    <h2>Favorite quote</h2> 
+                                    <blockquote>$FavoriteQuote</blockquote>
+                              <% end_if %> 
 
                         <% end_if %>
 
@@ -120,19 +126,24 @@
       
 
                               <% if $EnjoymentFactors %>
-                                    <h2>What do you enjoy about working at M+D?</h2>
+                                    <h2>What I enjoy about working at M+D</h2>
                                     $EnjoymentFactors
                               <% end_if %>
 
                               <% if $JoinDate %>
-                                    <h2>When did you join the M+D staff?</h2>
+                                    <h2>When I joined the M+D staff team</h2>
                                     $JoinDate
                               <% end_if %>
 
                               <% if $Background %>
-                                    <h2>Background and Education</h2>
+                                    <h2>Background and education</h2>
                                     $Background
                               <% end_if %>
+
+                              <% if $FavoriteQuote %>
+                                    <h2>Favorite quote</h2> 
+                                    <blockquote>$FavoriteQuote</blockquote>
+                              <% end_if %> 
 
                         <% end_if %>
 
