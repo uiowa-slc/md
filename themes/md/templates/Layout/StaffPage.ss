@@ -9,6 +9,7 @@
                         <p class="staff-small-info <% if not $Photo %>no-photo<% end_if %>">
                               <% if $inTeam("Professional Staff") %><strong>Position: </strong>$Position <br />
                                     <% if $EmailAddress %><a href="mailto:$EmailAddress">$EmailAddress <br /></a><% end_if %>
+                                     <% if $Phone %><a href="tel:$Phone">$Phone</a><br /><% end_if %>
                               <% end_if %>
                               <% if $Teams %><strong>Team:</strong> <% loop $Teams %>$Title<% if not $Last %>, <% end_if %><% end_loop %><br /><% end_if %>
                               <% if $Location %><strong>From:</strong> $Location<br /><% end_if %>
