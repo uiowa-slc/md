@@ -27,6 +27,10 @@
              <% loop $GalleryImages %>
                     <img class="b-lazy $FirstLast" src="{$ThemeDir}/images/placeholder.png" data-src="$SetWidth(1400).URL" data-src-small="$SetWidth(420).URL" data-src-medium="$SetWidth(768).URL" alt="$Top.$Title">
                     <noscript><img src="$Image.SetWidth(600).URL" alt="$Top.Title" /></noscript>
+                    <%-- if $Pos == 1 %>
+                        <% with $Top %><% include PortfolioPostNavigation %><% end_with %>
+                    <% end_if --%>
+
             <% end_loop %>
         </div>
     </div>

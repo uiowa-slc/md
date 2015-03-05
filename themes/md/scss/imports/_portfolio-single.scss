@@ -16,7 +16,11 @@
 	 	font-size: 1.3em;
 
 	 	@media #{$large-up}{
-	 		padding: 20px;
+	 		padding: $column-gutter+5;
+	 	}
+
+	 	@media #{$xlarge-up}{
+	 		padding: $column-gutter+15 $column-gutter;
 	 	}
 
 		 .staff-coin-list{
@@ -29,17 +33,9 @@
 	 }
 
 	 .portfolio-post-details{
-
-	 	@media #{$large-up}{
-	 		padding: 0 $column-gutter;
-	 		padding-bottom: $column-gutter;
-	 	}
-	 	@media screen and (min-width: $portfolio-width){
-	 		padding: 0;
-	 		padding-bottom: 25px;
-	 		
-	 	}
-
+	 	padding: 0 $column-gutter;
+	 	padding-bottom: $column-gutter;
+	 	
 	 	.portfolio-details-nav{
 	 		padding-top: $column-gutter;
 	 		text-align: center;
@@ -136,14 +132,14 @@
 
 	 	@media #{$medium-up}{
 	 		padding-top: 0;
-	 		width: 400px;
+	 		width: 300px;
 	 		float: right;
 	 	}
 
 	 	@media #{$large-up}{
 	 		
-	 		padding-left: $column-gutter;
-	 		padding-bottom: $column-gutter;
+	 		padding-left: $column-gutter/2;
+	 		padding-bottom: $column-gutter/2;
 	 	}
 
 
