@@ -12,11 +12,9 @@
         <% end_if %>
 
        <ul class="small-block-grid-1 medium-block-grid-2 portfolio-card-list">
-          <% cached %>
             <% loop PortfolioPosts %>
                   <% include PortfolioPostCard %>
             <% end_loop %>
-          <% end_cached %>
         </ul>
   </section>
 </div>
