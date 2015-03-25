@@ -1,3 +1,4 @@
+<div class="show-for-large-up"><% include ActiveTagsSection %></div>
 <div class="portfolio-holder-container row">
 <div class="large-12 columns">
   <section class="portfolio-holder-content">
@@ -23,4 +24,4 @@
       <% include PortfolioPostNavigation %>
     <% end_if %>
 </div>
-<% include ActiveTagsSection %>
+<div class="hide-for-large-up"><% include ActiveTagsSection %></div>

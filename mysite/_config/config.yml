@@ -24,3 +24,6 @@ StaffHolderPage_Controller:
 StaffTeam:
   extensions:
     - StaffTeamExtension
+UserDefinedForm:
+  extensions:
+    - UserDefinedFormExtension

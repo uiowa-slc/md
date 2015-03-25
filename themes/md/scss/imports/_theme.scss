@@ -87,8 +87,12 @@
 }
 
 .topics.active-tags{
-	padding-left: $column-gutter/2;
-	padding-right: $column-gutter/2;
+	padding: $column-gutter $column-gutter/2;
+	@media (min-width: $break-large) {
+		.mod h3{
+			margin-top: 0;
+		}
+	}
 	.row{
 		max-width: $portfolio-width;
 	}
