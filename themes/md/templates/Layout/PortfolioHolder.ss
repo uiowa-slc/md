@@ -12,10 +12,10 @@
         <% end_if %>
 
        <ul class="small-block-grid-1 medium-block-grid-2 portfolio-card-list">
-            <% loop PortfolioPosts %>
+            <% loop PortfolioPosts.Sort('RAND()') %>
                   <% include PortfolioPostCard %>
             <% end_loop %>
-        </ul>
+      </ul>
   </section>
 </div>
     <% if $SelectedTag %>
