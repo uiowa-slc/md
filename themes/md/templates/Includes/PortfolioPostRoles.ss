@@ -1,6 +1,6 @@
-<div class="portfolio-roles" id="concat2"> 
-    <% cached 'portfolio-post-roles', ID %>     
-        <% if $Roles %>
+<% cached 'portfolio-post-roles', ID %> 
+    <% if $Roles %>
+        <div class="portfolio-roles" id="concat2"> 
             <% loop $Roles.Sort("Title") %>
                 <div class="role $FirstLast">
                     <h3>$Title</h3>
@@ -9,6 +9,6 @@
                     <% end_loop %>
                 </div>
             <% end_loop %>
-        <% end_if %>  
-    <% end_cached %>  
-</div>
+        </div>
+    <% end_if %>  
+<% end_cached %>  
