@@ -210,7 +210,9 @@ ErrorDocument 500 /assets/error-500.html
 
 php_value error_reporting 2147483647
 php_flag display_errors off
-php_value upload_max_filesize 30M 
+php_value memory_limit 256M
+php_value post_max_size 50M
+php_value upload_max_filesize 50M
 
 # ------------------------------------------------------------------------------
 # | UTF-8 encoding                                                             |
