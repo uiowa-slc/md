@@ -10,7 +10,7 @@ input[type="search"]{ -webkit-appearance: textfield; box-sizing: content-box; }
 html, input{ color: rgb(34, 34, 34); }
 a{ color: rgb(0, 136, 204); outline-style: none; outline-width: initial; outline-color: initial; text-decoration: none; }
 p, ul{ margin-top: 0.6667em; margin-right: 0px; margin-bottom: 0.6667em; margin-left: 0px; }
-h1, h2, h3, h4{ color: rgb(51, 51, 51); font-family: proxima-nova-condensed, sans-serif; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; letter-spacing: 1px; line-height: 1.2; font-weight: 600; text-rendering: optimizelegibility; }
+h1, h2, h3, h4{ color: rgb(51, 51, 51); font-family: proxima-nova-condensed, 'Arial Narrow', sans-serif; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; letter-spacing: 1px; line-height: 1.2; font-weight: 600; text-rendering: optimizelegibility; }
 h1{ font-size: 2.66667rem; font-weight: 300; margin-top: 0.25em; margin-right: 0px; margin-bottom: 0.25em; margin-left: 0px; text-transform: uppercase; padding-bottom: 10px; }
 @media screen and (min-width: 768px){
 h1{ font-size: 4rem; }
@@ -132,7 +132,7 @@ input{ margin-left: 0px; width: 100%; }
 @media screen and (min-width: 480px){
 .hero-text li{ float: left; }
 }
-.hero-text li a{ background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 206, 57); color: rgb(255, 255, 255); display: block; font-family: proxima-nova-condensed, sans-serif; font-size: 1.4rem; font-weight: 600; letter-spacing: 0.05em; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; text-shadow: rgba(0, 0, 0, 0.296875) 1px 1px 1px; text-transform: uppercase; -webkit-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 1px; -webkit-transition-property: all; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: ease-out; -webkit-transition-delay: initial; background-position: initial initial; background-repeat: initial initial; }
+.hero-text li a{ background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 206, 57); color: rgb(255, 255, 255); display: block; font-family: proxima-nova-condensed, 'Arial Narrow', sans-serif; font-size: 1.4rem; font-weight: 600; letter-spacing: 0.05em; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; text-shadow: rgba(0, 0, 0, 0.296875) 1px 1px 1px; text-transform: uppercase; -webkit-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 1px; -webkit-transition-property: all; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: ease-out; -webkit-transition-delay: initial; background-position: initial initial; background-repeat: initial initial; }
 .home-highlights{ background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(242, 242, 242); padding-top: 5em; padding-right: 0px; padding-bottom: 5em; padding-left: 0px; background-position: initial initial; background-repeat: initial initial; }
 .module{ background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 255); -webkit-box-shadow: rgba(0, 0, 0, 0.398438) 0px 1px 1px; box-shadow: rgba(0, 0, 0, 0.398438) 0px 1px 1px; border-top-left-radius: 2px 2px; border-top-right-radius: 2px 2px; border-bottom-right-radius: 2px 2px; border-bottom-left-radius: 2px 2px; margin-bottom: 1em; min-height: 305px; background-position: initial initial; background-repeat: initial initial; }
 @media screen and (min-width: 480px){
@@ -152,7 +152,7 @@ input{ margin-left: 0px; width: 100%; }
 @media screen and (max-width: 767px){
 .nav-main-wrapper{ background-image: -webkit-linear-gradient(top, rgb(255, 255, 255) 0%, rgb(242, 242, 242) 100%); background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; -webkit-box-shadow: rgba(0, 0, 0, 0.0664062) 0px 1px 4px; border-top-left-radius: 4px 4px; border-top-right-radius: 4px 4px; border-bottom-right-radius: 4px 4px; border-bottom-left-radius: 4px 4px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(212, 212, 212); border-right-color: rgb(212, 212, 212); border-bottom-color: rgb(212, 212, 212); border-left-color: rgb(212, 212, 212); display: block; max-height: 44px; margin-top: 0px; margin-right: auto; margin-bottom: 1em; margin-left: auto; overflow-x: hidden; overflow-y: hidden; position: relative; width: 100%; background-position: initial initial; background-repeat: initial initial; }
 }
-.nav-title{ font-family: proxima-nova-condensed, sans-serif; font-size: 1.25em; font-weight: 300; line-height: 44px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; position: relative; text-align: left; text-transform: uppercase; }
+.nav-title{ font-family: proxima-nova-condensed, 'Arial Narrow', sans-serif; font-size: 1.25em; font-weight: 300; line-height: 44px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; position: relative; text-align: left; text-transform: uppercase; }
 .nav-title a{ color: rgb(34, 34, 34); display: block; padding-top: 0px; padding-right: 15px; padding-bottom: 0px; padding-left: 15px; }
 @media screen and (min-width: 768px){
 .nav-title{ display: none; }
@@ -172,7 +172,7 @@ input{ margin-left: 0px; width: 100%; }
 .nav-main a{ text-align: left; }
 }
 @media screen and (min-width: 768px){
-.nav-main a{ border-bottom-style: none; border-bottom-width: initial; border-bottom-color: initial; color: rgb(51, 51, 51); font-family: proxima-nova-condensed, sans-serif; font-size: 1.13333rem; font-weight: 300; letter-spacing: 0.05em; line-height: 1.3125em; padding-top: 0.25em; padding-right: 1.3em; padding-bottom: 0.55em; padding-left: 1.3em; text-transform: uppercase; white-space: nowrap; }
+.nav-main a{ border-bottom-style: none; border-bottom-width: initial; border-bottom-color: initial; color: rgb(51, 51, 51); font-family: proxima-nova-condensed, 'Arial Narrow', sans-serif; font-size: 1.13333rem; font-weight: 300; letter-spacing: 0.05em; line-height: 1.3125em; padding-top: 0.25em; padding-right: 1.3em; padding-bottom: 0.55em; padding-left: 1.3em; text-transform: uppercase; white-space: nowrap; }
 }
 @media screen and (min-width: 980px){
 .nav-main a{ font-size: 1.33333rem; padding-top: 0.25em; padding-right: 1.45em; padding-bottom: 0.55em; padding-left: 1.45em; }
@@ -215,7 +215,7 @@ body{ background-image: initial; background-attachment: initial; background-orig
 }
 .header{ background-image: url(../../../division-project/images/nav_yellow.gif); background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 255); position: relative; background-position: 0% 100%; background-repeat: repeat no-repeat; }
 .header h1{ margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; }
-.logo{ color: rgb(34, 34, 34); display: block; font-family: proxima-nova-condensed, sans-serif; font-size: 1.93333rem; font-weight: 600; letter-spacing: 1px; line-height: 1.1; margin-top: 0.5em; margin-right: 0px; margin-bottom: 0.2em; margin-left: 0px; text-align: center; text-decoration: none; text-transform: uppercase; text-rendering: optimizelegibility; }
+.logo{ color: rgb(34, 34, 34); display: block; font-family: proxima-nova-condensed, 'Arial Narrow', sans-serif; font-size: 1.93333rem; font-weight: 600; letter-spacing: 1px; line-height: 1.1; margin-top: 0.5em; margin-right: 0px; margin-bottom: 0.2em; margin-left: 0px; text-align: center; text-decoration: none; text-transform: uppercase; text-rendering: optimizelegibility; }
 @media screen and (min-width: 480px){
 .logo{ font-size: 2.73333rem; }
 }
