@@ -3,11 +3,24 @@
                         
                         <div class="portfolio-content">
                         <% include PortfolioPostRoles %>
+                        <% if $Small %>
+                            <p>hey<p>
+                        <% end_if %>
+
+
                         $Content
+                        <%-- $Title.LimitCharacters(40) --%>
                         </div>
 
                         <div class="portfolio-details-nav">
-                            <a href="#" id="unconcat" class="btn continue-reading">Continue Reading +</a>
+
+                            <%-- if charcount exceeds length show continue reading --%>
+                            
+                             <% if $ContentIsLong %>
+                                 <a href="#" id="unconcat" class="btn continue-reading">Continue Reading +</a>
+                            <% end_if %>
+
+                            
                             <% if $SiteLink %>
                                <a href="$SiteLink" class="btn" target="_blank">Visit Website</a></strong><br /> 
                             <% end_if %>

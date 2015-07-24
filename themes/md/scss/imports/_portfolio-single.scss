@@ -6,7 +6,9 @@
 	 margin: auto;
 	 padding: 0;
 
+	 .content-is-long{
 
+	 }
 	 .row{
 	 	max-width: 1400px;
 	 }
@@ -39,9 +41,12 @@
 	 	.portfolio-details-nav{
 	 		padding-top: $column-gutter;
 	 		text-align: center;
-	 		.btn.continue-reading{
-	 
-	 		}
+
+		 	@media #{$large-up}{
+			 		.btn.continue-reading{
+			 			
+			 		}
+		 	}
 	 	}
 	 }
 
@@ -111,7 +116,9 @@
 	 }
 
 	 .portfolio-content{
-	 	
+	 	@media #{$medium-up}{
+	 		height: 0px;
+	 	}
 	 	height: 300px;
 	 	overflow: hidden;
 	 	@media #{$large-up}{

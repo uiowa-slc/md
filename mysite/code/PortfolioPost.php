@@ -39,6 +39,7 @@ class PortfolioPost extends Page {
 
 	}
 
+
 	function getCMSFields() {
 
 		$fields = parent::getCMSFields();
@@ -127,6 +128,24 @@ class PortfolioPost extends Page {
 		$this->owner->SiteLink = $this->owner->ValidateUrl($this->owner->SiteLink);
 
 		parent::onBeforeWrite();
+	}
+
+	public function ContentIsLong(){
+
+		$content = $this->Content;
+		//$content = $content->ATT(): 
+
+		$count = strlen($content);
+		print_r($count);
+		if($count > 178){
+			return true;
+		}else{
+			return false;
+		}
+
+
+
+
 	}
 
 }

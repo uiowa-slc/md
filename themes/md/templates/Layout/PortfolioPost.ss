@@ -1,4 +1,4 @@
-<section class="portfolio-post-content">
+<section class="portfolio-post-content <% if $ContentIsLong %>content-is-long<% end_if %>">
     $Form
 
     <div class="portfolio-image-list main-image row">
