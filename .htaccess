@@ -73,6 +73,7 @@ RewriteRule .* staticpublisher/main.php?url=%1&%{QUERY_STRING} [L]
 php_value post_max_size 100M
 php_value upload_max_filesize 40M
 
+php_value memory_limit 3G
 
 # ------------------------------------------------------------------------------
 # | UTF-8 encoding                                                             |
