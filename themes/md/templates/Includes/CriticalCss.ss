@@ -10,13 +10,13 @@ input[type="search"]{ -webkit-appearance: textfield; box-sizing: content-box; }
 html, input{ color: rgb(34, 34, 34); }
 a{ color: rgb(0, 136, 204); outline-style: none; outline-width: initial; outline-color: initial; text-decoration: none; }
 p, ul{ margin-top: 0.6667em; margin-right: 0px; margin-bottom: 0.6667em; margin-left: 0px; }
-h1, h2, h4{ color: rgb(51, 51, 51); font-family: proxima-nova-condensed, 'Arial Narrow', sans-serif; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; letter-spacing: 1px; line-height: 1.2; font-weight: 600; text-rendering: optimizelegibility; }
+h1, h2, h3{ color: rgb(51, 51, 51); font-family: proxima-nova-condensed, 'Arial Narrow', sans-serif; margin-top: 1em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; letter-spacing: 1px; line-height: 1.2; font-weight: 600; text-rendering: optimizelegibility; }
 h1{ font-size: 2.66667rem; font-weight: 300; margin-top: 0.25em; margin-right: 0px; margin-bottom: 0.25em; margin-left: 0px; text-transform: uppercase; padding-bottom: 10px; }
 @media screen and (min-width: 768px){
 h1{ font-size: 4rem; }
 }
 h2{ font-size: 2.2rem; }
-h4{ font-size: 1.46667rem; }
+h3{ font-size: 1.73333rem; }
 ul{ padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; margin-left: 24px; }
 ul ul{ margin-top: 0px; margin-bottom: 0px; }
 hr{ clear: both; margin-top: 1.5em; margin-right: 0px; margin-bottom: 1.5em; margin-left: 0px; border-right-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; border-top-width: 1px; border-top-style: solid; border-top-color: rgb(221, 221, 221); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(255, 255, 255); }
@@ -26,6 +26,7 @@ img{ vertical-align: middle; }
 .clearfix::before, .clearfix::after{ content: ' '; display: table; }
 .clearfix::after{ clear: both; }
 .clearfix{ }
+.text-center{ text-align: center; }
 .division-topbar input[type="submit"]{ -webkit-appearance: button; cursor: pointer; }
 .division-topbar input[type="search"]{ -webkit-appearance: textfield; box-sizing: border-box; }
 .division-topbar *{ box-sizing: border-box; }
@@ -143,8 +144,8 @@ a{ text-decoration: underline; }
 a[href]::after{ content: ' (', attr(href), ')'; }
  img{ page-break-inside: avoid; }
 img{ max-width: 100% !important; }
-p, h2{ orphans: 3; widows: 3; }
-h2{ page-break-after: avoid; }
+p, h2, h3{ orphans: 3; widows: 3; }
+h2, h3{ page-break-after: avoid; }
 }
 .hero .container{ height: inherit; position: relative; }
 @media screen and (min-width: 768px){
@@ -167,6 +168,16 @@ h2{ page-break-after: avoid; }
 }
 .hero-text li a{ background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 206, 57); color: rgb(255, 255, 255); display: block; font-family: proxima-nova-condensed, 'Arial Narrow', sans-serif; font-size: 1.4rem; font-weight: 600; letter-spacing: 0.05em; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; text-shadow: rgba(0, 0, 0, 0.296875) 1px 1px 1px; text-transform: uppercase; -webkit-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 1px; -webkit-transition-property: all; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: ease-out; -webkit-transition-delay: initial; background-position: initial initial; background-repeat: initial initial; }
 .home-highlights{ background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(242, 242, 242); padding-top: 5em; padding-right: 0px; padding-bottom: 5em; padding-left: 0px; background-position: initial initial; background-repeat: initial initial; }
+.module{ background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 255); -webkit-box-shadow: rgba(0, 0, 0, 0.398438) 0px 1px 1px; box-shadow: rgba(0, 0, 0, 0.398438) 0px 1px 1px; border-top-left-radius: 2px 2px; border-top-right-radius: 2px 2px; border-bottom-right-radius: 2px 2px; border-bottom-left-radius: 2px 2px; margin-bottom: 1em; min-height: 305px; background-position: initial initial; background-repeat: initial initial; }
+@media screen and (min-width: 480px){
+.module{ float: left; margin-left: 2.7624309392265194%; margin-bottom: 0px; overflow-x: hidden; overflow-y: hidden; width: 31.491712707182323%; -webkit-transition-property: all; -webkit-transition-duration: 0.2s; -webkit-transition-timing-function: ease-out; -webkit-transition-delay: initial; }
+}
+.module:first-child{ margin-left: 0px; }
+.module .media{ border-bottom-width: 4px; border-bottom-style: solid; border-bottom-color: rgb(255, 206, 57); }
+.module .media img{ width: 100%; }
+.module .inner{ font-size: 0.93333rem; line-height: 1.5; padding-top: 1em; padding-right: 1em; padding-bottom: 1em; padding-left: 1em; }
+.module h3{ font-size: 20px; margin-top: 0.3em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; text-transform: uppercase; }
+.module h3 a{ color: rgb(51, 51, 51); }
 .loading .nav-main-wrapper{ opacity: 0; }
 @media screen and (min-width: 768px){
 .loading .nav-main-wrapper{ opacity: 1; }
@@ -213,9 +224,9 @@ h2{ page-break-after: avoid; }
 .footer img{ max-width: 266px; }
 }
 .footer .social-icon{ font-family: iconies_socialregular; }
- .footer h4{ color: rgb(238, 238, 238); font-size: 0.9375rem; text-transform: uppercase; }
+ .footer h3{ color: rgb(238, 238, 238); font-size: 0.9375rem; text-transform: uppercase; }
 @media only screen and (min-width: 40.0625em){
- .footer h4{ font-size: 0.875rem; }
+ .footer h3{ font-size: 0.875rem; }
 }
 .footer p, .footer li{ font-size: 0.875rem; }
 .footer a{ color: rgb(238, 238, 238); }
@@ -230,10 +241,6 @@ h2{ page-break-after: avoid; }
 .border-list a{ border-left-width: 1px; border-left-style: solid; border-left-color: rgb(46, 46, 46); padding-top: 5px; padding-right: 0px; padding-bottom: 5px; padding-left: 10px; }
 }
 .footer hr{ border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(46, 46, 46); margin-top: 0.5em; margin-right: 0px; margin-bottom: 0.5em; margin-left: 0px; }
-.footer h4{ color: rgb(238, 238, 238); font-weight: 300; text-transform: uppercase; }
-@media only screen{
-.footer h4{ margin-top: 0px; }
-}
 .footer-btn{ border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(238, 238, 238); border-right-color: rgb(238, 238, 238); border-bottom-color: rgb(238, 238, 238); border-left-color: rgb(238, 238, 238); color: rgb(255, 255, 255); display: block; margin-top: 12px; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; text-align: center; }
 html{ font-size: 15px; }
 body{ background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-family: proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.6; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; background-position: initial initial; background-repeat: initial initial; }
@@ -258,8 +265,8 @@ body{ font-size: 13px; line-height: 1.4; }
 a{ text-decoration: underline; }
  img{ page-break-inside: avoid; }
 img{ max-width: 100% !important; }
-p, h2{ orphans: 3; widows: 3; }
-h2{ page-break-after: avoid; }
+p, h2, h3{ orphans: 3; widows: 3; }
+h2, h3{ page-break-after: avoid; }
 .hide-print, .division-topbar{ display: none; }
 .logo{ font-size: 40px; text-align: left; }
 h1{ border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; font-size: 34px; text-transform: none; }
@@ -279,7 +286,4 @@ h1{ border-top-style: none; border-right-style: none; border-bottom-style: none;
 }
 @media only screen and (min-width: 64.0625em){
 .footer-md-logo img{ margin-top: -20px; max-width: 180px; }
-}
-@media only screen and (min-width: 64.0625em){
-.footer h4.work-with-md-header{ margin-top: 40px; }
 }
