@@ -37,6 +37,7 @@ img{ vertical-align: middle; }
 .clearfix::before{ content: ' '; display: table; }
 .clearfix::after{ content: ' '; display: table; clear: both; }
 .wrapper{ margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto; max-width: 980px; position: relative; }
+.container{ position: relative; }
 .division-topbar{ background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; line-height: 1.5; position: relative; background-position: initial initial; background-repeat: initial initial; }
 .uiowa, .directory-toggle{ line-height: 43px; }
 .uiowa{ display: block; float: left; opacity: 0.7; width: 177px; }
