@@ -330,12 +330,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/division-project.git",
-                "reference": "365949da18d04ca68ea99bb0f8505bd075c7cd46"
+                "reference": "1601a6e59a2c20c53e19942db4bec633e95fdaa4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/365949da18d04ca68ea99bb0f8505bd075c7cd46",
-                "reference": "365949da18d04ca68ea99bb0f8505bd075c7cd46",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/1601a6e59a2c20c53e19942db4bec633e95fdaa4",
+                "reference": "1601a6e59a2c20c53e19942db4bec633e95fdaa4",
                 "shasum": ""
             },
             "require": {
@@ -361,7 +361,7 @@
                 "silverstripe/staticpublisher": "*",
                 "silverstripe/tenon": "*",
                 "silverstripe/timepickerfield": "*",
-                "silverstripe/userforms": "2.*",
+                "silverstripe/userforms": "2.0.x-dev",
                 "silverstripe/widgets": "*",
                 "simplepie/simplepie": "*",
                 "thisisbd/silverstripe-maintenance-mode": "*",
@@ -375,7 +375,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/division-project/tree/2.1.x",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/division-project/issues"
             },
-            "time": "2016-02-29 23:00:21"
+            "time": "2016-03-02 18:18:29"
         },
         {
             "name": "md/rss-display",
@@ -520,16 +520,16 @@
         },
         {
             "name": "silverstripe-australia/gridfieldextensions",
-            "version": "1.1.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe-australia/silverstripe-gridfieldextensions.git",
-                "reference": "302f7c0dc1ca929d7aa001453eaa16491afd4d5b"
+                "reference": "7d1a48c5d76419ac1bb60b046f3946f7d89b0251"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-gridfieldextensions/zipball/302f7c0dc1ca929d7aa001453eaa16491afd4d5b",
-                "reference": "302f7c0dc1ca929d7aa001453eaa16491afd4d5b",
+                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-gridfieldextensions/zipball/7d1a48c5d76419ac1bb60b046f3946f7d89b0251",
+                "reference": "7d1a48c5d76419ac1bb60b046f3946f7d89b0251",
                 "shasum": ""
             },
             "require": {
@@ -541,6 +541,9 @@
             "type": "silverstripe-module",
             "extra": {
                 "installer-name": "gridfieldextensions",
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                },
                 "screenshots": [
                     "docs/en/_images/editable-rows.png",
                     "docs/en/_images/add-existing-search.png"
@@ -561,12 +564,12 @@
                 }
             ],
             "description": "A collection of useful grid field components",
-            "homepage": "http://github.com/ajshort/silverstripe-gridfieldextensions",
+            "homepage": "http://github.com/silverstripe-australia/silverstripe-gridfieldextensions",
             "keywords": [
                 "gridfield",
                 "silverstripe"
             ],
-            "time": "2015-03-04 01:28:24"
+            "time": "2016-02-02 00:28:09"
         },
         {
             "name": "silverstripe-themes/simple",
@@ -1140,20 +1143,19 @@
         },
         {
             "name": "silverstripe/userforms",
-            "version": "2.x-dev",
+            "version": "2.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-userforms.git",
-                "reference": "e5765dc367f5e02b536b3aad851777ab4d1ab82b"
+                "reference": "a4376c74e4ebf244052c1a9aa0caa1bf380ec8ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/e5765dc367f5e02b536b3aad851777ab4d1ab82b",
-                "reference": "e5765dc367f5e02b536b3aad851777ab4d1ab82b",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/a4376c74e4ebf244052c1a9aa0caa1bf380ec8ec",
+                "reference": "a4376c74e4ebf244052c1a9aa0caa1bf380ec8ec",
                 "shasum": ""
             },
             "require": {
-                "silverstripe-australia/gridfieldextensions": "1.1.0",
                 "silverstripe/cms": ">=3.1.0",
                 "silverstripe/framework": ">=3.1.0"
             },
@@ -1163,7 +1165,7 @@
             "type": "silverstripe-module",
             "extra": {
                 "branch-alias": {
-                    "2.x-dev": "2.1.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1181,7 +1183,7 @@
                 "silverstripe",
                 "userforms"
             ],
-            "time": "2015-08-30 23:27:36"
+            "time": "2016-02-28 19:42:31"
         },
         {
             "name": "silverstripe/widgets",
