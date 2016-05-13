@@ -52,27 +52,33 @@ class PortfolioPost extends Page {
 		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
 
 		$fields->addFieldToTab("Root.Main", new UploadField('Image', 'Main Image'), 'Content');
-		$fields->addFieldToTab("Root.Main", $uploadField = new SortableUploadField(
+		$fields->addFieldToTab("Root.Main", new LabelField('MoreImageLabel', 'Add more images in the image tab'), 'Content');
+		$fields->addFieldToTab("Root.Images", SortableUploadField::create(
 			'GalleryImages',
-			'Additional Photos (drag and drop sortable)'),
-			'Content');
+			'Additional Photos (drag and drop sortable)')->setAllowedMaxFileNumber(20));
 
-		$uploadField->setAllowedMaxFileNumber(20);
+		
 
 		$clientSource = function () {
 			return Client::get()->map()->toArray();
 		};
-		$clientField = ListboxField::create('Clients', 'Client', $clientSource());
-		$clientField->setMultiple(true)->useAddNew('Client', $clientSource);
+
+// $field = TagField::create(
+// 	'BlogTags',
+// 	'Blog Tags',
+// 	BlogTag::get(),
+// 	$this->BlogTags()
+// )
+// 	->setShouldLazyLoad(true) // tags should be lazy loaded
+// 	->setCanCreate(true); 
+
+		$clientField = TagField::create('Clients', 'Client(s)', Client::get(), $this->Clients());
 		$fields->addFieldToTab("Root.Main", $clientField, 'Content');
 
-		$mediumSource = function () {
-			return Medium::get()->map()->toArray();
-		};
-		$mediumField = ListboxField::create('Mediums', 'Medium', $mediumSource());
-		$mediumField->setMultiple(true)->useAddNew('Medium', $mediumSource);
+		$mediumField = TagField::create('Mediums', 'Medium(s)', Medium::get(), $this->Mediums());
 		$fields->addFieldToTab("Root.Main", $mediumField, 'Content');
-		$fields->addFieldToTab("Root.Main", new TextField("SiteLink", "Website Link"), "Content");
+
+		$fields->addFieldToTab("Root.Main", new TextField("SiteLink", "Website Link (please include http:// or https://)"), "Content");
 
 		$config = GridFieldConfig_RelationEditor::create();
 		$config->removeComponentsByType('GridFieldAddExistingAutocompleter');
