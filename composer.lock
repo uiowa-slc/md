@@ -1150,12 +1150,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-userforms.git",
-                "reference": "a4376c74e4ebf244052c1a9aa0caa1bf380ec8ec"
+                "reference": "c21135751d3e085ac2a0747a0cd61c929bebcdbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/a4376c74e4ebf244052c1a9aa0caa1bf380ec8ec",
-                "reference": "a4376c74e4ebf244052c1a9aa0caa1bf380ec8ec",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/c21135751d3e085ac2a0747a0cd61c929bebcdbf",
+                "reference": "c21135751d3e085ac2a0747a0cd61c929bebcdbf",
                 "shasum": ""
             },
             "require": {
@@ -1186,7 +1186,7 @@
                 "silverstripe",
                 "userforms"
             ],
-            "time": "2016-02-28 19:42:31"
+            "time": "2016-05-16 04:38:15"
         },
         {
             "name": "silverstripe/widgets",
@@ -1236,12 +1236,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplepie/simplepie.git",
-                "reference": "76fe7bb32214526f7e5cff08a22aba21d45ca4d1"
+                "reference": "8b2950f768be8dbf4ae52b08870cc65fdb846962"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplepie/simplepie/zipball/76fe7bb32214526f7e5cff08a22aba21d45ca4d1",
-                "reference": "76fe7bb32214526f7e5cff08a22aba21d45ca4d1",
+                "url": "https://api.github.com/repos/simplepie/simplepie/zipball/8b2950f768be8dbf4ae52b08870cc65fdb846962",
+                "reference": "8b2950f768be8dbf4ae52b08870cc65fdb846962",
                 "shasum": ""
             },
             "require": {
@@ -1282,7 +1282,7 @@
                 "feeds",
                 "rss"
             ],
-            "time": "2016-04-25 23:46:13"
+            "time": "2016-05-15 02:08:41"
         },
         {
             "name": "thisisbd/silverstripe-maintenance-mode",
