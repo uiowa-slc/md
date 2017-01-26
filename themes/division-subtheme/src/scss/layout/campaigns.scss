@@ -1,0 +1,117 @@
+.campaign{
+
+}
+
+//Image Group Headers
+.campaign__image-group-header{
+	font-size: rem-calc(48);
+	border-bottom: 3px solid #333;
+	&--facebook{
+		border-color: #3B5998;
+		color: #3B5998;
+	}
+	&--twitter{
+		border-color: #2aa3ef;
+		color: #2aa3ef;
+	}
+	&--instagram{
+		position: relative;
+		border: none;
+		color: #e04069;
+		  &:after{
+		  	    content:'';
+			    width:100%;
+			    position: absolute;
+			    left:0;
+			    bottom:-3px;
+			    height: 3px;
+			    background: #333;
+			    background:radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+		  }
+	}
+}
+
+//Image Headers (image dimensions + download button)
+
+.campaign__image-header{
+	padding: rem-calc(15);
+	background: #333;
+
+	&--facebook{
+		background: #3B5998;
+	}
+
+	&--twitter{
+		background: #2aa3ef;
+	}
+
+	&--instagram{
+		background:radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+	}
+}
+
+.campaign__image-desc{
+	padding: 4px 0;
+	margin: 0;
+}
+
+//Images
+.campaign__image-container{
+	padding: rem-calc(20) 0;
+	margin: rem-calc(10) 0;
+	border-bottom: 3px dashed #eee;
+
+}
+
+//Download buttons
+.campaign__save--facebook{
+	color: #3B5998;
+	border-color: #3B5998;
+}
+.campaign__save--twitter{
+	color: #2aa3ef;
+	border-color: #2aa3ef;
+}
+.campaign__save--instagram{
+	color: #e04069;
+	border-color: #e04069;
+}
+
+//Sidenav Items
+.campaign__sidenav-item--facebook{
+	background: #3B5998;
+	border-bottom: none;
+}
+.campaign__sidenav-item--twitter{
+	background: #2aa3ef;
+	border-bottom: none;
+}
+.campaign__sidenav-item--instagram{
+	background:radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+	border-bottom: none;
+}
+.campaign__sidenav-item--email{
+	background: #666;
+	border-bottom: none;
+}
+
+//Sidenav Links
+.campaign__sidenav-link--facebook{
+	color: white;
+	font-weight: bold;
+}
+.campaign__sidenav-link--twitter{
+	color: white;
+	font-weight: bold;
+}
+.campaign__sidenav-link--instagram{
+	color: white;
+	font-weight: bold;
+}
+.campaign__sidenav-link--email{
+	color: white;
+	font-weight: bold;
+}
+.campaign__image{
+	width: 100%;
+}

@@ -30,7 +30,6 @@ class CampaignPage extends Page {
 
 		$fields = parent::getCMSFields();
 		$fields->removeByName('Sidebar');
-		$fields->removeByName('BackgroundImage');
 		$fields->removeByName('Widgets');
 
 		return $fields;
