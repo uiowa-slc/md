@@ -1,0 +1,162 @@
+//division bar fixes for foundation buttons:
+button.directory-toggle {
+	padding: 0;
+	margin-bottom: 0;
+
+	&:hover {
+		background: none;
+	}
+}
+
+.filter-container {
+	.portfolio-holder-content {
+		padding-top: rem-calc(20);
+		padding-bottom: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	h3 {
+		margin: 0;
+	}
+
+	.columns {
+		//border-right: 1px solid #ddd;
+
+	}
+
+	.staff-filter-list {
+		margin-top: 4px;
+		margin-bottom: 4px;
+		text-align: center;
+
+		@include breakpoint(large) {
+			text-align: right;
+		}
+
+		img {
+			display: inline;
+			width: 67px;
+			margin: 0px 1px;
+			border-radius: 50%;
+
+			@include breakpoint(xlarge) {
+				width: 67px;
+				margin: 0px 2px;
+			}
+		}
+
+		a.last {
+			display: inline;
+
+			@include breakpoint(large) {
+				display: none;
+			}
+
+			@include breakpoint(xlarge) {
+				display: inline;
+			}
+		}
+
+		a.more-staff-link {
+			img {
+				width: 32px;
+			}
+		}
+	}
+}
+
+.line-clamp {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+.fade {
+	position: relative;
+	height: 3.6em;
+
+	/* exactly three lines */
+}
+
+.fade:after {
+	content: "";
+	text-align: right;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 70%;
+	height: 1.2em;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0), white 100%);
+	pointer-events: none;
+}
+
+.last-line {
+	height: 3.6em;
+
+	/* exactly three lines */
+	text-overflow: -o-ellipsis-lastline;
+}
+ $portfolio-width: 1400px;
+ 
+.topics {
+	background: #f4f4f4;
+}
+
+.topics.active-tags {
+	//padding: $column-gutter ($column-gutter / 2);
+
+	@include breakpoint(large) {
+		.mod h3 {
+			margin-top: 0;
+		}
+	}
+
+	.row {
+		max-width: $portfolio-width;
+	}
+}
+
+// /* -------------------------------------------------------
+// NAVIGATION OVERRIDES
+// ---------------------------------------------------------- */
+// .nav-main a {
+// 	@media (min-width: $break-medium) {
+// 		padding-left: .9em;
+// 		padding-right: .9em;
+// 	}
+
+// 	@media (min-width: $break-large) {
+// 		padding-left: 1.20em;
+// 		padding-right: 1.20em;
+// 	}
+
+// 	@media (min-width: $break-xlarge) {
+// 		padding-left: 1.8em;
+// 		padding-right: 1.8em;
+// 	}
+// }
+
+   /* -------------------------------------------------------
+FOOTER STYLES
+---------------------------------------------------------- */
+.footer-md-logo img {
+	margin-top: 0px;
+	max-width: 80px;
+
+	@include breakpoint(medium) {
+		margin-top: 0px;
+		max-width: 100px;
+	}
+
+	@include breakpoint(large) {
+		margin-top: -20px;
+		max-width: 180px;
+	}
+}
+
+.footer h4.work-with-md-header {
+	@include breakpoint(large) {
+		margin-top: 40px;
+	}
+}
