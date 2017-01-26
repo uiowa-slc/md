@@ -32,7 +32,7 @@ $BlockArea(BeforeContent)
 							<h3 class="campaign__image-desc subheader subheader--white">Share Image (1200 x 630)</h3>
 						</div>
 						<div class="large-6 columns text-right">
-							<a href="#" class="button button--hollow campaign__save">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
+							<a href="{$ThemeDir}/dist/images/campaigns/fb1.jpg" class="button button--hollow campaign__save" download>Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@ $BlockArea(BeforeContent)
 							<h3 class="campaign__image-desc subheader subheader--white">Event Cover Image (828 x ~315-465)</h3>
 						</div>
 						<div class="large-6 columns text-right">
-							<a href="#" class="button button--hollow campaign__save">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
+							<a href="{$ThemeDir}/dist/images/campaigns/fb2.jpg" class="button button--hollow campaign__save" download>Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -67,7 +67,7 @@ $BlockArea(BeforeContent)
 							<h3 class="campaign__image-desc subheader subheader--white">Share Image (440 x 220)</h3>
 						</div>
 						<div class="large-6 columns text-right">
-							<a href="#" class="button button--hollow campaign__save">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
+							<a href="{$ThemeDir}/dist/images/campaigns/twitter1.jpg" class="button button--hollow campaign__save" download>Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -85,7 +85,7 @@ $BlockArea(BeforeContent)
 							<h3 class="campaign__image-desc subheader subheader--white">Post Image (1080 x 1080)</h3>
 						</div>
 						<div class="large-6 columns text-right">
-							<a href="#" class="button button--hollow campaign__save">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
+							<a href="{$ThemeDir}/dist/images/campaigns/insta1.jpg" class="button button--hollow campaign__save" download>Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -104,7 +104,7 @@ $BlockArea(BeforeContent)
 							<h3 class="campaign__image-desc subheader subheader--white">Mailchimp Header (1000 x 385)</h3>
 						</div>
 						<div class="large-6 columns text-right">
-							<a href="#" class="button button--hollow campaign__save">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
+							<a href="{$ThemeDir}/dist/images/campaigns/insta1.jpg" class="button button--hollow campaign__save" download>Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
