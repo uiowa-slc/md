@@ -32,7 +32,7 @@ $BlockArea(BeforeContent)
 							<h3 class="campaign__image-desc subheader subheader--white">Share Image (1200 x 630)</h3>
 						</div>
 						<div class="large-6 columns text-right">
-							<a href="#" class="button button--hollow">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
+							<a href="#" class="button button--hollow campaign__save">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@ $BlockArea(BeforeContent)
 							<h3 class="campaign__image-desc subheader subheader--white">Event Cover Image (828 x ~315-465)</h3>
 						</div>
 						<div class="large-6 columns text-right">
-							<a href="#" class="button button--hollow">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
+							<a href="#" class="button button--hollow campaign__save">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -64,10 +64,10 @@ $BlockArea(BeforeContent)
 				<div class="campaign__image-header campaign__image-header--twitter">
 					<div class="row">
 						<div class="large-6 columns">
-							<h3 class="campaign__image-desc subheader subheader--white">Share Image</h3>
+							<h3 class="campaign__image-desc subheader subheader--white">Share Image (440 x 220)</h3>
 						</div>
 						<div class="large-6 columns text-right">
-							<a href="#" class="button button--hollow">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
+							<a href="#" class="button button--hollow campaign__save">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -85,7 +85,7 @@ $BlockArea(BeforeContent)
 							<h3 class="campaign__image-desc subheader subheader--white">Post Image (1080 x 1080)</h3>
 						</div>
 						<div class="large-6 columns text-right">
-							<a href="#" class="button button--hollow">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
+							<a href="#" class="button button--hollow campaign__save">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -104,7 +104,7 @@ $BlockArea(BeforeContent)
 							<h3 class="campaign__image-desc subheader subheader--white">Mailchimp Header (1000 x 385)</h3>
 						</div>
 						<div class="large-6 columns text-right">
-							<a href="#" class="button button--hollow">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
+							<a href="#" class="button button--hollow campaign__save">Save Image <i class="fa fa-download" aria-hidden="true"></i></a>
 						</div>
 					</div>
 				</div>
@@ -125,17 +125,17 @@ $BlockArea(BeforeContent)
 			<nav class="sidenav">
 				<h2 class="sidenav__section-title">Jump to:</h2>
 				<ul class="sidenav__menu">
-				<li class="sidenav__item campaign__sidenav-item--facebook">
-					<a href="#facebook" class="sidenav__link campaign__sidenav-link--facebook">Facebook</a>
+				<li class="sidenav__item campaign__sidenav-item campaign__sidenav-item--facebook">
+					<a href="#facebook" class="sidenav__link campaign__sidenav-link">Facebook</a>
 				</li>
-				<li class="sidenav__item campaign__sidenav-item--twitter">
-					<a href="#twitter" class="sidenav__link campaign__sidenav-link--twitter">Twitter</a>
+				<li class="sidenav__item campaign__sidenav-item campaign__sidenav-item--twitter">
+					<a href="#twitter" class="sidenav__link campaign__sidenav-link">Twitter</a>
 				</li>
-				<li class="sidenav__item campaign__sidenav-item--instagram">
-					<a href="#instagram" class="sidenav__link campaign__sidenav-link--instagram">Instagram</a>
+				<li class="sidenav__item campaign__sidenav-item campaign__sidenav-item--instagram">
+					<a href="#instagram" class="sidenav__link campaign__sidenav-link">Instagram</a>
 				</li>
-				<li class="sidenav__item campaign__sidenav-item--email">
-					<a href="#email" class="sidenav__link campaign__sidenav-link--email">Email Newsletter</a>
+				<li class="sidenav__item campaign__sidenav-item campaign__sidenav-item--email">
+					<a href="#email" class="sidenav__link campaign__sidenav-link">Email Newsletter</a>
 				</li>
 				</ul>
 				

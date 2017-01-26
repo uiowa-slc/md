@@ -62,43 +62,47 @@
 	border-bottom: 3px dashed #eee;
 
 }
+.campaign__image{
+	width: 100%;
+	padding: rem-calc(20);
+	background-color: #eee;
+	background-image: url('../images/campaigns/grid.png');
+}
 
-//Download buttons
-.campaign__save--facebook{
-	color: #3B5998;
-	border-color: #3B5998;
-}
-.campaign__save--twitter{
-	color: #2aa3ef;
-	border-color: #2aa3ef;
-}
-.campaign__save--instagram{
-	color: #e04069;
-	border-color: #e04069;
+.campaign__save{
+	&:hover{
+		color: #ddd;
+		border-color: #ddd;
+	}
 }
 
 //Sidenav Items
+.campaign__sidenav-item{
+	border-bottom: none;
+}
 .campaign__sidenav-item--facebook{
 	background: #3B5998;
-	border-bottom: none;
 }
 .campaign__sidenav-item--twitter{
 	background: #2aa3ef;
-	border-bottom: none;
 }
 .campaign__sidenav-item--instagram{
-	background:radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
-	border-bottom: none;
+	background:#e04069;
 }
 .campaign__sidenav-item--email{
 	background: #666;
-	border-bottom: none;
 }
 
 //Sidenav Links
-.campaign__sidenav-link--facebook{
+.campaign__sidenav-link{
 	color: white;
 	font-weight: bold;
+	&:hover{
+		color: #ddd;
+	}	
+}
+.campaign__sidenav-link--facebook{
+
 }
 .campaign__sidenav-link--twitter{
 	color: white;
@@ -111,7 +115,4 @@
 .campaign__sidenav-link--email{
 	color: white;
 	font-weight: bold;
-}
-.campaign__image{
-	width: 100%;
 }
