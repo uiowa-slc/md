@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "b6ac32767c789c542fd5ccfbcfab0fe543ed3348"
+                "reference": "020d476ae2ea88ef5fc3f8d711c33ed27ad5ea3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/b6ac32767c789c542fd5ccfbcfab0fe543ed3348",
-                "reference": "b6ac32767c789c542fd5ccfbcfab0fe543ed3348",
+                "url": "https://api.github.com/repos/composer/installers/zipball/020d476ae2ea88ef5fc3f8d711c33ed27ad5ea3e",
+                "reference": "020d476ae2ea88ef5fc3f8d711c33ed27ad5ea3e",
                 "shasum": ""
             },
             "require": {
@@ -157,7 +157,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-01-26 08:05:39"
+            "time": "2017-01-27 13:02:46"
         },
         {
             "name": "frankmullenger/gallery",
