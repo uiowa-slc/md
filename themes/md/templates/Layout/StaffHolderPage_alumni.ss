@@ -2,7 +2,7 @@
       <div class="container clearfix">
             <section class="staff-content main-content">
             	<h1 class="text-center">M+D Alumni Network</h1>
-                  <p class="text-center"><a href="https://docs.google.com/forms/d/1q44t27U28RlkOIUJ_2OXzrEHbxqap3TmLNbjAraLAUg/viewform?usp=send_form" target="_blank">If you've worked at M+D in the past and would like to be listed here, please fill out this form!</a></p>
+                  <p class="text-center"><a href="mailto:imu-web@uiowa.edu" target="_blank">If you've worked at M+D in the past and would like to be listed here, please give us a shout!</a></p>
                   <% loop $Teams.Sort("SortOrder") %>
                   <div class="staff-team $FirstLast">
                         <h2 class="staff-title">$Name</h2>
