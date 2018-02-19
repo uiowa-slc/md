@@ -28,7 +28,7 @@ $Header
                         </p>
                         <h1 class="staff-title">$Title</h1>
                         <% if $Projects %>
-                              <h2>$FirstName's projects</h2>
+                              <h2 class="project-title">$FirstName's projects</h2>
                               <div class="small-up-1 medium-up-2 portfolio__cards">
                                     <% cached 'staff-portfolio-posts', ID %>
                                     <% loop $Projects %>
