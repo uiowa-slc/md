@@ -26,7 +26,7 @@ $Header
                                <% if $PortfolioURL %><a href="$PortfolioURL" class="button social-button" target="_blank">Website</a><% end_if %>
                                </span>
                         </p>
-                        <h1>$Title</h1>
+                        <h1 class="staff-title">$Title</h1>
                         <% if $Projects %>
                               <h2>$FirstName's projects</h2>
                               <div class="small-up-1 medium-up-2 portfolio__cards">
