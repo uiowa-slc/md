@@ -18,12 +18,12 @@ $Header
                                     <% if $Major %><strong>Major:</strong> $Major<br /><% end_if %>
                               <% end_if %>
                               <span class="social">
-                                    <% if $TwitterHandle %><a href="http://www.twitter.com/$TwitterHandle/" class="btn" target="_blank">{$TwitterHandle}</a> <% end_if %>
-                                    <% if $LinkedInURL %><a href="$LinkedInURL" class="btn" target="_blank">LinkedIn</a> <% end_if %>
+                                    <% if $TwitterHandle %><a href="http://www.twitter.com/$TwitterHandle/" class="button social-button" target="_blank">{$TwitterHandle}</a> <% end_if %>
+                                    <% if $LinkedInURL %><a href="$LinkedInURL" class="button social-button" target="_blank">LinkedIn</a> <% end_if %>
                                
          
-                              <% if $GithubURL %><a href="$GithubURL" class="btn" target="_blank">GitHub</a> <% end_if %>
-                               <% if $PortfolioURL %><a href="$PortfolioURL" class="btn" target="_blank">Website</a><% end_if %>
+                              <% if $GithubURL %><a href="$GithubURL" class="button social-button" target="_blank">GitHub</a> <% end_if %>
+                               <% if $PortfolioURL %><a href="$PortfolioURL" class="button social-button" target="_blank">Website</a><% end_if %>
                                </span>
                         </p>
                         <h1>$Title</h1>

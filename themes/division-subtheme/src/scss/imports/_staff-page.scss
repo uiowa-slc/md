@@ -49,3 +49,12 @@
 
 		}
 	}
+
+	.button.social-button{
+		color: #333;
+ 		background: #f4f4f4;
+		&:hover,&:focus{
+	 	background: #eee;
+	 	color: #666;
+	}
+	}
