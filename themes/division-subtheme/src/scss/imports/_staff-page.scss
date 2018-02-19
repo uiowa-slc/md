@@ -44,9 +44,6 @@
 }
 .staff-page__info{
 		
-		.btn{
-			margin-bottom: 4px;
-		}
 		@media #{breakpoint(large)}{
 			/* Old Still might use: */
 			float: right;
@@ -72,12 +69,13 @@
 
 		}
 	}
-
-	.button.social-button{
+.button.social-button{
+	margin-bottom: 4px;
+		
 		color: #333;
  		background: #f4f4f4;
 		&:hover,&:focus{
 	 	background: #eee;
 	 	color: #666;
 	}
-	}
+}
