@@ -1,0 +1,24 @@
+.staff{
+	hr{
+		margin: rem-calc(60) 0;
+	}
+}
+
+.staff__title{
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	padding-bottom: 20px;
+}
+.staff__link:hover:before {
+	border: none;
+}
+
+.staff__team.first{
+	padding-top: 20px;
+		
+}
+	
+.staff__team .alumni-link{
+	margin-top: grid-column-gutter(small);
+}
