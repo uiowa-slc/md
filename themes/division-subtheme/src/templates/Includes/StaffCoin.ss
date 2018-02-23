@@ -11,6 +11,6 @@
       <p class="staff-name">
             <a href="$Link" class="show-for-large">$FirstName $LastName</a>
             <a href="$Link" class="hide-for-large">$FullNameTruncated</a>
-            <% if $Position %><small class="staff-position show-for-large">$Position</small><% end_if %>
+            <br /><% if $Position %><small class="staff-position show-for-large">$Position</small><% end_if %>
       </p>
 </li>

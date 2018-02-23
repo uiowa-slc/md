@@ -2,6 +2,8 @@
  		min-height: 200px;
  		overflow: hidden;
  		line-height: 67px;
+ 		padding-bottom: 10px;
+ 		padding-top: 10px;
 
  		&:hover{
  			.portfolio__card-overlay{
@@ -93,6 +95,10 @@
 
 .portfolio-holder.row{
 	max-width: $global-width;
+}
+.portfolio-holder__columns{
+	padding-left: 0;
+	padding-right: 0;
 }
 .portfolio-holder__content {
      border-right: none;

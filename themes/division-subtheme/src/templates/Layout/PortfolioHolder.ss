@@ -1,7 +1,7 @@
 $Header
 <div class="show-for-large"><% include ActiveTagsSection %></div>
 <div class="portfolio-holder row">
-<div class="columns large-12">
+<div class="portfolio-holder__columns columns large-12">
   <section class="portfolio-holder__content">
   	$Form
   	$Content
