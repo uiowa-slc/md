@@ -1,6 +1,6 @@
 <div class="portfolio__card column column-block">
 	<a href="$Link" class="portfolio__card-link">
-		<img class="b-lazy portfolio__cover-image" src="{$ThemeDir}/images/placeholder.png" data-src="$Image.CroppedFocusedImage(690,440).URL" data-src-small="$Image.CroppedFocusedImage(300,191).URL" data-src-medium="$Image.CroppedFocusedImage(400,255).URL"  alt="$Title">
+		<img class="dp-lazy portfolio__cover-image" src="{$ThemeDir}/images/placeholder.png" data-original="$Image.CroppedFocusedImage(690,440).URL" data-original-small="$Image.CroppedFocusedImage(300,191).URL" data-original-medium="$Image.CroppedFocusedImage(400,255).URL"  alt="$Title">
 		<div class="portfolio__card-overlay">&nbsp;</div>
 		<div class="portfolio__card-title"><h2>$Title</h2>
 			<p><% loop $Mediums.Limit(3) %>$Title<% if not $Last %>, <% end_if %><% end_loop %></p>

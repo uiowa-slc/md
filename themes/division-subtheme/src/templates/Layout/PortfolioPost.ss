@@ -4,7 +4,7 @@ $Header
 
     <div class="portfolio-post__image-list main-image row">
         <div class="large-12">
-            <% if $Image %><img class="b-lazy $FirstLast" src="{$ThemeDir}/images/placeholder.png" data-src="$Image.SetWidth(1400).URL" data-src-small="$Image.SetWidth(420).URL" data-src-medium="$Image.SetWidth(768).URL" alt="Cover photograph for $Title"><% end_if %>
+            <% if $Image %><img class="dp-lazy $FirstLast" src="{$ThemeDir}/images/placeholder.png" data-original="$Image.SetWidth(1400).URL" data-original-small="$Image.SetWidth(420).URL" data-original-medium="$Image.SetWidth(768).URL" alt="Cover photograph for $Title"><% end_if %>
              <noscript><img src="$Image.SetWidth(600).URL" alt="Cover photograph for $Title" /></noscript>
         </div>
     </div>
@@ -28,7 +28,7 @@ $Header
     <div class="portfolio-post__image-list row">
         <div class="large-12">
              <% loop $GalleryImages %>
-                    <img class="b-lazy $FirstLast" src="{$ThemeDir}/images/placeholder.png" data-src="$SetWidth(1400).URL" data-src-small="$SetWidth(420).URL" data-src-medium="$SetWidth(768).URL" alt="$Top.$Title">
+                    <img class="dp-lazy $FirstLast" src="{$ThemeDir}/images/placeholder.png" data-original="$SetWidth(1400).URL" data-original-small="$SetWidth(420).URL" data-original-medium="$SetWidth(768).URL" alt="$Top.$Title">
                     <noscript><img src="$Image.SetWidth(600).URL" alt="$Top.Title" /></noscript>
                     <%-- if $Pos == 1 %>
                         <% with $Top %><% include PortfolioPostNavigation %><% end_with %>

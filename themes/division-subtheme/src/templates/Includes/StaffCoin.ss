@@ -1,7 +1,7 @@
 <li>
       <% if $Photo %>
       <a href="$Link" class="staff__link">
-            <img class="b-lazy staff-img" data-src="$Photo.CroppedFocusedImage(350,350).URL" data-src-small="$Photo.CroppedFocusedImage(150,150).URL" data-src-medium="$Photo.CroppedFocusedImage(250,250).URL" alt="Image showing $FirstName $LastName">
+            <img class="dp-lazy staff-img" data-original="$Photo.CroppedFocusedImage(350,350).URL" data-original-small="$Photo.CroppedFocusedImage(150,150).URL" data-original-medium="$Photo.CroppedFocusedImage(250,250).URL" alt="Image showing $FirstName $LastName">
       </a>
       <% else %>
       <a href="$Link" class="staff__link">
