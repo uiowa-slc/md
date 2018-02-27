@@ -1,5 +1,5 @@
 <section class="topics active-tags hide-print">
-<div class="row">
+<div class="row expanded">
           
         <div class="columns large-6">
         <h3 class="active-tags__title">Filter by Client</h3>

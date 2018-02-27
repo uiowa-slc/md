@@ -33,6 +33,7 @@
 .portfolio__cards{
 }
 .portfolio__card{
+	position: relative;
 	&:hover{
 		.portfolio__card-title{
 			top: 40%;

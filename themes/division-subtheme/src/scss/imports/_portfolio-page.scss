@@ -2,28 +2,16 @@
 
 .portfolio-post {
      border-right: none;
-	 max-width: $global-width;
 	 margin: auto;
 	 padding: 0;
 
-
-	 .row{
-	 	max-width: 1400px;
-	 }
-
 	 .portfolio-content{
 	 	
-	 	height: 300px;
-	 	overflow: hidden;
 	 	@media #{breakpoint(large)}{
 	 		font-size: rem-calc(23);
 	 	}
 	 	p:first-of-type{
 	 		margin-top: 0;
-	 	}
-	 	&.active{
-	 		overflow: auto;
-	 		height: auto;
 	 	}
 	 }
 	 .portfolio-roles{

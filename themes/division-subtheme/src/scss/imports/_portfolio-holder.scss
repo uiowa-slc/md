@@ -70,13 +70,7 @@
  	display: block;
  	position: relative;
 }
-.staff__coin-list{
- 	display: none;
- 	margin-left: 0;
- 	@media #{breakpoint(large)}{
- 		display: block;
- 	}
- }
+
 .portfolio__card-overlay, .portfolio__card-title{
  	opacity: 0;
  	display: block;
@@ -93,9 +87,7 @@
  	width: 100%;
  }
 
-.portfolio-holder.row{
-	max-width: $global-width;
-}
+
 .portfolio-holder__columns{
 	padding-left: 0;
 	padding-right: 0;
@@ -164,7 +156,4 @@
 		}
 	}
 
-	.row {
-		max-width: $global-width;
-	}
 }

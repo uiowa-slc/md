@@ -1,6 +1,7 @@
 $Header
       <div class="container clearfix">
             <section class="staff">
+                  <h1 class="text-center">Our Team</h1>
             	$Form
             	$Content
             	<% loop Teams %>

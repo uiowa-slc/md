@@ -29,7 +29,7 @@ $Header
                         <h1 class="staff-title">$Title</h1>
                         <% if $Projects %>
                               <h2 class="project-title">$FirstName's projects</h2>
-                              <div class="small-up-1 medium-up-2 portfolio__cards">
+                              <div class="row small-up-1 medium-up-2 portfolio__cards">
                                     <% cached 'staff-portfolio-posts', ID %>
                                     <% loop $Projects %>
                                           <% include PortfolioPostCardSmall %>
@@ -149,21 +149,7 @@ $Header
 
                         <% end_if %>
 
-                        <% if $isAlum %>
-                              <hr />
-                              <p><a href="$EditPortfolioLink" target="_blank">Is this your M+D alumni page? If you'd like to make changes to it, please fill out this form.</a></p>
 
-                        <% end_if %>
-
-                        <% if $isStudent %>
-                              <hr />
-                              <p><a href="$EditPortfolioLink" target="_blank">Is this your M+D staff page? If you'd like to make changes to it, please fill out this form.</a></p>
-                        <% end_if %>
-
-                        <% if $inTeam("Professional Staff") %>
-                               <hr />
-                              <p><a href="$EditPortfolioLink" target="_blank">Is this your M+D professional staff page? If you'd like to make changes to it, please fill out this form.</a></p>
-                        <% end_if %>
             </section>
            
             <aside class="sidebar" class="dp-sticky">
