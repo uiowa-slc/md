@@ -1,0 +1,143 @@
+
+.staff__coin-list{
+	margin-top: 4px;
+	margin-bottom: 4px;
+	text-align: center;
+
+
+	li{
+		list-style-type: none;
+		display: inline-block;
+		margin: 0;
+		margin-bottom: 5px;
+
+	 	@media #{breakpoint(large)}{
+	 		margin-bottom: 0;
+	 	}
+	}
+
+	&:hover{
+		img{
+		 	-webkit-filter: grayscale(0);
+			-moz-filter: grayscale(0);
+			filter: grayscale(0);
+		}
+	}
+
+	img.more-staff{
+		width: 30px;
+		opacity: 1;
+		transition: opacity 1s ease-in-out;
+		-moz-transition: opacity 1s ease-in-out;
+		-webkit-transition: opacity 1s ease-in-out;
+	}
+	img{
+		display: inline-block;
+
+		width: 67px;
+		margin: 0px 3px;
+
+		border-radius: 50%;
+
+		@media #{breakpoint(large)}{
+			margin: 0 4px;
+		}
+
+		@media #{breakpoint(xlarge)}{
+			width: 67px;
+			margin: 0px 5px;
+		}
+
+ 		//opacity: 0;
+ 		-webkit-filter: grayscale(100%);
+		-moz-filter: grayscale(100%);
+		filter: grayscale(100%);
+
+		&#details-toggle{
+			 -webkit-filter: grayscale(0);
+			-moz-filter: grayscale(0);
+			filter: grayscale(0);
+		}
+
+		-webkit-transition: opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out, -webkit-filter 1s ease;
+
+		&:hover{
+			-webkit-filter: grayscale(0);
+			-moz-filter: grayscale(0);
+			filter: grayscale(0);
+
+			-webkit-transform:rotate(5deg);
+		    -moz-transform:rotate(5deg);
+		    -o-transform:rotate(5deg);
+
+		    cursor: pointer;
+
+		}
+	}
+
+	#details-toggle:hover{
+
+		-webkit-filter: grayscale(40);
+		-moz-filter: grayscale(40);
+		filter: grayscale(40);
+
+		-webkit-transform:rotate(0);
+	    -moz-transform:rotate(0);
+	    -o-transform:rotate(0);
+	}
+ 
+}
+
+.staff__coin-list--alumni{
+	.staff-position{
+		display: none;
+	}
+}
+
+.staff__coin-list--large{
+			margin: 0;
+			li{
+
+				margin-left:0;
+				
+				padding: 3px 0;
+
+				@media #{breakpoint(large)}{
+					padding: 5px 0;
+				}
+			}
+
+			img{
+				width: 100px;
+				@media #{breakpoint(large)}{
+					width: 175px;
+				}
+
+				-webkit-filter: none;
+				-moz-filter: none;
+				filter: none;
+
+			}
+
+		}
+
+.staff__coin-list--large .staff__coin-list--alumni{
+	img{
+		width: 75px;
+		@media #{breakpoint(large)}{
+			width: 100px;
+		}
+	}
+}
+
+.staff__link{
+	margin-left: 5px;
+	margin-right: 5px;
+
+	@media #{breakpoint(large)}{
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+}
+

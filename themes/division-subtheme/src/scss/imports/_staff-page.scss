@@ -1,0 +1,82 @@
+.staff-page{
+	blockquote{
+		padding-left: 1em;
+		border-left: 5px solid #ffce39;
+		padding: 30px 1em;
+		font-size: 2em;
+		font-style: italic;
+	}
+}
+.staff-title{
+	font-weight: 300;
+	font-size: 4rem;
+	text-transform: uppercase;
+	margin: .25em 0;
+	padding-bottom: 10px;
+	color: #333;
+	font-family: "proxima-nova-condensed", "Arial Narrow", sans-serif;
+	letter-spacing: 1px;
+	line-height: 1.2;
+	text-rendering: optimizelegibility;
+	text-transform: uppercase;
+}
+.project-title{
+	margin-top: 0;
+	font-size: 2.2rem;
+	color: #333;
+	font-family: "proxima-nova-condensed", "Arial Narrow", sans-serif;
+	letter-spacing: 1px;
+	line-height: 1.2;
+	font-weight: 600;
+	text-rendering: optimizelegibility;
+}
+.portfolio__cards{
+}
+.portfolio__card{
+	position: relative;
+	&:hover{
+		.portfolio__card-title{
+			top: 40%;
+		}
+		h2{
+			font-size: 1.6em;
+		}
+	}
+}
+.staff-page__info{
+		
+		@media #{breakpoint(large)}{
+			/* Old Still might use: */
+			float: right;
+			width: 30%;
+			position: relative;
+			z-index: 1000;
+			margin-top: -30px;
+			background: white;
+			padding-top: 15px;
+			padding-left: 15px;
+
+			&.no-photo{
+				float: none;
+				width: 100%;
+				margin-top: 0;
+				padding: 0;
+			}
+
+			.social{
+				text-align: center;
+			}
+
+
+		}
+	}
+.button.social-button{
+	margin-bottom: 4px;
+		
+		color: #333;
+ 		background: #f4f4f4;
+		&:hover,&:focus{
+	 	background: #eee;
+	 	color: #666;
+	}
+}
