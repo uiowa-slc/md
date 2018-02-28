@@ -15,11 +15,11 @@ $Header
           <% end_if %>
 
          <div class="small-up-1 medium-up-2 portfolio__cards">
-            <% cached %>
+           
               <% loop PortfolioPosts.Sort('RAND()') %>
                     <% include PortfolioPostCard %>
               <% end_loop %>
-            <% end_cached %>
+            
         </div>
     </section>
   </div>
