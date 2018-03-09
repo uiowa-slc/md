@@ -46,10 +46,10 @@ class PortfolioPost extends Page {
 		$fields->removeByName('BackgroundImage');
 		$fields->removeByName('Widgets');
 
-		$fields->addFieldToTab("Root.Main", $dateField = new DatetimeField("Date", _t("BlogEntry.DT", "Date")), "Content");
+		// $fields->addFieldToTab("Root.Main", $dateField = new DatetimeField("Date", _t("BlogEntry.DT", "Date")), "Content");
 
-		$dateField->getDateField()->setConfig('showcalendar', true);
-		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
+		// $dateField->getDateField()->setConfig('showcalendar', true);
+		// $dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
 
 		$fields->addFieldToTab("Root.Main", new UploadField('Image', 'Main Image'), 'Content');
 		$fields->addFieldToTab("Root.Main", $uploadField = new SortableUploadField(
@@ -59,20 +59,13 @@ class PortfolioPost extends Page {
 
 		$uploadField->setAllowedMaxFileNumber(20);
 
-		$clientSource = function () {
-			return Client::get()->map()->toArray();
-		};
-		$clientField = ListboxField::create('Clients', 'Client', $clientSource());
-		$clientField->setMultiple(true)->useAddNew('Client', $clientSource);
+		$clientField = TagField::create('Clients', 'Client(s)', Client::get(), $this->Clients())->setCanCreate(true);
 		$fields->addFieldToTab("Root.Main", $clientField, 'Content');
 
-		$mediumSource = function () {
-			return Medium::get()->map()->toArray();
-		};
-		$mediumField = ListboxField::create('Mediums', 'Medium', $mediumSource());
-		$mediumField->setMultiple(true)->useAddNew('Medium', $mediumSource);
+		$mediumField = TagField::create('Mediums', 'Medium(s)', Medium::get(), $this->Mediums())->setCanCreate(true);
+
 		$fields->addFieldToTab("Root.Main", $mediumField, 'Content');
-		$fields->addFieldToTab("Root.Main", new TextField("SiteLink", "Website Link"), "Content");
+		$fields->addFieldToTab("Root.Main", new TextField("SiteLink", "Website Link (MUST include http:// in the URL)"), "Content");
 
 		$config = GridFieldConfig_RelationEditor::create();
 		$config->removeComponentsByType('GridFieldAddExistingAutocompleter');

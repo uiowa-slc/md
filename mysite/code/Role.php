@@ -17,12 +17,8 @@ class Role extends DataObject {
 
 	public function getCMSFields() {
 
-		$staffPages = function () {
-			return StaffPage::get()->map()->toArray();
-		};
-		$staffListboxField = ListboxField::create('StaffPages', 'Staff who worked on this project', $staffPages())
-			->setMultiple(true)
-			->useAddNew('StaffPage', $staffPages);
+		$staffListboxField = TagField::create('StaffPages', 'Staff who worked on this project', StaffPage::get(), $this->StaffPages())->setCanCreate(true);
+
 		return new FieldList(
 			new TextField('Title', 'Title'),
 			$staffListboxField
