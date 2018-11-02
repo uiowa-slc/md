@@ -1,28 +1,51 @@
-<div class="portfolio-post__details row">
-    <div class="columns large-12 large-centered">
-        <div class="portfolio-content">
-            <% include PortfolioPostRoles %>
-            $Content
-            </div>
-            <div class="portfolio-post__details-nav">
-                <% if $SiteLink %>
-                   <a href="$SiteLink" class="button details-nav__button" target="_blank">Visit Website</a></strong><br /> 
-                <% end_if %>
-            </div>
-             <hr />
-            <% if $Mediums %>
-                <strong>Mediums: </strong>
-                <% loop $Mediums %>
-                    <a href="$Link">$Title<% if not Last %>, <% end_if %></a>
-                <% end_loop %>
-                <br />
-            <% end_if %>
-            <% if $Clients %>
-                <strong>Clients: </strong> 
-                <% loop $Clients %>
-                    <a href="$Link">$Title<% if not Last %>, <% end_if %></a>
-                <% end_loop %>
-                <br />
-            <% end_if %>
-    </div>
+<% if not $BackgroundImage %>
+<div class="row">
+	<div class="columns small-12">
+		<div class="main-content__header">
+			<h1>$Title</h1>
+		</div>
+	</div>
 </div>
+<br /><br />
+<% end_if %>
+
+<div class="row">
+	<div class="columns medium-7">
+		$Content
+	</div>
+	<div class="columns medium-4 medium-offset-1">
+
+		<!-- Site Link -->
+		<% if $SiteLink %>
+			<a href="$SiteLink" class="site-link" target="_blank">View The Website</a></strong>
+			<hr />
+		<% end_if %>
+
+		<!-- Roles -->
+		<% include PortfolioPostRoles %>
+
+		<!-- Client -->
+		<% if $Clients %>
+			<hr />
+			<p class="client">
+			<strong>Clients: </strong>
+			<% loop $Clients %>
+				<a href="$Link">$Title<% if not Last %>, <% end_if %></a>
+			<% end_loop %>
+			</p>
+		<% end_if %>
+
+		<!-- Mediums -->
+		<% if $Mediums %>
+			<hr />
+			<p class="medium">
+			<strong>Services Provided: </strong>
+			<% loop $Mediums %>
+				<a href="$Link">$Title</a>
+			<% end_loop %>
+			</p>
+		<% end_if %>
+
+	</div>
+</div>
+<br /><br />

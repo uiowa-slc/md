@@ -3,10 +3,8 @@ class StaffPageExtension extends DataExtension {
 
 	private static $db = array(
 		//Everybody
-
-		"Location" => "Text",
-		"Interests" => "Text",
-		"FavoriteProject" => "Text",
+		"Interests" => "HTMLText",
+		"FavoriteProject" => "HTMLText",
 		"LinkedInURL" => "Text",
 		"PortfolioURL" => "Text",
 		"TwitterHandle" => "Text",
@@ -14,26 +12,25 @@ class StaffPageExtension extends DataExtension {
 
 		//Students
 		"Major" => "Text",
-		"DegreeDescription" => "Text",
+		"DegreeDescription" => "HTMLText",
 		"TopStrengths" => "Text",
 		"FavoriteQuote" => "Text",
-		"PostGraduation" => "Text",
-
-		"MDExperience" => "Text",
+		"PostGraduation" => "HTMLText",
+		"MDExperience" => "HTMLText",
 
 		//Alumni
 		"EmploymentLocation" => "Text",
 		"CurrentPosition" => "Text",
 		"EmploymentLocationURL" => "Text",
-		"FavoriteMemory" => "Text",
-		"Advice" => "Text",
+		"FavoriteMemory" => "HTMLText",
+		"Advice" => "HTMLText",
 		"YearGraduated" => "Text",
 
 		//Pro Staff
 		"PositionTitle" => "Text",
-		"EnjoymentFactors" => "Text",
+		"EnjoymentFactors" => "HTMLText",
 		"JoinDate" => "Text",
-		"Background" => "Text",
+		"Background" => "HTMLText",
 
 	);
 
@@ -54,7 +51,7 @@ class StaffPageExtension extends DataExtension {
 		$fields->removeByName('DepartmentName');
 		$fields->removeByName('DepartmentURL');
 		$fields->removeByName('Content');
-		$fields->removeByName("BackgroundImage");
+		// $fields->removeByName("BackgroundImage");
 
 		//Everybody
 
@@ -64,22 +61,23 @@ class StaffPageExtension extends DataExtension {
 		$fields->renameField('Teams', 'Team - If this person\'s an M+D Alum, put
             them in <strong>both the Alumni team and their original position</strong> (e.g., "Alumni + Graphic Designers")');
 
-		$fields->addFieldToTab("Root.Main", new TextField("Location", "Where are you from?"));
-		$fields->addFieldToTab("Root.Main", new TextareaField("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) "));
+
 		$fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
-		$fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
 		$fields->addFieldToTab("Root.Main", new TextField("TwitterHandle", "Twitter Username @"));
 		$fields->addFieldToTab("Root.Main", new TextField("GithubURL", "Github URL?"));
-		$fields->addFieldToTab("Root.Main", new TextareaField("FavoriteProject", "Favorite M+D project? Why?"));
+		$fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
+		$fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
+		$fields->addFieldToTab("Root.Main", new HTMLEditorField("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) "));
+		$fields->addFieldToTab("Root.Main", new HTMLEditorField("FavoriteProject", "Favorite M+D project? Why?"));
 
 		//Students
 		if ($owner->isStudent()) {
 			$fields->addFieldToTab("Root.Main", new TextField("Major", "Major"));
-			$fields->addFieldToTab("Root.Main", new TextareaField("DegreeDescription", "Explain why you chose your degree."));
-			$fields->addFieldToTab("Root.Main", new TextareaField("MDExperience", "What have you learned from your experience at M+D?"));
+			$fields->addFieldToTab("Root.Main", new HTMLEditorField("DegreeDescription", "Explain why you chose your degree."));
+			$fields->addFieldToTab("Root.Main", new HTMLEditorField("MDExperience", "What have you learned from your experience at M+D?"));
 			$fields->addFieldToTab("Root.Main", new TextareaField("TopStrengths", "Top five strengths"));
 			$fields->addFieldToTab("Root.Main", new TextareaField("FavoriteQuote", "Favorite quote"));
-			$fields->addFieldToTab("Root.Main", new TextareaField("PostGraduation", "What do you hope to do after graduation?"));
+			$fields->addFieldToTab("Root.Main", new HTMLEditorField("PostGraduation", "What do you hope to do after graduation?"));
 
 		}
 
@@ -89,22 +87,19 @@ class StaffPageExtension extends DataExtension {
 			$fields->addFieldToTab("Root.Main", new TextField("EmploymentLocation", "Where are you employed?"));
 			$fields->addFieldToTab("Root.Main", new TextField("CurrentPosition", "What is your current position title?"));
 			$fields->addFieldToTab("Root.Main", new TextField("EmploymentLocationURL", "Your employer's website"));
-			$fields->addFieldToTab("Root.Main", new TextareaField("FavoriteMemory", "What is your favorite memory of M+D?"));
-			$fields->addFieldToTab("Root.Main", new TextareaField("Advice", "What advice would you give to current students?"));
+			$fields->addFieldToTab("Root.Main", new HTMLEditorField("FavoriteMemory", "What is your favorite memory of M+D?"));
+			$fields->addFieldToTab("Root.Main", new HTMLEditorField("Advice", "What advice would you give to current students?"));
 		}
 
 		//Pro Staff
 		if ($owner->inTeam('Professional Staff')) {
 			$fields->addFieldToTab("Root.Main", new TextField("Position", "Position"), "EmailAddress");
 			$fields->addFieldToTab("Root.Main", new TextField("Phone", "Phone(xxx-xxx-xxxx)"));
-			$fields->addFieldToTab("Root.Main", new TextareaField("EnjoymentFactors", "What do you enjoy about working at M+D?"));
+			$fields->addFieldToTab("Root.Main", new HTMLEditorField("EnjoymentFactors", "What do you enjoy about working at M+D?"));
 			$fields->addFieldToTab("Root.Main", new TextField("JoinDate", "When did you join the M+D staff?"));
 			// $dateField->getDateField()->setConfig('showcalendar', true);
-			$fields->addFieldToTab("Root.Main", new TextareaField("Background", "Background & Education"));
+			$fields->addFieldToTab("Root.Main", new HTMLEditorField("Background", "Background & Education"));
 		}
-
-		$fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
-		$fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
 
 	}
 
@@ -190,34 +185,43 @@ class StaffPageExtension extends DataExtension {
 				}
 			}
 			$projects->removeDuplicates();
+			
+			return $projects->sort('Date DESC');
+		}
 
-			return $projects;
+	}
+
+	public function Posts(){
+		$author = Member::get()->filter(array('Email' => $this->owner->EmailAddress))->First();
+		
+		if($author){
+			return $author->BlogPosts()->limit(4);
 		}
 
 	}
 
 	public function ValidateTwitter($username) {
-			if (empty($username)) {
-				return $username;
-			} else if (!preg_match("/@/i", $username)) {
-				$username = "@" . $username;
-			}
-
+		if (empty($username)) {
 			return $username;
+		} else if (!preg_match("/@/i", $username)) {
+			$username = "@" . $username;
 		}
+
+		return $username;
+	}
 
 
 	public function EditPortfolioLink(){
 
 		/* 	Student staff Page:
 			https://docs.google.com/forms/d/1Bh8JIkuV3b_2NHX8ST8Ud8xTOWsKTILnQWgddn3XmDU/viewform?entry.1413661770=FirstName&entry.1547650400=LastName&entry.1970732278=WhereFrom&entry.46708057=InterestsAct&entry.2022956471=Major&entry.83862488=WhyDegree&entry.721109635=LearnedFromExp&entry.428912992=FavoriteMDProject&entry.246858419=FiveStrengths&entry.43829841=FavQuote&entry.644260591=AfterGrad&entry.1346755299=LinkedIn&entry.1110916745=Portfolio
-			
+
 			Pro Staff Page:
 			https://docs.google.com/forms/d/16nRmETxww4vIEqqlqQ72JUV_FWgSET4fUahp9-hdDoc/viewform?entry.1413661770=FirstName&entry.1547650400=LastNam&entry.1970732278=From&entry.46708057=InterestsActs&entry.428912992=FavoriteMDProject&entry.882405316=Position&entry.721109635=EnjoyAboutMD&entry.246858419=WhenJoined&entry.43829841=BackgroundEd&entry.1346755299=LinkedIn&entry.1110916745=Portfolio
 
 			Alum Page:
 			https://docs.google.com/forms/d/1q44t27U28RlkOIUJ_2OXzrEHbxqap3TmLNbjAraLAUg/viewform?entry.1413661770=FirstName&entry.1547650400=LastName&entry.1970732278=WhereFrom&entry.1276658641=Email&entry.1105919959=CurrentEmployer&entry.706670405=CurrentEmployerURL&entry.782910880=CurrentPosition&entry.813930454=YearGraduated&entry.2022956471=Major&entry.1552428663=Bio&entry.46708057=InterestsAct&entry.382308292=AdviceToCurrentStudents&entry.721109635=LearnedFromExp&entry.428912992=FavoriteMDProject&entry.246858419=FiveStrengths&entry.43829841=FavQuote&entry.1346755299=LinkedIn&entry.1672914025=Twitter&entry.1110916745=Portfolio
-		
+
 
 		*/	include_once(Director::BaseFolder().'/mysite/code/thirdparty/Bitly.php');
 			$owner = $this->owner;
@@ -288,7 +292,7 @@ class StaffPageExtension extends DataExtension {
 
 				$url = $urlPrefix.$parameters;
 				$token = BITLY_OAUTH;
-				
+
 				$shorten = bitly_v3_shorten($url, $token);
 
 				//print_r($shorten);

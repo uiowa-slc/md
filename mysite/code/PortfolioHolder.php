@@ -47,7 +47,7 @@ class PortfolioHolder_Controller extends BlogHolder_Controller {
 		if (isset($tag)) {
 			return $tag->PortfolioPosts();
 		} else {
-			return $this->AllChildren();
+			return PortfolioPost::get();
 		}
 	}
 
