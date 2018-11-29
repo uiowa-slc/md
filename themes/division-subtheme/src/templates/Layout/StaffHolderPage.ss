@@ -2,7 +2,7 @@ $Header
 <div class="container clearfix">
 	<div class="row large-12 columns">
 	<section class="staff">
-		<h1 class="text-center">Our Team</h1>
+		<h1 class="text-center">$Title</h1>
 		$Form
 		$Content
 		<% loop Teams %>

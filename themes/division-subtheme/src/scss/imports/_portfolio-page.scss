@@ -24,7 +24,7 @@
 		margin: 0;
 	}
 	&__role {
-		margin-bottom: 0;
+		margin-bottom: .5em;
 	}
 	&__anchor {
 		&:hover, &:focus {
@@ -32,7 +32,7 @@
 		}
 	}
 }
-.portfolio-roles, .medium, .client {
+.portfolio-roles, .medium, .client, .date, .link {
 	font-size: rem-calc(16);
 }
 

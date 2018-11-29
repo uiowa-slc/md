@@ -1,16 +1,14 @@
 <% cached 'portfolio-post-roles', ID %>
 <% if $Roles %>
 	<div class="portfolio-roles" id="concat2">
-		<%-- <h3 class="portfolio-roles__title">Project Roles</h3> --%>
+		<p class=""><strong>Credits:</strong><br />
 		<% loop $Roles.Sort("Title") %>
-			<div class="role $FirstLast">
-				<p class="portfolio-roles__role"><strong>$Title:</strong>
 				<% loop $SortedStaffPages %>
-					<a href="$Link" class="portfolio-roles__anchor">$Title<% if not $Last %>, <% end_if %></a>
+					<a href="$Link" class="portfolio-roles__anchor">$Title</a>, <small>$Up.Title</small>
+					<br />
 				<% end_loop %>
-				</p>
-			</div>
 		<% end_loop %>
+		</p>
 	</div>
 <% end_if %>
 <% end_cached %>

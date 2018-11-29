@@ -15,12 +15,6 @@
 	</div>
 	<div class="columns medium-4 medium-offset-1">
 
-		<!-- Site Link -->
-		<% if $SiteLink %>
-			<a href="$SiteLink" class="site-link" target="_blank">View The Website</a></strong>
-			<hr />
-		<% end_if %>
-
 		<!-- Roles -->
 		<% include PortfolioPostRoles %>
 
@@ -28,7 +22,7 @@
 		<% if $Clients %>
 			<hr />
 			<p class="client">
-			<strong>Clients: </strong>
+			<strong>Client:</strong><br />
 			<% loop $Clients %>
 				<a href="$Link">$Title<% if not Last %>, <% end_if %></a>
 			<% end_loop %>
@@ -39,13 +33,29 @@
 		<% if $Mediums %>
 			<hr />
 			<p class="medium">
-			<strong>Services Provided: </strong>
+			<strong>Services Provided:</strong><br />
 			<% loop $Mediums %>
 				<a href="$Link">$Title</a>
 			<% end_loop %>
 			</p>
 		<% end_if %>
 
+		<!-- Date -->
+		<% if $Date %>
+			<hr />
+			<p class="date">
+				<strong>Date:</strong><br />
+				$Date.Format('F, Y')
+			</p>
+		<% end_if %>
+
+		<!-- Site Link -->
+		<% if $SiteLink %>
+			<p class="link">
+				<strong>Link:</strong><br />
+				<a href="$SiteLink" target="_blank">$SiteLink</a>
+			</p>
+		<% end_if %>
 	</div>
 </div>
 <br /><br />
