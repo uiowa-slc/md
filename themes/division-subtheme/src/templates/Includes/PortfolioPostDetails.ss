@@ -51,6 +51,7 @@
 
 		<!-- Site Link -->
 		<% if $SiteLink %>
+			<hr />
 			<p class="link">
 				<strong>Link:</strong><br />
 				<a href="$SiteLink" target="_blank">$SiteLink</a>
