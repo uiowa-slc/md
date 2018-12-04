@@ -9,11 +9,9 @@
 		</a>
 	<% end_if %>
 	<p class="staff-name">
-		<a href="$Link" class="show-for-large">$FirstName $LastName</a>
-		<a href="$Link" class="hide-for-large">$FullNameTruncated</a>
-		<br />
+		<a href="$Link" class="staff-name__firstlast">$FirstName $LastName</a>
 		<% if $Position %>
-			<small class="staff-position show-for-large">$Position</small>
+			<small class="staff-name__position show-for-medium">$Position</small>
 		<% end_if %>
 	</p>
 </li>

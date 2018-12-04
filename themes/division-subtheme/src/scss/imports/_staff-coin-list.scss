@@ -26,17 +26,19 @@
 		text-decoration: underline;
 	}
 }
-
 .staff__coin-list--alumni {
 	.staff-position{
 		display: none;
 	}
 }
-
 .staff__link{
 	display: block;
 }
-.staff-position {
-	display: inline-block;
+.staff-name {
+	font-size: rem-calc(16);
+	font-weight: bold;
+	&__position {
+		display: block;
+		font-weight: normal;
+	}
 }
-
