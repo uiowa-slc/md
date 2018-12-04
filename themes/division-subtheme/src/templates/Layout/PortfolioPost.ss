@@ -6,7 +6,7 @@ $Header
 <section class="portfolio-post">
 	$Form
 	<% include PortfolioPostDetails %>
-	<div class="portfolio-post__image-list row row--large">
+	<div class="portfolio-post__image-list row">
 		<div class="columns large-12">
 			<div class="portfolio-gallery">
 				<% loop $GalleryImages %>
