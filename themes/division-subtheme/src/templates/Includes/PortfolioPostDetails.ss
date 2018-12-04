@@ -2,7 +2,7 @@
 <div class="row">
 	<div class="columns small-12">
 		<div class="main-content__header">
-			<h1>$Title</h1>
+			<h1>$Title<% if $Date %>, $Date.Format('Y')<% end_if %></h1>
 		</div>
 	</div>
 </div>
@@ -44,7 +44,7 @@
 		<% if $Date %>
 			<hr />
 			<p class="date">
-				<strong>Date:</strong><br />
+				<strong>Date Completed:</strong><br />
 				$Date.Format('F, Y')
 			</p>
 		<% end_if %>
