@@ -3,7 +3,7 @@ $Header
 	<section class="container clearfix">
 		<div class="white-cover"></div>
 		<section class="main-content main-content--with-padding main-content--full-width staff-page">
-			
+
 
 			<div class="row">
 				<div class="columns small-12">
@@ -109,10 +109,11 @@ $Header
 				</div><!-- end columns -->
 				<div class="columns large-4">
 					<br />
-					
-					<% if $inTeam("Professional Staff") &&  not $inTeam("Alumni") %>
+					<% if $Position %>
 						<p><strong>Position:</strong><br />$Position</p>
+					<% end_if %>
 
+					<% if $inTeam("Professional Staff") &&  not $inTeam("Alumni") %>
 						<% if $EmailAddress %>
 							<p><strong>Email:</strong><br /><a href="mailto:$EmailAddress">$EmailAddress</a></p>
 						<% end_if %>
@@ -188,7 +189,7 @@ $Header
 							<% include PortfolioPostCard %>
 						<% end_loop %>
 					</ul>
-					
+
 					<!-- If more than 9 project, show them in table view -->
 					<% if $Projects.Count > 9 %>
 						<h4>More Projects</h4>

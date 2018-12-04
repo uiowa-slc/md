@@ -67,6 +67,7 @@ class StaffPageExtension extends DataExtension {
 		$fields->addFieldToTab("Root.Main", new TextField("GithubURL", "Github URL?"));
 		$fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
 		$fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
+		$fields->addFieldToTab("Root.Main", new TextField("Position", "Position"), "EmailAddress");
 		$fields->addFieldToTab("Root.Main", new HTMLEditorField("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) "));
 		$fields->addFieldToTab("Root.Main", new HTMLEditorField("FavoriteProject", "Favorite M+D project? Why?"));
 
@@ -93,7 +94,6 @@ class StaffPageExtension extends DataExtension {
 
 		//Pro Staff
 		if ($owner->inTeam('Professional Staff')) {
-			$fields->addFieldToTab("Root.Main", new TextField("Position", "Position"), "EmailAddress");
 			$fields->addFieldToTab("Root.Main", new TextField("Phone", "Phone(xxx-xxx-xxxx)"));
 			$fields->addFieldToTab("Root.Main", new HTMLEditorField("EnjoymentFactors", "What do you enjoy about working at M+D?"));
 			$fields->addFieldToTab("Root.Main", new TextField("JoinDate", "When did you join the M+D staff?"));
@@ -185,7 +185,7 @@ class StaffPageExtension extends DataExtension {
 				}
 			}
 			$projects->removeDuplicates();
-			
+
 			return $projects->sort('Date DESC');
 		}
 
@@ -193,7 +193,7 @@ class StaffPageExtension extends DataExtension {
 
 	public function Posts(){
 		$author = Member::get()->filter(array('Email' => $this->owner->EmailAddress))->First();
-		
+
 		if($author){
 			return $author->BlogPosts()->limit(4);
 		}
