@@ -192,7 +192,8 @@ $Header
 
 					<!-- If more than 9 project, show them in table view -->
 					<% if $Projects.Count > 9 %>
-						<h4>More Projects</h4>
+						<br />
+						<h4>Additional Projects</h4>
 						<ul class="project-table">
 							<% loop $Projects.limit(20,9) %>
 								<li class="project-table__item">

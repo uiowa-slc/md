@@ -11,7 +11,7 @@ $Header
 			<div class="portfolio-gallery">
 				<% loop $GalleryImages %>
 					<div>
-						<img class="dp-lazy $FirstLast" src="{$ThemeDir}/dist/images/placeholder.png" data-original="$SetWidth(1400).URL" data-original-small="$SetWidth(420).URL" data-original-medium="$SetWidth(768).URL" alt="$Top.$Title">
+						<img class="dp-lazy $FirstLast" src="{$ThemeDir}/dist/images/placeholder.png" data-original="$SetWidth(1200).URL" data-original-small="$SetWidth(420).URL" data-original-medium="$SetWidth(768).URL" alt="$Top.$Title">
 						<% if $Caption %><p class="caption">$Caption</p><% end_if %>
 						<%-- <noscript><img src="$Image.SetWidth(600).URL" alt="$Top.Title" /></noscript> --%>
 					</div>
