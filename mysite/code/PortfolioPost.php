@@ -49,14 +49,14 @@ class PortfolioPost extends Page {
 		// $fields->removeByName('BackgroundImage');
 		$fields->removeByName('Widgets');
 
-		// $fields->addFieldToTab("Root.Main", $dateField = new DatetimeField("Date", _t("BlogEntry.DT", "Date")), "Content");
+		$fields->addFieldToTab("Root.Main", $dateField = new DatetimeField("Date", _t("BlogEntry.DT", "Date")), "Content");
 
 
 		// $dateField->getDateField()->setConfig('showcalendar', true);
 		// $dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
 
-		// $dateField->getDateField()->setConfig('showcalendar', true);
-		// $dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
+		$dateField->getDateField()->setConfig('showcalendar', true);
+		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
 		$fields->addFieldToTab('Root.Main', new CheckboxField('IsArchived','Is this work archived? (Yes)'), "Content");
 
 
