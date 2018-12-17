@@ -55,8 +55,8 @@ class PortfolioPost extends Page {
 		// $dateField->getDateField()->setConfig('showcalendar', true);
 		// $dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
 
-		$dateField->getDateField()->setConfig('showcalendar', true);
-		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
+		// $dateField->getDateField()->setConfig('showcalendar', true);
+		// $dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
 		$fields->addFieldToTab('Root.Main', new CheckboxField('IsArchived','Is this work archived? (Yes)'), "Content");
 
 
