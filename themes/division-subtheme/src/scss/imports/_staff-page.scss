@@ -1,82 +1,158 @@
-.staff-page{
+.staff-page {
 	blockquote{
 		padding-left: 1em;
 		border-left: 5px solid #ffce39;
-		padding: 30px 1em;
-		font-size: 2em;
+		padding: 15px 1em;
+		font-size: 1.4em;
 		font-style: italic;
 	}
 }
-.staff-title{
-	font-weight: 300;
-	font-size: 4rem;
-	text-transform: uppercase;
-	margin: .25em 0;
-	padding-bottom: 10px;
-	color: #333;
-	font-family: "proxima-nova-condensed", "Arial Narrow", sans-serif;
-	letter-spacing: 1px;
-	line-height: 1.2;
-	text-rendering: optimizelegibility;
-	text-transform: uppercase;
+.staff-title {
+	margin-top: .5em;
 }
-.project-title{
-	margin-top: 0;
-	font-size: 2.2rem;
-	color: #333;
-	font-family: "proxima-nova-condensed", "Arial Narrow", sans-serif;
-	letter-spacing: 1px;
-	line-height: 1.2;
-	font-weight: 600;
-	text-rendering: optimizelegibility;
-}
-.portfolio__cards{
-}
-.portfolio__card{
-	position: relative;
-	&:hover{
-		.portfolio__card-title{
-			top: 40%;
-		}
-		h2{
-			font-size: 1.6em;
-		}
-	}
-}
-.staff-page__info{
-		
-		@media #{breakpoint(large)}{
-			/* Old Still might use: */
-			float: right;
-			width: 30%;
-			position: relative;
-			z-index: 1000;
-			margin-top: -30px;
-			background: white;
-			padding-top: 15px;
-			padding-left: 15px;
 
-			&.no-photo{
-				float: none;
-				width: 100%;
-				margin-top: 0;
-				padding: 0;
-			}
-
-			.social{
-				text-align: center;
-			}
-
-
-		}
-	}
-.button.social-button{
+.button.social-button {
 	margin-bottom: 4px;
-		
-		color: #333;
- 		background: #f4f4f4;
-		&:hover,&:focus{
+	color: #333;
+	background: #f4f4f4;
+	&:hover,&:focus{
 	 	background: #eee;
 	 	color: #666;
+	}
+}
+
+/* Social Media
+============================================================= */
+.staff-social {
+	list-style: none;
+	margin: 0;
+	& li {
+
+	}
+	& li a {
+		font-size: rem-calc(14);
+		color: $black;
+		display: block;
+		padding: 8px 0;
+		&:before {
+			content:'';
+			display: inline-block;
+			background-repeat: no-repeat;
+			background-size: 26px 26px;
+			width: 28px;
+			height: 28px;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+}
+.social--twitter:before {
+	background-image: url(../images/icon_twitter.png);
+}
+.social--linkedin:before {
+	background-image: url(../images/icon_linkedin.png);
+}
+.social--github:before {
+	background-image: url(../images/icon_github.png);
+}
+.social--website:before {
+	background-image: url(../images/link.png);
+}
+
+.staff-qa {
+	& h4 {
+		margin-bottom: 0;
+	}
+}
+
+/* Articles
+============================================================= */
+.article-title {
+	font-size: rem-calc(22);
+	letter-spacing: 1px;
+	margin: 3em 0;
+	text-transform: uppercase;
+	text-align: center;
+}
+.articles {
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+	list-style: none;
+	margin: 0;
+	margin-bottom: 4em;
+	&__item {
+		background-color: #fff;
+		border-top: 1px solid #eee;
+		padding: 2em;
+	}
+	&__title {
+		color: $black;
+		display: block;
+		font-size: rem-calc(22);
+		font-weight: 600;
+		margin-bottom: 10px;
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+/* Projects
+============================================================= */
+.project-title {
+	font-size: rem-calc(22);
+	letter-spacing: 1px;
+	margin: 3em 0;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.project-table {
+	list-style: none;
+	margin: 0 0 4em;
+	&__item {
+		border-top: 1px solid #eee;
+		&:last-child {
+			border-bottom: 1px solid #eee;
+		}
+	}
+	&__anchor {
+		color: $black;
+		display:flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1.5em 0;
+		&:hover, &:focus {
+			background-color: #fafafa;
+		}
+	}
+	&__title, &__year, &__medium {
+		margin: 0;
+	}
+	&__title {
+		font-size: rem-calc(18);
+		width: calc(70% - 20px);
+		@include breakpoint(medium) {
+			width: calc(40% - 40px);
+		}
+	}
+	&__year {
+		width: calc(30% - 20px);
+		text-align: right;
+		@include breakpoint(medium) {
+			width: calc(20% - 40px);
+		}
+	}
+	&__medium {
+		display: none;
+		text-align: right;
+		width: calc(40% - 40px);
+		@include breakpoint(medium) {
+			display: block;
+		}
 	}
 }

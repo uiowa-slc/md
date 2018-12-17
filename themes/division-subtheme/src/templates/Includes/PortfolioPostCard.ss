@@ -1,17 +1,11 @@
-<div class="portfolio__card column column-block">
-	<a href="$Link" class="portfolio__card-link">
-		<img class="dp-lazy portfolio__cover-image" src="{$ThemeDir}/dist/images/placeholder.png" data-original="$Image.CroppedFocusedImage(690,440).URL" data-original-small="$Image.CroppedFocusedImage(300,191).URL" data-original-medium="$Image.CroppedFocusedImage(400,255).URL"  alt="$Title">
-		<div class="portfolio__card-overlay">&nbsp;</div>
-		<div class="portfolio__card-title"><h2>$Title</h2>
-			<p><% loop $Mediums.Limit(3) %>$Title<% if not $Last %>, <% end_if %><% end_loop %></p>
-			<% if $StaffPages %>
-			<ul class="staff__coin-list show-for-large">
-				<% loop $StaffPages.Limit(3) %>
-				<% if $Photo %><li><img src="$Photo.CroppedImage(200,200).URL" alt="Photo of $FirstName $LastName" /></li><% end_if %>
-				<% end_loop %>
-				<li><img class="more-staff" src="{$ThemeDir}/dist/images/more-staff.gif" /></li>
-			</ul>
-			<% end_if %>
+<li class="project-list__item">
+	<a href="$Link" class="project-list__anchor">
+		<div class="project-list__img-holder">
+			<img class="project-list__img" src="$Image.CroppedFocusedImage(500,400).URL" alt="$Title">
+		</div>
+		<div class="project-list__content">
+			<h3 class="project-list__title">$Title<% if $Date %>, $Date.Format('Y')<% end_if %></h3>
+			<p class="project-list__taglist"><% loop $Mediums.Limit(3) %>$Title<% if not $Last %>, <% end_if %><% end_loop %></p>
 		</div>
 	</a>
-</div>
+</li>

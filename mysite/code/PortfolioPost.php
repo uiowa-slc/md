@@ -6,6 +6,7 @@ class PortfolioPost extends Page {
 	private static $db = array(
 		"Date" => "SS_Datetime",
 		'SiteLink' => 'Text',
+		'IsArchived' => 'Boolean',
 
 	);
 	private static $can_be_root = false;
@@ -32,6 +33,8 @@ class PortfolioPost extends Page {
 		'ShowInMenus' => false,
 	);
 
+	private static $default_sort = 'Date DESC';
+
 	public function populateDefaults() {
 		parent::populateDefaults();
 
@@ -43,15 +46,21 @@ class PortfolioPost extends Page {
 
 		$fields = parent::getCMSFields();
 		$fields->removeByName('Sidebar');
-		$fields->removeByName('BackgroundImage');
+		// $fields->removeByName('BackgroundImage');
 		$fields->removeByName('Widgets');
 
 		// $fields->addFieldToTab("Root.Main", $dateField = new DatetimeField("Date", _t("BlogEntry.DT", "Date")), "Content");
 
+
 		// $dateField->getDateField()->setConfig('showcalendar', true);
 		// $dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
 
-		$fields->addFieldToTab("Root.Main", new UploadField('Image', 'Main Image'), 'Content');
+		$dateField->getDateField()->setConfig('showcalendar', true);
+		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
+		$fields->addFieldToTab('Root.Main', new CheckboxField('IsArchived','Is this work archived? (Yes)'), "Content");
+
+
+		$fields->addFieldToTab("Root.Main", new UploadField('Image', 'Cover Image'), 'Content');
 		$fields->addFieldToTab("Root.Main", $uploadField = new SortableUploadField(
 			'GalleryImages',
 			'Additional Photos (drag and drop sortable)'),
@@ -126,17 +135,17 @@ class PortfolioPost extends Page {
 
 class PortfolioPost_Controller extends BlogEntry_Controller {
 	public function NextPage() {
-		$page = Page::get()->filter(array(
+		$page = PortfolioPost::get()->filter(array(
 			'ParentID' => $this->ParentID,
-			'Sort:GreaterThan' => $this->Sort,
+			'Date:LessThan' => $this->Date,
 		))->First();
 
 		return $page;
 	}
 	public function PreviousPage() {
-		$page = Page::get()->filter(array(
+		$page = PortfolioPost::get()->filter(array(
 			'ParentID' => $this->ParentID,
-			'Sort:LessThan' => $this->Sort,
+			'Date:GreaterThan' => $this->Date,
 		))->Last();
 
 		return $page;
