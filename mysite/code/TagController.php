@@ -1,5 +1,8 @@
 <?php
-class Tag_Controller extends Page_Controller {
+
+use SilverStripe\Core\Convert;
+
+class Tag_Controller extends PageController {
 
 	/**
 	 * An array of actions that can be accessed via a request. Each array element should be an action name, and the

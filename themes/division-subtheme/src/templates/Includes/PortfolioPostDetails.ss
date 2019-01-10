@@ -45,7 +45,7 @@
 			<hr />
 			<p class="date">
 				<strong>Date Completed:</strong><br />
-				$Date.Format('F, Y')
+				$Date.Format('MMMM, Y')
 			</p>
 		<% end_if %>
 

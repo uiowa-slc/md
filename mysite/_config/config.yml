@@ -1,114 +1,21 @@
 ---
-Name: mysite
-After:
-  - 'framework/*'
-  - 'cms/*'
+Name: myproject
 ---
-# YAML configuration for SilverStripe
-# See http://doc.silverstripe.org/framework/en/topics/configuration
-# Caution: Indentation through two spaces  not tabs
 StaffPage:
   extensions:
     - StaffPageExtension
 StaffHolderPage:
   extensions:
     - StaffHolderPageExtension
-StaffPage_Controller:
+StaffPageController:
   extensions:
     - StaffPageControllerExtension
-StaffHolderPage_Controller:
+StaffHolderPageController:
   extensions:
     - StaffHolderPageControllerExtension
 StaffTeam:
   extensions:
     - StaffTeamExtension
-UserDefinedForm:
+SilverStripe\UserForms\Model\UserDefinedForm:
   extensions:
     - UserDefinedFormExtension
-File: 
-  allowed_extensions: 
-    - ace
-    - ai
-    - arc
-    - arj
-    - asf
-    - au
-    - avi
-    - bmp
-    - bz2
-    - cab
-    - cda
-    - ace
-    - arc
-    - arj
-    - asf
-    - au
-    - avi
-    - bmp
-    - bz2
-    - cab
-    - cda
-    - css
-    - csv
-    - dmg
-    - doc
-    - docx
-    - dotx
-    - dotm
-    - eps
-    - flv
-    - gif
-    - gpx
-    - gz
-    - hqx
-    - ico
-    - jar
-    - jpeg
-    - jpg
-    - kml
-    - m4a
-    - m4v
-    - mid
-    - midi
-    - mkv
-    - mov
-    - mp3
-    - mp4
-    - mpa
-    - mpeg
-    - mpg
-    - ogg
-    - ogv
-    - pages
-    - pcx
-    - pdf
-    - pkg
-    - png
-    - pps
-    - ppt
-    - pptx
-    - potx
-    - potm
-    - psd
-    - ra
-    - ram
-    - rm
-    - rtf
-    - sit
-    - sitx
-    - svg
-    - tar
-    - tgz
-    - tif
-    - tiff
-    - txt
-    - wav
-    - webm
-    - wma
-    - wmv
-    - xls
-    - xlsx
-    - xltx
-    - xltm
-    - zip
-    - zipx

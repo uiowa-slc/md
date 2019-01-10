@@ -1,7 +1,7 @@
 <li>
 	<% if $Photo %>
 		<a href="$Link" class="staff__link">
-			<img class="staff-img" src="$Photo.CroppedFocusedImage(350,260).URL" alt="Image showing $FirstName $LastName">
+			<img class="staff-img" src="$Photo.FocusFill(350,260).URL" alt="Image showing $FirstName $LastName">
 		</a>
 	<% else %>
 		<a href="$Link" class="staff__link">

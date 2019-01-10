@@ -1,10 +1,25 @@
 <?php
 
+use SilverStripe\Assets\Image;
+use SilverStripe\ORM\FieldType\DBDate;
+use SilverStripe\Forms\DatetimeField;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+
+use SilverStripe\TagField\TagField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
+use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
+use SilverStripe\Forms\GridField\GridFieldDataColumns;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\ORM\ArrayList;
+use Bummzack\SortableFile\Forms\SortableUploadField;
 class PortfolioPost extends Page {
 
 	private static $default_parent = 'PortfolioHolder';
 	private static $db = array(
-		"Date" => "SS_Datetime",
+		"Date" => "DBDatetime",
 		'SiteLink' => 'Text',
 		'IsArchived' => 'Boolean',
 
@@ -15,7 +30,7 @@ class PortfolioPost extends Page {
 	private static $plural_name = 'Portfolio Post Pages';
 
 	private static $has_one = array(
-		'Image' => 'Image',
+		'Image' => Image::class,
 	);
 
 	private static $has_many = array(
@@ -33,12 +48,16 @@ class PortfolioPost extends Page {
 		'ShowInMenus' => false,
 	);
 
+    private static $owns = array(
+        'Image'
+    );
+
 	private static $default_sort = 'Date DESC';
 
 	public function populateDefaults() {
 		parent::populateDefaults();
 
-		$this->setField('Date', date('Y-m-d H:i:s', strtotime('now')));
+		$this->setField(DBDate::class, date('Y-m-d H:i:s', strtotime('now')));
 
 	}
 
@@ -49,14 +68,14 @@ class PortfolioPost extends Page {
 		// $fields->removeByName('BackgroundImage');
 		$fields->removeByName('Widgets');
 
-		$fields->addFieldToTab("Root.Main", $dateField = new DatetimeField("Date", _t("BlogEntry.DT", "Date")), "Content");
+		$fields->addFieldToTab("Root.Main", $dateField = new DatetimeField('Date'), "Content");
 
 
 		// $dateField->getDateField()->setConfig('showcalendar', true);
 		// $dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
 
-		$dateField->getDateField()->setConfig('showcalendar', true);
-		$dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
+		// $dateField->getDateField()->setConfig('showcalendar', true);
+		// $dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
 		$fields->addFieldToTab('Root.Main', new CheckboxField('IsArchived','Is this work archived? (Yes)'), "Content");
 
 
@@ -77,12 +96,12 @@ class PortfolioPost extends Page {
 		$fields->addFieldToTab("Root.Main", new TextField("SiteLink", "Website Link (MUST include http:// in the URL)"), "Content");
 
 		$config = GridFieldConfig_RelationEditor::create();
-		$config->removeComponentsByType('GridFieldAddExistingAutocompleter');
-		$config->getComponentByType('GridFieldDataColumns')->setDisplayFields(array(
+		$config->removeComponentsByType(GridFieldAddExistingAutocompleter::class);
+		$config->getComponentByType(GridFieldDataColumns::class)->setDisplayFields(array(
 			'Title' => 'Title',
 			// Retrieve from a has-one relationship
 		));
-		$config->addComponent(new GridFieldSortableRows('SortOrder'));
+		//$config->addComponent(new GridFieldSortableRows('SortOrder'));
 
 		$rolesField = new GridField(
 			'Roles',
@@ -129,26 +148,6 @@ class PortfolioPost extends Page {
 		$this->owner->SiteLink = $this->owner->ValidateUrl($this->owner->SiteLink);
 
 		parent::onBeforeWrite();
-	}
-
-}
-
-class PortfolioPost_Controller extends BlogEntry_Controller {
-	public function NextPage() {
-		$page = PortfolioPost::get()->filter(array(
-			'ParentID' => $this->ParentID,
-			'Date:LessThan' => $this->Date,
-		))->First();
-
-		return $page;
-	}
-	public function PreviousPage() {
-		$page = PortfolioPost::get()->filter(array(
-			'ParentID' => $this->ParentID,
-			'Date:GreaterThan' => $this->Date,
-		))->Last();
-
-		return $page;
 	}
 
 }

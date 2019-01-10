@@ -1,4 +1,7 @@
 <?php
+
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\Core\Extension;
 class StaffHolderPageControllerExtension extends Extension {
 
 	private static $allowed_actions = array(

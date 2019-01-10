@@ -1,4 +1,7 @@
 <?php
+
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\ORM\DataExtension;
 class StaffTeamExtension extends DataExtension {
 
 	public function ActiveStaffPages() {

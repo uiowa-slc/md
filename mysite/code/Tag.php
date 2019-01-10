@@ -1,10 +1,14 @@
 <?php
 
+use SilverStripe\View\Parsers\URLSegmentFilter;
+use SilverStripe\Control\Controller;
+use SilverStripe\ORM\DataObject;
+
 class Tag extends DataObject{
 
 	private static $db = array(
-		"Title" => "varchar(255)",
-		"URLSegment" => "varchar(255)",
+		"Title" => "Text",
+		"URLSegment" => "Text",
 		//"Content" => "HTMLText"
 	);
 
@@ -13,7 +17,7 @@ class Tag extends DataObject{
 	);
 
 	private static $belongs_many_many = array(
-		
+
 	);
 
 	public function onBeforeWrite(){
@@ -45,7 +49,7 @@ class Tag extends DataObject{
 	}
 	public function FeedLink(){
 		$link = 'tags/feed/'.$this->URLSegment.'/';
-		return $link;		
+		return $link;
 	}
 	public function Link(){
 		$portfolioHolder = PortfolioHolder::get()->First();

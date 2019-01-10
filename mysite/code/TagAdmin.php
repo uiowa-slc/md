@@ -1,5 +1,7 @@
 <?php
 
+use SilverStripe\Admin\ModelAdmin;
+
 class TagAdmin extends ModelAdmin {
 
 	private static $managed_models = array('Tag'); 

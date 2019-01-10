@@ -1,7 +1,12 @@
 <?php
+
+use SilverStripe\TagField\TagField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\ORM\DataObject;
 class Role extends DataObject {
 	private static $db = array(
-		'Title' => 'Varchar(155)',
+		'Title' => 'Text',
 		'SortOrder' => 'Int',
 
 	);
@@ -13,7 +18,7 @@ class Role extends DataObject {
 	private static $has_one = array(
 		'PortfolioPost' => 'PortfolioPost',
 	);
-	public static $default_sort = 'SortOrder';
+	private static $default_sort = 'SortOrder';
 
 	public function getCMSFields() {
 

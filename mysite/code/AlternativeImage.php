@@ -1,4 +1,6 @@
 <?php
+
+use SilverStripe\Assets\Image;
 class GalleryImage extends Image {
 
 	private static $db = array( 

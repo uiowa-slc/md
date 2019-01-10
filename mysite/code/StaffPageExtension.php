@@ -1,4 +1,14 @@
 <?php
+
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\CheckboxSetField;
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\Security\Member;
+use SilverStripe\Control\Director;
+use SilverStripe\ORM\DataExtension;
 class StaffPageExtension extends DataExtension {
 
 	private static $db = array(

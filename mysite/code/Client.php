@@ -1,5 +1,8 @@
 <?php
 
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\FieldList;
+
 class Client extends Tag{
 
 	private static $db = array(
