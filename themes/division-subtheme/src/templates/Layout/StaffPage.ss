@@ -183,7 +183,7 @@ $Header
             <div class="row">
                 <div class="columns small-12">
                     <hr />
-                    <h4 class="project-title">$FirstName's projects</h2>
+                    <h2 class="project-title">$FirstName's projects</h2>
                     <ul class="project-list">
                         <% loop $Projects.limit(9) %>
                             <% include PortfolioPostCard %>
