@@ -43,6 +43,9 @@ class StaffPageExtension extends DataExtension {
 		"Background" => "HTMLText",
 
 	);
+	private static $has_one = array(
+		'Member' => Member::class
+	);
 
 	private static $belongs_many_many = array(
 		'Roles' => 'Role',
@@ -133,6 +136,7 @@ class StaffPageExtension extends DataExtension {
 	}
 
 	public function isStudent() {
+		// print_r($this->owner);
 		if (!($this->inTeam("Professional Staff")) && !($this->inTeam("Alumni"))) {
 			return true;
 		} else {

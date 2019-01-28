@@ -19,3 +19,6 @@ StaffTeam:
 SilverStripe\UserForms\Model\UserDefinedForm:
   extensions:
     - UserDefinedFormExtension
+Member:
+  extensions:
+    - MemberExtension
