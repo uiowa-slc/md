@@ -153,10 +153,15 @@ $Header
                             <% if $PortfolioURL %>
                                 <li><a href="$PortfolioURL" target="_blank" class="social--website">Website</a></li>
                             <% end_if %>
-                            <% if $Member %>
+                            <%-- <% if $Member %>
                                 <li><a href="{$Link}edit">Edit Profile</a></li>
-                            <% end_if %>
+                            <% end_if %> --%>
                         </ul>
+                    <% end_if %>
+                    <% if $Member %>
+                    <ul class="staff-social">
+                        <li><a href="{$Link}edit">Edit Profile</a></li>
+                    </ul>
                     <% end_if %>
                 </div>
             </div><!-- end row -->
