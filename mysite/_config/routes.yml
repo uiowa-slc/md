@@ -1,8 +1,9 @@
-# ---
-# Name: myroutes
-# After: framework/routes#coreroutes
-# ---
-# SilverStripe\Control\Director:
-#   rules:
-#     tags//$ID: Tag_Controller
-#     api//$Action/$ID: Api_Controller
+---
+Name: myroutes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'edit-profile': 'EditProfileRoutingController'
