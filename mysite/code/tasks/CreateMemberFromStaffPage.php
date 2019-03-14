@@ -23,7 +23,11 @@ class CreateMemberFromStaffPage extends BuildTask {
                     $member->Email = $staff->EmailAddress;
                     $staff->MemberID = $member->ID;
                     $member->write();
+
                     $staff->write();
+                    if($staff->isPublished()){
+                        $staff->publish('Stage', 'Live');
+                    }
                     print_r('<li>created member and updated staff memberID</li>');
                 }
                 else{
@@ -31,6 +35,9 @@ class CreateMemberFromStaffPage extends BuildTask {
                     // print_r($existingMember->ID);
                     $staff->MemberID = $existingMember->ID;
                     $staff->write();
+                    if($staff->isPublished()){
+                        $staff->publish('Stage', 'Live');
+                    }
                     print_r('<li>updated staff memberID</li>');
                 }
             }
