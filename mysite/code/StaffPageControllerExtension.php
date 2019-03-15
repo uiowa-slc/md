@@ -15,6 +15,16 @@ use SilverStripe\Control\RequestHandler;
 use Silverstripe\Forms\Form;
 use SilverStripe\View\Requirements;
 use SilverStripe\Forms\HTMLEditor\TinyMCEConfig;
+use SilverStripe\Admin\ModalController;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorConfig;
+use SilverStripe\Core\Manifest\ModuleLoader;
+use SilverStripe\Admin\CMSMenu;
+use SilverStripe\Core\Injector\Injector;
+use SilverStripe\Admin\LeftAndMain;
+use SilverStripe\Control\Director;
+use SilverStripe\Admin\AdminRootController;
+use SilverStripe\Security\SecurityToken;
+use SilverStripe\Core\Convert;
 class StaffPageControllerExtension extends Extension {
 
 	private static $allowed_actions = array(
@@ -48,11 +58,59 @@ class StaffPageControllerExtension extends Extension {
 		}
 	}
 
+    /**
+     * Gets the combined configuration of all LeftAndMain subclasses required by the client app.
+     *
+     * @return string
+     *
+     * WARNING: Experimental API
+     */
+    public function getCombinedClientConfig()
+    {
+        $combinedClientConfig = ['sections' => []];
+        $cmsClassNames = CMSMenu::get_cms_classes(LeftAndMain::class, true, CMSMenu::URL_PRIORITY);
+
+        // append LeftAndMain to the list as well
+        $cmsClassNames[] = LeftAndMain::class;
+        foreach ($cmsClassNames as $className) {
+            $combinedClientConfig['sections'][] = Injector::inst()->get($className)->getClientConfig();
+        }
+
+        // Pass in base url (absolute and relative)
+        $combinedClientConfig['baseUrl'] = Director::baseURL();
+        $combinedClientConfig['absoluteBaseUrl'] = Director::absoluteBaseURL();
+        $combinedClientConfig['adminUrl'] = AdminRootController::admin_url();
+
+        // Get "global" CSRF token for use in JavaScript
+        $token = SecurityToken::inst();
+        $combinedClientConfig[$token->getName()] = $token->getValue();
+
+        // Set env
+        $combinedClientConfig['environment'] = Director::get_environment_type();
+        $combinedClientConfig['debugging'] = LeftAndMain::config()->uninherited('client_debugging');
+
+        return Convert::raw2json($combinedClientConfig);
+    }
 	/**
 	 * Creates a form for Staff/Students/Alumni to edit the content of their Profile Page.
 	 * @return Form object
 	 */
 	public function EditProfileForm() {
+		Requirements::javascript('silverstripe/admin: thirdparty/jquery/jquery.js');
+		Requirements::javascript('silverstripe/admin:thirdparty/jquery-entwine/dist/jquery.entwine-dist.js');
+		Requirements::javascript('silverstripe/admin: client/dist/js/vendor.js');
+		Requirements::javascript('silverstripe/admin: client/dist/js/bundle.js');
+		// Requirements::javascript('silverstripe/admin: thirdparty/bootstrap/js/dist/util.js');
+		// Requirements::javascript('silverstripe/admin: thirdparty/bootstrap/js/dist/collapse.js');
+		//Requirements::css('silverstripe/admin: client/dist/styles/bundle.css');
+
+		$clientConfig = '{
+  			"sections": []}';
+
+        Requirements::customScript("
+            window.ss = window.ss || {};
+            window.ss.config = " . $this->getCombinedClientConfig() . ";
+        ");
 
 	TinyMCEConfig::get('default')
 	    ->setOptions([
@@ -60,7 +118,7 @@ class StaffPageControllerExtension extends Extension {
 	        'priority' => '50',
 	        'skin' => 'silverstripe',
 	        'body_class' => 'typography',
-	        'contextmenu' => "sslink ssmedia ssembed inserttable | cell row column deletetable",
+	        'contextmenu' => "link image ssembed | cell row column deletetable",
 	        'use_native_selects' => false,
 	        'valid_elements' => "@[id|class|style|title],a[id|rel|rev|dir|tabindex|accesskey|type|name|href|target|title"
 	            . "|class],-strong/-b[class],-em/-i[class],-strike[class],-u[class],#p[id|dir|class|align|style],-ol[class],"
@@ -80,8 +138,20 @@ class StaffPageControllerExtension extends Extension {
 	            . "object[width|height|data|type],param[name|value],map[class|name|id],area[shape|coords|href|target|alt]"
 	    ]);
 
-		Requirements::javascript('silverstripe/admin: client/dist/js/vendor.js');
-		Requirements::javascript('silverstripe/admin: client/dist/js/bundle.js');
+	    $module = ModuleLoader::inst()->getManifest()->getModule('silverstripe/admin');
+		TinyMCEConfig::get('default')
+		    ->enablePlugins([
+		        'contextmenu' => null,
+		        'image' => $module->getResource('thirdparty/tinymce/plugins/image/plugin.js'),
+		        'link' => $module->getResource('thirdparty/tinymce/plugins/link/plugin.js'),
+		        // 'sslinkexternal' => $module->getResource('client/dist/js/TinyMCE_sslink-external.js'),
+		        // 'sslinkemail' => $module->getResource('client/dist/js/TinyMCE_sslink-email.js'),
+		    ])
+		    ->setOption('contextmenu', 'link image ssembed inserttable | cell row column deletetable');
+
+		// TinyMCEConfig::get('default')->disablePlugins('ssbuttons');
+		// TinyMCEConfig::get('default')->removeButtons('sslink', 'ssmedia');
+		TinyMCEConfig::get('default')->addButtonsToLine(2, 'image');
 
 		$Member = Member::CurrentUser();
 
@@ -97,8 +167,8 @@ class StaffPageControllerExtension extends Extension {
 				$fields = new FieldList(
 					new TextField('FirstName', '*First Name'),
 					new TextField('Surname', '*Last Name'),
-					new TextareaField('Interests', 'Interests'),
-					new TextareaField('FavoriteProject', 'Favorite Project'),
+					new HTMLEditorField('Interests', 'Interests'),
+					new HTMLEditorField('FavoriteProject', 'Favorite Project'),
 					new TextField('LinkedInURL', 'LinkedIn'),
 					new TextField('PortfolioURL', 'Portfolio'),
 					new TextField('TwitterHandle', 'Twitter'),
@@ -106,8 +176,8 @@ class StaffPageControllerExtension extends Extension {
 					new TextField("Major", "Major"),
 					new HTMLEditorField("DegreeDescription", "Explain why you chose your degree."),
 					new HTMLEditorField("MDExperience", "What have you learned from your experience at M+D?"),
-					new TextareaField("TopStrengths", "Top five strengths"),
-					new TextareaField("FavoriteQuote", "Favorite quote"),
+					new HTMLEditorField("TopStrengths", "Top five strengths"),
+					new HTMLEditorField("FavoriteQuote", "Favorite quote"),
 					new HTMLEditorField("PostGraduation", "What do you hope to do after graduation?")
 				);
 			}
@@ -117,8 +187,8 @@ class StaffPageControllerExtension extends Extension {
 				$fields = new FieldList(
 					new TextField('FirstName', '*First Name'),
 					new TextField('Surname', '*Last Name'),
-					new TextareaField('Interests', 'Interests'),
-					new TextareaField('FavoriteProject', 'Favorite Project'),
+					new HTMLEditorField('Interests', 'Interests'),
+					new HTMLEditorField('FavoriteProject', 'Favorite Project'),
 					new TextField('LinkedInURL', 'LinkedIn'),
 					new TextField('PortfolioURL', 'Portfolio'),
 					new TextField('TwitterHandle', 'Twitter'),
@@ -137,8 +207,8 @@ class StaffPageControllerExtension extends Extension {
 				$fields = new FieldList(
 					new TextField('FirstName', '*First Name'),
 					new TextField('Surname', '*Last Name'),
-					new TextareaField('Interests', 'Interests'),
-					new TextareaField('FavoriteProject', 'Favorite Project'),
+					new HTMLEditorField('Interests', 'Interests'),
+					new HTMLEditorField('FavoriteProject', 'Favorite Project'),
 					new TextField('LinkedInURL', 'LinkedIn'),
 					new TextField('PortfolioURL', 'Portfolio'),
 					new TextField('TwitterHandle', 'Twitter'),
@@ -170,7 +240,10 @@ class StaffPageControllerExtension extends Extension {
 			return $message;
 		}
 	}
-
+    public function Modals() 
+    {
+        return ModalController::create($this, "Modals");
+    }
 	/**
 	 * Saves Edit Staff Page Form into StaffPage and Member.
 	 * @param $data, $form
