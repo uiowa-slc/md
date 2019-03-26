@@ -25,15 +25,18 @@ use SilverStripe\Control\Director;
 use SilverStripe\Admin\AdminRootController;
 use SilverStripe\Security\SecurityToken;
 use SilverStripe\Core\Convert;
+use SilverStripe\View\ArrayData;
 class StaffPageControllerExtension extends Extension {
 
 	private static $allowed_actions = array(
 		'editProfile', 
-		'EditProfileForm'
+		'EditProfileForm',
+		'error'
 	);
 
 	private static $url_handlers = array(
-		'edit//$action' => 'editProfile'
+		'edit//$action' => 'editProfile',
+		'error//' => 'error'
 	);
 	public function init(){
 		parent::init();
@@ -54,7 +57,7 @@ class StaffPageControllerExtension extends Extension {
 			return $this->owner->customise($Data)->renderWith(array("StaffPage_Edit", "Page"));
 		} else {
 			// TODO: send User back to edit profile page after they've logged in.
-			// $this->owner->redirect(Security::login_url());
+			$this->owner->redirect($this->owner->Link('error'));
 		}
 	}
 
@@ -239,6 +242,18 @@ class StaffPageControllerExtension extends Extension {
 			$message = "<a href='Security/login'>You must be logged in to edit your profile. </a>";
 			return $message;
 		}
+	}
+
+	public function error($message = 'Unknown Error'){
+
+		$messageHTML = 
+		$Data = new ArrayData([
+                'ErrorMessage' =>  $message,
+            ]);
+		//print_r(EmailAdmins::gatherStats());
+		return $this->owner->renderWith(array("StaffPage_Error", "Page"));
+		// return $this->owner->customise($Data)->renderWith(array("StaffPage_Error", "Page"));
+
 	}
     public function Modals() 
     {
