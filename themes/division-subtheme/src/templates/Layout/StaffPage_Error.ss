@@ -8,7 +8,7 @@ $Header
             <div class="row">
                 <div class="columns small-12">
                     <div class="main-content__header">
-                        <h1 class="staff-title">$Title</h1>
+                        <h1 class="staff-title">Your M+D Public Profile Page</h1>
                     </div>
                 </div>
             </div>
