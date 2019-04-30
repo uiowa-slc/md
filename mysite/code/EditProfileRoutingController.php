@@ -14,26 +14,25 @@ class EditProfileRoutingController extends PageController {
 
 	public function index() {
 
-		$memberID = Member::CurrentUserID();
-		$test = Member::get()->filter(array('ID' => $memberID))->First();
-		if ($test) {
-			$email = $this->owner->EmailAddress;
-			// print_r(Member::CurrentUserID());
-			$memberTest = Member::get()->filter(array('Email' => $email))->First();
+		$member = Security::getCurrentUser();
 
-			if($memberTest){
 
-				$Staff = StaffPage::get()->filter(array('MemberID' => $memberID))->first();
-				return $this->owner->redirect('team/'.$Staff->URLSegment.'/edit');
-
-			}
-		} else {
-			// TODO: send User back to edit profile page after they've logged in.
-			// $this->owner->redirect('Security/Login?BackURL=edit-profile/');
-
-			Security::PermissionFailure($this->controller, 'You must be an M+D staff member to edit this profile page.');
+		if(!$member){
+			return Security::PermissionFailure($this->controller, 'You must be an M+D staff member to edit this profile page.');
 		}
-	}
 
-	
+		$memberID = $member->ID;
+
+
+		$staffPage = StaffPage::get()->filter(array('EmailAddress' => $member->Email))->First();
+
+		if($staffPage){
+			$this->owner->redirect($staffPage->Link('/edit'));
+		}else{
+			
+		}
+		
+		//return 
+	}
 }
+

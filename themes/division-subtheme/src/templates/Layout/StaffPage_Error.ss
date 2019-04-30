@@ -14,7 +14,7 @@ $Header
             </div>
             <div class="row">
             	<div class="columns small-12">
-                    <p>Sorry, there's been an issue editing your profile. Please email Dustin (<a href="mailto:dustin-quam@uiowa.edu">dustin-quam@uiowa.edu</a>) what's up. It's likely his fault.</p>
+                    <p>Sorry, there's been an issue editing your profile. Please email Dustin (<a href="mailto:dustin-quam@uiowa.edu">dustin-quam@uiowa.edu</a>) and tell him you received this error. It's likely his fault.</p>
                     <% if ErrorMessage %>
                     <p>Please include the following error message in the email:</p>
                     <h2>Error information:</h2>

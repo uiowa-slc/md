@@ -26,6 +26,7 @@ use SilverStripe\Admin\AdminRootController;
 use SilverStripe\Security\SecurityToken;
 use SilverStripe\Core\Convert;
 use SilverStripe\View\ArrayData;
+
 class StaffPageControllerExtension extends Extension {
 
 	private static $allowed_actions = array(
@@ -43,22 +44,44 @@ class StaffPageControllerExtension extends Extension {
 	}
 
 	public function editProfile() {
-		$action = $this->owner->getRequest()->param('action');
-		if (isset($action)) {
-			$response = $this->owner->getResponse();
-			return $response;
+
+		$member = Security::getCurrentUser();
+
+		if(!$member){
+			return Security::PermissionFailure($this->owner, 'You must be an M+D staff member to edit this profile page.');
+
 		}
 
-		$memberID = Member::CurrentUserID();
+		$staffPage = $this->owner->dataRecord;
+		$Data = array(
+			'Saved' => $this->owner->getRequest()->getVar('saved')
 
-		if ($memberID == $this->owner->Member()->ID) {
-			$Data = array();
+		);
+
+		if ($member->ID == $staffPage->Member()->ID) {
+			
 			//print_r(EmailAdmins::gatherStats());
 			return $this->owner->customise($Data)->renderWith(array("StaffPage_Edit", "Page"));
 		} else {
-			// TODO: send User back to edit profile page after they've logged in.
-			$this->owner->redirect($this->owner->Link('error'));
+			
+			//Create the relationship if this is the first time someone's tried editing their profile:
+
+
+			if($member->Email == $staffPage->EmailAddress ){
+				$staffPage->MemberID = $member->ID;
+				$staffPage->write();
+				if($staffPage->isPublished()){
+					$staffPage->publish('Stage', 'Live');
+				}
+
+				return $this->owner->customise($Data)->renderWith(array("StaffPage_Edit", "Page"));
+			}else{
+				//Trying to edit someone else's profile or the profile relationship isn't set up right:
+				$this->owner->redirect($this->owner->Link('error'));
+			}
+			
 		}
+
 	}
 
     /**
@@ -224,7 +247,7 @@ class StaffPageControllerExtension extends Extension {
 			}
 
 
-			$saveAction = new FormAction('SaveProfile', 'Save');
+			$saveAction = new FormAction('SaveProfile', 'Save Changes');
 			$saveAction->addExtraClass('radius');
 
 			$actions = new FieldList($saveAction);
@@ -255,6 +278,11 @@ class StaffPageControllerExtension extends Extension {
 		// return $this->owner->customise($Data)->renderWith(array("StaffPage_Error", "Page"));
 
 	}
+
+	// public function Saved(){
+	// 	return $this->getRequest()->getVar('saved');
+	// }
+
     public function Modals() 
     {
         return ModalController::create($this, "Modals");
@@ -286,7 +314,7 @@ class StaffPageControllerExtension extends Extension {
 		Versioned::set_stage('Live');
 		$Staff->write();
 
-		return $this->owner->redirect($this->owner->Link('?saved=1'));
+		return $this->owner->redirect($this->owner->Link('edit/?saved=1'));
 	}
 
 

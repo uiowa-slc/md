@@ -156,3 +156,21 @@
 		}
 	}
 }
+
+
+// Edit Profile Stuff:
+.view-public-link{
+	width: 100%;
+}
+
+.edit-profile__image-preview{
+	width: 100%;
+}
+
+#Form_EditProfileForm_action_SaveProfile{
+	background: #42bb04;
+	font-size: rem-calc(22);
+	color: white;
+	width: 100%;
+	margin-top: rem-calc(20);
+}
