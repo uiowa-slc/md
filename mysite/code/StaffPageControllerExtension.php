@@ -233,6 +233,7 @@ class StaffPageControllerExtension extends Extension {
 				$fields = new FieldList(
 					new TextField('FirstName', '*First Name'),
 					new TextField('Surname', '*Last Name'),
+					new TextField('Position', 'Position'),
 					new HTMLEditorField('Interests', 'Interests'),
 					new HTMLEditorField('FavoriteProject', 'Favorite Project'),
 					new TextField('LinkedInURL', 'LinkedIn'),
