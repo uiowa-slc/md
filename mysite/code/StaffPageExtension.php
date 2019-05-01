@@ -23,7 +23,7 @@ class StaffPageExtension extends DataExtension {
 		//Students
 		"Major" => "Text",
 		"DegreeDescription" => "HTMLText",
-		"TopStrengths" => "Text",
+		"TopStrengths" => "HTMLText",
 		"FavoriteQuote" => "Text",
 		"PostGraduation" => "HTMLText",
 		"MDExperience" => "HTMLText",

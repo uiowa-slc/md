@@ -203,7 +203,7 @@ class StaffPageControllerExtension extends Extension {
 					new HTMLEditorField("DegreeDescription", "Explain why you chose your degree."),
 					new HTMLEditorField("MDExperience", "What have you learned from your experience at M+D?"),
 					new HTMLEditorField("TopStrengths", "Top five strengths"),
-					new HTMLEditorField("FavoriteQuote", "Favorite quote"),
+					new TextareaField("FavoriteQuote", "Favorite quote"),
 					new HTMLEditorField("PostGraduation", "What do you hope to do after graduation?")
 				);
 			}
