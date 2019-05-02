@@ -18,6 +18,7 @@ class StaffPageExtension extends DataExtension {
 		"LinkedInURL" => "Text",
 		"PortfolioURL" => "Text",
 		"TwitterHandle" => "Text",
+		"InstagramHandle" => "Text",
 		"GithubURL" => "Text",
 
 		//Students
@@ -165,7 +166,7 @@ class StaffPageExtension extends DataExtension {
 		$this->owner->GithubURL= $this->owner->ValidateUrl($this->owner->GithubURL);
 		$this->owner->EmploymentLocationURL= $this->owner->ValidateUrl($this->owner->EmploymentLocationURL);
 		$this->owner->TwitterHandle= $this->owner->ValidateTwitter($this->owner->TwitterHandle);
-
+		$this->owner->InstagramHandle= $this->owner->ValidateInstagram($this->owner->InstagramHandle);
 
 		parent::onBeforeWrite();
 	}
@@ -224,101 +225,15 @@ class StaffPageExtension extends DataExtension {
 		return $username;
 	}
 
+	public function ValidateInstagram($username) {
+		if (empty($username)) {
+			return $username;
+		} else if (preg_match("/@/i", $username)) {
+			$username = str_replace('@', '', $username); 
+		}
 
-	public function EditPortfolioLink(){
-
-		/* 	Student staff Page:
-			https://docs.google.com/forms/d/1Bh8JIkuV3b_2NHX8ST8Ud8xTOWsKTILnQWgddn3XmDU/viewform?entry.1413661770=FirstName&entry.1547650400=LastName&entry.1970732278=WhereFrom&entry.46708057=InterestsAct&entry.2022956471=Major&entry.83862488=WhyDegree&entry.721109635=LearnedFromExp&entry.428912992=FavoriteMDProject&entry.246858419=FiveStrengths&entry.43829841=FavQuote&entry.644260591=AfterGrad&entry.1346755299=LinkedIn&entry.1110916745=Portfolio
-
-			Pro Staff Page:
-			https://docs.google.com/forms/d/16nRmETxww4vIEqqlqQ72JUV_FWgSET4fUahp9-hdDoc/viewform?entry.1413661770=FirstName&entry.1547650400=LastNam&entry.1970732278=From&entry.46708057=InterestsActs&entry.428912992=FavoriteMDProject&entry.882405316=Position&entry.721109635=EnjoyAboutMD&entry.246858419=WhenJoined&entry.43829841=BackgroundEd&entry.1346755299=LinkedIn&entry.1110916745=Portfolio
-
-			Alum Page:
-			https://docs.google.com/forms/d/1q44t27U28RlkOIUJ_2OXzrEHbxqap3TmLNbjAraLAUg/viewform?entry.1413661770=FirstName&entry.1547650400=LastName&entry.1970732278=WhereFrom&entry.1276658641=Email&entry.1105919959=CurrentEmployer&entry.706670405=CurrentEmployerURL&entry.782910880=CurrentPosition&entry.813930454=YearGraduated&entry.2022956471=Major&entry.1552428663=Bio&entry.46708057=InterestsAct&entry.382308292=AdviceToCurrentStudents&entry.721109635=LearnedFromExp&entry.428912992=FavoriteMDProject&entry.246858419=FiveStrengths&entry.43829841=FavQuote&entry.1346755299=LinkedIn&entry.1672914025=Twitter&entry.1110916745=Portfolio
-
-
-		*/	include_once(Director::BaseFolder().'/mysite/code/thirdparty/Bitly.php');
-			$owner = $this->owner;
-
-			if($owner->isStudent()){
-				$urlPrefix = 'https://docs.google.com/forms/d/1Bh8JIkuV3b_2NHX8ST8Ud8xTOWsKTILnQWgddn3XmDU/viewform?';
-
-				$parameters = 'entry.1413661770='.urlencode($owner->FirstName);
-				$parameters .='&entry.1547650400='.urlencode($owner->LastName);
-				$parameters .='&entry.1970732278='.urlencode($owner->Location);
-				$parameters .='&entry.46708057='.urlencode($owner->Interests);
-				$parameters .='&entry.2022956471='.urlencode($owner->Major);
-				$parameters .='&entry.83862488='.urlencode($owner->DegreeDescription);
-				$parameters .='&entry.721109635='.urlencode($owner->MDExperience);
-				$parameters .='&entry.428912992='.urlencode($owner->FavoriteProject);
-				$parameters .='&entry.246858419='.urlencode($owner->TopStrengths);
-				$parameters .='&entry.43829841='.urlencode($owner->FavoriteQuote);
-				$parameters .='&entry.644260591='.urlencode($owner->PostGraduation);
-				$parameters .='&entry.1346755299='.urlencode($owner->LinkedInURL);
-				$parameters .='&entry.1110916745='.urlencode($owner->PortfolioURL);
-
-			}else if($owner->isProStaff()){
-				$urlPrefix = 'https://docs.google.com/forms/d/16nRmETxww4vIEqqlqQ72JUV_FWgSET4fUahp9-hdDoc/viewform?';
-
-				$parameters = 'entry.1413661770='.urlencode($owner->FirstName);
-				$parameters .='&entry.1547650400='.urlencode($owner->LastName);
-				$parameters .='&entry.1970732278='.urlencode($owner->Location);
-				$parameters .='&entry.46708057='.urlencode($owner->Interests);
-				$parameters .='&entry.428912992='.urlencode($owner->FavoriteProject);
-				$parameters .='&entry.882405316='.urlencode($owner->PositionTitle);
-				$parameters .='&entry.721109635='.urlencode($owner->EnjoymentFactors);
-				$parameters .='&entry.246858419='.urlencode($owner->JoinDate);
-				$parameters .='&entry.43829841='.urlencode($owner->Background);
-				$parameters .='&entry.1346755299='.urlencode($owner->LinkedInURL);
-				$parameters .='&entry.1110916745='.urlencode($owner->PortfolioURL);
-
-
-			}else if($owner->isAlum()){
-				$urlPrefix = 'https://docs.google.com/forms/d/1Bh8JIkuV3b_2NHX8ST8Ud8xTOWsKTILnQWgddn3XmDU/viewform?';
-
-				$parameters = 'entry.1413661770='.urlencode($owner->FirstName);
-				$parameters .='&entry.1547650400='.urlencode($owner->LastName);
-				$parameters .='&entry.1970732278='.urlencode($owner->Location);
-				$parameters .='&entry.1276658641='.urlencode($owner->EmailAddress);
-				$parameters .='&entry.1105919959='.urlencode($owner->EmploymentLocation);
-				$parameters .='&entry.706670405='.urlencode($owner->EmploymentLocationURL);
-				$parameters .='&entry.782910880='.urlencode($owner->CurrentPosition);
-				$parameters .='&entry.813930454='.urlencode($owner->YearGraduated);
-				$parameters .='&entry.2022956471='.urlencode($owner->Major);
-				$parameters .='&entry.1552428663='.urlencode($owner->Content);
-				$parameters .='&entry.46708057='.urlencode($owner->Interests);
-				$parameters .='&entry.382308292='.urlencode($owner->Advice);
-				$parameters .='&entry.721109635='.urlencode($owner->MDExperience);
-				$parameters .='&entry.428912992='.urlencode($owner->FavoriteProject);
-				$parameters .='&entry.246858419='.urlencode($owner->TopStrengths);
-				$parameters .='&entry.43829841='.urlencode($owner->FavoriteQuote);
-				$parameters .='&entry.1346755299='.urlencode($owner->LinkedInURL);
-				$parameters .='&entry.1672914025='.urlencode($owner->TwitterHandle);
-				$parameters .='&entry.1110916745='.urlencode($owner->PortfolioURL);
-
-
-			}else{
-				return false;
-			}
-			//print_r(urldecode('https%253A%252F%252Fdocs.google.com%252Fforms'));
-			//print_r(get_defined_constants() );
-			if(defined('BITLY_OAUTH')){
-
-				$url = $urlPrefix.$parameters;
-				$token = BITLY_OAUTH;
-
-				$shorten = bitly_v3_shorten($url, $token);
-
-				//print_r($shorten);
-
-				if(isset($shorten['url'])){
-					return $shorten['url'];
-				}else{
-					return $urlPrefix;
-				}
-			}else{
-				return $urlPrefix;
-			}
-
+		return $username;
 	}
+
+
 }

@@ -141,6 +141,9 @@ $Header
                             <% if $PortfolioURL %><a href="$PortfolioURL" class="button social-button" target="_blank">Website</a><% end_if %>
                         </span> --%>
                         <ul class="staff-social">
+                            <% if $InstagramHandle %>
+                                <li><a href="http://www.instagram.com/$InstagramHandle/" target="_blank" class="social--instagram">Instagram</a></li>
+                            <% end_if %>
                             <% if $TwitterHandle %>
                                 <li><a href="http://www.twitter.com/$TwitterHandle/" target="_blank" class="social--twitter">Twitter</a></li>
                             <% end_if %>

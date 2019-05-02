@@ -193,14 +193,16 @@ class StaffPageControllerExtension extends Extension {
 				$fields = new FieldList(
 					new TextField('FirstName', '*First Name'),
 					new TextField('Surname', '*Last Name'),
-					new HTMLEditorField('Interests', 'Interests'),
-					new HTMLEditorField('FavoriteProject', 'Favorite Project'),
-					new TextField('LinkedInURL', 'LinkedIn'),
 					new TextField('PortfolioURL', 'Portfolio'),
+					new TextField('LinkedInURL', 'LinkedIn'),
+					
 					new TextField('TwitterHandle', 'Twitter'),
+					new TextField('InstagramHandle', 'Instagram'),
 					new TextField('GithubURL', 'Github'),
 					new TextField("Major", "Major"),
 					new HTMLEditorField("DegreeDescription", "Explain why you chose your degree."),
+					new HTMLEditorField('Interests', 'Interests'),
+					new HTMLEditorField('FavoriteProject', 'Favorite Project'),
 					new HTMLEditorField("MDExperience", "What have you learned from your experience at M+D?"),
 					new HTMLEditorField("TopStrengths", "Top five strengths"),
 					new TextareaField("FavoriteQuote", "Favorite quote"),
@@ -211,13 +213,15 @@ class StaffPageControllerExtension extends Extension {
 			//Alumni
 			if ($this->owner->inTeam('Alumni')) {
 				$fields = new FieldList(
-					new TextField('FirstName', '*First Name'),
-					new TextField('Surname', '*Last Name'),
+					new TextField('FirstName', 'First Name'),
+					new TextField('Surname', 'Last Name'),
+					new TextField('PortfolioURL', 'Portfolio'),
+					new TextField('LinkedInURL', 'LinkedIn'),
+					new TextField('TwitterHandle', 'Twitter'),
+					new TextField('InstagramHandle', 'Instagram'),
 					new HTMLEditorField('Interests', 'Interests'),
 					new HTMLEditorField('FavoriteProject', 'Favorite Project'),
-					new TextField('LinkedInURL', 'LinkedIn'),
-					new TextField('PortfolioURL', 'Portfolio'),
-					new TextField('TwitterHandle', 'Twitter'),
+
 					new TextField('GithubURL', 'Github'),
 					new TextField("YearGraduated", "Year Graduated"),
 					new TextField("EmploymentLocation", "Where are you employed?"),
@@ -231,14 +235,16 @@ class StaffPageControllerExtension extends Extension {
 			//Pro Staff
 			if ($this->owner->inTeam('Professional Staff')) {
 				$fields = new FieldList(
-					new TextField('FirstName', '*First Name'),
-					new TextField('Surname', '*Last Name'),
-					new TextField('Position', 'Position'),
-					new HTMLEditorField('Interests', 'Interests'),
-					new HTMLEditorField('FavoriteProject', 'Favorite Project'),
+					new TextField('FirstName', 'First Name'),
+					new TextField('Surname', 'Last Name'),
+					new TextField('Position', 'Position, Location (e.g., "Assistant Director for Marketing, IMU"'),
 					new TextField('LinkedInURL', 'LinkedIn'),
 					new TextField('PortfolioURL', 'Portfolio'),
 					new TextField('TwitterHandle', 'Twitter'),
+					new TextField('InstagramHandle', 'Instagram'),
+					new HTMLEditorField('Interests', 'Interests'),
+					new HTMLEditorField('FavoriteProject', 'Favorite Project'),
+
 					new TextField('GithubURL', 'Github'),
 					new TextField("Phone", "Phone(xxx-xxx-xxxx)"),
 					new HTMLEditorField("EnjoymentFactors", "What do you enjoy about working at M+D?"),
