@@ -59,21 +59,20 @@ class StaffPageExtension extends DataExtension {
 
 	public function updateCMSFields(FieldList $fields) {
 		$owner = $this->owner;
-		$fields->removeByName('Position');
-		//$fields->removeByName('EmailAddress');
-		$fields->removeByName('Phone');
+	
+		if (!$owner->inTeam('Professional Staff')) {
+				$fields->removeByName('Phone');
+				$fields->removeByName('Position');
+			}
 		$fields->removeByName('DepartmentName');
 		$fields->removeByName('DepartmentURL');
 		$fields->removeByName('Content');
-		// $fields->removeByName("BackgroundImage");
+		$fields->removeByName('Content');
 
 		//Everybody
 
 		$fields->renameField('Teams', 'Team - If this person\'s an M+D Alum, put
-            them in <strong>both the Alumni team and their original position</strong> (e.g., "Alumni + Graphic Designers")');
-
-		$fields->renameField('Teams', 'Team - If this person\'s an M+D Alum, put
-            them in <strong>both the Alumni team and their original position</strong> (e.g., "Alumni + Graphic Designers")');
+            them in both the Alumni team and their original position (e.g., "Alumni + Graphic Designers")');
 
 
 		$fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
@@ -81,9 +80,9 @@ class StaffPageExtension extends DataExtension {
 		$fields->addFieldToTab("Root.Main", new TextField("GithubURL", "Github URL?"));
 		$fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
 		$fields->addFieldToTab("Root.Main", new TextField("PortfolioURL", "Portfolio or other URL"));
-		$fields->addFieldToTab("Root.Main", new TextField("Position", "Position"), "EmailAddress");
-		$fields->addFieldToTab("Root.Main", new HTMLEditorField("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) "));
-		$fields->addFieldToTab("Root.Main", new HTMLEditorField("FavoriteProject", "Favorite M+D project? Why?"));
+		
+		$fields->addFieldToTab("Root.Main", HTMLEditorField::create("Interests", "Interests and activities (snowshoeing, cattle herding, snake wrestling...) ")->addExtraClass('stacked'));
+		$fields->addFieldToTab("Root.Main", HTMLEditorField::create("FavoriteProject", "Favorite M+D project? Why?")->addExtraClass('stacked'));
 
 		//Students
 		if ($owner->isStudent()) {
@@ -108,11 +107,10 @@ class StaffPageExtension extends DataExtension {
 
 		//Pro Staff
 		if ($owner->inTeam('Professional Staff')) {
-			$fields->addFieldToTab("Root.Main", new TextField("Phone", "Phone(xxx-xxx-xxxx)"));
-			$fields->addFieldToTab("Root.Main", new HTMLEditorField("EnjoymentFactors", "What do you enjoy about working at M+D?"));
+			$fields->addFieldToTab("Root.Main", HTMLEditorField::create("EnjoymentFactors", "What do you enjoy about working at M+D?")->addExtraClass('stacked'));
 			$fields->addFieldToTab("Root.Main", new TextField("JoinDate", "When did you join the M+D staff?"));
 			// $dateField->getDateField()->setConfig('showcalendar', true);
-			$fields->addFieldToTab("Root.Main", new HTMLEditorField("Background", "Background & Education"));
+			$fields->addFieldToTab("Root.Main", HTMLEditorField::create("Background", "Background & Education")->addExtraClass('stacked'));
 		}
 
 	}
