@@ -10,6 +10,7 @@ use SilverStripe\Security\Member;
 use SilverStripe\Control\Director;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\Security\Security;
+use SilverStripe\Forms\RequiredFields;
 class StaffPageExtension extends DataExtension {
 
 	private static $db = array(
@@ -75,6 +76,8 @@ class StaffPageExtension extends DataExtension {
 		$fields->renameField('Teams', 'Team - If this person\'s an M+D Alum, put
             them in both the Alumni team and their original position (e.g., "Alumni + Graphic Designers")');
 
+		$fields->renameField('EmailAddress', 'Email Address (@uiowa.edu, required for editing their own profile)');
+
 
 		$fields->addFieldToTab("Root.Main", new TextField("LinkedInURL", "LinkedIn URL?"));
 		$fields->addFieldToTab("Root.Main", new TextField("TwitterHandle", "Twitter Username @"));
@@ -88,11 +91,11 @@ class StaffPageExtension extends DataExtension {
 		//Students
 		if ($owner->isStudent()) {
 			$fields->addFieldToTab("Root.Main", new TextField("Major", "Major"));
-			$fields->addFieldToTab("Root.Main", new HTMLEditorField("DegreeDescription", "Explain why you chose your degree."));
-			$fields->addFieldToTab("Root.Main", new HTMLEditorField("MDExperience", "What have you learned from your experience at M+D?"));
+			$fields->addFieldToTab("Root.Main", HTMLEditorField::create("DegreeDescription", "Explain why you chose your degree.")->addExtraClass('stacked'));
+			$fields->addFieldToTab("Root.Main", HTMLEditorField::create("MDExperience", "What have you learned from your experience at M+D?")->addExtraClass('stacked'));
 			$fields->addFieldToTab("Root.Main", new TextareaField("TopStrengths", "Top five strengths"));
 			$fields->addFieldToTab("Root.Main", new TextareaField("FavoriteQuote", "Favorite quote"));
-			$fields->addFieldToTab("Root.Main", new HTMLEditorField("PostGraduation", "What do you hope to do after graduation?"));
+			$fields->addFieldToTab("Root.Main", HTMLEditorField::create("PostGraduation", "What do you hope to do after graduation?")->addExtraClass('stacked'));
 
 		}
 
@@ -102,8 +105,8 @@ class StaffPageExtension extends DataExtension {
 			$fields->addFieldToTab("Root.Main", new TextField("EmploymentLocation", "Where are you employed?"));
 			$fields->addFieldToTab("Root.Main", new TextField("CurrentPosition", "What is your current position title?"));
 			$fields->addFieldToTab("Root.Main", new TextField("EmploymentLocationURL", "Your employer's website"));
-			$fields->addFieldToTab("Root.Main", new HTMLEditorField("FavoriteMemory", "What is your favorite memory of M+D?"));
-			$fields->addFieldToTab("Root.Main", new HTMLEditorField("Advice", "What advice would you give to current students?"));
+			$fields->addFieldToTab("Root.Main", HTMLEditorField::create("FavoriteMemory", "What is your favorite memory of M+D?")->addExtraClass('stacked'));
+			$fields->addFieldToTab("Root.Main", HTMLEditorField::create("Advice", "What advice would you give to current students?")->addExtraClass('stacked'));
 		}
 
 		//Pro Staff
@@ -115,7 +118,12 @@ class StaffPageExtension extends DataExtension {
 		}
 
 	}
-
+    public function getCMSValidator()
+    {
+        return new RequiredFields([
+            'EmailAddress'
+        ]);
+    }
 	public function getAddNewFields() {
 		$fields = new FieldList();
 		$fields->push(new TextField("FirstName", "First Name"));
