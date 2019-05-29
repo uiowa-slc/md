@@ -9,6 +9,7 @@ use SilverStripe\ORM\ArrayList;
 use SilverStripe\Security\Member;
 use SilverStripe\Control\Director;
 use SilverStripe\ORM\DataExtension;
+use SilverStripe\Security\Security;
 class StaffPageExtension extends DataExtension {
 
 	private static $db = array(
@@ -132,6 +133,21 @@ class StaffPageExtension extends DataExtension {
 
 		return $fullName;
 
+	}
+
+	public function CurrentMemberOwnsPage(){
+		if( $member = Security::getCurrentUser() ) {
+			$pageMember = $this->owner->Member();
+
+			if($pageMember){
+				if($pageMember->ID == $member->ID){
+					return true;
+				}
+			}
+		    // Work with $member
+		}
+
+		return false;
 	}
 
 	public function isStudent() {

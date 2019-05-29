@@ -161,7 +161,7 @@ $Header
                             <% end_if %> --%>
                         </ul>
                     <% end_if %>
-                    <% if $Member %>
+                    <% if $CurrentMemberOwnsPage %>
                     <ul class="staff-social">
                         <li><a href="{$Link}edit">Edit Profile</a></li>
                     </ul>
