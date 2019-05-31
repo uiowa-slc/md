@@ -64,7 +64,6 @@ class StaffPageExtension extends DataExtension {
 	
 		if (!$owner->inTeam('Professional Staff')) {
 				$fields->removeByName('Phone');
-				$fields->removeByName('Position');
 			}
 		$fields->removeByName('DepartmentName');
 		$fields->removeByName('DepartmentURL');
