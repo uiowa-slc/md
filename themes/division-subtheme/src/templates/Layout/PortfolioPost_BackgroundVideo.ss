@@ -1,9 +1,27 @@
 $Header
-<% if $BackgroundImage %>
-   <% include FeaturedImage %>
+<% if $YoutubeBackgroundEmbed %>
+    <div class="backgroundvideo">
+
+      <% if $BackgroundImage %>
+         <div id="ESEE" class="backgroundvideo__container" data-interchange="[$BackgroundImage.URL, small], [$BackgroundImage.URL, large]">
+         <a href="http://www.youtube.com/embed/$YoutubeBackgroundEmbed" data-video="$YoutubeBackgroundEmbed" class="backgroundvideo__link">
+      <% else %>
+
+         <div id="ESEE" class="backgroundvideo__container" data-interchange="[http://img.youtube.com/vi/$YoutubeBackgroundEmbed/sddefault.jpg, small], [http://img.youtube.com/vi/$YoutubeBackgroundEmbed/maxresdefault.jpg, large]">
+         <a href="http://www.youtube.com/embed/$YoutubeBackgroundEmbed" data-video="$YoutubeBackgroundEmbed" class="backgroundvideo__link">
+      <% end_if %>
+         </a>
+      </div>
+   </div>
    <br /><br />
 <% end_if %>
+   <div class="column row">
+
+         <h1>$Title</h1>
+
+   </div>
 <section class="portfolio-post">
+
    $Form
    <% include PortfolioPostDetails %>
    <div class="portfolio-post__image-list row">
