@@ -54,7 +54,7 @@
 			<hr />
 			<p class="link">
 				<strong>Link:</strong><br />
-				<a href="$SiteLink" target="_blank">$SiteLink</a>
+				<a href="$SiteLink" target="_blank">Visit Website</a>
 			</p>
 		<% end_if %>
 	</div>
