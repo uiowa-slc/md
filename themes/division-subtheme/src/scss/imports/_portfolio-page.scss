@@ -2,67 +2,75 @@
 
 /* Site Link Button ----------------------- */
 .site-link {
-	background-color: $black;
-	border: 1px solid $black;
-	border-radius: 3px;
-	color: #fff;
-	display: block;
-	font-size: rem-calc(16);
-	letter-spacing: 1px;
-	padding: 1em 2em;
-	text-transform: uppercase;
-	&:focus, &:hover {
-		background-color: #fafafa;
-		color: $black;
-	}
+   background-color: $black;
+   border: 1px solid $black;
+   border-radius: 3px;
+   color: #fff;
+   display: block;
+   font-size: rem-calc(16);
+   letter-spacing: 1px;
+   padding: 1em 2em;
+   text-transform: uppercase;
+   &:focus, &:hover {
+      background-color: #fafafa;
+      color: $black;
+   }
 }
 
 /* Portfolio Roles ----------------------- */
 .portfolio-roles {
-	&__title {
-		font-size: rem-calc(20);
-		margin: 0;
-	}
-	&__role {
-		margin-bottom: .5em;
-	}
-	&__anchor {
-		&:hover, &:focus {
-			text-decoration: underline;
-		}
-	}
+   &__title {
+      font-size: rem-calc(20);
+      margin: 0;
+   }
+   &__role {
+      margin-bottom: .5em;
+   }
+   &__anchor {
+      &:hover, &:focus {
+         text-decoration: underline;
+      }
+   }
 }
 .portfolio-roles, .medium, .client, .date, .link {
-	font-size: rem-calc(16);
+   font-size: rem-calc(16);
 }
 
 /* Medium -------------------------------- */
 .medium a {
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	color: $black;
-	display: inline-block;
-	font-size: rem-calc(14);
-	margin: 5px 2px;
-	padding: 3px 8px;
-	&:hover, &:focus {
-		background-color: #eee;
-	}
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   color: $black;
+   display: inline-block;
+   font-size: rem-calc(14);
+   margin: 5px 2px;
+   padding: 3px 8px;
+   &:hover, &:focus {
+      background-color: #eee;
+   }
 }
 
 
 .portfolio-gallery {
-	display: grid;
-	grid-gap: 30px;
-	grid-template-columns: 1fr, 1fr;
-	margin-bottom: 30px;
-	& .caption {
-		margin: 1em 0;
-	}
+
+   & > div {
+      margin-bottom: rem-calc(30);
+   }
+   & .caption {
+      margin: 1em 0;
+   }
 }
 // .portfolio-gallery > div:nth-child(3n+1) {
-// 	@include breakpoint(medium) {
-// 		grid-column: span 2;
-// 	}
+//    @include breakpoint(medium) {
+//       grid-column: span 2;
+//    }
 // }
+
+/* Video -------------------------------------- */
+.portfolio-post .elemental-area--AfterContentConstrained .backgroundvideo__container {
+   @include breakpoint(large) {
+      height: 668px;
+      background-position: center;
+   }
+}
 
