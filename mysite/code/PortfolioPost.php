@@ -53,7 +53,7 @@ class PortfolioPost extends Page {
     );
 
 	private static $default_sort = 'Date DESC';
-
+	private static $icon_class = 'font-icon-book-open';
 	public function populateDefaults() {
 		parent::populateDefaults();
 
