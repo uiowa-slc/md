@@ -57,8 +57,6 @@ class PortfolioPost extends Page {
 	public function populateDefaults() {
 		parent::populateDefaults();
 
-		$this->setField(DBDate::class, date('Y-m-d H:i:s', strtotime('now')));
-
 	}
 
 	function getCMSFields() {
