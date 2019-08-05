@@ -54,10 +54,6 @@ class PortfolioPost extends Page {
 
 	private static $default_sort = 'Date DESC';
 	private static $icon_class = 'font-icon-book-open';
-	public function populateDefaults() {
-		parent::populateDefaults();
-
-	}
 
 	function getCMSFields() {
 
@@ -68,12 +64,6 @@ class PortfolioPost extends Page {
 
 		$fields->addFieldToTab("Root.Main", $dateField = new DatetimeField('Date'), "Content");
 
-
-		// $dateField->getDateField()->setConfig('showcalendar', true);
-		// $dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
-
-		// $dateField->getDateField()->setConfig('showcalendar', true);
-		// $dateField->getTimeField()->setConfig('timeformat', 'H:m:s');
 		$fields->addFieldToTab('Root.Main', new CheckboxField('IsArchived','Is this work archived? (Yes)'), "Content");
 
 
