@@ -16,9 +16,11 @@ $Header
                   <%-- <noscript><img src="$Image.ScaleWidth(600).URL" alt="$Top.Title" /></noscript> --%>
                </div>
             <% end_loop %>
+            <br />
+            $AfterContentConstrained
          </div>
       </div>
    </div>
    <% include PortfolioPostNavigation %>
 </section>
-<%-- include ActiveTagsSection --%>
+
