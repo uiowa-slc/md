@@ -1,0 +1,22 @@
+---
+Name: staffextensions
+After:
+    - '#lumberjack'
+---
+StaffPage:
+  extensions:
+    - StaffPageExtension
+  show_in_sitetree: false
+StaffHolderPage:
+  extensions:
+    - SilverStripe\Lumberjack\Model\Lumberjack
+    - StaffHolderPageExtension
+StaffPageController:
+  extensions:
+    - StaffPageControllerExtension
+StaffHolderPageController:
+  extensions:
+    - StaffHolderPageControllerExtension
+StaffTeam:
+  extensions:
+    - StaffTeamExtension
