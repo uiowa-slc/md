@@ -2,7 +2,7 @@ $Header
 <div class="gradient">
     <section class="container clearfix">
         <div class="white-cover"></div>
-        <section class="main-content main-content--with-padding main-content--full-width staff-page">
+        <section class="staff-page">
 
 
             <div class="row">
