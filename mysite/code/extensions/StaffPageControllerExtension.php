@@ -191,9 +191,9 @@ class StaffPageControllerExtension extends Extension {
 			//Students
 			if ($this->owner->isStudent()) {
 				$fields = new FieldList(
-					new TextField('FirstName', '*First Name'),
-					new TextField('Surname', '*Last Name'),
-					new TextField('PortfolioURL', 'Portfolio'),
+					TextField::create('FirstName', 'First Name')->setReadOnly(true),
+					TextField::create('Surname', 'Last Name')->setReadOnly(true),
+					new TextField('PortfolioURL', 'Portfolio Website'),
 					new TextField('LinkedInURL', 'LinkedIn'),
 					
 					new TextField('TwitterHandle', 'Twitter'),
@@ -235,8 +235,8 @@ class StaffPageControllerExtension extends Extension {
 			//Pro Staff
 			if ($this->owner->inTeam('Professional Staff')) {
 				$fields = new FieldList(
-					new TextField('FirstName', 'First Name'),
-					new TextField('Surname', 'Last Name'),
+                    TextField::create('FirstName', 'First Name')->setReadOnly(true),
+                    TextField::create('Surname', 'Last Name')->setReadOnly(true),
 					new TextField('Position', 'Position, Location (e.g., "Assistant Director for Marketing, IMU)"'),
 					new TextField('LinkedInURL', 'LinkedIn'),
 					new TextField('PortfolioURL', 'Portfolio'),
