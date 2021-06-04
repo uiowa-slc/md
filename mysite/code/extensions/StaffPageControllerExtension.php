@@ -48,7 +48,7 @@ class StaffPageControllerExtension extends Extension {
 		$member = Security::getCurrentUser();
 
 		if(!$member){
-			return Security::PermissionFailure($this->owner, 'You must be an M+D staff member to edit this profile page.');
+			return Security::PermissionFailure($this->owner, 'You must be an SLC staff member to edit this profile page.');
 
 		}
 
@@ -203,7 +203,7 @@ class StaffPageControllerExtension extends Extension {
 					new HTMLEditorField("DegreeDescription", "Explain why you chose your degree."),
 					new HTMLEditorField('Interests', 'Interests'),
 					new HTMLEditorField('FavoriteProject', 'Favorite Project'),
-					new HTMLEditorField("MDExperience", "What have you learned from your experience at M+D?"),
+					new HTMLEditorField("MDExperience", "What have you learned from your experience at SLC?"),
 					new HTMLEditorField("TopStrengths", "Top five strengths"),
 					new TextareaField("FavoriteQuote", "Favorite quote"),
 					new HTMLEditorField("PostGraduation", "What do you hope to do after graduation?")
@@ -227,7 +227,7 @@ class StaffPageControllerExtension extends Extension {
 					new TextField("EmploymentLocation", "Where are you employed?"),
 					new TextField("CurrentPosition", "What is your current position title?"),
 					new TextField("EmploymentLocationURL", "Your employer's website"),
-					new HTMLEditorField("FavoriteMemory", "What is your favorite memory of M+D?"),
+					new HTMLEditorField("FavoriteMemory", "What is your favorite memory of SLC?"),
 					new HTMLEditorField("Advice", "What advice would you give to current students?")
 				);
 			}
@@ -237,7 +237,7 @@ class StaffPageControllerExtension extends Extension {
 				$fields = new FieldList(
 					new TextField('FirstName', 'First Name'),
 					new TextField('Surname', 'Last Name'),
-					new TextField('Position', 'Position, Location (e.g., "Assistant Director for Marketing, IMU"'),
+					new TextField('Position', 'Position, Location (e.g., "Assistant Director for Marketing, IMU)"'),
 					new TextField('LinkedInURL', 'LinkedIn'),
 					new TextField('PortfolioURL', 'Portfolio'),
 					new TextField('TwitterHandle', 'Twitter'),
@@ -247,8 +247,8 @@ class StaffPageControllerExtension extends Extension {
 
 					new TextField('GithubURL', 'Github'),
 					new TextField("Phone", "Phone(xxx-xxx-xxxx)"),
-					new HTMLEditorField("EnjoymentFactors", "What do you enjoy about working at M+D?"),
-					new TextField("JoinDate", "When did you join the M+D staff?"),
+					new HTMLEditorField("EnjoymentFactors", "What do you enjoy about working at SLC?"),
+					new TextField("JoinDate", "When did you join the SLC staff?"),
 					new HTMLEditorField("Background", "Background & Education")
 				);
 			}

@@ -7,6 +7,7 @@ $Header
 		$Content
 		<% loop Teams %>
 			<% if $Title != "Alumni" %>
+                <% if $ActiveStaffPages %>
 				<div class="">
 					<h2 class="staff__title">$Title</h2>
 					<ul class="staff__coin-list">
@@ -16,6 +17,7 @@ $Header
 					</ul>
 				</div>
 				<hr />
+                <% end_if %>
 			<% else %>
 				<div class="">
 					<h2 class="staff__title">$Title</h2>

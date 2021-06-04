@@ -164,6 +164,7 @@
 // Edit Profile Stuff:
 .view-public-link{
 	width: 100%;
+    margin-bottom: 0;
 }
 
 .edit-profile__image-preview{
@@ -174,10 +175,23 @@
 	}
 }
 
+.edit-profile__photo-blurb{
+    font-size: rem-calc(15);
+}
+
+.btn-toolbar{
+    position: sticky;
+    bottom: 0;
+}
+
 #Form_EditProfileForm_action_SaveProfile{
-	background: #42bb04;
+	background: rgba(#42bb04, 0.8);
 	font-size: rem-calc(22);
 	color: white;
 	width: 100%;
 	margin-top: rem-calc(20);
+
+    &:hover{
+        background: rgba(#42bb04, 1);
+    }
 }
