@@ -28,7 +28,7 @@ $Header
 							<% end_if %>
 						<% end_loop %>
 					</ul>
-					<p class="text-center alumni-link"><a href="meet-us/alumni" class="btn">View all Alumni</a></p>
+					<p class="text-center alumni-link"><a href="meet-us/alumni" class="button large">View all Alumni</a></p>
 				</div>
 				<hr />
 			<% end_if %>
