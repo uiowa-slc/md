@@ -6,7 +6,7 @@
 		<% loop AlumStaffPages.Sort("LastName ASC") %>
 			<li <% if $LinkOrCurrent = "current" %>class="active"<% end_if %>><a href="$Link">$MenuTitle</a></li>
 		<% end_loop %>
-		<li><a href="meet-us/">View current M+D Staff Members</a></li>
+		<li><a href="meet-us/">View current SLC Staff Members</a></li>
 	</ul>
 </nav>
 <% end_if %> --%>

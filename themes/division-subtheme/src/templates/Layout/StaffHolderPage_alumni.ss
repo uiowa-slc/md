@@ -3,8 +3,8 @@ $Header
 <div class="row large-12 columns">
 	<section class="staff">
 		$Form
-		<h1 class="text-center">M+D Alumni Network</h1>
-		<p class="text-center"><a href="mailto:imu-web@uiowa.edu" target="_blank">If you've worked at M+D in the past and would like to be listed here, please give us a shout!</a></p>
+		<h1 class="text-center">SLC Alumni Network</h1>
+		<p class="text-center"><a href="mailto:imu-web@uiowa.edu" target="_blank">If you've worked at SLC in the past and would like to be listed here, please give us a shout!</a></p>
 		$Content
 		<% loop $Teams.Sort("SortOrder") %>
 			<div class="$FirstLast">

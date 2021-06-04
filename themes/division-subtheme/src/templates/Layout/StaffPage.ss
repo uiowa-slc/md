@@ -22,7 +22,7 @@ $Header
                     <!-- Q & A -->
                     <div class="staff-qa">
                         <% if $FavoriteProject %>
-                            <h4>Favorite M+D project and why?</h4>
+                            <h4>Favorite SLC project and why?</h4>
                             $FavoriteProject
                         <% end_if %>
 
@@ -44,7 +44,7 @@ $Header
                             <% end_if %>
 
                             <% if $MDExperience %>
-                                <h4>What I've learned from my experience at M+D</h4>
+                                <h4>What I've learned from my experience at SLC</h4>
                                 $MDExperience
                             <% end_if %>
 
@@ -71,7 +71,7 @@ $Header
                             <% end_if %>
 
                             <% if $FavoriteMemory %>
-                                <h4>Favorite memory of M+D</h4>
+                                <h4>Favorite memory of SLC</h4>
                                 $FavoriteMemory
                             <% end_if %>
 
@@ -85,12 +85,12 @@ $Header
 
                         <% if $inTeam("Professional Staff") %>
                             <% if $EnjoymentFactors %>
-                                <h4>What I enjoy about working at M+D</h4>
+                                <h4>What I enjoy about working at SLC</h4>
                                 $EnjoymentFactors
                             <% end_if %>
 
                             <% if $JoinDate %>
-                                <h4>When I joined the M+D staff team</h4>
+                                <h4>When I joined the SLC staff team</h4>
                                 $JoinDate
                             <% end_if %>
 
