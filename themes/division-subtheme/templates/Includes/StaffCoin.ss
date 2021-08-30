@@ -1,1 +1,17 @@
-<li> <% if $Photo %> <a href="$Link" class="staff__link"><img class="dp-lazy" class="staff-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-original="$Photo.FocusFill(350,260).URL" alt="Portrait of $FirstName $LastName"> </a> <% else %> <a href="$Link" class="staff__link"><img class="dp-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-original="{$ThemeDir}/dist/images/staff-coin-placeholder.png" alt="" role="presentation"> </a> <% end_if %> <p class="staff-name"><a href="$Link" class="staff-name__firstlast">$FirstName $LastName</a> <% if $Position %> <small class="staff-name__position show-for-medium">$Position</small> <% end_if %> </p></li>
+<li>
+	<% if $Photo %>
+		<a href="$Link" class="staff__link">
+			<img class="dp-lazy" class="staff-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-original="$Photo.FocusFill(350,260).URL" alt="Portrait of $FirstName $LastName">
+		</a>
+	<% else %>
+		<a href="$Link" class="staff__link">
+			<img class="dp-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-original="{$ThemeDir}/dist/images/staff-coin-placeholder.png" alt="" role="presentation">
+		</a>
+	<% end_if %>
+	<p class="staff-name">
+		<a href="$Link" class="staff-name__firstlast">$FirstName $LastName</a>
+		<% if $Position %>
+			<small class="staff-name__position show-for-medium">$Position</small>
+		<% end_if %>
+	</p>
+</li>

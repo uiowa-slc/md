@@ -1,1 +1,0 @@
-<% if $Photo %><li><a href="$Link"><img class="dp-lazy" data-original="$Photo.CroppedImage(100,100).URL" alt="Photograph of $Title" /></a></li><% end_if %>
