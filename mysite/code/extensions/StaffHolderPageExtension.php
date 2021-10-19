@@ -37,12 +37,12 @@ class StaffHolderPageExtension extends DataExtension {
 
         $grid->setList($sortedList);
         $grid->setTitle('Staff Members');
-        $grid->setName('StaffPages');
+        // $grid->setName('StaffPages');
 
 
 
         $fields->addFieldToTab('Root.Main', $grid);
-        $fields->removeByName('ChildPages');
+        // $fields->removeByName('ChildPages');
 	}
 
 }
