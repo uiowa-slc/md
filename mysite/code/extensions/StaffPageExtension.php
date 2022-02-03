@@ -9,6 +9,7 @@ use SilverStripe\ORM\ArrayList;
 use SilverStripe\Security\Member;
 use SilverStripe\Control\Director;
 use SilverStripe\ORM\DataExtension;
+use SilverStripe\ORM\DataObject;
 use SilverStripe\Security\Security;
 use SilverStripe\Forms\RequiredFields;
 class StaffPageExtension extends DataExtension {
@@ -156,7 +157,24 @@ class StaffPageExtension extends DataExtension {
 
 		return false;
 	}
+    public function TeamsWithoutAlumni(){
 
+        $teams = $this->owner->Teams();
+        $teamsArrayList = new ArrayList();
+        $teamsArray = array();
+
+        foreach ($teams as $team){
+            if($team->Title != 'Alumni'){
+                $teamTitle = $team->Title;
+                $teamTitleTrim = rtrim($teamTitle, 's');
+                $teamObjNew = new DataObject();
+                $teamObjNew->TeamTitle = $teamTitleTrim;
+                $teamsArrayList->push($teamObjNew);
+            }
+        }
+
+        return $teamsArrayList;
+    }
 	public function isStudent() {
 		// print_r($this->owner);
 		if (!($this->inTeam("Professional Staff")) && !($this->inTeam("Alumni"))) {

@@ -274,6 +274,8 @@ class StaffPageControllerExtension extends Extension {
 		}
 	}
 
+
+
 	public function error($message = 'Unknown Error'){
 
 		$messageHTML = 
