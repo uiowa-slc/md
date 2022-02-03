@@ -1724,12 +1724,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/division-project.git",
-                "reference": "b0c645dd5ac1828016447996c32c0120975d9a14"
+                "reference": "c8b6293d8e09b2efc2e462889d86585bf299fa42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/b0c645dd5ac1828016447996c32c0120975d9a14",
-                "reference": "b0c645dd5ac1828016447996c32c0120975d9a14",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/division-project/zipball/c8b6293d8e09b2efc2e462889d86585bf299fa42",
+                "reference": "c8b6293d8e09b2efc2e462889d86585bf299fa42",
                 "shasum": ""
             },
             "require": {
@@ -1779,7 +1779,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/division-project/tree/3-slc-migration",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/division-project/issues"
             },
-            "time": "2022-01-25T18:00:06+00:00"
+            "time": "2022-02-03T20:25:15+00:00"
         },
         {
             "name": "md/saml",
