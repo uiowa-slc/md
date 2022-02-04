@@ -1920,12 +1920,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StudentLifeMarketingAndDesign/silverstripe-migration-tools.git",
-                "reference": "ad792adcce5f30001f8c2c9eef1337790c22a2c3"
+                "reference": "7ad83b48fdf4ac13fdf1dbd10b0c3c7e70cb6b94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/silverstripe-migration-tools/zipball/ad792adcce5f30001f8c2c9eef1337790c22a2c3",
-                "reference": "ad792adcce5f30001f8c2c9eef1337790c22a2c3",
+                "url": "https://api.github.com/repos/StudentLifeMarketingAndDesign/silverstripe-migration-tools/zipball/7ad83b48fdf4ac13fdf1dbd10b0c3c7e70cb6b94",
+                "reference": "7ad83b48fdf4ac13fdf1dbd10b0c3c7e70cb6b94",
                 "shasum": ""
             },
             "require": {
@@ -1940,7 +1940,7 @@
                 "source": "https://github.com/StudentLifeMarketingAndDesign/silverstripe-migration-tools/tree/slc-migration",
                 "issues": "https://github.com/StudentLifeMarketingAndDesign/silverstripe-migration-tools/issues"
             },
-            "time": "2022-02-04T20:33:10+00:00"
+            "time": "2022-02-04T20:48:39+00:00"
         },
         {
             "name": "md/uiowa-bar",
