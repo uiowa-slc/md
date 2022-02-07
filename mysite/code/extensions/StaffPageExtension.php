@@ -218,15 +218,13 @@ class StaffPageExtension extends DataExtension {
 		$teamsIncluded = $owner->Teams();
         $teamsArray = $teamsIncluded->Map()->toArray();
 
-        if(array_key_exists($teamName, $teamsArray)){
-
+        if(in_array($teamName, $teamsArray)){
+            // echo $owner->Title.': is alumni ';
             return true;
         }else{
+            // echo $owner->Title.': is NOT alumni ';
             return false;
         }
-
-
-
 	}
 
 	public function Projects() {
