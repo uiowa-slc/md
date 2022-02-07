@@ -216,14 +216,16 @@ class StaffPageExtension extends DataExtension {
 
 		$owner = $this->owner;
 		$teamsIncluded = $owner->Teams();
+        $teamsArray = $teamsIncluded->Map()->toArray();
 
-		foreach ($teamsIncluded as $team) {
-			if ($team->Name == $teamName) {
-				return true;
-			}
-		}
+        if(array_key_exists($teamName, $teamsArray)){
 
-		return false;
+            return true;
+        }else{
+            return false;
+        }
+
+
 
 	}
 
